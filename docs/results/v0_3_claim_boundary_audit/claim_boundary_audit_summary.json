@@ -1,0 +1,23 @@
+{
+  "artifact_id": "claim_boundary_audit",
+  "artifacts": [
+    "claim_boundary_audit_findings.csv",
+    "claim_boundary_audit_summary.json",
+    "claim_boundary_audit.md"
+  ],
+  "audit_target_count": 5,
+  "audited_targets": [
+    "README.md",
+    "docs/benchmark_v0_3_protocol.md",
+    "docs/claim_boundaries.md",
+    "docs/technical_report.md",
+    "docs/research_report.md"
+  ],
+  "blocking_violation_count": 0,
+  "check_count": 13,
+  "claim_boundary": "This audit checks whether public narrative surfaces preserve TreLLM's claim boundaries. It is not evidence of model performance and does not close the direct API or external reproduction gaps.",
+  "headline_scientific_claim_ready": false,
+  "protocol_id": "trellm-v0.3-protocol",
+  "schema": "trellm_v0_3_claim_boundary_audit_v0.1",
+  "violation_count": 0
+}

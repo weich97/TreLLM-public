@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/weich97/TreLLM-public/schemas/reproduction_report.schema.json",
+  "title": "TreLLM External Reproduction Report",
+  "type": "object",
+  "required": [
+    "schema",
+    "created_at",
+    "repository",
+    "commit_or_tag",
+    "python",
+    "commands",
+    "artifacts",
+    "trajectory_hash",
+    "live_api_used",
+    "market_data_used",
+    "private_fills_used"
+  ],
+  "properties": {
+    "schema": { "const": "tradearena_external_reproduction_pack_v1" },
+    "created_at": { "type": "string" },
+    "repository": { "type": "string" },
+    "protocol_id": {
+      "type": "string",
+      "description": "Optional protocol identifier; v0.3 reproduction reports should use trellm-v0.3-protocol."
+    },
+    "environment_class": {
+      "type": "string",
+      "enum": ["windows_or_macos", "linux", "colab_or_binder"],
+      "description": "Optional v0.3 environment class used by the external reproduction gate."
+    },
+    "report_author_type": {
+      "type": "string",
+      "enum": ["project-maintainer", "independent"],
+      "description": "Whether the report was produced by a project maintainer or an independent reviewer."
+    },
+    "independent_reviewer": {
+      "type": "boolean",
+      "description": "True only for reports submitted by someone outside the project authorship team."
+    },
+    "commit_or_tag": { "type": "string", "minLength": 1 },
+    "git_status_short": { "type": "string" },
+    "python": {
+      "type": "object",
+      "required": ["version", "implementation", "executable", "platform"],
+      "properties": {
+        "version": { "type": "string" },
+        "implementation": { "type": "string" },
+        "executable": { "type": "string" },
+        "platform": { "type": "string" }
+      }
+    },
+    "commands": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "argv"],
+        "properties": {
+          "id": { "type": "string" },
+          "description": { "type": "string" },
+          "argv": { "type": "array", "items": { "type": "string" } },
+          "returncode": { "type": ["integer", "null"] }
+        }
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "exists"],
+        "properties": {
+          "path": { "type": "string" },
+          "exists": { "type": "boolean" },
+          "bytes": { "type": "integer", "minimum": 0 },
+          "sha256": { "type": "string" }
+        }
+      }
+    },
+    "trajectory_hash": { "type": "object" },
+    "live_api_used": { "type": "boolean" },
+    "market_data_used": { "type": "string" },
+    "private_fills_used": { "type": "boolean" },
+    "notes": { "type": "string" }
+  }
+}

@@ -1,0 +1,9 @@
+| case | model | symbols | steps | total_return | sharpe | max_drawdown | risk_clipped_decisions | correlation_mean_abs | effective_assets | mean_herfindahl |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| intraday_50_buy_and_hold | deterministic | 51 | 40 | 0.0070863948 | 1.4329991 | -0.007939827 | 2040 | 0.21927034 | 4.5605804 | 0.019066198 |
+| intraday_50_deterministic_risk_aware | deterministic | 51 | 40 | -0.013527596 | -1.2801483 | -0.031137641 | 672 | 0.21927034 | 4.5605804 | 0.061865615 |
+| intraday_50_markowitz_mvo | markowitz_min_variance | 51 | 40 | -0.0054431209 | -1.366454 | -0.01345568 | 357 | 0.21927034 | 4.5605804 | 0.023176577 |
+| intraday_50_low_liquidity_stress | deterministic_low_liquidity | 51 | 40 | -0.02164312 | -2.0589745 | -0.035962551 | 672 | 0.21927034 | 4.5605804 | 0.061925463 |
+| intraday_50_latency_stress | deterministic_latency | 51 | 40 | 0.019636457 | 1.7609901 | -0.013296037 | 672 | 0.21927034 | 4.5605804 | 0.080960485 |
+| intraday_50_llm_gpt_5_5_risk_aware | gpt-5.5_expensive_probe | 51 | 40 | -0.022291664 | -3.0407624 | -0.029342599 | 2924 | 0.21927034 | 4.5605804 | 0.045221952 |
+| intraday_50_llm_gemini_3_1_pro_risk_aware | gemini-3.1-pro_expensive_probe | 51 | 40 | -0.0052836693 | -0.86136267 | -0.023106864 | 1200 | 0.21927034 | 4.5605804 | 0.034985549 |

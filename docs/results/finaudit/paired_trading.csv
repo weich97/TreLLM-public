@@ -1,0 +1,5 @@
+auditor,clean_recall,clean_n,confounded_recall,confounded_n,drop,discordant_clean_hit,discordant_conf_hit,mcnemar_p,conf_miss_mislabel_rate
+deepseek:deepseek-v4-pro,0.917,60,0.333,60,+0.583,36,1,5.53e-10,1.000
+glm:glm-5,0.717,60,0.300,60,+0.417,28,3,4.649e-06,1.000
+poe:claude-opus-4.7,0.967,60,0.917,60,+0.050,4,1,0.375,0.800
+poe:gemini-3.1-pro,1.000,60,0.883,60,+0.117,7,0,0.01562,1.000

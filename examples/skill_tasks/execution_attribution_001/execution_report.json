@@ -1,0 +1,27 @@
+{
+  "case_id": "skill-execution-attribution-fixture",
+  "execution_mode": "realistic-stress",
+  "evidence_label": "stress-only",
+  "quote_sample": {
+    "venue": "public crypto sample",
+    "quote_rows": 240,
+    "fill_rows": 0
+  },
+  "shortfall_bps": {
+    "total": 47.4,
+    "spread": 9.8,
+    "impact": 21.6,
+    "latency": 11.3,
+    "fees": 4.7
+  },
+  "liquidity": {
+    "participation_cap": 0.12,
+    "requested_participation": 0.24,
+    "partial_fill_ratio": 0.48
+  },
+  "provenance_gaps": [
+    "no venue-specific realized fills",
+    "no broker timestamps",
+    "no private order identifiers"
+  ]
+}

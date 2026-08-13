@@ -1,0 +1,40 @@
+{
+  "task_id": "risk_report_gap_001",
+  "skill": "tradearena-risk-gate-review",
+  "ability": "risk_understanding",
+  "metric": "detects missing risk lifecycle checks beyond position clipping",
+  "criteria": [
+    {
+      "id": "position_clip",
+      "description": "Mentions max_abs_weight or position clipping",
+      "points": 1,
+      "any_terms": ["max_abs_weight", "position clipping", "clipped", "0.35"]
+    },
+    {
+      "id": "confidence_floor",
+      "description": "Mentions confidence floor / min_confidence blocks",
+      "points": 1,
+      "any_terms": ["min_confidence", "confidence floor", "0.50", "low confidence"]
+    },
+    {
+      "id": "drawdown_kill",
+      "description": "Mentions drawdown kill switch or de-risking",
+      "points": 1,
+      "any_terms": ["drawdown", "kill switch", "de-risk", "0.158"]
+    },
+    {
+      "id": "turnover_gross",
+      "description": "Mentions gross exposure or turnover check",
+      "points": 1,
+      "any_terms": ["gross exposure", "turnover", "max_gross_exposure", "max_single_step_turnover"]
+    },
+    {
+      "id": "post_trade_monitor",
+      "description": "Mentions post-trade slippage or latency monitoring",
+      "points": 1,
+      "any_terms": ["slippage", "latency", "post-trade", "in-trade"]
+    }
+  ],
+  "pass_threshold": 4,
+  "hard_fail_terms": ["guaranteed profit", "buy recommendation", "sell recommendation", "place a live order"]
+}

@@ -1,0 +1,23 @@
+{
+  "artifact_id": "variance_decomposition",
+  "artifacts": [
+    "variance_decomposition_rows.csv",
+    "variance_decomposition_summary.json",
+    "variance_decomposition.md"
+  ],
+  "claim_boundary": "This fixture validates variance-decomposition reporting for v0.3. It uses protocol-fixture rows and does not support model-performance or model-stochasticity claims.",
+  "metrics": [
+    "total_return",
+    "max_drawdown",
+    "execution_fill_rate",
+    "risk_clipped_decisions"
+  ],
+  "minimum_seed_group_count": 2,
+  "minimum_total_sample_count": 4,
+  "protocol_id": "trellm-v0.3-protocol",
+  "schema": "trellm_v0_3_variance_decomposition_v0.1",
+  "source_artifact": "docs/results/v0_3_direct_api_pilot/direct_api_pilot_rows.csv",
+  "source_row_count": 4,
+  "testable_metric_count": 4,
+  "variance_row_count": 4
+}

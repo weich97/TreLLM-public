@@ -1,0 +1,54 @@
+{
+  "end": "2026-05-14",
+  "evidence": {
+    "claim_scope": "cached-provider reliability under stress-only execution",
+    "tag_definitions": {
+      "cached-provider": "Provider-backed behavior is replayed or published through cache/redacted manifest evidence.",
+      "redacted-prompt": "Raw provider prompt/response text is not public; a redacted manifest is provided.",
+      "stress-only": "Execution uses shared stress assumptions, not venue-calibrated transaction-cost prediction."
+    },
+    "tags": [
+      "stress-only",
+      "cached-provider",
+      "redacted-prompt"
+    ]
+  },
+  "frequency": "weekly",
+  "max_periods": 12,
+  "metrics": {
+    "alpha_pre_risk_hit_rate": 0.5714285714285714,
+    "alpha_pre_risk_sharpe": -0.044037278444508735,
+    "alpha_pre_risk_steps": 7,
+    "alpha_pre_risk_total_return": -0.010312518762756628,
+    "alpha_quality_score": 0.43018037249358215,
+    "execution_fill_rate": 0.6956521739130435,
+    "execution_robustness_score": 0.6857294171241894,
+    "max_drawdown": -0.044648539063345094,
+    "rejected_order_count": 4,
+    "risk_clipped_decisions": 33,
+    "risk_discipline_score": 0.3194444444444444,
+    "risk_violation_count": 8,
+    "sharpe": -7.552697972356075,
+    "total_return": -0.04294666571299777,
+    "trajectory_reproducibility_coverage": 1.0
+  },
+  "model": "claude-opus-4.7",
+  "parse_coverage": 1.0,
+  "provider": "poe",
+  "redaction": {
+    "raw_prompts_included": false,
+    "raw_responses_included": false,
+    "timestamps_masked": true
+  },
+  "scenario_id": "leaderboard_real_yahoo_recent_gspc_btc_btcf_weekly_v0_1",
+  "scenario_label": "Yahoo recent GSPC/BTC/BTC futures",
+  "schema_version": "0.1",
+  "seed": 31,
+  "start": "2025-05-01",
+  "symbols": [
+    "GSPC",
+    "BTC-USD",
+    "BTC=F"
+  ],
+  "window_offset": 4
+}

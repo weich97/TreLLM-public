@@ -1,0 +1,65 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Install project
+        run: python -m pip install -e ".[dev]"
+      - name: Test before packaging
+        run: |
+          python -m compileall src scripts examples tests -q
+          python -m ruff check src scripts examples tests
+          python -m mypy
+          python scripts/validate_skill_contract.py skills
+          python scripts/build_skill_index.py skills --output docs/agent_skills_index.md --check
+          python scripts/score_skill_task.py --tasks-dir examples/skill_tasks --validate-only
+          python scripts/score_skill_task.py --tasks-dir examples/skill_tasks --answers-dir examples/skill_task_answers/reference
+          python scripts/score_skill_task_report.py --tasks-dir examples/skill_tasks --output docs/results/skill_task_matrix.md --check
+          python -m pytest tests -q
+      - name: Install build dependencies
+        run: python -m pip install --upgrade build twine
+      - name: Build wheel and source distribution
+        run: python -m build
+      - name: Check distribution metadata
+        run: python -m twine check dist/*
+      - name: Upload distribution artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: python-dist
+          path: dist/*
+      - name: Upload release assets
+        uses: softprops/action-gh-release@v3
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          generate_release_notes: true
+          files: dist/*
+
+  publish-pypi:
+    needs: build
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/') && vars.PYPI_PUBLISH == 'true'
+    environment:
+      name: pypi
+      url: https://pypi.org/project/tradearena-benchmark/
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: python-dist
+          path: dist
+      - name: Publish to PyPI with Trusted Publishing
+        uses: pypa/gh-action-pypi-publish@release/v1

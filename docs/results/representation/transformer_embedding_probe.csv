@@ -1,0 +1,5 @@
+case,embedding,model,steps,anchors,pre_steps,mean_pre_shift,mean_effective_rank_delta,rank_contraction_rate,mean_early_warning_ba
+llm_matrix_gpt_5_5_risk_aware,bge_m3,BAAI/bge-m3,52,10,40,0.01862599114614919,279.86028759776235,1.0,0.9211538461538462
+llm_matrix_gpt_5_5_risk_aware,hash64,deterministic_hash_64,52,10,40,0.07522326531465942,7.845183505496169,1.0,0.9346153846153846
+llm_matrix_gemini_3_1_pro_risk_aware,bge_m3,BAAI/bge-m3,52,10,40,0.038438633289949585,253.14375229309525,1.0,0.9451923076923077
+llm_matrix_gemini_3_1_pro_risk_aware,hash64,deterministic_hash_64,52,10,40,0.12402668936336261,9.17445571604384,1.0,0.9221153846153847

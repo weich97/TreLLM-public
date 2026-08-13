@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="520" viewBox="0 0 1040 520" role="img" aria-label="TreLLM extension walkthrough">
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<text x="42" y="52" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="800" fill="#0f172a">Bring your own module: plug into the protocol, not the core</text>
+<text x="42" y="82" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="500" fill="#64748b">This hands-on demo swaps in a custom analyst, risk manager, and evaluator while reusing the runner, strategy, simulator, memory, and trajectory logger.</text>
+<rect x="42" y="132" width="166" height="124" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<rect x="42" y="132" width="166" height="8" rx="4" fill="#2563eb"/>
+<text x="56" y="164" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="800" fill="#2563eb">1. You add</text>
+<text x="56" y="190" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="800" fill="#0f172a">Analyst plugin</text>
+<text x="56" y="216" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="500" fill="#475569">GapVolumeAnalyst</text>
+<path d="M213 194 L232 194" stroke="#334155" stroke-width="2"/>
+<path d="M232 194 L226 189 M232 194 L226 199" stroke="#334155" stroke-width="2" fill="none"/>
+<rect x="236" y="132" width="166" height="124" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<rect x="236" y="132" width="166" height="8" rx="4" fill="#0f766e"/>
+<text x="250" y="164" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="800" fill="#0f766e">2. Core reuses</text>
+<text x="250" y="190" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="800" fill="#0f172a">Strategy</text>
+<text x="250" y="216" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="500" fill="#475569">signal-weighted-strategy</text>
+<path d="M407 194 L426 194" stroke="#334155" stroke-width="2"/>
+<path d="M426 194 L420 189 M426 194 L420 199" stroke="#334155" stroke-width="2" fill="none"/>
+<rect x="430" y="132" width="166" height="124" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<rect x="430" y="132" width="166" height="8" rx="4" fill="#dc2626"/>
+<text x="444" y="164" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="800" fill="#dc2626">3. You add</text>
+<text x="444" y="190" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="800" fill="#0f172a">Risk plugin</text>
+<text x="444" y="216" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="500" fill="#475569">VolatilityCircuitBreake.</text>
+<path d="M601 194 L620 194" stroke="#334155" stroke-width="2"/>
+<path d="M620 194 L614 189 M620 194 L614 199" stroke="#334155" stroke-width="2" fill="none"/>
+<rect x="624" y="132" width="166" height="124" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<rect x="624" y="132" width="166" height="8" rx="4" fill="#7c3aed"/>
+<text x="638" y="164" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="800" fill="#7c3aed">4. Core reuses</text>
+<text x="638" y="190" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="800" fill="#0f172a">Execution simulator</text>
+<text x="638" y="216" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="500" fill="#475569">realistic-order-simulat.</text>
+<path d="M795 194 L814 194" stroke="#334155" stroke-width="2"/>
+<path d="M814 194 L808 189 M814 194 L808 199" stroke="#334155" stroke-width="2" fill="none"/>
+<rect x="818" y="132" width="166" height="124" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<rect x="818" y="132" width="166" height="8" rx="4" fill="#ea580c"/>
+<text x="832" y="164" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="800" fill="#ea580c">5. You add</text>
+<text x="832" y="190" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="800" fill="#0f172a">Evaluator plugin</text>
+<text x="832" y="216" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="500" fill="#475569">ExtensionCoverageEvalua.</text>
+<text x="42" y="320" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="800" fill="#0f172a">What the contributor gets automatically</text>
+<text x="42" y="346" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="500" fill="#64748b">Metrics, risk reports, execution realism, memory events, and reproducible trajectory fields are produced without modifying the core runner.</text>
+<rect x="42" y="376" width="210" height="86" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="58" y="408" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="800" fill="#64748b">Custom signals</text>
+<text x="58" y="446" font-family="Inter,Arial,sans-serif" font-size="26" font-weight="800" fill="#2563eb">126</text>
+<rect x="282" y="376" width="210" height="86" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="298" y="408" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="800" fill="#64748b">Circuit blocks</text>
+<text x="298" y="446" font-family="Inter,Arial,sans-serif" font-size="26" font-weight="800" fill="#dc2626">34</text>
+<rect x="522" y="376" width="210" height="86" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="538" y="408" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="800" fill="#64748b">Fill rate</text>
+<text x="538" y="446" font-family="Inter,Arial,sans-serif" font-size="26" font-weight="800" fill="#7c3aed">0.787</text>
+<rect x="762" y="376" width="210" height="86" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="778" y="408" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="800" fill="#64748b">Audit coverage</text>
+<text x="778" y="446" font-family="Inter,Arial,sans-serif" font-size="26" font-weight="800" fill="#0f766e">1.000</text>
+</svg>

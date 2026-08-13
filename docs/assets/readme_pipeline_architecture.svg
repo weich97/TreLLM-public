@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="560" viewBox="0 0 1280 560" role="img" aria-labelledby="title desc">
+  <title id="title">TreLLM runtime architecture</title>
+  <desc id="desc">A runtime architecture diagram showing market inputs, agent observation and planning, risk gating, execution simulation, portfolio state updates, memory feedback, and audit artifacts.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto">
+      <path d="M2,2 L12,7 L2,12 Z" fill="#26384f"/>
+    </marker>
+    <marker id="softArrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#7c6f53"/>
+    </marker>
+    <style>
+      .bg { fill: #ffffff; }
+      .title { fill: #172033; font: 700 30px Arial, Helvetica, sans-serif; }
+      .subtitle { fill: #5b6778; font: 400 15px Arial, Helvetica, sans-serif; }
+      .lane { fill: #f8fafc; stroke: #d6dee8; stroke-width: 1.2; rx: 18; }
+      .box { fill: #ffffff; stroke: #bdc9d8; stroke-width: 1.4; rx: 14; }
+      .input { fill: #eef6ff; stroke: #87b5e1; }
+      .agent { fill: #f4f0ff; stroke: #a99ad7; }
+      .risk { fill: #fff5eb; stroke: #e0aa72; }
+      .exec { fill: #eefaf4; stroke: #89c4a0; }
+      .state { fill: #f8f9fb; stroke: #aeb9c8; }
+      .artifact { fill: #fffdf0; stroke: #d9c66f; }
+      .memory { fill: #f2fbfa; stroke: #75b9b0; }
+      .label { fill: #172033; font: 700 18px Arial, Helvetica, sans-serif; }
+      .text { fill: #3f4f63; font: 400 14px Arial, Helvetica, sans-serif; }
+      .small { fill: #637083; font: 400 12.5px Arial, Helvetica, sans-serif; }
+      .arrow { stroke: #26384f; stroke-width: 2.4; fill: none; marker-end: url(#arrow); }
+      .soft { stroke: #7c6f53; stroke-width: 2; fill: none; stroke-dasharray: 7 6; marker-end: url(#softArrow); }
+      .rail { fill: #ffffff; stroke: #cfd8e3; stroke-width: 1.2; rx: 12; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1280" height="560"/>
+  <text class="title" x="640" y="45" text-anchor="middle">TreLLM Runtime Architecture</text>
+  <text class="subtitle" x="640" y="72" text-anchor="middle">Every decision becomes an auditable trajectory: intent, risk intervention, execution friction, state update, and replay artifact.</text>
+
+  <rect class="lane" x="42" y="96" width="1196" height="312"/>
+
+  <rect class="box input" x="74" y="146" width="150" height="142"/>
+  <text class="label" x="149" y="179" text-anchor="middle">Inputs</text>
+  <text class="text" x="98" y="210">Market bars</text>
+  <text class="text" x="98" y="234">News and macro</text>
+  <text class="text" x="98" y="258">Synthetic scenes</text>
+
+  <rect class="box agent" x="274" y="126" width="188" height="182"/>
+  <text class="label" x="368" y="159" text-anchor="middle">Observe</text>
+  <text class="text" x="300" y="191">Analyst signals</text>
+  <text class="text" x="300" y="216">LLM rationale</text>
+  <text class="text" x="300" y="241">Memory context</text>
+  <text class="small" x="300" y="274">structured observation</text>
+
+  <rect class="box agent" x="512" y="126" width="170" height="182"/>
+  <text class="label" x="597" y="159" text-anchor="middle">Plan</text>
+  <text class="text" x="539" y="191">Target weights</text>
+  <text class="text" x="539" y="216">Confidence</text>
+  <text class="text" x="539" y="241">Intent summary</text>
+  <text class="small" x="539" y="274">proposed decision</text>
+
+  <rect class="box risk" x="732" y="126" width="170" height="182"/>
+  <text class="label" x="817" y="159" text-anchor="middle">Risk Gate</text>
+  <text class="text" x="759" y="191">Position caps</text>
+  <text class="text" x="759" y="216">Turnover checks</text>
+  <text class="text" x="759" y="241">Drawdown limits</text>
+  <text class="small" x="759" y="274">clip, block, explain</text>
+
+  <rect class="box exec" x="952" y="126" width="184" height="182"/>
+  <text class="label" x="1044" y="159" text-anchor="middle">Execution</text>
+  <text class="text" x="980" y="191">Spread and fees</text>
+  <text class="text" x="980" y="216">Slippage impact</text>
+  <text class="text" x="980" y="241">Latency, liquidity</text>
+  <text class="small" x="980" y="274">fills and rejections</text>
+
+  <rect class="box state" x="952" y="344" width="184" height="114"/>
+  <text class="label" x="1044" y="376" text-anchor="middle">Portfolio</text>
+  <text class="text" x="980" y="407">Cash, positions</text>
+  <text class="text" x="980" y="431">Equity, pending orders</text>
+
+  <rect class="box memory" x="512" y="344" width="170" height="114"/>
+  <text class="label" x="597" y="376" text-anchor="middle">Memory</text>
+  <text class="text" x="539" y="407">Past errors</text>
+  <text class="text" x="539" y="431">Risk feedback</text>
+
+  <rect class="box artifact" x="74" y="344" width="388" height="114"/>
+  <text class="label" x="268" y="376" text-anchor="middle">Artifacts</text>
+  <text class="text" x="104" y="407">Trajectory JSON, metrics tables, equity curves</text>
+  <text class="text" x="104" y="431">Risk and execution audit reports for replay</text>
+
+  <path class="arrow" d="M224 217 H268"/>
+  <path class="arrow" d="M462 217 H506"/>
+  <path class="arrow" d="M682 217 H726"/>
+  <path class="arrow" d="M902 217 H946"/>
+  <path class="arrow" d="M1044 309 V338"/>
+  <path class="arrow" d="M946 401 H690"/>
+  <path class="arrow" d="M512 401 H468"/>
+  <path class="soft" d="M817 126 C817 86, 597 86, 597 120"/>
+  <path class="soft" d="M597 344 C597 318, 597 318, 597 312"/>
+  <path class="soft" d="M1044 458 C1044 503, 368 503, 368 313"/>
+
+  <text class="small" x="704" y="104" text-anchor="middle">structured risk feedback</text>
+  <text class="small" x="748" y="493" text-anchor="middle">state and fill outcomes become future context</text>
+
+  <rect class="rail" x="98" y="480" width="1084" height="42"/>
+  <text class="small" x="640" y="507" text-anchor="middle">Evidence trail: observation -> signal -> intent -> risk report -> order -> fill or rejection -> portfolio state -> diagnostic output</text>
+</svg>

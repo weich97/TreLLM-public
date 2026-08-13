@@ -1,0 +1,16 @@
+{
+  "name": "TradeArena",
+  "image": "mcr.microsoft.com/devcontainers/python:3.10",
+  "features": {},
+  "postCreateCommand": "python -m pip install -e \".[dev]\" && python scripts/run_showcase.py",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python"
+      },
+      "extensions": [
+        "ms-python.python"
+      ]
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "phase": "pre_trade",
+  "approved_count": 2,
+  "blocked_count": 1,
+  "clipped_count": 1,
+  "budget": {
+    "max_position_weight": 0.35,
+    "max_gross_exposure": 1.0,
+    "min_confidence": 0.05,
+    "max_drawdown": 0.2
+  },
+  "checks": [
+    {
+      "name": "min_confidence",
+      "passed": false,
+      "severity": "error",
+      "message": "ALT confidence 0.020 below 0.050"
+    },
+    {
+      "name": "max_abs_weight",
+      "passed": true,
+      "severity": "warning",
+      "message": "SYN target clipped from 0.600 to 0.350"
+    }
+  ],
+  "violations": [
+    {
+      "phase": "pre_trade",
+      "constraint": "min_confidence",
+      "severity": "error",
+      "observed": 0.02,
+      "limit": 0.05,
+      "message": "ALT blocked by confidence floor",
+      "symbol": "ALT"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "agent": {
+    "agent_commit": "v0.3-direct-api-pilot",
+    "agent_type": "llm_policy",
+    "model_display_name": "fixture-llm-policy-v0 protocol fixture",
+    "model_family": "fixture-llm-policy-v0",
+    "model_identifier_redacted": false,
+    "parse_coverage": 1.0,
+    "prompt_mode": "weights_only",
+    "prompt_version": "trellm-allocation-v0.3",
+    "provider": "fixture-direct-api",
+    "response_format": "json_object",
+    "risk_feedback_mode": "true"
+  },
+  "data_source": {
+    "data_hash": "sha256:4c51d1015faeed46f67ef72006693445742d5a88dcbdcaaf0900f85271fdf94c",
+    "frequency": "weekly",
+    "name": "trellm-synthetic-c0",
+    "symbols": [
+      "SYN"
+    ],
+    "timestamp_policy": "relative_masked"
+  },
+  "evidence": {
+    "boundary_notes": [
+      "Artifact, schema, replay, or hash behavior is demonstrated.",
+      "Only row metadata or a redacted manifest is public.",
+      "Do not read this row as calibrated transaction-cost prediction.",
+      "Direct API evidence must retain model/version, prompt hash, response hash, and redacted manifest metadata.",
+      "Fixture rows validate artifact plumbing only; do not report them as provider performance.",
+      "Prompt redaction weakens scientific reasoning claims."
+    ],
+    "claim_class": "engineering",
+    "claim_scope": "protocol fixture for direct API evidence validation; not provider-performance or return evidence",
+    "evidence_tier": "manifest-only",
+    "tag_definitions": {
+      "direct-api": "Provider-backed behavior is bound to a direct provider API manifest with model/version, prompt hash, response hash, and redaction metadata.",
+      "protocol-fixture": "Synthetic fixture row that validates schema, manifest, and registry plumbing without claiming live provider behavior.",
+      "redacted-prompt": "Raw provider prompt/response text is not public; a redacted manifest is provided.",
+      "stress-only": "Execution uses shared stress assumptions, not venue-calibrated transaction-cost prediction."
+    },
+    "tags": [
+      "stress-only",
+      "direct-api",
+      "protocol-fixture",
+      "redacted-prompt"
+    ]
+  },
+  "execution_config": {
+    "base_slippage_bps": 2.0,
+    "commission_bps": 1.0,
+    "execution_level": "E1",
+    "latency_steps": 1,
+    "market_impact": 0.15,
+    "participation_rate": 0.05,
+    "spread_bps": 0.0
+  },
+  "metrics": {
+    "execution_fill_rate": 0.75,
+    "max_drawdown": -0.0075,
+    "rejected_order_count": 0,
+    "risk_clipped_decisions": 0,
+    "risk_violation_count": 0,
+    "sharpe": 0.693333,
+    "total_return": 0.0052,
+    "trajectory_reproducibility_coverage": 1.0
+  },
+  "redaction": {
+    "notes": "Protocol fixture stores only hashes and direct-provider-style metadata; no raw prompt or response text is included.",
+    "provider_secrets_removed": true,
+    "raw_provider_text_removed": true,
+    "timestamps_masked": true
+  },
+  "reproducibility_hash": "sha256:4d72b0d118b4ae8618ee67e91e13155b691e2ac51c45f3e3a87597ff0d7af73f",
+  "risk_config": {
+    "risk_budget": {
+      "max_gross_exposure": 1.0,
+      "max_position_weight": 0.35,
+      "max_single_step_turnover": 0.75,
+      "risk_feedback_mode": "true"
+    },
+    "risk_manager": "max-position"
+  },
+  "scenario_id": "synthetic_calm_trend_c0_v0_3",
+  "schema_version": "0.1",
+  "trajectory_manifest": {
+    "artifact_hashes": {
+      "direct_provider_manifest": "sha256:bbd8a8a7cc55092a9c8a2bfbba68ac0e6aae812b006312c367a49d0f719a8ba0"
+    },
+    "format": "redacted_manifest",
+    "manifest_hash": "sha256:6885306fde8bae2e0af59cc57b611f6e4938e3857dbf15fdf2b05343e0d1fdae",
+    "path_or_uri": "provider-manifest-bound-pilot-row",
+    "raw_prompts_included": false,
+    "raw_responses_included": false
+  }
+}

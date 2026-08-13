@@ -1,0 +1,258 @@
+{
+  "artifacts": [
+    {
+      "bytes": 6232628,
+      "exists": true,
+      "path": "outputs/examples/audit_walkthrough_trajectory.json",
+      "sha256": "sha256:a7a2166efb594eed4c1513d6137553685d47102e2ef8dd6236a4d414b121e7b7"
+    },
+    {
+      "bytes": 191526,
+      "exists": true,
+      "path": "outputs/anchor_execution_ladder/execution_ladder_rows.csv",
+      "sha256": "sha256:413c0ba6b4ec613646902ee68e7b51ad7b8f9b6b07e80a5b00c6f69b42c3b03e"
+    },
+    {
+      "bytes": 4411,
+      "exists": true,
+      "path": "outputs/anchor_execution_ladder/execution_ladder_aggregate.csv",
+      "sha256": "sha256:6ee32af4b754121dd9629f64d7a1672551963e7074f9b7fbb3f3ecb26ea1c11f"
+    },
+    {
+      "bytes": 345,
+      "exists": true,
+      "path": "outputs/anchor_execution_ladder/execution_ladder_ranking_stability.csv",
+      "sha256": "sha256:0e078c75df18ac27f26f80f2bdd9701553c5e3d089ffaf3d51f521547cb7206f"
+    },
+    {
+      "bytes": 1630,
+      "exists": true,
+      "path": "outputs/anchor_execution_ladder/execution_ladder_summary.json",
+      "sha256": "sha256:ff9cc5cfb2acc29a7d54b45b6f9c77e295920a88e8f2c9cbb60acc4ceb12f9bb"
+    },
+    {
+      "bytes": 822,
+      "exists": true,
+      "path": "outputs/anchor_power_note/v0_3_power_curves.csv",
+      "sha256": "sha256:7c9fbdf33432be3517d6760e3fcae4e8f6428160819957b16bcabe001761b3bd"
+    },
+    {
+      "bytes": 385,
+      "exists": true,
+      "path": "outputs/anchor_power_note/v0_3_detectable_effects.csv",
+      "sha256": "sha256:e24630f041f0432a74b41ad9e2ab931162db146909941252ae65c02dca65487a"
+    },
+    {
+      "bytes": 1463,
+      "exists": true,
+      "path": "outputs/anchor_power_note/v0_3_power_note_summary.json",
+      "sha256": "sha256:9d7204388341b8d22c088db3b3c54658d927e9bb7bf4ce02d187129276cc3040"
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "python",
+        "scripts/validate_benchmark_spec.py",
+        "benchmarks/v0.3/protocol.json"
+      ],
+      "description": "Validate the frozen v0.3 protocol contract and print its canonical hash.",
+      "elapsed_seconds": 0.145,
+      "id": "validate_protocol",
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"canonical_sha256\": \"sha256:b2c54d236c110ac2924f0174d62d080cce49eef47d8e4949095451a93a7108af\",\n  \"errors\": [],\n  \"schema_version\": \"trellm_protocol_v0.3\",\n  \"spec\": \"benchmarks/v0.3/protocol.json\",\n  \"spec_id\": \"trellm-v0.3-protocol\",\n  \"valid\": true\n}\n"
+    },
+    {
+      "argv": [
+        "python",
+        "examples/audit_trajectory_walkthrough.py"
+      ],
+      "description": "Generate the deterministic replayable trajectory used for the reproducibility hash.",
+      "elapsed_seconds": 2.682,
+      "id": "deterministic_trajectory",
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "One auditable decision step\n  timestamp: 2024-01-01T00:00:00\n  prices: {'SYN': 99.55592732428603, 'ALT': 116.45097869213566, 'DEF': 129.7502638492083}\n  proposed decisions: 3\n  approved decisions: 3\n  submitted orders: 1\n  fills: 0\n  risk clipped: 1\n  risk blocked: 0\n  pending orders: 1\n  rejected orders: 0\n  memory events recorded: 1\n\nReproducibility fingerprint\n  prompt_version: baseline-v0\n  model_version: deterministic-baseline\n  memory_digest: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945\n  random_seed: 11\n\nRun metrics\n  total_return=0.2171\n  max_drawdown=-0.0425\n  fill_rate=0.767\n\nWrote replayable trajectory to outputs\\examples\\audit_walkthrough_trajectory.json\n"
+    },
+    {
+      "argv": [
+        "python",
+        "scripts/run_v03_execution_ladder.py",
+        "--output-dir",
+        "outputs/anchor_execution_ladder",
+        "--agents",
+        "always-hold,buy-and-hold,equal-weight,random,naive-momentum,mean-reversion,sma-crossover,risk-parity,min-var,markowitz-mvo,no-trade-band,signal-weighted",
+        "--levels",
+        "E0,E1",
+        "--seeds",
+        "101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130",
+        "--periods",
+        "45",
+        "--top-k",
+        "3"
+      ],
+      "description": "Classical-agent leaderboard across the E0/E1 execution ladder (C0 synthetic, CPU only).",
+      "elapsed_seconds": 297.041,
+      "id": "anchor_execution_ladder",
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "Wrote outputs/anchor_execution_ladder/execution_ladder_rows.csv\nWrote outputs/anchor_execution_ladder/execution_ladder_aggregate.csv\nWrote outputs/anchor_execution_ladder/execution_ladder_ranking_stability.csv\nWrote outputs/anchor_execution_ladder/execution_ladder_summary.json\nWrote outputs/anchor_execution_ladder/execution_ladder_summary.md\nRows: 720\n"
+    },
+    {
+      "argv": [
+        "python",
+        "scripts/run_v03_power_note.py",
+        "--output-dir",
+        "outputs/anchor_power_note",
+        "--repeat-levels",
+        "6,10",
+        "--effect-sizes",
+        "0.5,0.8,1.2",
+        "--target-powers",
+        "0.8",
+        "--draws",
+        "80",
+        "--permutation-draws",
+        "256",
+        "--seed",
+        "2026"
+      ],
+      "description": "Bootstrap/permutation power curves and smallest detectable effect note.",
+      "elapsed_seconds": 0.857,
+      "id": "anchor_power_note",
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "Wrote outputs/anchor_power_note/v0_3_power_curves.csv\nWrote outputs/anchor_power_note/v0_3_detectable_effects.csv\nWrote outputs/anchor_power_note/v0_3_power_note_summary.json\nWrote outputs/anchor_power_note/v0_3_power_note_summary.md\nPower rows: 6\nDetectable-effect rows: 2\n"
+    }
+  ],
+  "commit_or_tag": "tradearena-replication-pack-v1@1.0.0",
+  "created_at": "2026-07-02T14:18:33.043898+00:00",
+  "environment_class": "windows_or_macos",
+  "independent_reviewer": false,
+  "live_api_used": false,
+  "market_data_used": "deterministic synthetic market paths generated inside the pack (contamination tier C0)",
+  "notes": "Deterministic zero-key replication of the TradeArena v0.3 anchor arms: classical-agent leaderboard across execution levels E0/E1 with 30 seeds, statistics power note, protocol validation, and a replayable trajectory. This is protocol-reproducibility evidence only; it is not a trading-profit claim.",
+  "pack_id": "tradearena-replication-pack-v1",
+  "pack_manifest_sha256": "sha256:1fa212f15bd9a59448607ab43c8ee070b04e91c3f49a9927b5fbb54c2065718f",
+  "pack_version": "1.0.0",
+  "private_fills_used": false,
+  "protocol_id": "trellm-v0.3-protocol",
+  "python": {
+    "executable": "python.exe",
+    "implementation": "CPython",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "version": "3.12.10"
+  },
+  "replication_mode": "full",
+  "report_author_type": "project-maintainer",
+  "repository": "pack:tradearena-replication-pack-v1",
+  "reviewer": {
+    "affiliation": "",
+    "contact": "",
+    "name": ""
+  },
+  "schema": "tradearena_external_reproduction_pack_v1",
+  "trajectory_hash": {
+    "file_sha256": "sha256:a7a2166efb594eed4c1513d6137553685d47102e2ef8dd6236a4d414b121e7b7",
+    "path": "outputs\\examples\\audit_walkthrough_trajectory.json",
+    "reproducibility_hash": "sha256:64d287cb37f61dea472682adeceb2ca4a27ec454df39cf02b4fac77512ac9c03",
+    "scenario_id": "audit_walkthrough"
+  },
+  "verification": {
+    "elapsed_seconds_total": 301.112,
+    "hard_checks": [
+      {
+        "detail": [
+          "86 files verified"
+        ],
+        "id": "pack_integrity",
+        "status": "PASS",
+        "tier": "hard"
+      },
+      {
+        "detail": [
+          "protocol contract validates"
+        ],
+        "id": "protocol_valid",
+        "status": "PASS",
+        "tier": "hard"
+      },
+      {
+        "detail": [
+          "match"
+        ],
+        "id": "protocol_canonical_hash",
+        "status": "PASS",
+        "tier": "hard"
+      },
+      {
+        "detail": [
+          "experiment name, seed, schema, and step count match"
+        ],
+        "id": "trajectory_structure",
+        "status": "PASS",
+        "tier": "hard"
+      },
+      {
+        "detail": [
+          "24 rows compared within tolerance"
+        ],
+        "id": "ladder_aggregate",
+        "mismatch_count": 0,
+        "status": "PASS",
+        "tier": "hard"
+      },
+      {
+        "detail": [
+          "1 rows compared within tolerance"
+        ],
+        "id": "ladder_ranking_stability",
+        "mismatch_count": 0,
+        "status": "PASS",
+        "tier": "hard"
+      },
+      {
+        "detail": [
+          "6 rows compared within tolerance"
+        ],
+        "id": "power_curves",
+        "mismatch_count": 0,
+        "status": "PASS",
+        "tier": "hard"
+      },
+      {
+        "detail": [
+          "2 rows compared within tolerance"
+        ],
+        "id": "detectable_effects",
+        "mismatch_count": 0,
+        "status": "PASS",
+        "tier": "hard"
+      }
+    ],
+    "overall_pass": true,
+    "strict_checks": [
+      {
+        "detail": [
+          "match"
+        ],
+        "id": "strict_trajectory_content_hash",
+        "status": "STRICT_PASS",
+        "tier": "strict-informational"
+      },
+      {
+        "detail": [
+          "match"
+        ],
+        "id": "strict_trajectory_file_hash",
+        "status": "STRICT_PASS",
+        "tier": "strict-informational"
+      }
+    ],
+    "tolerances": {
+      "abs": 2e-06,
+      "rel": 1e-06
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "task_id": "risk_feedback_learning_001",
+  "skill": "tradearena-risk-gate-review",
+  "ability": "risk_understanding",
+  "metric": "risk-feedback adaptation review",
+  "criteria": [
+    {
+      "id": "intervention_detected",
+      "description": "Detects the clipped or edited risk intervention",
+      "points": 1,
+      "any_terms": ["clipped", "edited", "risk feedback", "max_abs_weight", "max_gross_exposure"]
+    },
+    {
+      "id": "next_step_correction",
+      "description": "Checks whether the next step reduced concentration or gross exposure",
+      "points": 1,
+      "all_terms": ["next"],
+      "any_terms": ["reduced", "lower", "corrected", "de-risk", "approved"]
+    },
+    {
+      "id": "feedback_not_profit",
+      "description": "Separates structured risk feedback from return or profitability evidence",
+      "points": 1,
+      "all_terms": ["risk report"],
+      "any_terms": ["not return", "not profitability", "external supervision", "risk feedback"]
+    },
+    {
+      "id": "learning_evidence",
+      "description": "States that learning needs repeated steps, seeds, or counterfactuals",
+      "points": 1,
+      "any_terms": ["learning curve", "repeated", "seeds", "counterfactual", "rolling windows"]
+    },
+    {
+      "id": "missing_evidence",
+      "description": "Reports missing evidence before a scientific claim",
+      "points": 1,
+      "any_terms": ["missing evidence", "cannot conclude", "unsupported", "not enough evidence"]
+    }
+  ],
+  "pass_threshold": 4,
+  "hard_fail_terms": ["guaranteed profit", "buy recommendation", "sell recommendation", "place a live order"]
+}

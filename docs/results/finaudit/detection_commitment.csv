@@ -1,0 +1,13 @@
+domain,model,criterion,n_pairs,clean_recall,confounded_recall,drop,mcnemar_p
+trading,deepseek:deepseek-v4-pro,strict,60,0.933,0.3,0.633,7.28e-12
+trading,deepseek:deepseek-v4-pro,lenient,60,1.0,0.983,0.017,1.00e+00
+trading,deepseek:deepseek-v4-pro,localized,60,1.0,0.983,0.017,1.00e+00
+trading,glm:glm-5,strict,60,0.783,0.317,0.467,7.66e-07
+trading,glm:glm-5,lenient,60,0.9,1.0,-0.1,3.12e-02
+trading,glm:glm-5,localized,60,0.9,1.0,-0.1,3.12e-02
+tooluse,deepseek:deepseek-v4-pro,strict,40,0.975,0.775,0.2,2.15e-02
+tooluse,deepseek:deepseek-v4-pro,lenient,40,0.975,0.95,0.025,1.00e+00
+tooluse,deepseek:deepseek-v4-pro,localized,40,0.975,0.95,0.025,1.00e+00
+tooluse,glm:glm-5,strict,40,1.0,0.45,0.55,4.77e-07
+tooluse,glm:glm-5,lenient,40,1.0,1.0,0.0,1.00e+00
+tooluse,glm:glm-5,localized,40,1.0,1.0,0.0,1.00e+00

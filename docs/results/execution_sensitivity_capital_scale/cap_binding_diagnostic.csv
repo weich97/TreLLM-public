@@ -1,0 +1,7 @@
+capital,level,n_fills,median_order_shares,median_participation,max_participation,mean_fill_rate,pct_cap_bound,pct_cash_pos_bound
+100k,E1,1092,170.0,0.00012,0.00056,0.9591,0.0,13.6
+100k,harsh,625,252.1,0.00013,0.00063,0.8867,0.0,21.3
+100k,participation_1pct,1092,170.0,0.00012,0.00056,0.9591,0.0,13.6
+30M,E1,1190,46121.2,0.03523,0.05,0.8658,32.7,7.8
+30M,harsh,960,73229.2,0.01,0.01,0.2655,95.2,1.4
+30M,participation_1pct,1226,44283.2,0.01,0.01,0.4305,83.5,1.3

@@ -1,0 +1,93 @@
+{
+  "agent": {
+    "agent_commit": "redacted-or-local",
+    "agent_type": "control_policy",
+    "model_display_name": "random",
+    "model_family": "random",
+    "model_identifier_redacted": false,
+    "parse_coverage": 1.0,
+    "prompt_mode": "rationale",
+    "prompt_version": "risk-feedback-v1",
+    "provider": "baseline",
+    "response_format": "json_object",
+    "risk_feedback_mode": "true"
+  },
+  "data_source": {
+    "data_hash": "sha256:a5cc889c07bd7a70b9413b00e624e2713f3c22dd61c99fa0e320b64229637948",
+    "frequency": "weekly",
+    "name": "yahoo-finance-csv",
+    "symbols": [
+      "GSPC",
+      "BTC-USD",
+      "BTC=F"
+    ],
+    "timestamp_policy": "relative_masked"
+  },
+  "evidence": {
+    "claim_scope": "deterministic baseline under stress-only execution",
+    "tag_definitions": {
+      "deterministic-baseline": "Policy is deterministic or seeded local code, not an LLM provider.",
+      "stress-only": "Execution uses shared stress assumptions, not venue-calibrated transaction-cost prediction."
+    },
+    "tags": [
+      "stress-only",
+      "deterministic-baseline"
+    ]
+  },
+  "execution_config": {
+    "base_slippage_bps": 2.0,
+    "commission_bps": 1.0,
+    "latency_steps": 1,
+    "market_impact": 0.15,
+    "participation_rate": 0.05,
+    "spread_bps": 0.0
+  },
+  "metrics": {
+    "alpha_pre_risk_hit_rate": 0.625,
+    "alpha_pre_risk_sharpe": -1.877882381087678,
+    "alpha_pre_risk_steps": 8,
+    "alpha_pre_risk_total_return": -0.048119538419472474,
+    "alpha_quality_score": 0.2488545663260724,
+    "execution_fill_rate": 0.8,
+    "execution_robustness_score": 0.6966570324255735,
+    "max_drawdown": -0.15847686457994725,
+    "rejected_order_count": 4,
+    "risk_clipped_decisions": 0,
+    "risk_discipline_score": 0.02777777777777779,
+    "risk_violation_count": 17,
+    "sharpe": -3.361553522292896,
+    "total_return": -0.10610974304344589,
+    "trajectory_reproducibility_coverage": 1.0
+  },
+  "redaction": {
+    "notes": "Real-market leaderboard manifest generated from Yahoo Finance CSV data. Raw prompts and responses remain in ignored local cache files.",
+    "provider_secrets_removed": true,
+    "raw_provider_text_removed": true,
+    "timestamps_masked": true
+  },
+  "reproducibility_hash": "sha256:6a1d2a467cd8f4ba8686c350a869757c01a54d2d1971fb44058111756acf0c09",
+  "risk_config": {
+    "risk_budget": {
+      "drawdown_de_risk_weight": 0.0,
+      "drawdown_lookback": 5,
+      "max_drawdown": 0.2,
+      "max_gross_exposure": 1.0,
+      "max_position_weight": 0.35,
+      "max_single_step_turnover": 0.75,
+      "risk_feedback_mode": "true"
+    },
+    "risk_manager": "max-position"
+  },
+  "scenario_id": "leaderboard_real_yahoo_2022_gspc_btc_btcf_weekly_v0_1",
+  "schema_version": "0.1",
+  "trajectory_manifest": {
+    "artifact_hashes": {
+      "redacted_summary": "sha256:f7d275a1d7ed52b7e02070e151d817cdbc871913b2ecd2255989c155dfeb5bdd"
+    },
+    "format": "redacted_manifest",
+    "manifest_hash": "sha256:f7d275a1d7ed52b7e02070e151d817cdbc871913b2ecd2255989c155dfeb5bdd",
+    "path_or_uri": "docs/results/real_market_matrix/rates_drawdown__baseline_random__seed_17_summary.json",
+    "raw_prompts_included": false,
+    "raw_responses_included": false
+  }
+}

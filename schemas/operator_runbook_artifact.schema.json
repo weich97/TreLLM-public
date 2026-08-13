@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/weich97/TreLLM-public/schemas/operator_runbook_artifact.schema.json",
+  "title": "TreLLM Operator Runbook Artifact",
+  "type": "object",
+  "required": [
+    "schema",
+    "live_submission",
+    "default_mode",
+    "allowed_modes",
+    "manual_approval_required",
+    "kill_switch_required",
+    "approval_expiry_required",
+    "artifact_retention_required",
+    "incident_owner_required",
+    "incident_response_drill",
+    "checklist",
+    "verification_commands",
+    "safety_note"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "trellm_operator_runbook_v0.1" },
+    "live_submission": { "const": false },
+    "default_mode": { "enum": ["offline_export", "dry_run"] },
+    "allowed_modes": {
+      "type": "array",
+      "minItems": 4,
+      "uniqueItems": true,
+      "items": {
+        "enum": ["offline_export", "dry_run", "paper_sandbox", "live_human_approved"]
+      },
+      "contains": { "const": "live_human_approved" }
+    },
+    "manual_approval_required": { "const": true },
+    "kill_switch_required": { "const": true },
+    "approval_expiry_required": { "const": true },
+    "artifact_retention_required": { "const": true },
+    "incident_owner_required": { "const": true },
+    "incident_response_drill": { "$ref": "#/$defs/incident_response_drill" },
+    "checklist": {
+      "type": "array",
+      "minItems": 7,
+      "items": { "$ref": "#/$defs/checklist_item" },
+      "allOf": [
+        { "contains": { "type": "object", "properties": { "id": { "const": "mode-boundary" } }, "required": ["id"] }, "minContains": 1, "maxContains": 1 },
+        { "contains": { "type": "object", "properties": { "id": { "const": "approval-expiry" } }, "required": ["id"] }, "minContains": 1, "maxContains": 1 },
+        { "contains": { "type": "object", "properties": { "id": { "const": "kill-switch" } }, "required": ["id"] }, "minContains": 1, "maxContains": 1 },
+        { "contains": { "type": "object", "properties": { "id": { "const": "reconciliation" } }, "required": ["id"] }, "minContains": 1, "maxContains": 1 },
+        { "contains": { "type": "object", "properties": { "id": { "const": "rollback" } }, "required": ["id"] }, "minContains": 1, "maxContains": 1 },
+        { "contains": { "type": "object", "properties": { "id": { "const": "artifact-retention" } }, "required": ["id"] }, "minContains": 1, "maxContains": 1 },
+        { "contains": { "type": "object", "properties": { "id": { "const": "incident-owner" } }, "required": ["id"] }, "minContains": 1, "maxContains": 1 }
+      ]
+    },
+    "verification_commands": {
+      "type": "array",
+      "description": "Commands a reviewer can run before accepting a broker-facing packet. Runtime validation requires exactly one supported validate-live-readiness command; its preflight bundle argument must be a portable relative path naming the current preflight bundle being validated, and its `validate-live-readiness --now` timestamp must match the preflight approval_checked_at value.",
+      "minItems": 1,
+      "items": { "type": "string", "pattern": "\\S" },
+      "contains": { "type": "string", "pattern": "validate-live-readiness" }
+    },
+    "safety_note": { "type": "string", "pattern": "\\S" }
+  },
+  "$defs": {
+    "incident_response_drill": {
+      "type": "object",
+      "required": [
+        "kill_switch_action",
+        "rollback_owner",
+        "affected_account_mode",
+        "affected_symbols",
+        "artifact_retention_path",
+        "reenable_approval_gate"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "kill_switch_action": { "type": "string", "pattern": "\\S" },
+        "rollback_owner": { "type": "string", "pattern": "^\\S+$" },
+        "affected_account_mode": { "enum": ["paper", "live"] },
+        "affected_symbols": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^\\S+$" }
+        },
+        "artifact_retention_path": {
+          "type": "string",
+          "pattern": "^outputs/examples/operator_runbook/[^\\s\\\\]*$",
+          "not": { "pattern": "\\.\\." }
+        },
+        "reenable_approval_gate": { "type": "string", "pattern": "\\S" }
+      }
+    },
+    "checklist_item": {
+      "type": "object",
+      "required": ["id", "owner", "evidence", "pass_condition"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "enum": [
+            "mode-boundary",
+            "approval-expiry",
+            "kill-switch",
+            "reconciliation",
+            "rollback",
+            "artifact-retention",
+            "incident-owner"
+          ]
+        },
+        "owner": { "type": "string", "pattern": "^\\S+$" },
+        "evidence": { "type": "string", "pattern": "\\S" },
+        "pass_condition": { "type": "string", "pattern": "\\S" }
+      }
+    }
+  }
+}

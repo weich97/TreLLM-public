@@ -1,0 +1,73 @@
+{
+  "schema": "tradearena_live_llm_baseline_v1",
+  "run_date": "2026-05-18",
+  "purpose": "minimal real provider-backed LLM analyst baseline",
+  "provider": "poe",
+  "model": "gpt-5.5",
+  "benchmark": "llm-smoke",
+  "command": "python -m tradearena.cli --benchmark llm-smoke --analysts poe-llm --llm-model gpt-5.5 --periods 3 --symbols SYN,ALT --llm-cache data/llm_cache/poe_gpt55_live_smoke_2026-05-18.jsonl --output outputs/examples/poe_gpt55_live_smoke_2026-05-18_trajectory.json",
+  "data_source": {
+    "type": "deterministic synthetic market",
+    "symbols": ["SYN", "ALT"],
+    "seed": 7,
+    "periods": 3
+  },
+  "agent_stack": {
+    "analyst": "poe-llm",
+    "strategy": "signal-weighted",
+    "risk_manager": "max-position",
+    "execution": "realistic"
+  },
+  "metrics": {
+    "total_return": -0.0008398349500295943,
+    "final_equity": 99916.01650499704,
+    "max_drawdown": -0.0008398349500295943,
+    "order_count": 3,
+    "fill_count": 2,
+    "execution_fill_rate": 0.6666666666666666,
+    "pending_order_count": 1,
+    "rejected_order_count": 0,
+    "partial_fill_count": 0,
+    "total_commission": 7.017568976491514,
+    "total_slippage_cost": 77.27189021380104,
+    "risk_reports": 3,
+    "in_trade_reports": 3,
+    "post_trade_reports": 3,
+    "risk_blocked_decisions": 0,
+    "risk_clipped_decisions": 2,
+    "risk_violation_count": 0,
+    "risk_audit_coverage": 1.0,
+    "risk_lifecycle_coverage": 1.0,
+    "trajectory_reproducibility_coverage": 1.0,
+    "agent_trace_coverage": 1.0
+  },
+  "provider_call_diagnostics": {
+    "fresh_cache_rows": 3,
+    "provider_model_counts": {
+      "poe:gpt-5.5": 3
+    },
+    "parsed_response_rate": 1.0,
+    "average_signals_per_parsed_response": 2.0,
+    "prompt_mode_counts": {
+      "initial_or_no_recent_feedback": 1,
+      "visible_risk_feedback": 2
+    },
+    "average_latency_ms": 8682.86,
+    "minimum_latency_ms": 5204.72,
+    "maximum_latency_ms": 11945.79
+  },
+  "redaction": {
+    "raw_cache_tracked": false,
+    "raw_prompts_included": false,
+    "raw_responses_included": false,
+    "api_keys_included": false,
+    "tracked_manifest_dir": "docs/results/llm_live_baseline_manifest"
+  },
+  "hashes": {
+    "local_trajectory_file_sha256": "sha256:a88839cd34a01a3c4eb6efdf62a79be2f785a42668e0bbb78f4abbac7c0652df",
+    "local_trajectory_reproducibility_hash": "sha256:459cf550e13ffe49240c1d76576f793658ec58f7ed1ba435e6a90b6f6632107c",
+    "manifest_sha256": "sha256:41ceb8b8feeb4327af09075459e2a3d88853cbac03cdb5bfe0771577d456a084",
+    "summary_sha256": "sha256:a196be7c7f64dab82e553b2589ce90a21a94c513bbae9d6e3a3219f587db0faa"
+  },
+  "interpretation": "This is an integration and audit baseline, not a trading-performance claim."
+}

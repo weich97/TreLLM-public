@@ -1,0 +1,39 @@
+name: Good first task
+description: Claim or propose a small offline-friendly contribution
+title: "[Good first task] "
+labels: ["good first issue", "help wanted"]
+body:
+  - type: textarea
+    id: task
+    attributes:
+      label: Task
+      description: Link or copy one task from docs/community_tasks.md.
+      placeholder: "Add an SMA crossover strategy plugin."
+    validations:
+      required: true
+  - type: textarea
+    id: files
+    attributes:
+      label: Likely files
+      description: Keep the file set narrow so the PR is easy to review.
+      placeholder: |
+        - src/tradearena/...
+        - tests/...
+        - docs/...
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation command
+      description: Name the command a reviewer should run.
+      placeholder: "python -m pytest tests/test_new_plugin.py -q"
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Boundaries
+      options:
+        - label: This task does not require unattended live trading.
+          required: true
+        - label: This task does not require committing credentials, raw provider text, private holdings, or broker files.
+          required: true

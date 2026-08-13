@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/weich97/TreLLM-public/schemas/demo_artifact_contract.schema.json",
+  "title": "TreLLM Demo Artifact Contract",
+  "type": "object",
+  "required": ["version", "artifacts"],
+  "properties": {
+    "version": { "type": "string" },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "command", "required_outputs"],
+        "properties": {
+          "id": { "type": "string" },
+          "command": { "type": "string" },
+          "required_outputs": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "required_json_fields": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "Format: path.to/file.json:field.nested_field"
+            }
+          }
+        }
+      }
+    }
+  }
+}

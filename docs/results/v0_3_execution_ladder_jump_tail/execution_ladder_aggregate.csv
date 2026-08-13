@@ -1,0 +1,17 @@
+scenario_id,contamination_tier,execution_level,execution_label,agent,run_count,rank,sharpe_mean,sharpe_std,sharpe_ci_low,sharpe_ci_high,total_return_mean,max_drawdown_mean,execution_fill_rate_mean,rejected_order_count_mean,total_slippage_cost_mean,intent_execution_gap_l1_mean,intent_risk_gap_l1_mean,risk_execution_gap_l1_mean
+synthetic_jump_tail_c0_v0_3,C0,E0,ideal execution,risk-parity,2,1,11.966456,1.103179,11.186391,12.746521,0.385989,-0.02016,1.0,0.0,31.609323,1.5e-05,0.0,1.5e-05
+synthetic_jump_tail_c0_v0_3,C0,E0,ideal execution,naive-momentum,2,2,10.885788,0.535063,10.507441,11.264135,0.272884,-0.014908,1.0,0.0,49.251019,1.5e-05,0.0,1.5e-05
+synthetic_jump_tail_c0_v0_3,C0,E0,ideal execution,signal-weighted,2,3,10.34049,2.150783,8.819657,11.861324,0.260351,-0.009286,1.0,0.0,27.038447,0.379868,0.379876,9e-06
+synthetic_jump_tail_c0_v0_3,C0,E0,ideal execution,random,2,4,9.395163,1.887873,8.060236,10.730091,0.253592,-0.018397,1.0,0.0,176.819717,4e-05,0.0,4e-05
+synthetic_jump_tail_c0_v0_3,C0,E1,paper stress execution,risk-parity,2,1,10.959746,0.746882,10.43162,11.487871,0.444238,-0.012409,0.927083,1.5,2706.656482,0.271554,0.0,0.271554
+synthetic_jump_tail_c0_v0_3,C0,E1,paper stress execution,signal-weighted,2,2,9.907836,1.613599,8.766849,11.048822,0.225977,-0.011529,0.930048,0.5,1461.352363,0.443979,0.379876,0.164712
+synthetic_jump_tail_c0_v0_3,C0,E1,paper stress execution,naive-momentum,2,3,8.105557,0.258001,7.923123,8.287991,0.236333,-0.023558,0.902924,2.0,2546.661498,0.268728,0.0,0.268728
+synthetic_jump_tail_c0_v0_3,C0,E1,paper stress execution,random,2,4,7.903363,0.074299,7.850825,7.9559,0.303223,-0.018219,0.891253,3.0,3415.612097,0.407161,0.0,0.407161
+synthetic_jump_tail_c0_v0_3,C0,E2,harsh friction sweep corner,risk-parity,2,1,9.587675,2.291241,7.967523,11.207827,0.331648,-0.015503,0.645833,11.0,2646.79506,0.420766,0.0,0.420766
+synthetic_jump_tail_c0_v0_3,C0,E2,harsh friction sweep corner,random,2,2,7.880397,0.304287,7.665234,8.095561,0.246749,-0.015607,0.609144,11.0,2939.583383,0.414746,0.0,0.414746
+synthetic_jump_tail_c0_v0_3,C0,E2,harsh friction sweep corner,naive-momentum,2,3,7.188259,1.707702,5.980731,8.395787,0.381559,-0.019282,0.596581,11.0,3460.464641,0.595168,0.0,0.595168
+synthetic_jump_tail_c0_v0_3,C0,E2,harsh friction sweep corner,signal-weighted,2,4,6.805643,3.409202,4.394973,9.216312,0.162911,-0.010466,0.583591,9.0,1658.24439,0.530718,0.379876,0.265686
+synthetic_jump_tail_c0_v0_3,C0,E3,calibrated replay fixture,risk-parity,2,1,10.290154,1.048793,9.548545,11.031762,0.281297,-0.018042,0.708333,10.0,3120.54607,0.401837,0.0,0.401837
+synthetic_jump_tail_c0_v0_3,C0,E3,calibrated replay fixture,signal-weighted,2,2,9.177935,3.770749,6.511613,11.844257,0.174297,-0.014912,0.667183,8.0,1321.289405,0.463156,0.379876,0.219124
+synthetic_jump_tail_c0_v0_3,C0,E3,calibrated replay fixture,naive-momentum,2,3,9.173992,1.916527,7.818803,10.529181,0.289306,-0.02822,0.742695,6.5,3667.658624,0.516566,0.0,0.516566
+synthetic_jump_tail_c0_v0_3,C0,E3,calibrated replay fixture,random,2,4,8.893312,0.338659,8.653844,9.13278,0.288148,-0.020249,0.678911,10.0,2509.055455,0.460442,0.0,0.460442

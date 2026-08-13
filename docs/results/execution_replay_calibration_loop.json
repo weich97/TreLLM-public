@@ -1,0 +1,198 @@
+{
+  "schema": "tradearena_execution_replay_calibration_loop_v1",
+  "claim_boundary": "This is a small execution evidence loop. Stress mode is a conservative proxy under shared OHLCV assumptions, not ground truth. Quote replay uses observed top-of-book and available best-size constraints. Fill replay applies realized sample fills for audit replay; public exchange trades are not broker-specific private fills.",
+  "samples": [
+    {
+      "sample_id": "fixture",
+      "label": "BTCUSDT redistributable microstructure fixture",
+      "symbols": [
+        "BTCUSDT"
+      ],
+      "fills_used": 8,
+      "quote_rows": 10,
+      "source": "tradearena_public_microstructure_fixture_v1",
+      "venue": "fixture",
+      "window_start_utc": null,
+      "window_end_utc": null,
+      "provenance_note": "Checked-in redistributable fixture for calibration plumbing; not a venue-wide cost claim.",
+      "calibration_residual_mae_bps": 0.446571,
+      "stress_residual_mae_bps": 3.533257
+    },
+    {
+      "sample_id": "binance",
+      "label": "BTCUSDT Binance USD-M public sample",
+      "symbols": [
+        "BTCUSDT"
+      ],
+      "fills_used": 50,
+      "quote_rows": 884,
+      "source": "Binance public-data USD-M futures daily files",
+      "venue": "Binance USD-M Futures",
+      "window_start_utc": "2024-03-01T00:00:00Z",
+      "window_end_utc": "2024-03-01T00:15:00Z",
+      "provenance_note": "Public Binance bookTicker/trades sample; stronger than OHLCV stress, but not broker-specific private-fill evidence.",
+      "calibration_residual_mae_bps": 0.907738,
+      "stress_residual_mae_bps": 3.163166
+    }
+  ],
+  "mode_rows": [
+    {
+      "sample_id": "fixture",
+      "mode": "ohlcv_stress",
+      "evidence_labels": [
+        "stress-only",
+        "conservative-proxy"
+      ],
+      "orders": 8,
+      "filled_orders": 8,
+      "rejected_orders": 0,
+      "rejection_rate": 0.0,
+      "partial_fills": 0,
+      "fill_ratio_mean": 1.0,
+      "quantity_fill_ratio": 1.0,
+      "median_spread_bps": 0.952593,
+      "p90_spread_bps": 1.364077,
+      "mean_slippage_bps": 4.215156,
+      "p90_abs_slippage_bps": 4.81953,
+      "total_slippage_cost": 37.87711,
+      "total_commission": 8.949745,
+      "average_latency_steps": 1.0,
+      "median_latency_seconds": null,
+      "median_quote_event_lag_seconds": null,
+      "median_quote_staleness_seconds": 22.5,
+      "boundary": "Conservative OHLCV stress proxy; not ground-truth transaction-cost evidence."
+    },
+    {
+      "sample_id": "fixture",
+      "mode": "quote_replay",
+      "evidence_labels": [
+        "quote-replay",
+        "public-top-of-book",
+        "depth-constrained"
+      ],
+      "orders": 8,
+      "filled_orders": 8,
+      "rejected_orders": 0,
+      "rejection_rate": 0.0,
+      "partial_fills": 1,
+      "fill_ratio_mean": 0.972314,
+      "quantity_fill_ratio": 0.950088,
+      "median_spread_bps": 0.952593,
+      "p90_spread_bps": 1.364077,
+      "mean_slippage_bps": 1.751788,
+      "p90_abs_slippage_bps": 1.97513,
+      "total_slippage_cost": 15.335853,
+      "total_commission": 8.502562,
+      "average_latency_steps": 0.0,
+      "median_latency_seconds": null,
+      "median_quote_event_lag_seconds": null,
+      "median_quote_staleness_seconds": 22.5,
+      "boundary": "Uses observed top-of-book and best-size constraints; no hidden queue or broker-routing evidence."
+    },
+    {
+      "sample_id": "fixture",
+      "mode": "fill_replay",
+      "evidence_labels": [
+        "fill-replay",
+        "sample-realized-fills"
+      ],
+      "orders": 8,
+      "filled_orders": 8,
+      "rejected_orders": 0,
+      "rejection_rate": 0.0,
+      "partial_fills": 0,
+      "fill_ratio_mean": 1.0,
+      "quantity_fill_ratio": 1.0,
+      "median_spread_bps": 0.952593,
+      "p90_spread_bps": 1.364077,
+      "mean_slippage_bps": 1.424115,
+      "p90_abs_slippage_bps": 1.646462,
+      "total_slippage_cost": 13.456,
+      "total_commission": 0.9,
+      "average_latency_steps": 1.0,
+      "median_latency_seconds": 15.0,
+      "median_quote_event_lag_seconds": null,
+      "median_quote_staleness_seconds": 22.5,
+      "boundary": "Replays realized fills from fixture; Checked-in redistributable fixture for calibration plumbing; not a venue-wide cost claim."
+    },
+    {
+      "sample_id": "binance",
+      "mode": "ohlcv_stress",
+      "evidence_labels": [
+        "stress-only",
+        "conservative-proxy"
+      ],
+      "orders": 50,
+      "filled_orders": 50,
+      "rejected_orders": 0,
+      "rejection_rate": 0.0,
+      "partial_fills": 0,
+      "fill_ratio_mean": 1.0,
+      "quantity_fill_ratio": 1.0,
+      "median_spread_bps": 0.016332,
+      "p90_spread_bps": 0.034305,
+      "mean_slippage_bps": 5.457035,
+      "p90_abs_slippage_bps": 13.93413,
+      "total_slippage_cost": 98.218206,
+      "total_commission": 21.181483,
+      "average_latency_steps": 1.0,
+      "median_latency_seconds": null,
+      "median_quote_event_lag_seconds": 0.008,
+      "median_quote_staleness_seconds": 0.5855,
+      "boundary": "Conservative OHLCV stress proxy; not ground-truth transaction-cost evidence."
+    },
+    {
+      "sample_id": "binance",
+      "mode": "quote_replay",
+      "evidence_labels": [
+        "quote-replay",
+        "public-top-of-book",
+        "depth-constrained"
+      ],
+      "orders": 50,
+      "filled_orders": 50,
+      "rejected_orders": 0,
+      "rejection_rate": 0.0,
+      "partial_fills": 12,
+      "fill_ratio_mean": 0.833079,
+      "quantity_fill_ratio": 0.569857,
+      "median_spread_bps": 0.016332,
+      "p90_spread_bps": 0.034305,
+      "mean_slippage_bps": 1.258612,
+      "p90_abs_slippage_bps": 1.280166,
+      "total_slippage_cost": 15.724395,
+      "total_commission": 0.0,
+      "average_latency_steps": 0.0,
+      "median_latency_seconds": null,
+      "median_quote_event_lag_seconds": 0.008,
+      "median_quote_staleness_seconds": 0.5855,
+      "boundary": "Uses observed top-of-book and best-size constraints; no hidden queue or broker-routing evidence."
+    },
+    {
+      "sample_id": "binance",
+      "mode": "fill_replay",
+      "evidence_labels": [
+        "fill-replay",
+        "sample-realized-fills"
+      ],
+      "orders": 50,
+      "filled_orders": 50,
+      "rejected_orders": 0,
+      "rejection_rate": 0.0,
+      "partial_fills": 0,
+      "fill_ratio_mean": 1.0,
+      "quantity_fill_ratio": 1.0,
+      "median_spread_bps": 0.016332,
+      "p90_spread_bps": 0.034305,
+      "mean_slippage_bps": 0.299572,
+      "p90_abs_slippage_bps": 1.39763,
+      "total_slippage_cost": 6.6714,
+      "total_commission": 0.0,
+      "average_latency_steps": 0.0,
+      "median_latency_seconds": null,
+      "median_quote_event_lag_seconds": 0.008,
+      "median_quote_staleness_seconds": 0.5855,
+      "boundary": "Replays realized fills from binance; Public Binance bookTicker/trades sample; stronger than OHLCV stress, but not broker-specific private-fill evidence."
+    }
+  ]
+}

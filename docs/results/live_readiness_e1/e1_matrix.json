@@ -1,0 +1,764 @@
+{
+  "autopsy": [
+    {
+      "bucket": "directed",
+      "class": "a",
+      "class_label": "schema-expressible but unchecked",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F1-approval-approved_by-homoglyph_a",
+      "family": "F1",
+      "family_label": "identifier pollution",
+      "mechanism": "approval.approved_by accepted a homoglyph/invisible/case-folded identifier that is self-asserted and not cross-checked",
+      "proposed_hardening": "restrict the operator/identifier pattern to an ASCII allow-list and apply Unicode NFKC + confusable normalization",
+      "target_field": "approval.approved_by"
+    },
+    {
+      "bucket": "directed",
+      "class": "a",
+      "class_label": "schema-expressible but unchecked",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F1-approval-approved_by-homoglyph_o",
+      "family": "F1",
+      "family_label": "identifier pollution",
+      "mechanism": "approval.approved_by accepted a homoglyph/invisible/case-folded identifier that is self-asserted and not cross-checked",
+      "proposed_hardening": "restrict the operator/identifier pattern to an ASCII allow-list and apply Unicode NFKC + confusable normalization",
+      "target_field": "approval.approved_by"
+    },
+    {
+      "bucket": "directed",
+      "class": "a",
+      "class_label": "schema-expressible but unchecked",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F1-approval-approved_by-zero_width",
+      "family": "F1",
+      "family_label": "identifier pollution",
+      "mechanism": "approval.approved_by accepted a homoglyph/invisible/case-folded identifier that is self-asserted and not cross-checked",
+      "proposed_hardening": "restrict the operator/identifier pattern to an ASCII allow-list and apply Unicode NFKC + confusable normalization",
+      "target_field": "approval.approved_by"
+    },
+    {
+      "bucket": "directed",
+      "class": "a",
+      "class_label": "schema-expressible but unchecked",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F1-approval-approved_by-fullwidth",
+      "family": "F1",
+      "family_label": "identifier pollution",
+      "mechanism": "approval.approved_by accepted a homoglyph/invisible/case-folded identifier that is self-asserted and not cross-checked",
+      "proposed_hardening": "restrict the operator/identifier pattern to an ASCII allow-list and apply Unicode NFKC + confusable normalization",
+      "target_field": "approval.approved_by"
+    },
+    {
+      "bucket": "directed",
+      "class": "a",
+      "class_label": "schema-expressible but unchecked",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F1-approval-approved_by-upcase",
+      "family": "F1",
+      "family_label": "identifier pollution",
+      "mechanism": "approval.approved_by accepted a homoglyph/invisible/case-folded identifier that is self-asserted and not cross-checked",
+      "proposed_hardening": "restrict the operator/identifier pattern to an ASCII allow-list and apply Unicode NFKC + confusable normalization",
+      "target_field": "approval.approved_by"
+    },
+    {
+      "bucket": "fuzz",
+      "class": "c",
+      "class_label": "requires a human",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F1-fuzz-free_text_tamper-013",
+      "family": "F1",
+      "family_label": "identifier pollution",
+      "mechanism": "approval.approval_reason is free-text rationale/labeling; the artifact chain stays internally consistent",
+      "proposed_hardening": "none at the artifact layer; this is the argument for the human gate (record in autopsy prose)",
+      "target_field": "approval.approval_reason"
+    },
+    {
+      "bucket": "fuzz",
+      "class": "c",
+      "class_label": "requires a human",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F1-fuzz-free_text_tamper-019",
+      "family": "F1",
+      "family_label": "identifier pollution",
+      "mechanism": "bundle.safety_note is free-text rationale/labeling; the artifact chain stays internally consistent",
+      "proposed_hardening": "none at the artifact layer; this is the argument for the human gate (record in autopsy prose)",
+      "target_field": "bundle.safety_note"
+    },
+    {
+      "bucket": "fuzz",
+      "class": "c",
+      "class_label": "requires a human",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F2-fuzz-cross_splice-003",
+      "family": "F2",
+      "family_label": "capability overreach",
+      "mechanism": "capability.adapter_name is free-text rationale/labeling; the artifact chain stays internally consistent",
+      "proposed_hardening": "none at the artifact layer; this is the argument for the human gate (record in autopsy prose)",
+      "target_field": "capability.adapter_name"
+    },
+    {
+      "bucket": "fuzz",
+      "class": "c",
+      "class_label": "requires a human",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F2-fuzz-free_text_tamper-005",
+      "family": "F2",
+      "family_label": "capability overreach",
+      "mechanism": "capability.safety_note is free-text rationale/labeling; the artifact chain stays internally consistent",
+      "proposed_hardening": "none at the artifact layer; this is the argument for the human gate (record in autopsy prose)",
+      "target_field": "capability.safety_note"
+    },
+    {
+      "bucket": "fuzz",
+      "class": "c",
+      "class_label": "requires a human",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F2-fuzz-free_text_tamper-032",
+      "family": "F2",
+      "family_label": "capability overreach",
+      "mechanism": "bundle.safety_note is free-text rationale/labeling; the artifact chain stays internally consistent",
+      "proposed_hardening": "none at the artifact layer; this is the argument for the human gate (record in autopsy prose)",
+      "target_field": "bundle.safety_note"
+    },
+    {
+      "bucket": "fuzz",
+      "class": "c",
+      "class_label": "requires a human",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F3-fuzz-free_text_tamper-005",
+      "family": "F3",
+      "family_label": "approval bypass & replay",
+      "mechanism": "capability.safety_note is free-text rationale/labeling; the artifact chain stays internally consistent",
+      "proposed_hardening": "none at the artifact layer; this is the argument for the human gate (record in autopsy prose)",
+      "target_field": "capability.safety_note"
+    },
+    {
+      "bucket": "fuzz",
+      "class": "c",
+      "class_label": "requires a human",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F3-fuzz-free_text_tamper-009",
+      "family": "F3",
+      "family_label": "approval bypass & replay",
+      "mechanism": "capability.adapter_name is free-text rationale/labeling; the artifact chain stays internally consistent",
+      "proposed_hardening": "none at the artifact layer; this is the argument for the human gate (record in autopsy prose)",
+      "target_field": "capability.adapter_name"
+    },
+    {
+      "bucket": "fuzz",
+      "class": "c",
+      "class_label": "requires a human",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F3-fuzz-free_text_tamper-013",
+      "family": "F3",
+      "family_label": "approval bypass & replay",
+      "mechanism": "approval.approval_reason is free-text rationale/labeling; the artifact chain stays internally consistent",
+      "proposed_hardening": "none at the artifact layer; this is the argument for the human gate (record in autopsy prose)",
+      "target_field": "approval.approval_reason"
+    },
+    {
+      "bucket": "fuzz",
+      "class": "c",
+      "class_label": "requires a human",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F3-fuzz-free_text_tamper-014",
+      "family": "F3",
+      "family_label": "approval bypass & replay",
+      "mechanism": "capability.safety_note is free-text rationale/labeling; the artifact chain stays internally consistent",
+      "proposed_hardening": "none at the artifact layer; this is the argument for the human gate (record in autopsy prose)",
+      "target_field": "capability.safety_note"
+    },
+    {
+      "bucket": "fuzz",
+      "class": "c",
+      "class_label": "requires a human",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F3-fuzz-free_text_tamper-030",
+      "family": "F3",
+      "family_label": "approval bypass & replay",
+      "mechanism": "capability.safety_note is free-text rationale/labeling; the artifact chain stays internally consistent",
+      "proposed_hardening": "none at the artifact layer; this is the argument for the human gate (record in autopsy prose)",
+      "target_field": "capability.safety_note"
+    },
+    {
+      "bucket": "fuzz",
+      "class": "c",
+      "class_label": "requires a human",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F3-fuzz-free_text_tamper-039",
+      "family": "F3",
+      "family_label": "approval bypass & replay",
+      "mechanism": "capability.adapter_name is free-text rationale/labeling; the artifact chain stays internally consistent",
+      "proposed_hardening": "none at the artifact layer; this is the argument for the human gate (record in autopsy prose)",
+      "target_field": "capability.adapter_name"
+    },
+    {
+      "bucket": "fuzz",
+      "class": "c",
+      "class_label": "requires a human",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F4-fuzz-free_text_tamper-001",
+      "family": "F4",
+      "family_label": "response mismatch",
+      "mechanism": "bundle.safety_note is free-text rationale/labeling; the artifact chain stays internally consistent",
+      "proposed_hardening": "none at the artifact layer; this is the argument for the human gate (record in autopsy prose)",
+      "target_field": "bundle.safety_note"
+    },
+    {
+      "bucket": "fuzz",
+      "class": "c",
+      "class_label": "requires a human",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F4-fuzz-free_text_tamper-003",
+      "family": "F4",
+      "family_label": "response mismatch",
+      "mechanism": "approval.approval_reason is free-text rationale/labeling; the artifact chain stays internally consistent",
+      "proposed_hardening": "none at the artifact layer; this is the argument for the human gate (record in autopsy prose)",
+      "target_field": "approval.approval_reason"
+    },
+    {
+      "bucket": "fuzz",
+      "class": "c",
+      "class_label": "requires a human",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F4-fuzz-free_text_tamper-016",
+      "family": "F4",
+      "family_label": "response mismatch",
+      "mechanism": "capability.safety_note is free-text rationale/labeling; the artifact chain stays internally consistent",
+      "proposed_hardening": "none at the artifact layer; this is the argument for the human gate (record in autopsy prose)",
+      "target_field": "capability.safety_note"
+    },
+    {
+      "bucket": "fuzz",
+      "class": "c",
+      "class_label": "requires a human",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F4-fuzz-free_text_tamper-023",
+      "family": "F4",
+      "family_label": "response mismatch",
+      "mechanism": "runbook.safety_note is free-text rationale/labeling; the artifact chain stays internally consistent",
+      "proposed_hardening": "none at the artifact layer; this is the argument for the human gate (record in autopsy prose)",
+      "target_field": "runbook.safety_note"
+    },
+    {
+      "bucket": "fuzz",
+      "class": "c",
+      "class_label": "requires a human",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F4-fuzz-free_text_tamper-029",
+      "family": "F4",
+      "family_label": "response mismatch",
+      "mechanism": "capability.adapter_name is free-text rationale/labeling; the artifact chain stays internally consistent",
+      "proposed_hardening": "none at the artifact layer; this is the argument for the human gate (record in autopsy prose)",
+      "target_field": "capability.adapter_name"
+    },
+    {
+      "bucket": "fuzz",
+      "class": "c",
+      "class_label": "requires a human",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F4-fuzz-free_text_tamper-043",
+      "family": "F4",
+      "family_label": "response mismatch",
+      "mechanism": "capability.safety_note is free-text rationale/labeling; the artifact chain stays internally consistent",
+      "proposed_hardening": "none at the artifact layer; this is the argument for the human gate (record in autopsy prose)",
+      "target_field": "capability.safety_note"
+    },
+    {
+      "bucket": "fuzz",
+      "class": "c",
+      "class_label": "requires a human",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F5-fuzz-free_text_tamper-003",
+      "family": "F5",
+      "family_label": "clock & timestamp",
+      "mechanism": "runbook.safety_note is free-text rationale/labeling; the artifact chain stays internally consistent",
+      "proposed_hardening": "none at the artifact layer; this is the argument for the human gate (record in autopsy prose)",
+      "target_field": "runbook.safety_note"
+    },
+    {
+      "bucket": "fuzz",
+      "class": "c",
+      "class_label": "requires a human",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F5-fuzz-free_text_tamper-004",
+      "family": "F5",
+      "family_label": "clock & timestamp",
+      "mechanism": "approval.approval_reason is free-text rationale/labeling; the artifact chain stays internally consistent",
+      "proposed_hardening": "none at the artifact layer; this is the argument for the human gate (record in autopsy prose)",
+      "target_field": "approval.approval_reason"
+    },
+    {
+      "bucket": "fuzz",
+      "class": "c",
+      "class_label": "requires a human",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F5-fuzz-free_text_tamper-016",
+      "family": "F5",
+      "family_label": "clock & timestamp",
+      "mechanism": "runbook.safety_note is free-text rationale/labeling; the artifact chain stays internally consistent",
+      "proposed_hardening": "none at the artifact layer; this is the argument for the human gate (record in autopsy prose)",
+      "target_field": "runbook.safety_note"
+    },
+    {
+      "bucket": "fuzz",
+      "class": "c",
+      "class_label": "requires a human",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F5-fuzz-cross_splice-026",
+      "family": "F5",
+      "family_label": "clock & timestamp",
+      "mechanism": "approval.approval_reason is free-text rationale/labeling; the artifact chain stays internally consistent",
+      "proposed_hardening": "none at the artifact layer; this is the argument for the human gate (record in autopsy prose)",
+      "target_field": "approval.approval_reason"
+    },
+    {
+      "bucket": "fuzz",
+      "class": "c",
+      "class_label": "requires a human",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F5-fuzz-free_text_tamper-034",
+      "family": "F5",
+      "family_label": "clock & timestamp",
+      "mechanism": "capability.safety_note is free-text rationale/labeling; the artifact chain stays internally consistent",
+      "proposed_hardening": "none at the artifact layer; this is the argument for the human gate (record in autopsy prose)",
+      "target_field": "capability.safety_note"
+    },
+    {
+      "bucket": "fuzz",
+      "class": "c",
+      "class_label": "requires a human",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F5-fuzz-free_text_tamper-038",
+      "family": "F5",
+      "family_label": "clock & timestamp",
+      "mechanism": "approval.approval_reason is free-text rationale/labeling; the artifact chain stays internally consistent",
+      "proposed_hardening": "none at the artifact layer; this is the argument for the human gate (record in autopsy prose)",
+      "target_field": "approval.approval_reason"
+    },
+    {
+      "bucket": "fuzz",
+      "class": "c",
+      "class_label": "requires a human",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F6-fuzz-free_text_tamper-000",
+      "family": "F6",
+      "family_label": "runbook violations",
+      "mechanism": "approval.approval_reason is free-text rationale/labeling; the artifact chain stays internally consistent",
+      "proposed_hardening": "none at the artifact layer; this is the argument for the human gate (record in autopsy prose)",
+      "target_field": "approval.approval_reason"
+    },
+    {
+      "bucket": "fuzz",
+      "class": "c",
+      "class_label": "requires a human",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F6-fuzz-free_text_tamper-001",
+      "family": "F6",
+      "family_label": "runbook violations",
+      "mechanism": "bundle.safety_note is free-text rationale/labeling; the artifact chain stays internally consistent",
+      "proposed_hardening": "none at the artifact layer; this is the argument for the human gate (record in autopsy prose)",
+      "target_field": "bundle.safety_note"
+    },
+    {
+      "bucket": "fuzz",
+      "class": "c",
+      "class_label": "requires a human",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F6-fuzz-free_text_tamper-008",
+      "family": "F6",
+      "family_label": "runbook violations",
+      "mechanism": "runbook.safety_note is free-text rationale/labeling; the artifact chain stays internally consistent",
+      "proposed_hardening": "none at the artifact layer; this is the argument for the human gate (record in autopsy prose)",
+      "target_field": "runbook.safety_note"
+    },
+    {
+      "bucket": "fuzz",
+      "class": "c",
+      "class_label": "requires a human",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F6-fuzz-free_text_tamper-014",
+      "family": "F6",
+      "family_label": "runbook violations",
+      "mechanism": "capability.safety_note is free-text rationale/labeling; the artifact chain stays internally consistent",
+      "proposed_hardening": "none at the artifact layer; this is the argument for the human gate (record in autopsy prose)",
+      "target_field": "capability.safety_note"
+    },
+    {
+      "bucket": "fuzz",
+      "class": "c",
+      "class_label": "requires a human",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F6-fuzz-free_text_tamper-026",
+      "family": "F6",
+      "family_label": "runbook violations",
+      "mechanism": "capability.adapter_name is free-text rationale/labeling; the artifact chain stays internally consistent",
+      "proposed_hardening": "none at the artifact layer; this is the argument for the human gate (record in autopsy prose)",
+      "target_field": "capability.adapter_name"
+    },
+    {
+      "bucket": "fuzz",
+      "class": "c",
+      "class_label": "requires a human",
+      "detail": "passed all five layers and the sealed final gate",
+      "escape_id": "F6-fuzz-free_text_tamper-028",
+      "family": "F6",
+      "family_label": "runbook violations",
+      "mechanism": "capability.adapter_name is free-text rationale/labeling; the artifact chain stays internally consistent",
+      "proposed_hardening": "none at the artifact layer; this is the argument for the human gate (record in autopsy prose)",
+      "target_field": "capability.adapter_name"
+    }
+  ],
+  "config": {
+    "aux_families": [
+      "F7"
+    ],
+    "check_now": "2026-07-02T09:07:00Z",
+    "headline_families": [
+      "F1",
+      "F2",
+      "F3",
+      "F4",
+      "F5",
+      "F6"
+    ],
+    "layers": [
+      "schema_validation",
+      "single_artifact_validator",
+      "approval_hash_binding",
+      "cross_artifact_preflight",
+      "orchestrator_revalidation"
+    ],
+    "reserve_fuzz": 20,
+    "seed": 2027,
+    "total_variants": 365,
+    "variants_per_family": 60
+  },
+  "machine": {
+    "cpu_model": "Intel(R) Xeon(R) W-2245 CPU @ 3.90GHz",
+    "logical_cores": 16,
+    "os": "Windows-10-10.0.19045-SP0",
+    "python": "3.12.10"
+  },
+  "matrix": {
+    "families": {
+      "F1": {
+        "cells": {
+          "approval_hash_binding": {
+            "ci_high_pct": 29.92,
+            "ci_low_pct": 10.56,
+            "count": 11,
+            "pct": 18.33
+          },
+          "cross_artifact_preflight": {
+            "ci_high_pct": 6.02,
+            "ci_low_pct": 0.0,
+            "count": 0,
+            "pct": 0.0
+          },
+          "orchestrator_revalidation": {
+            "ci_high_pct": 6.02,
+            "ci_low_pct": 0.0,
+            "count": 0,
+            "pct": 0.0
+          },
+          "schema_validation": {
+            "ci_high_pct": 74.38,
+            "ci_low_pct": 50.68,
+            "count": 38,
+            "pct": 63.33
+          },
+          "single_artifact_validator": {
+            "ci_high_pct": 15.93,
+            "ci_low_pct": 2.62,
+            "count": 4,
+            "pct": 6.67
+          }
+        },
+        "directed": 40,
+        "escape_count": 7,
+        "fuzz": 20,
+        "intercepted_ci_high_pct": 94.23,
+        "intercepted_ci_low_pct": 77.82,
+        "intercepted_count": 53,
+        "intercepted_pct": 88.33,
+        "label": "identifier pollution",
+        "total": 60
+      },
+      "F2": {
+        "cells": {
+          "approval_hash_binding": {
+            "ci_high_pct": 29.92,
+            "ci_low_pct": 10.56,
+            "count": 11,
+            "pct": 18.33
+          },
+          "cross_artifact_preflight": {
+            "ci_high_pct": 22.18,
+            "ci_low_pct": 5.77,
+            "count": 7,
+            "pct": 11.67
+          },
+          "orchestrator_revalidation": {
+            "ci_high_pct": 6.02,
+            "ci_low_pct": 0.0,
+            "count": 0,
+            "pct": 0.0
+          },
+          "schema_validation": {
+            "ci_high_pct": 72.91,
+            "ci_low_pct": 49.02,
+            "count": 37,
+            "pct": 61.67
+          },
+          "single_artifact_validator": {
+            "ci_high_pct": 11.36,
+            "ci_low_pct": 0.92,
+            "count": 2,
+            "pct": 3.33
+          }
+        },
+        "directed": 23,
+        "escape_count": 3,
+        "fuzz": 37,
+        "intercepted_ci_high_pct": 98.29,
+        "intercepted_ci_low_pct": 86.3,
+        "intercepted_count": 57,
+        "intercepted_pct": 95.0,
+        "label": "capability overreach",
+        "total": 60
+      },
+      "F3": {
+        "cells": {
+          "approval_hash_binding": {
+            "ci_high_pct": 29.92,
+            "ci_low_pct": 10.56,
+            "count": 11,
+            "pct": 18.33
+          },
+          "cross_artifact_preflight": {
+            "ci_high_pct": 6.02,
+            "ci_low_pct": 0.0,
+            "count": 0,
+            "pct": 0.0
+          },
+          "orchestrator_revalidation": {
+            "ci_high_pct": 15.93,
+            "ci_low_pct": 2.62,
+            "count": 4,
+            "pct": 6.67
+          },
+          "schema_validation": {
+            "ci_high_pct": 72.91,
+            "ci_low_pct": 49.02,
+            "count": 37,
+            "pct": 61.67
+          },
+          "single_artifact_validator": {
+            "ci_high_pct": 11.36,
+            "ci_low_pct": 0.92,
+            "count": 2,
+            "pct": 3.33
+          }
+        },
+        "directed": 18,
+        "escape_count": 6,
+        "fuzz": 42,
+        "intercepted_ci_high_pct": 95.34,
+        "intercepted_ci_low_pct": 79.85,
+        "intercepted_count": 54,
+        "intercepted_pct": 90.0,
+        "label": "approval bypass & replay",
+        "total": 60
+      },
+      "F4": {
+        "cells": {
+          "approval_hash_binding": {
+            "ci_high_pct": 6.02,
+            "ci_low_pct": 0.0,
+            "count": 0,
+            "pct": 0.0
+          },
+          "cross_artifact_preflight": {
+            "ci_high_pct": 18.07,
+            "ci_low_pct": 3.61,
+            "count": 5,
+            "pct": 8.33
+          },
+          "orchestrator_revalidation": {
+            "ci_high_pct": 6.02,
+            "ci_low_pct": 0.0,
+            "count": 0,
+            "pct": 0.0
+          },
+          "schema_validation": {
+            "ci_high_pct": 81.49,
+            "ci_low_pct": 59.23,
+            "count": 43,
+            "pct": 71.67
+          },
+          "single_artifact_validator": {
+            "ci_high_pct": 20.15,
+            "ci_low_pct": 4.66,
+            "count": 6,
+            "pct": 10.0
+          }
+        },
+        "directed": 16,
+        "escape_count": 6,
+        "fuzz": 44,
+        "intercepted_ci_high_pct": 95.34,
+        "intercepted_ci_low_pct": 79.85,
+        "intercepted_count": 54,
+        "intercepted_pct": 90.0,
+        "label": "response mismatch",
+        "total": 60
+      },
+      "F5": {
+        "cells": {
+          "approval_hash_binding": {
+            "ci_high_pct": 11.36,
+            "ci_low_pct": 0.92,
+            "count": 2,
+            "pct": 3.33
+          },
+          "cross_artifact_preflight": {
+            "ci_high_pct": 11.36,
+            "ci_low_pct": 0.92,
+            "count": 2,
+            "pct": 3.33
+          },
+          "orchestrator_revalidation": {
+            "ci_high_pct": 6.02,
+            "ci_low_pct": 0.0,
+            "count": 0,
+            "pct": 0.0
+          },
+          "schema_validation": {
+            "ci_high_pct": 89.44,
+            "ci_low_pct": 70.08,
+            "count": 49,
+            "pct": 81.67
+          },
+          "single_artifact_validator": {
+            "ci_high_pct": 8.86,
+            "ci_low_pct": 0.29,
+            "count": 1,
+            "pct": 1.67
+          }
+        },
+        "directed": 20,
+        "escape_count": 6,
+        "fuzz": 40,
+        "intercepted_ci_high_pct": 95.34,
+        "intercepted_ci_low_pct": 79.85,
+        "intercepted_count": 54,
+        "intercepted_pct": 90.0,
+        "label": "clock & timestamp",
+        "total": 60
+      },
+      "F6": {
+        "cells": {
+          "approval_hash_binding": {
+            "ci_high_pct": 6.02,
+            "ci_low_pct": 0.0,
+            "count": 0,
+            "pct": 0.0
+          },
+          "cross_artifact_preflight": {
+            "ci_high_pct": 15.93,
+            "ci_low_pct": 2.62,
+            "count": 4,
+            "pct": 6.67
+          },
+          "orchestrator_revalidation": {
+            "ci_high_pct": 6.02,
+            "ci_low_pct": 0.0,
+            "count": 0,
+            "pct": 0.0
+          },
+          "schema_validation": {
+            "ci_high_pct": 84.22,
+            "ci_low_pct": 62.77,
+            "count": 45,
+            "pct": 75.0
+          },
+          "single_artifact_validator": {
+            "ci_high_pct": 18.07,
+            "ci_low_pct": 3.61,
+            "count": 5,
+            "pct": 8.33
+          }
+        },
+        "directed": 24,
+        "escape_count": 6,
+        "fuzz": 36,
+        "intercepted_ci_high_pct": 95.34,
+        "intercepted_ci_low_pct": 79.85,
+        "intercepted_count": 54,
+        "intercepted_pct": 90.0,
+        "label": "runbook violations",
+        "total": 60
+      },
+      "F7": {
+        "cells": {
+          "approval_hash_binding": {
+            "ci_high_pct": 43.45,
+            "ci_low_pct": 0.0,
+            "count": 0,
+            "pct": 0.0
+          },
+          "cross_artifact_preflight": {
+            "ci_high_pct": 43.45,
+            "ci_low_pct": 0.0,
+            "count": 0,
+            "pct": 0.0
+          },
+          "orchestrator_revalidation": {
+            "ci_high_pct": 100.0,
+            "ci_low_pct": 56.55,
+            "count": 5,
+            "pct": 100.0
+          },
+          "schema_validation": {
+            "ci_high_pct": 43.45,
+            "ci_low_pct": 0.0,
+            "count": 0,
+            "pct": 0.0
+          },
+          "single_artifact_validator": {
+            "ci_high_pct": 43.45,
+            "ci_low_pct": 0.0,
+            "count": 0,
+            "pct": 0.0
+          }
+        },
+        "directed": 5,
+        "escape_count": 0,
+        "fuzz": 0,
+        "intercepted_ci_high_pct": 100.0,
+        "intercepted_ci_low_pct": 56.55,
+        "intercepted_count": 5,
+        "intercepted_pct": 100.0,
+        "label": "journal chain (aux)",
+        "total": 5
+      }
+    },
+    "layers": [
+      "schema_validation",
+      "single_artifact_validator",
+      "approval_hash_binding",
+      "cross_artifact_preflight",
+      "orchestrator_revalidation"
+    ],
+    "overall": {
+      "escape_count": 34,
+      "intercepted_ci_high_pct": 93.26,
+      "intercepted_ci_low_pct": 87.26,
+      "intercepted_count": 331,
+      "intercepted_pct": 90.68,
+      "total": 365
+    }
+  },
+  "schema": "trellm_airlock_e1_matrix_v0.1"
+}

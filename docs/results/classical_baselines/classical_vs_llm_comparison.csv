@@ -1,0 +1,9 @@
+universe,scenario_key,scenario_label,best_classical,best_classical_return,best_classical_drawdown,best_llm_provider,best_llm_model,best_llm_return,best_llm_drawdown,llm_return_minus_classical,llm_outperforms_classical_return
+real_market,rates_drawdown,Yahoo 2022 rates drawdown,Risk parity,0.047678818917642474,-0.046742470278478776,poe,gemini-3.1-pro,0.025622787673017955,-0.054961035306124284,-0.02205603124462452,False
+real_market,recent_cross_asset,Yahoo recent GSPC/BTC/BTC futures,Buy and hold,0.12152170517051908,-0.05853359381277479,poe,gemini-3.1-pro,0.04864212103857812,-0.04226851863858172,-0.07287958413194096,False
+synthetic,calm_trend,Calm trend,Buy and hold,0.026055942538617316,-0.007774000273097381,poe,kimi-k2.5,0.0319117870102712,-0.0008398349500295943,0.0058558444716538816,True
+synthetic,high_vol,High volatility,Mean reversion,0.0187895255928916,-0.0014544029056052787,poe,gemini-3.1-pro,0.014380820994550625,-0.004041424009702865,-0.004408704598340973,False
+synthetic,jump_tail,Jump and tail risk,Buy and hold,0.028106722747016866,-0.0040143342861805875,poe,gpt-5.5,0.016686905489183834,-0.021397961890934902,-0.011419817257833031,False
+synthetic,latency_spike,Latency spike,Buy and hold,0.03290557483821965,-0.009126731449652481,poe,gemini-3.1-pro,0.03290557483821965,-0.009126731449652481,0.0,False
+synthetic,liquidity_collapse,Liquidity collapse,Minimum variance,0.09068441018345963,-0.0028832641733815834,poe,gpt-5.5,0.04416006916041204,-0.0011713690842416469,-0.04652434102304759,False
+synthetic,spread_explosion,Spread explosion,Buy and hold,0.01074762609261648,-0.020281957131582873,deepseek,deepseek-v4-pro,0.004837979222670485,-0.020633570209063867,-0.005909646869945995,False

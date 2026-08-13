@@ -1,0 +1,4 @@
+scenario_id,contamination_tier,baseline_level,comparison_level,agent_count,rank_metric,kendall_tau,top_k,top_k_jaccard,mean_return_delta_vs_e0,mean_fill_rate_delta_vs_e0,mean_intent_execution_gap_delta_vs_e0,mean_slippage_delta_vs_e0
+synthetic_calm_trend_c0_v0_3,C0,E0,E1,4,sharpe_mean,0.666667,3,1.0,-0.011962,-0.083412,0.238384,1337.253542
+synthetic_calm_trend_c0_v0_3,C0,E0,E2,4,sharpe_mean,0.666667,3,1.0,-0.022168,-0.395934,0.400826,1719.727213
+synthetic_calm_trend_c0_v0_3,C0,E0,E3,4,sharpe_mean,0.666667,3,1.0,-0.001662,-0.29578,0.374592,1736.345569

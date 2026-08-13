@@ -1,0 +1,2 @@
+protocol_id,gap_id,required_for,missing_evidence,current_status,blocking_level
+trellm-v0.3-protocol,external_reproduction_reports,reproduction criterion: at least one accepted independent external report,"a passing pack self-verification report, or at least one accepted independent external reproduction report (intake gate remains open either way)",v0.3 intake gate exists; no accepted independent reports are present,external-validation-claim

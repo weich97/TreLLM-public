@@ -1,0 +1,29 @@
+{
+  "artifact_id": "direct_api_call_packets",
+  "artifacts": [
+    "direct_api_call_packets.jsonl",
+    "direct_api_call_packet_manifest.csv",
+    "direct_api_call_packets_summary.json",
+    "direct_api_call_packets.md"
+  ],
+  "call_packet_count": 900,
+  "claim_boundary": "Call packets make the pre-registered direct API matrix executable and auditable. They do not call providers, store raw prompts, store raw responses, or support model-performance claims.",
+  "credential_ready_packet_count": 0,
+  "manifest_row_count": 900,
+  "models": [
+    "deepseek-v4-flash",
+    "deepseek-v4-pro",
+    "glm-5",
+    "glm-5-turbo",
+    "glm-5.2"
+  ],
+  "not_run_packet_count": 900,
+  "protocol_id": "trellm-v0.3-protocol",
+  "providers": [
+    "deepseek",
+    "glm"
+  ],
+  "redaction_contract": "raw provider prompts/responses stay private; public artifacts contain hashes and manifests only",
+  "schema": "trellm_v0_3_direct_api_call_packets_v0.1",
+  "source_plan_rows": "docs/results/v0_3_direct_api_matrix_plan/direct_api_matrix_plan_rows.csv"
+}

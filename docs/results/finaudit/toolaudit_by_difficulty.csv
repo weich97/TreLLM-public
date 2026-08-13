@@ -1,0 +1,5 @@
+model,L1_recall,L2_recall,L3_recall,ALL_recall,L1_n,L2_n,L3_n,ALL_n
+deepseek:deepseek-v4-pro,1.000,0.940,0.680,0.890,25,50,25,100
+glm:glm-5,1.000,0.940,0.280,0.790,25,50,25,100
+poe:claude-opus-4.7,1.000,1.000,1.000,1.000,25,50,25,100
+poe:gemini-3.1-pro,0.960,0.820,0.600,0.800,25,50,25,100

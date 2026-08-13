@@ -1,0 +1,17 @@
+scenario_id,contamination_tier,execution_level,execution_label,agent,run_count,rank,sharpe_mean,sharpe_std,sharpe_ci_low,sharpe_ci_high,total_return_mean,max_drawdown_mean,execution_fill_rate_mean,rejected_order_count_mean,total_slippage_cost_mean,intent_execution_gap_l1_mean,intent_risk_gap_l1_mean,risk_execution_gap_l1_mean
+synthetic_calm_trend_c0_v0_3,C0,E0,ideal execution,risk-parity,2,1,26.766609,3.652293,24.184047,29.34917,0.230906,-0.003204,1.0,0.0,23.304574,2.1e-05,0.0,2.1e-05
+synthetic_calm_trend_c0_v0_3,C0,E0,ideal execution,naive-momentum,2,2,26.201349,0.090911,26.137065,26.265633,0.226279,-0.000105,1.0,0.0,23.288527,1.5e-05,0.0,1.5e-05
+synthetic_calm_trend_c0_v0_3,C0,E0,ideal execution,random,2,3,16.819584,0.578493,16.410528,17.22864,0.162091,-0.000673,1.0,0.0,172.886789,4.2e-05,0.0,4.2e-05
+synthetic_calm_trend_c0_v0_3,C0,E0,ideal execution,signal-weighted,2,4,15.44008,0.917304,14.791448,16.088712,0.155232,-0.002041,1.0,0.0,24.142586,0.354569,0.354569,1.5e-05
+synthetic_calm_trend_c0_v0_3,C0,E1,paper stress execution,naive-momentum,2,1,23.30653,5.829589,19.184388,27.428672,0.205878,-0.000977,0.917497,1.5,1410.091026,0.240793,0.0,0.240793
+synthetic_calm_trend_c0_v0_3,C0,E1,paper stress execution,risk-parity,2,2,21.128348,1.409547,20.131648,22.125048,0.209964,-0.004613,0.927083,1.5,1466.246279,0.247316,0.0,0.247316
+synthetic_calm_trend_c0_v0_3,C0,E1,paper stress execution,random,2,3,14.109159,0.009424,14.102495,14.115823,0.159438,-0.00433,0.891725,3.0,1848.323993,0.40285,0.0,0.40285
+synthetic_calm_trend_c0_v0_3,C0,E1,paper stress execution,signal-weighted,2,4,13.908388,1.934381,12.540574,15.276202,0.151381,-0.000502,0.930048,0.5,867.975345,0.417223,0.354569,0.151408
+synthetic_calm_trend_c0_v0_3,C0,E2,harsh friction sweep corner,naive-momentum,2,1,19.11312,0.182342,18.984185,19.242055,0.253711,-0.00165,0.576689,12.0,2759.256923,0.674061,0.0,0.674061
+synthetic_calm_trend_c0_v0_3,C0,E2,harsh friction sweep corner,risk-parity,2,2,17.604933,6.055293,13.323194,21.886672,0.18975,-0.003561,0.625,12.0,1539.249332,0.371451,0.0,0.371451
+synthetic_calm_trend_c0_v0_3,C0,E2,harsh friction sweep corner,random,2,3,12.220041,1.551128,11.123228,13.316854,0.131728,-0.002393,0.616279,10.5,1695.387551,0.396463,0.0,0.396463
+synthetic_calm_trend_c0_v0_3,C0,E2,harsh friction sweep corner,signal-weighted,2,4,10.275841,0.918974,9.626028,10.925653,0.110647,-0.001244,0.598297,8.5,1128.637524,0.515976,0.354569,0.268138
+synthetic_calm_trend_c0_v0_3,C0,E3,calibrated replay fixture,naive-momentum,2,1,19.661623,5.052846,16.088721,23.234524,0.256009,-0.003671,0.729236,7.5,2899.091785,0.63024,0.0,0.63024
+synthetic_calm_trend_c0_v0_3,C0,E3,calibrated replay fixture,risk-parity,2,2,17.902551,0.044667,17.870966,17.934135,0.211178,-0.001455,0.729167,9.0,1631.534978,0.350021,0.0,0.350021
+synthetic_calm_trend_c0_v0_3,C0,E3,calibrated replay fixture,random,2,3,14.729365,0.398271,14.447745,15.010985,0.160608,-0.002043,0.689746,9.5,1684.255453,0.437679,0.0,0.437679
+synthetic_calm_trend_c0_v0_3,C0,E3,calibrated replay fixture,signal-weighted,2,4,12.13123,1.540938,11.041622,13.220838,0.140064,-0.001728,0.668731,8.0,974.122537,0.435075,0.354569,0.212394

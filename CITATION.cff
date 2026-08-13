@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use TreLLM in research, please cite the arXiv technical report. If you use TradeArena leaderboard artifacts or a specific software release, also cite the repository release you used."
+title: "TreLLM: An LLM-Driven Trading Audit and Control System with TradeArena Leaderboard Artifacts"
+type: software
+authors:
+  - family-names: Xue
+    given-names: Weicheng
+    email: "weich97@vt.edu"
+repository-code: "https://github.com/weich97/TreLLM-public"
+url: "https://github.com/weich97/TreLLM-public"
+license: MIT
+version: "0.2.0"
+date-released: "2026-05-22"
+keywords:
+  - LLM agents
+  - trading agents
+  - risk management
+  - execution simulation
+  - benchmark
+preferred-citation:
+  type: article
+  title: "Representation Signatures and Risk-Feedback Alignment in LLM Trading Agents"
+  authors:
+    - family-names: Xue
+      given-names: Weicheng
+  year: 2026
+  date-released: "2026-05-16"
+  doi: "10.48550/arXiv.2605.28850"
+  url: "https://arxiv.org/abs/2605.28850"
+  journal: "arXiv preprint arXiv:2605.28850"

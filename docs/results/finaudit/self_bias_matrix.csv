@@ -1,0 +1,5 @@
+auditor,prod_deepseek_v4_pro,prod_glm_5_direct,prod_gemini_3_1_pro,prod_claude_opus_4_7,self,cross,gap
+deepseek:deepseek-v4-pro,0.675,0.683,0.675,0.758,0.675,0.706,+0.031
+glm:glm-5,0.575,0.567,0.517,0.650,0.567,0.581,+0.014
+poe:gemini-3.1-pro,0.975,0.983,0.975,0.983,0.975,0.981,+0.006
+poe:claude-opus-4.7,0.950,0.992,0.975,0.958,0.958,0.972,+0.014

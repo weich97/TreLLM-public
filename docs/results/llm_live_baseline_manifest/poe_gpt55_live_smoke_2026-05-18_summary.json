@@ -1,0 +1,65 @@
+{
+  "schema": "tradearena_llm_cache_manifest_v1",
+  "cache_name": "poe_gpt55_live_smoke_2026-05-18.jsonl",
+  "cache_path_hint": "data/llm_cache/poe_gpt55_live_smoke_2026-05-18.jsonl",
+  "rows": 3,
+  "provider_model_counts": {
+    "poe:gpt-5.5": 3
+  },
+  "prompt_mode_counts": {
+    "initial_or_no_recent_feedback": 1,
+    "visible_risk_feedback": 2
+  },
+  "timestamp_masked_rows": 0,
+  "parsed_response_rate": 1.0,
+  "average_signals_per_parsed_response": 2.0,
+  "sample_rows": [
+    {
+      "provider_model": "poe:gpt-5.5",
+      "timestamp": "2024-01-01T00:00:00",
+      "symbols": 2,
+      "prompt_hash_prefix": "0bbbcbde9fb4",
+      "cache_key_prefix": "poe:gpt-5.5:0bbbcbde9fb4",
+      "prompt_mode": "initial_or_no_recent_feedback",
+      "parsed_signals": 2
+    },
+    {
+      "provider_model": "poe:gpt-5.5",
+      "timestamp": "2024-01-02T00:00:00",
+      "symbols": 2,
+      "prompt_hash_prefix": "2a454d4cce04",
+      "cache_key_prefix": "poe:gpt-5.5:2a454d4cce04",
+      "prompt_mode": "visible_risk_feedback",
+      "parsed_signals": 2
+    },
+    {
+      "provider_model": "poe:gpt-5.5",
+      "timestamp": "2024-01-03T00:00:00",
+      "symbols": 2,
+      "prompt_hash_prefix": "45ac9e1b8906",
+      "cache_key_prefix": "poe:gpt-5.5:45ac9e1b8906",
+      "prompt_mode": "visible_risk_feedback",
+      "parsed_signals": 2
+    }
+  ],
+  "redaction": {
+    "raw_prompts_included": false,
+    "raw_responses_included": false,
+    "api_keys_included": false,
+    "retained_fields": [
+      "provider_model_counts",
+      "prompt_mode_counts",
+      "timestamp_masked_rows",
+      "parsed_response_rate",
+      "average_signals_per_parsed_response",
+      "prompt_hash_prefix",
+      "cache_key_prefix",
+      "parsed_signal_count"
+    ]
+  },
+  "notes": [
+    "This manifest is derived from a local prompt/response cache but does not include raw prompts or raw model outputs.",
+    "Raw JSONL caches are intentionally ignored by Git; keep them local or distribute them through an explicit external artifact if licensing permits.",
+    "Hash prefixes are included only as lightweight replay fingerprints."
+  ]
+}

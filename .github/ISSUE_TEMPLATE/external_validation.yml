@@ -1,0 +1,69 @@
+name: External validation report
+description: Report an independent reproduction, benchmark row, or calibration validation
+title: "[Validation] "
+labels: ["validation", "reproducibility"]
+body:
+  - type: dropdown
+    id: validation_type
+    attributes:
+      label: Validation type
+      options:
+        - v0.2 reproduction pack on macOS
+        - v0.2 reproduction pack on Ubuntu
+        - Deterministic baseline row
+        - Quote/fill calibration mini-report
+        - Benchmark claim-boundary review
+        - Deterministic smoke-test reproduction
+        - Redacted LLM benchmark row
+        - Historical-market replay
+        - Execution fill calibration
+        - Reproducibility critique
+    validations:
+      required: true
+  - type: input
+    id: commit
+    attributes:
+      label: Commit or release tag
+      placeholder: "git rev-parse HEAD"
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Operating system, Python version, install command, and optional provider/data dependencies.
+      placeholder: |
+        OS:
+        Python:
+        Install command:
+        Live APIs used:
+        Private or licensed data used:
+    validations:
+      required: true
+  - type: textarea
+    id: commands
+    attributes:
+      label: Commands run
+      description: Paste the exact commands needed to reproduce the result.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: Artifacts and metrics
+      description: Output paths, metric summary, hashes, or redacted manifest links. For execution calibration, include quote/fill source, venue, date range, sample size, residuals, and evidence label. Do not paste secrets or raw provider responses.
+    validations:
+      required: true
+  - type: textarea
+    id: deviations
+    attributes:
+      label: Deviations or failures
+      description: Note any divergence from the documented protocol.
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety confirmation
+      options:
+        - label: I did not include API keys, broker credentials, private holdings, or raw LLM provider responses.
+          required: true

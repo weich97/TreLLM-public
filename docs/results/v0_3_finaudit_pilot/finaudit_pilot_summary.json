@@ -1,0 +1,52 @@
+{
+  "answer_key_public": false,
+  "answer_key_sha256": "sha256:c6aa8cfc09c4f1442bf33e431a1351f40211e901242da69b2d62fffd9d060361",
+  "artifacts": [
+    "finaudit_pilot_task_manifest.csv",
+    "finaudit_pilot_scores.csv",
+    "finaudit_pilot_difficulty_breakdown.csv",
+    "finaudit_pilot_summary.json",
+    "finaudit_pilot_summary.md"
+  ],
+  "base_seed": 310,
+  "claim_boundary": "FinAudit pilot protocol fixture for injected-defect scoring and self/cross audit plumbing; fixture auditor scores are not model-performance evidence.",
+  "conditions": [
+    "cross-audit",
+    "self-audit"
+  ],
+  "contamination_tier": "C0",
+  "cross_audit_f1": 0.857143,
+  "defect_families": [
+    "unclipped_position",
+    "silent_risk_edit",
+    "provenance_drift",
+    "tampered_fill_price"
+  ],
+  "difficulty_breakdown_rows": 8,
+  "difficulty_levels": [
+    "L1",
+    "L2",
+    "L3"
+  ],
+  "periods": 24,
+  "protocol_id": "trellm-v0.3-protocol",
+  "required_metrics": [
+    "precision",
+    "recall",
+    "f1",
+    "wilson_interval",
+    "difficulty_breakdown"
+  ],
+  "scenario_id": "synthetic_finaudit_c0_v0_3",
+  "schema": "trellm_v0_3_finaudit_pilot_v0.1",
+  "score_row_count": 16,
+  "self_audit_bias_recall_delta": 0.25,
+  "self_audit_f1": 0.666667,
+  "strategy": "signal-weighted",
+  "symbols": [
+    "SYN",
+    "ALT"
+  ],
+  "task_count": 8,
+  "task_manifest_sha256": "sha256:c9ffc2b306c78d72116682eaf05d0004e5789dce6c720f9bd5492284e39a3259"
+}

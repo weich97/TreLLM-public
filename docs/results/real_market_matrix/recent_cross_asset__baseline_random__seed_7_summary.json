@@ -1,0 +1,52 @@
+{
+  "end": "2026-05-14",
+  "evidence": {
+    "claim_scope": "deterministic baseline under stress-only execution",
+    "tag_definitions": {
+      "deterministic-baseline": "Policy is deterministic or seeded local code, not an LLM provider.",
+      "stress-only": "Execution uses shared stress assumptions, not venue-calibrated transaction-cost prediction."
+    },
+    "tags": [
+      "stress-only",
+      "deterministic-baseline"
+    ]
+  },
+  "frequency": "weekly",
+  "max_periods": 12,
+  "metrics": {
+    "alpha_pre_risk_hit_rate": 0.5,
+    "alpha_pre_risk_sharpe": 5.739600809743966,
+    "alpha_pre_risk_steps": 8,
+    "alpha_pre_risk_total_return": 0.05880211652154532,
+    "alpha_quality_score": 0.8073047621734769,
+    "execution_fill_rate": 0.6857142857142857,
+    "execution_robustness_score": 0.5691455158531716,
+    "max_drawdown": -0.04494148910462359,
+    "rejected_order_count": 8,
+    "risk_clipped_decisions": 0,
+    "risk_discipline_score": 0.0,
+    "risk_violation_count": 18,
+    "sharpe": 4.292073187988316,
+    "total_return": 0.06919076526954648,
+    "trajectory_reproducibility_coverage": 1.0
+  },
+  "model": "random",
+  "parse_coverage": 1.0,
+  "provider": "baseline",
+  "redaction": {
+    "raw_prompts_included": false,
+    "raw_responses_included": false,
+    "timestamps_masked": true
+  },
+  "scenario_id": "leaderboard_real_yahoo_recent_gspc_btc_btcf_weekly_v0_1",
+  "scenario_label": "Yahoo recent GSPC/BTC/BTC futures",
+  "schema_version": "0.1",
+  "seed": 7,
+  "start": "2025-05-01",
+  "symbols": [
+    "GSPC",
+    "BTC-USD",
+    "BTC=F"
+  ],
+  "window_offset": 0
+}

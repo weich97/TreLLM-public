@@ -1,0 +1,2 @@
+scenario,level_a,level_b,agent_count,rank_metric,kendall_tau,top_3_jaccard
+high_vol,E0_ideal,E1_default_stress,12,sharpe_mean,0.696969696969697,1.0

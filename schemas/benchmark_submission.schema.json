@@ -1,0 +1,265 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/weich97/TreLLM-public/schemas/benchmark_submission.schema.json",
+  "title": "TradeArena Benchmark Submission",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "scenario_id",
+    "agent",
+    "data_source",
+    "execution_config",
+    "risk_config",
+    "metrics",
+    "trajectory_manifest",
+    "reproducibility_hash",
+    "redaction"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1"
+    },
+    "scenario_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Stable benchmark scenario identifier, e.g. crisis_svb_2023 or intraday_51_us_hourly."
+    },
+    "agent": {
+      "type": "object",
+      "required": ["agent_type", "model_family", "model_identifier_redacted"],
+      "additionalProperties": false,
+      "properties": {
+        "provider": {
+          "type": "string",
+          "description": "Provider or local policy source, e.g. deterministic, poe, deepseek, local_rl."
+        },
+        "agent_type": {
+          "type": "string",
+          "examples": ["deterministic", "markowitz", "llm_policy", "multi_agent"]
+        },
+        "model_family": {
+          "type": "string",
+          "description": "Human-readable family name or baseline family."
+        },
+        "model_display_name": {
+          "type": "string",
+          "description": "Public-safe display name when exact provider model identifiers must be redacted."
+        },
+        "model_identifier_redacted": {
+          "type": "boolean",
+          "description": "True when provider-sensitive exact model IDs are hidden from the public submission."
+        },
+        "prompt_mode": {
+          "type": "string",
+          "examples": ["rationale", "weights_only", "multi_agent_debate", "none"]
+        },
+        "risk_feedback_mode": {
+          "type": "string",
+          "examples": ["true", "hidden", "placebo", "contrarian", "none"]
+        },
+        "parse_coverage": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Fraction of model responses that parsed into valid benchmark actions."
+        },
+        "response_format": {
+          "type": "string",
+          "examples": ["json_object", "jsonl", "structured_policy", "not_applicable"]
+        },
+        "prompt_version": {
+          "type": "string"
+        },
+        "agent_commit": {
+          "type": "string"
+        }
+      }
+    },
+    "data_source": {
+      "type": "object",
+      "required": ["name", "frequency", "symbols", "timestamp_policy"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "frequency": { "type": "string" },
+        "symbols": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "timestamp_policy": {
+          "type": "string",
+          "description": "Whether calendar timestamps are exact, relative, masked, or embargoed."
+        },
+        "data_hash": { "type": "string" }
+      }
+    },
+    "execution_config": {
+      "type": "object",
+      "required": ["commission_bps", "base_slippage_bps", "latency_steps", "participation_rate"],
+      "additionalProperties": true,
+      "properties": {
+        "commission_bps": { "type": "number" },
+        "base_slippage_bps": { "type": "number" },
+        "spread_bps": {
+          "type": "number",
+          "description": "Full quoted bid-ask spread in basis points; market orders cross half the spread."
+        },
+        "latency_steps": { "type": "number" },
+        "participation_rate": { "type": "number" }
+      }
+    },
+    "risk_config": {
+      "type": "object",
+      "required": ["risk_manager", "risk_budget"],
+      "additionalProperties": true,
+      "properties": {
+        "risk_manager": { "type": "string" },
+        "risk_budget": { "type": "object" }
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "required": [
+        "total_return",
+        "max_drawdown",
+        "execution_fill_rate",
+        "rejected_order_count",
+        "risk_clipped_decisions",
+        "risk_violation_count",
+        "trajectory_reproducibility_coverage"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "total_return": { "type": "number" },
+        "max_drawdown": { "type": "number" },
+        "sharpe": { "type": "number" },
+        "execution_fill_rate": { "type": "number", "minimum": 0, "maximum": 1 },
+        "rejected_order_count": { "type": "integer", "minimum": 0 },
+        "risk_clipped_decisions": { "type": "integer", "minimum": 0 },
+        "risk_violation_count": { "type": "integer", "minimum": 0 },
+        "alpha_pre_risk_total_return": {
+          "type": "number",
+          "description": "Paper return of proposed target weights before risk edits and execution costs."
+        },
+        "alpha_quality_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Bounded diagnostic score for pre-risk, pre-cost intended alpha."
+        },
+        "risk_discipline_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Bounded diagnostic score penalizing blocked, clipped, and violating decisions."
+        },
+        "execution_robustness_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Bounded diagnostic score for fills, rejection, latency, partial fills, and costs."
+        },
+        "trajectory_reproducibility_coverage": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "trajectory_manifest": {
+      "type": "object",
+      "required": ["format", "path_or_uri", "raw_prompts_included", "raw_responses_included"],
+      "additionalProperties": false,
+      "properties": {
+        "format": { "type": "string", "examples": ["json", "jsonl", "redacted_manifest"] },
+        "path_or_uri": { "type": "string" },
+        "raw_prompts_included": { "type": "boolean" },
+        "raw_responses_included": { "type": "boolean" },
+        "manifest_hash": { "type": "string" },
+        "artifact_hashes": {
+          "type": "object",
+          "additionalProperties": { "type": "string" },
+          "description": "Hashes for public tables, charts, manifests, or redacted trajectories."
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["tags", "claim_scope"],
+      "additionalProperties": false,
+      "properties": {
+        "tags": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "stress-only",
+              "direct-api",
+              "protocol-fixture",
+              "cached-provider",
+              "live-provider",
+              "deterministic-baseline",
+              "external-submitted",
+              "quote-calibrated",
+              "fill-replay-validated",
+              "redacted-prompt",
+              "fully-auditable"
+            ]
+          },
+          "description": "Evidence-level tags that bound how strongly this row can be interpreted."
+        },
+        "claim_scope": {
+          "type": "string",
+          "description": "Plain-language interpretation boundary for this result row."
+        },
+        "claim_class": {
+          "type": "string",
+          "enum": ["engineering", "benchmark", "scientific"],
+          "description": "Conservative claim class implied by the evidence tags."
+        },
+        "evidence_tier": {
+          "type": "string",
+          "enum": [
+            "manifest-only",
+            "artifact-audit",
+            "stress-benchmark",
+            "quote-calibrated",
+            "fill-replay-validated"
+          ],
+          "description": "Evidence tier implied by the strongest public artifact attached to the row."
+        },
+        "tag_definitions": {
+          "type": "object",
+          "additionalProperties": { "type": "string" },
+          "description": "Optional public definitions for each evidence tag attached to the row."
+        },
+        "boundary_notes": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Optional notes that explain what the evidence tags do and do not support."
+        }
+      }
+    },
+    "evaluation_protocol": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Optional protocol metadata such as rolling-window offsets, cache policy, provider call policy, and statistical tests."
+    },
+    "reproducibility_hash": {
+      "type": "string",
+      "description": "Hash over scenario, data, risk, execution, model/prompt metadata, and trajectory manifest."
+    },
+    "redaction": {
+      "type": "object",
+      "required": ["provider_secrets_removed", "timestamps_masked", "raw_provider_text_removed"],
+      "additionalProperties": false,
+      "properties": {
+        "provider_secrets_removed": { "type": "boolean" },
+        "timestamps_masked": { "type": "boolean" },
+        "raw_provider_text_removed": { "type": "boolean" },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

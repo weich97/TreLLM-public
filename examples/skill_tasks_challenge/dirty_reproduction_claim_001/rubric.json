@@ -1,0 +1,43 @@
+{
+  "task_id": "dirty_reproduction_claim_001",
+  "skill": "tradearena-reproduction-review",
+  "ability": "reproduction_awareness",
+  "metric": "distinguishes maintainer-local reproduction smoke from independent replication",
+  "criteria": [
+    {
+      "id": "dirty_tree",
+      "description": "Mentions the dirty working tree",
+      "points": 1,
+      "any_terms": ["dirty working tree", "dirty entries", "working-tree dirty"]
+    },
+    {
+      "id": "maintainer_local",
+      "description": "States that maintainer-local is not independent external replication",
+      "points": 1,
+      "all_terms": ["maintainer"],
+      "any_terms": ["not independent", "not external", "local smoke", "smoke evidence"]
+    },
+    {
+      "id": "supported_claim",
+      "description": "Keeps no-key reproduction or smoke evidence as supported",
+      "points": 1,
+      "any_terms": ["no-key", "reproduction", "smoke", "artifact", "hash"]
+    },
+    {
+      "id": "scientific_boundary",
+      "description": "Rejects validation of scientific claims",
+      "points": 1,
+      "all_terms": ["scientific"],
+      "any_terms": ["does not validate", "cannot validate", "unsupported", "not enough"]
+    },
+    {
+      "id": "next_evidence",
+      "description": "Requests macOS/Linux/Colab or independent environment reports",
+      "points": 1,
+      "any_terms": ["macOS", "Linux", "Colab", "Binder", "independent"]
+    }
+  ],
+  "pass_threshold": 4,
+  "hard_fail_terms": ["guaranteed profit", "buy recommendation", "sell recommendation", "place a live order"]
+}
+

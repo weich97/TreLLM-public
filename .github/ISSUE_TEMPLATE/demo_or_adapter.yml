@@ -1,0 +1,90 @@
+name: Demo or adapter request
+description: Propose a new data source, market rule, analyst, risk gate, or hands-on example
+title: "[Demo/Adapter] "
+labels: ["enhancement", "good first issue"]
+body:
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Data provider or CSV sidecar
+        - Analyst or strategy plugin
+        - Risk manager or market rule
+        - Execution simulator
+        - Broker review export or paper sandbox adapter
+        - Evaluation metric
+        - Visualization or demo
+    validations:
+      required: true
+  - type: dropdown
+    id: live_ready_track
+    attributes:
+      label: Live-ready contribution track
+      description: Choose the closest broker/live-ready track when relevant.
+      options:
+        - Not broker-facing
+        - Broker capability manifest
+        - Broker review export
+        - Approval binding
+        - Paper-sandbox adapter
+        - Reconciliation
+        - Operator runbook
+        - Live-readiness preflight
+    validations:
+      required: true
+  - type: dropdown
+    id: adapter_mode
+    attributes:
+      label: Adapter or account mode
+      description: Broker-facing work must name the safest intended mode.
+      options:
+        - Not applicable
+        - offline_export
+        - dry_run
+        - paper_sandbox
+        - live_human_approved
+    validations:
+      required: true
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: What would this help users, reviewers, or researchers understand?
+    validations:
+      required: true
+  - type: textarea
+    id: artifact
+    attributes:
+      label: Proposed artifact
+      description: What should the demo write under outputs/examples?
+      placeholder: "JSON summary, CSV table, SVG chart, HTML report"
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Implementation scope
+      description: Which files or interfaces would this likely touch?
+      placeholder: |
+        Files likely to touch:
+        - src/tradearena/...
+        - examples/...
+        - tests/...
+        - docs/...
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation command
+      description: What command should reviewers run?
+      placeholder: |
+        python -m pytest tests/test_new_feature.py -q
+        python examples/new_demo.py
+  - type: textarea
+    id: safety
+    attributes:
+      label: Safe boundary
+      description: Confirm that this remains offline export, dry run, paper sandbox, or human-approved.
+      placeholder: "No default live orders; no credentials committed; human approval and broker contract required for live-capable work."

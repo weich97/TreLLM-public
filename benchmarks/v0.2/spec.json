@@ -1,0 +1,169 @@
+{
+  "schema_version": "tradearena_benchmark_spec_v0.2",
+  "spec_id": "tradearena-v0.2",
+  "status": "frozen",
+  "claim_boundary": "agent reliability, risk-aware decision quality, and intent-to-execution auditability; not live profitability or broker-grade transaction-cost prediction",
+  "claim_classes": {
+    "engineering": "the framework records replayable trajectories, risk reports, execution reports, manifests, and hashes",
+    "benchmark": "under a frozen protocol, risk gates and paper-execution friction can change measured agent outcomes",
+    "scientific": "model-specific trading-skill claims require provider-stable live calls, non-redacted or auditable prompts, repeated seeds or rolling windows, and wins over fixed non-LLM baselines"
+  },
+  "data_windows": {
+    "synthetic": {
+      "scenarios": [
+        "calm_trend",
+        "high_vol",
+        "jump_tail",
+        "liquidity_collapse",
+        "spread_explosion",
+        "latency_spike"
+      ],
+      "symbols": ["SYN", "ALT"],
+      "periods": 8,
+      "seed_policy": "scenario_seed = benchmark_seed + scenario.seed_offset"
+    },
+    "real_market": [
+      {
+        "key": "recent_cross_asset",
+        "source": "Yahoo Finance CSV snapshot",
+        "data_dir": "data/real/yahoo_daily_leaderboard_2021_2026",
+        "symbols": ["GSPC", "BTC-USD", "BTC=F"],
+        "start": "2025-05-01",
+        "end": "2026-05-14",
+        "frequency": "weekly",
+        "max_periods": 12,
+        "window_offset_policy": "seed index maps to rolling historical slice offset"
+      },
+      {
+        "key": "rates_drawdown",
+        "source": "Yahoo Finance CSV snapshot",
+        "data_dir": "data/real/yahoo_daily_leaderboard_2021_2026",
+        "symbols": ["GSPC", "BTC-USD", "BTC=F"],
+        "start": "2022-01-01",
+        "end": "2022-12-31",
+        "frequency": "weekly",
+        "max_periods": 12,
+        "window_offset_policy": "seed index maps to rolling historical slice offset"
+      }
+    ]
+  },
+  "market_rules": {
+    "currency": "USD",
+    "initial_cash": 100000.0,
+    "long_only": true,
+    "max_gross_exposure": 1.0,
+    "max_position_weight": 0.35,
+    "max_single_step_turnover": 0.75,
+    "max_drawdown": 0.2,
+    "drawdown_lookback": 5,
+    "drawdown_de_risk_weight": 0.0,
+    "shorting": "disallowed in v0.2 public leaderboard",
+    "leverage": "disallowed above max_gross_exposure",
+    "rule_packages": [
+      "us_equity_regular_hours",
+      "ashare_t_plus_one_price_limit_board_lot",
+      "hong_kong_board_lot_stamp_duty",
+      "crypto_fee_tier_funding",
+      "futures_margin_roll",
+      "suspension_circuit_liquidity_halt"
+    ]
+  },
+  "execution": {
+    "default_mode": "realistic-stress",
+    "commission_bps": 1.0,
+    "base_slippage_bps": 2.0,
+    "spread_bps": 0.0,
+    "participation_rate": 0.05,
+    "latency_steps": 1,
+    "market_impact": 0.15,
+    "transaction_cost_claim_policy": "default stress results must not be described as calibrated transaction-cost predictions; calibrated claims require quote/fill provenance"
+  },
+  "allowed_information": {
+    "lookahead": "forbidden",
+    "market_timestamp_policy": "relative_masked for public LLM manifests",
+    "raw_provider_text": "not published in redacted leaderboard submissions",
+    "news_or_macro": "allowed only when the source, timestamp, and retrieval policy are recorded",
+    "private_account_data": "forbidden in public submissions"
+  },
+  "model_audit": {
+    "provider_required": true,
+    "model_display_name_required": true,
+    "prompt_version_required": true,
+    "risk_feedback_mode_required": true,
+    "parse_coverage_required": true,
+    "cache_policy_required": true,
+    "raw_prompt_publication": "forbidden unless explicitly redacted and approved"
+  },
+  "seeds": [7, 11, 17, 23, 31],
+  "baselines": [
+    "always-hold",
+    "random",
+    "buy_and_hold",
+    "equal_weight",
+    "naive_momentum",
+    "mean_reversion",
+    "risk_parity",
+    "min_var",
+    "markowitz_mvo"
+  ],
+  "metrics": {
+    "primary": [
+      "total_return",
+      "max_drawdown",
+      "sharpe",
+      "execution_fill_rate",
+      "rejected_order_count",
+      "risk_clipped_decisions",
+      "trajectory_reproducibility_coverage"
+    ],
+    "decomposition": [
+      "alpha_quality_score",
+      "risk_discipline_score",
+      "execution_robustness_score",
+      "alpha_pre_risk_total_return",
+      "alpha_pre_risk_sharpe"
+    ],
+    "audit": [
+      "parse_coverage",
+      "reproducibility_hash",
+      "manifest_hash",
+      "data_hash"
+    ]
+  },
+  "statistics": {
+    "confidence_level": 0.95,
+    "interval": "bootstrap_ci",
+    "paired_tests": [
+      "paired_bootstrap",
+      "paired_sign_flip_permutation"
+    ],
+    "comparison_keys": ["scenario_key", "seed"],
+    "reporting": "raw seed rows plus aggregate mean, sample standard deviation, CI, paired deltas, and p-values"
+  },
+  "failure_policy": {
+    "provider_call_failure": "record failure row with provider, model, scenario, seed, and error class; exclude from numeric aggregate unless a deterministic fallback was declared before the run",
+    "parse_failure": "count parse_coverage below 1.0 and use the documented parser fallback; do not silently drop the row",
+    "risk_block": "count as a valid decision with zero approved target for the blocked order",
+    "execution_rejection": "count as a valid attempted order, increment rejected_order_count, and keep the portfolio state unchanged for the rejected quantity",
+    "missing_data": "row is invalid unless the scenario declares a data-gap rule before evaluation",
+    "autopsy_taxonomy": [
+      "overtrading",
+      "pre_risk_leverage",
+      "low_confidence_bet",
+      "slippage_insensitive",
+      "liquidity_insensitive",
+      "memory_pollution",
+      "rationale_decision_mismatch",
+      "position_limit_noncompliance"
+    ]
+  },
+  "required_artifacts": [
+    "raw seed CSV",
+    "aggregate CSV",
+    "significance CSV",
+    "redacted benchmark submission",
+    "trajectory or redacted trajectory manifest",
+    "hash report",
+    "walk-forward provenance table for real-market runs"
+  ]
+}

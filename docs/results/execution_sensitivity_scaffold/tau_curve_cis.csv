@@ -1,0 +1,14 @@
+board,scenario,level_a,level_b,agents,seeds,kendall_tau_b,ci_low,ci_high
+direct_h12,high_vol,E0_ideal,E1_default_stress,9,10,0.444,0.167,0.611
+direct_h30,high_vol,E0_ideal,E1_default_stress,9,10,0.833,0.389,0.944
+direct_h60,high_vol,E0_ideal,E1_default_stress,9,10,0.389,0.056,0.889
+direct_h120,high_vol,E0_ideal,E1_default_stress,9,10,0.889,0.611,0.944
+routed_h30,high_vol,E0_ideal,E1_default_stress,9,10,0.944,0.5,0.944
+routed_h60,high_vol,E0_ideal,E1_default_stress,9,10,0.556,0.167,0.889
+routed_h120,high_vol,E0_ideal,E1_default_stress,9,10,0.833,0.556,0.944
+universe_N3,high_vol,E0_ideal,E1_default_stress,12,10,0.636,0.333,0.848
+universe_N5,high_vol,E0_ideal,E1_default_stress,12,10,0.697,0.424,0.848
+classical_h12,high_vol,E0_ideal,E1_default_stress,7,10,0.81,0.429,0.905
+classical_h30,high_vol,E0_ideal,E1_default_stress,7,10,0.905,0.429,1.0
+classical_h60,high_vol,E0_ideal,E1_default_stress,7,10,0.714,0.238,1.0
+classical_h120,high_vol,E0_ideal,E1_default_stress,7,10,0.905,0.619,1.0

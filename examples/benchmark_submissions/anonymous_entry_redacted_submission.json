@@ -1,0 +1,95 @@
+{
+  "schema_version": "0.1",
+  "scenario_id": "anonymous_entry_synthetic_stress_v0_1",
+  "agent": {
+    "provider": "anonymous",
+    "agent_type": "llm_policy",
+    "model_family": "anonymous-redacted-policy",
+    "model_display_name": "entry-id:ta-anonymous-demo",
+    "model_identifier_redacted": true,
+    "prompt_mode": "weights_only",
+    "risk_feedback_mode": "true",
+    "parse_coverage": 0.942,
+    "response_format": "json_object",
+    "prompt_version": "redacted-risk-feedback-v1",
+    "agent_commit": "redacted-entry-local"
+  },
+  "data_source": {
+    "name": "synthetic-market",
+    "frequency": "daily",
+    "symbols": [
+      "SYN",
+      "ALT",
+      "DEF"
+    ],
+    "timestamp_policy": "relative_masked",
+    "data_hash": "sha256:anonymous-synthetic-panel-v0-1"
+  },
+  "execution_config": {
+    "commission_bps": 1.0,
+    "base_slippage_bps": 5.0,
+    "spread_bps": 12.0,
+    "latency_steps": 2,
+    "participation_rate": 0.01,
+    "market_impact": 0.25
+  },
+  "risk_config": {
+    "risk_manager": "max-position",
+    "risk_budget": {
+      "max_position_weight": 0.2,
+      "max_gross_exposure": 0.8,
+      "max_single_step_turnover": 0.5,
+      "risk_feedback_mode": "true"
+    }
+  },
+  "metrics": {
+    "total_return": 0.0184,
+    "max_drawdown": -0.0261,
+    "sharpe": 0.67,
+    "execution_fill_rate": 0.8125,
+    "rejected_order_count": 9,
+    "risk_clipped_decisions": 31,
+    "risk_violation_count": 0,
+    "trajectory_reproducibility_coverage": 1.0,
+    "alpha_quality_score": 0.58,
+    "risk_discipline_score": 0.91,
+    "execution_robustness_score": 0.74
+  },
+  "evidence": {
+    "tags": [
+      "stress-only",
+      "external-submitted",
+      "redacted-prompt"
+    ],
+    "claim_scope": "anonymous external submission under stress-only execution",
+    "claim_class": "benchmark",
+    "evidence_tier": "stress-benchmark",
+    "tag_definitions": {
+      "stress-only": "Execution uses shared stress assumptions, not venue-calibrated transaction-cost prediction.",
+      "external-submitted": "Row is shaped like a participant submission rather than a maintainer-generated model matrix row.",
+      "redacted-prompt": "Provider prompt and completion text are not public; only public-safe manifest fields are included."
+    },
+    "boundary_notes": [
+      "Use the entry ID and reproducibility hash when citing this row.",
+      "Do not infer provider identity, private holdings, or calibrated transaction-cost validity from this manifest."
+    ]
+  },
+  "trajectory_manifest": {
+    "format": "redacted_manifest",
+    "path_or_uri": "examples/benchmark_submissions/anonymous_entry_redacted_submission.json",
+    "raw_prompts_included": false,
+    "raw_responses_included": false,
+    "manifest_hash": "sha256:anonymous-entry-redacted-manifest-v0-1",
+    "artifact_hashes": {
+      "metrics": "sha256:anonymous-entry-metrics-v0-1",
+      "trajectory_summary": "sha256:anonymous-entry-trajectory-summary-v0-1"
+    }
+  },
+  "reproducibility_hash": "sha256:109a118ee5d70ca663873c613da8caef7802ceb2f80a45df7b05f48e25ecced9",
+  "redaction": {
+    "provider_secrets_removed": true,
+    "timestamps_masked": true,
+    "raw_provider_text_removed": true,
+    "notes": "Anonymous entry example only; provider identity, prompts, completions, credentials, and private portfolio details are omitted."
+  }
+}

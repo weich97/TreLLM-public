@@ -1,0 +1,43 @@
+{
+  "task_id": "intent_execution_autopsy_001",
+  "skill": "tradearena-trajectory-audit",
+  "ability": "audit_accuracy",
+  "metric": "intent-to-risk-to-execution audit accuracy",
+  "criteria": [
+    {
+      "id": "artifact_replay",
+      "description": "Reports the trajectory artifact or replay/hash command",
+      "points": 1,
+      "any_terms": ["trajectory_excerpt.json", "hash-run", "trajectory hash", "replay"]
+    },
+    {
+      "id": "raw_approved_diff",
+      "description": "Compares raw intent with approved weights and names risk edits",
+      "points": 1,
+      "all_terms": ["raw", "approved"],
+      "any_terms": ["max_abs_weight", "gross exposure", "risk edit", "clipping"]
+    },
+    {
+      "id": "execution_outcomes",
+      "description": "Identifies partial fill, rejected order, and execution friction",
+      "points": 1,
+      "all_terms": ["partial", "rejected"],
+      "any_terms": ["slippage", "latency", "participation"]
+    },
+    {
+      "id": "rationale_mismatch",
+      "description": "Flags the rationale-decision mismatch or low-confidence concentration",
+      "points": 1,
+      "any_terms": ["rationale-decision mismatch", "rationale decision mismatch", "low confidence", "de-risk rationale"]
+    },
+    {
+      "id": "portfolio_claim_boundary",
+      "description": "States portfolio impact and supported claim boundary",
+      "points": 1,
+      "all_terms": ["portfolio", "claim boundary"],
+      "any_terms": ["benchmark claim", "engineering claim", "not scientific"]
+    }
+  ],
+  "pass_threshold": 4,
+  "hard_fail_terms": ["guaranteed profit", "buy recommendation", "sell recommendation", "place a live order"]
+}

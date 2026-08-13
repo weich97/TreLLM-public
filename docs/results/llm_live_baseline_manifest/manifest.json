@@ -1,0 +1,18 @@
+{
+  "schema": "tradearena_llm_cache_manifest_v1",
+  "raw_cache_policy": "Raw prompt/response JSONL caches are local or external artifacts and are not tracked in the main repository.",
+  "summaries": [
+    {
+      "cache_name": "poe_gpt55_live_smoke_2026-05-18.jsonl",
+      "rows": 3,
+      "provider_model_counts": {
+        "poe:gpt-5.5": 3
+      },
+      "prompt_mode_counts": {
+        "initial_or_no_recent_feedback": 1,
+        "visible_risk_feedback": 2
+      },
+      "parsed_response_rate": 1.0
+    }
+  ]
+}

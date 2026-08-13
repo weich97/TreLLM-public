@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="260" viewBox="0 0 920 260" role="img" aria-labelledby="title desc">
+  <title id="title">TreLLM README system banner v2</title>
+  <desc id="desc">A TreLLM README audit-system banner with an audit ring, candlesticks, a shield, trajectory nodes, and a TradeArena leaderboard module label.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071318"/>
+      <stop offset="0.58" stop-color="#102126"/>
+      <stop offset="1" stop-color="#1e2b2a"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#34d399"/>
+      <stop offset="0.46" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="shield" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d1fae5"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000000" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+
+  <rect width="920" height="260" rx="36" fill="url(#bg)"/>
+  <g opacity="0.12" stroke="#d1fae5" stroke-width="1">
+    <path d="M36 210 C174 130, 254 230, 410 150 S668 70, 884 150" fill="none"/>
+    <path d="M36 72 C176 150, 280 40, 430 102 S690 190, 884 84" fill="none"/>
+    <path d="M60 238 H860"/>
+    <path d="M60 42 H860"/>
+  </g>
+
+  <g transform="translate(62 40)" filter="url(#softShadow)">
+    <ellipse cx="90" cy="90" rx="82" ry="70" fill="#0b1f24" stroke="url(#ring)" stroke-width="7"/>
+    <ellipse cx="90" cy="90" rx="62" ry="50" fill="none" stroke="#d1fae5" stroke-width="2" opacity="0.3"/>
+    <path d="M30 112 C58 78, 83 132, 112 92 S143 74, 154 96" fill="none" stroke="#22d3ee" stroke-width="5" stroke-linecap="round"/>
+    <g stroke-linecap="round">
+      <path d="M55 62 V121" stroke="#94a3b8" stroke-width="4"/>
+      <rect x="47" y="78" width="16" height="30" rx="4" fill="#34d399"/>
+      <path d="M84 52 V128" stroke="#94a3b8" stroke-width="4"/>
+      <rect x="76" y="68" width="16" height="42" rx="4" fill="#f59e0b"/>
+      <path d="M119 54 V120" stroke="#94a3b8" stroke-width="4"/>
+      <rect x="111" y="82" width="16" height="22" rx="4" fill="#22d3ee"/>
+    </g>
+    <path d="M90 132 C108 123, 123 113, 123 94 V76 L90 64 L57 76 V94 C57 113, 72 123, 90 132Z" fill="url(#shield)" opacity="0.96"/>
+    <path d="M76 96 L86 106 L106 84" fill="none" stroke="#062128" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <g fill="#e0f2fe" stroke="#071318" stroke-width="3">
+      <circle cx="30" cy="112" r="7"/>
+      <circle cx="112" cy="92" r="7"/>
+      <circle cx="154" cy="96" r="7"/>
+    </g>
+  </g>
+
+  <g transform="translate(260 58)">
+    <text x="0" y="54" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="64" font-weight="800" fill="#f8fafc">TreLLM</text>
+    <text x="2" y="92" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="21" font-weight="600" fill="#a7f3d0">LLM Trading Audit and Control System</text>
+    <g transform="translate(2 112)" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">
+      <rect x="0" y="0" width="210" height="32" rx="16" fill="#102f38" stroke="#22d3ee" opacity="0.95"/>
+      <text x="18" y="21" fill="#e0f2fe">TradeArena leaderboard</text>
+      <rect x="226" y="0" width="198" height="32" rx="16" fill="#12352f" stroke="#34d399" opacity="0.95"/>
+      <text x="244" y="21" fill="#d1fae5">reproducible artifacts</text>
+    </g>
+    <g transform="translate(2 154)" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">
+      <rect x="0" y="0" width="104" height="32" rx="16" fill="#12352f" stroke="#34d399" opacity="0.95"/>
+      <text x="18" y="21" fill="#d1fae5">modular</text>
+      <rect x="120" y="0" width="168" height="32" rx="16" fill="#102f38" stroke="#22d3ee" opacity="0.95"/>
+      <text x="138" y="21" fill="#e0f2fe">execution-realistic</text>
+      <rect x="304" y="0" width="116" height="32" rx="16" fill="#3b2812" stroke="#f59e0b" opacity="0.95"/>
+      <text x="322" y="21" fill="#ffedd5">risk-aware</text>
+      <rect x="436" y="0" width="128" height="32" rx="16" fill="#182835" stroke="#93c5fd" opacity="0.95"/>
+      <text x="454" y="21" fill="#dbeafe">replayable</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,40 @@
+{
+  "task_id": "reproduction_hash_mismatch_001",
+  "skill": "tradearena-reproduction-review",
+  "ability": "reproduction_awareness",
+  "metric": "hash mismatch triage and evidence completeness",
+  "criteria": [
+    {
+      "id": "hash_mismatch",
+      "description": "Reports expected versus observed trajectory hash mismatch",
+      "points": 1,
+      "any_terms": ["hash mismatch", "expected", "observed", "trajectory hash"]
+    },
+    {
+      "id": "environment_fields",
+      "description": "Reports commit/tag, Python version, platform, or command",
+      "points": 1,
+      "any_terms": ["commit", "tag", "python", "platform", "command"]
+    },
+    {
+      "id": "artifact_paths",
+      "description": "Mentions artifact paths or SHA-256 hashes",
+      "points": 1,
+      "any_terms": ["artifact", "sha256", "trajectory.json", "dashboard.html"]
+    },
+    {
+      "id": "data_flags",
+      "description": "Checks live API, downloaded market data, or private fills flags",
+      "points": 1,
+      "any_terms": ["live api", "downloaded market data", "private fills", "data-source"]
+    },
+    {
+      "id": "next_action",
+      "description": "Rejects or holds the row until rerun or triage explains the mismatch",
+      "points": 1,
+      "any_terms": ["hold", "reject", "rerun", "triage", "cannot accept"]
+    }
+  ],
+  "pass_threshold": 4,
+  "hard_fail_terms": ["guaranteed profit", "buy recommendation", "sell recommendation", "place a live order"]
+}

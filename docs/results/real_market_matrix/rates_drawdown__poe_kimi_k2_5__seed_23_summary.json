@@ -1,0 +1,54 @@
+{
+  "end": "2022-12-31",
+  "evidence": {
+    "claim_scope": "cached-provider reliability under stress-only execution",
+    "tag_definitions": {
+      "cached-provider": "Provider-backed behavior is replayed or published through cache/redacted manifest evidence.",
+      "redacted-prompt": "Raw provider prompt/response text is not public; a redacted manifest is provided.",
+      "stress-only": "Execution uses shared stress assumptions, not venue-calibrated transaction-cost prediction."
+    },
+    "tags": [
+      "stress-only",
+      "cached-provider",
+      "redacted-prompt"
+    ]
+  },
+  "frequency": "weekly",
+  "max_periods": 12,
+  "metrics": {
+    "alpha_pre_risk_hit_rate": 0.625,
+    "alpha_pre_risk_sharpe": 1.6276944232613229,
+    "alpha_pre_risk_steps": 8,
+    "alpha_pre_risk_total_return": 0.028049809227193467,
+    "alpha_quality_score": 0.6247275787847625,
+    "execution_fill_rate": 0.6428571428571429,
+    "execution_robustness_score": 0.630421900947562,
+    "max_drawdown": -0.10082585424208401,
+    "rejected_order_count": 7,
+    "risk_clipped_decisions": 30,
+    "risk_discipline_score": 0.4444444444444444,
+    "risk_violation_count": 5,
+    "sharpe": -2.77875787084019,
+    "total_return": -0.06737451501381486,
+    "trajectory_reproducibility_coverage": 1.0
+  },
+  "model": "kimi-k2.5",
+  "parse_coverage": 1.0,
+  "provider": "poe",
+  "redaction": {
+    "raw_prompts_included": false,
+    "raw_responses_included": false,
+    "timestamps_masked": true
+  },
+  "scenario_id": "leaderboard_real_yahoo_2022_gspc_btc_btcf_weekly_v0_1",
+  "scenario_label": "Yahoo 2022 rates drawdown",
+  "schema_version": "0.1",
+  "seed": 23,
+  "start": "2022-01-01",
+  "symbols": [
+    "GSPC",
+    "BTC-USD",
+    "BTC=F"
+  ],
+  "window_offset": 3
+}

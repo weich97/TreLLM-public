@@ -1,0 +1,12 @@
+{
+  "source": "Yahoo Finance chart API",
+  "start": "2021-05-01",
+  "end": "2026-05-14",
+  "frequency": "1d",
+  "downloaded_at_utc": "2026-05-19T15:15:21.787843+00:00",
+  "tickers": [
+    "^GSPC",
+    "BTC-USD",
+    "BTC=F"
+  ]
+}

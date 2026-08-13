@@ -1,0 +1,93 @@
+{
+  "schema": "tradearena_execution_calibration_stability_v0.1",
+  "quote_file": "data/public/binance_btcusdt_perp_2024_03_01_sample/quotes.csv",
+  "fill_file": "data/public/binance_btcusdt_perp_2024_03_01_sample/fills.csv",
+  "window_size": 100,
+  "windows": [
+    {
+      "window": 1,
+      "start_timestamp": "2024-03-01T00:00:00.019000Z",
+      "end_timestamp": "2024-03-01T00:01:37.984000Z",
+      "fills": 100,
+      "aligned_rows": 100,
+      "median_spread_bps": 0.016327,
+      "p90_spread_bps": 0.01634,
+      "market_impact": 0.0,
+      "participation_rate_p90": 0.00088348,
+      "median_shortfall_bps": 0.224568,
+      "calibrated_residual_mae_bps": 1.155006,
+      "stress_residual_mae_bps": 3.023066,
+      "mae_reduction_vs_stress_bps": 1.86806
+    },
+    {
+      "window": 2,
+      "start_timestamp": "2024-03-01T00:01:40.018000Z",
+      "end_timestamp": "2024-03-01T00:04:34.696000Z",
+      "fills": 100,
+      "aligned_rows": 100,
+      "median_spread_bps": 0.01633,
+      "p90_spread_bps": 0.016337,
+      "market_impact": 0.008599,
+      "participation_rate_p90": 0.00066177,
+      "median_shortfall_bps": 0.008168,
+      "calibrated_residual_mae_bps": 0.961625,
+      "stress_residual_mae_bps": 3.342327,
+      "mae_reduction_vs_stress_bps": 2.380702
+    },
+    {
+      "window": 3,
+      "start_timestamp": "2024-03-01T00:04:38.131000Z",
+      "end_timestamp": "2024-03-01T00:07:22.142000Z",
+      "fills": 100,
+      "aligned_rows": 100,
+      "median_spread_bps": 0.016312,
+      "p90_spread_bps": 0.016337,
+      "market_impact": 0.0,
+      "participation_rate_p90": 0.00053073,
+      "median_shortfall_bps": 0.024479,
+      "calibrated_residual_mae_bps": 0.887058,
+      "stress_residual_mae_bps": 3.331391,
+      "mae_reduction_vs_stress_bps": 2.444333
+    },
+    {
+      "window": 4,
+      "start_timestamp": "2024-03-01T00:07:23.873000Z",
+      "end_timestamp": "2024-03-01T00:11:07.235000Z",
+      "fills": 100,
+      "aligned_rows": 100,
+      "median_spread_bps": 0.01629,
+      "p90_spread_bps": 0.016295,
+      "market_impact": 0.017182,
+      "participation_rate_p90": 0.00182691,
+      "median_shortfall_bps": 0.008148,
+      "calibrated_residual_mae_bps": 0.799949,
+      "stress_residual_mae_bps": 3.045434,
+      "mae_reduction_vs_stress_bps": 2.245485
+    },
+    {
+      "window": 5,
+      "start_timestamp": "2024-03-01T00:11:08.097000Z",
+      "end_timestamp": "2024-03-01T00:14:59.998000Z",
+      "fills": 100,
+      "aligned_rows": 100,
+      "median_spread_bps": 0.016306,
+      "p90_spread_bps": 0.016313,
+      "market_impact": 0.015128,
+      "participation_rate_p90": 0.00100744,
+      "median_shortfall_bps": 0.008154,
+      "calibrated_residual_mae_bps": 0.725995,
+      "stress_residual_mae_bps": 3.073612,
+      "mae_reduction_vs_stress_bps": 2.347617
+    }
+  ],
+  "claim_boundary": "This report checks stability of a public quote/fill calibration sample across rolling windows. It supports calibration-plumbing robustness, not venue-wide or broker-grade execution claims.",
+  "summary": {
+    "window_count": 5,
+    "calibrated_residual_mae_mean_bps": 0.905927,
+    "calibrated_residual_mae_min_bps": 0.725995,
+    "calibrated_residual_mae_max_bps": 1.155006,
+    "stress_residual_mae_mean_bps": 3.163166,
+    "mae_reduction_mean_bps": 2.257239,
+    "windows_where_calibrated_beats_stress": 5
+  }
+}

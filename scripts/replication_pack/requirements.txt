@@ -1,0 +1,8 @@
+# TradeArena deterministic replication pack v1
+#
+# Intentionally empty: the deterministic replication path runs on the Python
+# standard library only (CPython >= 3.10; frozen and verified on 3.12).
+# No API keys, no network access, and no third-party packages are required.
+#
+# If you want a byte-identical interpreter to the freeze environment, use the
+# provided Dockerfile (python:3.12-slim).

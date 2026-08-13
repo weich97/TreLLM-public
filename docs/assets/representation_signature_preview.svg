@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="380" viewBox="0 0 920 380" role="img" aria-label="Representation signature summary">
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<text x="36" y="44" font-family="Inter,Arial,sans-serif" font-size="22" font-weight="800" fill="#0f172a" text-anchor="start">Representation signatures: from table to visual diagnostic</text>
+<text x="36" y="72" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" fill="#64748b" text-anchor="start">A hands-on reader can inspect rank contraction, dense embedding agreement, and lexical controls without API calls.</text>
+<rect x="72" y="100.0" width="58" height="150.0" rx="6" fill="#2563eb"/>
+<text x="101" y="272" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="700" fill="#0f172a" text-anchor="middle">hash64</text>
+<text x="101" y="288" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="500" fill="#64748b" text-anchor="middle">plan</text>
+<text x="101" y="306" font-family="Inter,Arial,sans-serif" font-size="10" font-weight="500" fill="#64748b" text-anchor="middle">CR 0.97</text>
+<rect x="198" y="241.9" width="58" height="8.1" rx="6" fill="#2563eb"/>
+<text x="227" y="272" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="700" fill="#0f172a" text-anchor="middle">hash64</text>
+<text x="227" y="288" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="500" fill="#64748b" text-anchor="middle">fused</text>
+<text x="227" y="306" font-family="Inter,Arial,sans-serif" font-size="10" font-weight="500" fill="#64748b" text-anchor="middle">CR 0.68</text>
+<rect x="324" y="166.1" width="58" height="83.9" rx="6" fill="#7c3aed"/>
+<text x="353" y="272" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="700" fill="#0f172a" text-anchor="middle">lsa32</text>
+<text x="353" y="288" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="500" fill="#64748b" text-anchor="middle">plan</text>
+<text x="353" y="306" font-family="Inter,Arial,sans-serif" font-size="10" font-weight="500" fill="#64748b" text-anchor="middle">CR 0.85</text>
+<rect x="450" y="161.7" width="58" height="88.3" rx="6" fill="#7c3aed"/>
+<text x="479" y="272" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="700" fill="#0f172a" text-anchor="middle">lsa32</text>
+<text x="479" y="288" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="500" fill="#64748b" text-anchor="middle">fused</text>
+<text x="479" y="306" font-family="Inter,Arial,sans-serif" font-size="10" font-weight="500" fill="#64748b" text-anchor="middle">CR 0.86</text>
+<rect x="620" y="110" width="250" height="92" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="638" y="140" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700" fill="#0f172a" text-anchor="start">BGE-M3 rows: 4; best BA 0.945</text>
+<text x="638" y="166" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="500" fill="#475569" text-anchor="start">Lexical controls: plan no-lexical-collapse 0.79, fused </text>
+<text x="638" y="184" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="500" fill="#475569" text-anchor="start">no-lexical-collapse 0.59</text>
+<text x="72" y="346" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="500" fill="#64748b" text-anchor="start">Bar height = mean effective-rank delta before failure. CR = contraction rate.</text>
+</svg>

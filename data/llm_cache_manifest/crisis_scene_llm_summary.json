@@ -1,0 +1,114 @@
+{
+  "schema": "tradearena_llm_cache_manifest_v1",
+  "cache_name": "crisis_scene_llm.jsonl",
+  "cache_path_hint": "data/llm_cache/crisis_scene_llm.jsonl",
+  "rows": 322,
+  "provider_model_counts": {
+    "deepseek:deepseek-v4-pro": 110,
+    "poe:claude-opus-4.7": 70,
+    "poe:gemini-3.1-pro": 70,
+    "poe:gpt-5.5": 72
+  },
+  "prompt_mode_counts": {
+    "hidden_risk_feedback": 110,
+    "initial_or_no_recent_feedback": 12,
+    "visible_risk_feedback": 200
+  },
+  "timestamp_masked_rows": 322,
+  "parsed_response_rate": 1.0,
+  "average_signals_per_parsed_response": 32.12111801242236,
+  "sample_rows": [
+    {
+      "provider_model": "poe:gpt-5.5",
+      "timestamp": "T+0",
+      "symbols": 51,
+      "prompt_hash_prefix": "e7d44aef2a91",
+      "cache_key_prefix": "poe:gpt-5.5:e7d44aef2a91",
+      "prompt_mode": "initial_or_no_recent_feedback",
+      "parsed_signals": 51
+    },
+    {
+      "provider_model": "poe:gpt-5.5",
+      "timestamp": "T+1",
+      "symbols": 51,
+      "prompt_hash_prefix": "a497d8668177",
+      "cache_key_prefix": "poe:gpt-5.5:a497d8668177",
+      "prompt_mode": "visible_risk_feedback",
+      "parsed_signals": 51
+    },
+    {
+      "provider_model": "poe:gpt-5.5",
+      "timestamp": "T+2",
+      "symbols": 51,
+      "prompt_hash_prefix": "7efb91cbdd37",
+      "cache_key_prefix": "poe:gpt-5.5:7efb91cbdd37",
+      "prompt_mode": "visible_risk_feedback",
+      "parsed_signals": 51
+    },
+    {
+      "provider_model": "poe:gpt-5.5",
+      "timestamp": "T+3",
+      "symbols": 51,
+      "prompt_hash_prefix": "d98a667f64f0",
+      "cache_key_prefix": "poe:gpt-5.5:d98a667f64f0",
+      "prompt_mode": "visible_risk_feedback",
+      "parsed_signals": 51
+    },
+    {
+      "provider_model": "poe:gpt-5.5",
+      "timestamp": "T+4",
+      "symbols": 51,
+      "prompt_hash_prefix": "1ce9e8b7a15e",
+      "cache_key_prefix": "poe:gpt-5.5:1ce9e8b7a15e",
+      "prompt_mode": "visible_risk_feedback",
+      "parsed_signals": 51
+    },
+    {
+      "provider_model": "poe:gpt-5.5",
+      "timestamp": "T+5",
+      "symbols": 51,
+      "prompt_hash_prefix": "53236d0864c3",
+      "cache_key_prefix": "poe:gpt-5.5:53236d0864c3",
+      "prompt_mode": "visible_risk_feedback",
+      "parsed_signals": 51
+    },
+    {
+      "provider_model": "poe:gpt-5.5",
+      "timestamp": "T+6",
+      "symbols": 51,
+      "prompt_hash_prefix": "59e114579697",
+      "cache_key_prefix": "poe:gpt-5.5:59e114579697",
+      "prompt_mode": "visible_risk_feedback",
+      "parsed_signals": 51
+    },
+    {
+      "provider_model": "poe:gpt-5.5",
+      "timestamp": "T+7",
+      "symbols": 51,
+      "prompt_hash_prefix": "ec794fa396e7",
+      "cache_key_prefix": "poe:gpt-5.5:ec794fa396e7",
+      "prompt_mode": "visible_risk_feedback",
+      "parsed_signals": 51
+    }
+  ],
+  "redaction": {
+    "raw_prompts_included": false,
+    "raw_responses_included": false,
+    "api_keys_included": false,
+    "retained_fields": [
+      "provider_model_counts",
+      "prompt_mode_counts",
+      "timestamp_masked_rows",
+      "parsed_response_rate",
+      "average_signals_per_parsed_response",
+      "prompt_hash_prefix",
+      "cache_key_prefix",
+      "parsed_signal_count"
+    ]
+  },
+  "notes": [
+    "This manifest is derived from a local prompt/response cache but does not include raw prompts or raw model outputs.",
+    "Raw JSONL caches are intentionally ignored by Git; keep them local or distribute them through an explicit external artifact if licensing permits.",
+    "Hash prefixes are included only as lightweight replay fingerprints."
+  ]
+}

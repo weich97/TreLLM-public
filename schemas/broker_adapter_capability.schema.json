@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/weich97/TreLLM-public/schemas/broker_adapter_capability.schema.json",
+  "title": "TreLLM Broker Adapter Capability Manifest",
+  "type": "object",
+  "required": [
+    "schema",
+    "adapter_id",
+    "adapter_name",
+    "adapter_kind",
+    "default_mode",
+    "supported_modes",
+    "account_modes",
+    "network_access",
+    "supports_live_submission",
+    "live_submission_default",
+    "requires_credentials",
+    "credential_policy",
+    "safety_controls",
+    "supported_order_types",
+    "supported_time_in_force",
+    "verification_commands",
+    "safety_note"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "supports_live_submission": { "const": true }
+        },
+        "required": ["supports_live_submission"]
+      },
+      "then": {
+        "properties": {
+          "adapter_kind": { "const": "live_capable" },
+          "supported_modes": { "contains": { "const": "live_human_approved" } },
+          "account_modes": { "contains": { "const": "live" } },
+          "network_access": { "const": "required_for_live" },
+          "requires_credentials": { "const": true },
+          "credential_policy": {
+            "properties": {
+              "env_vars": { "minItems": 1 }
+            }
+          },
+          "safety_controls": {
+            "properties": {
+              "manual_approval_required": { "const": true },
+              "approval_expiry_required": { "const": true },
+              "request_hash_binding_required": { "const": true },
+              "kill_switch_required": { "const": true },
+              "reconciliation_required": { "const": true },
+              "artifact_retention_required": { "const": true }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "adapter_kind": { "const": "live_capable" }
+        },
+        "required": ["adapter_kind"]
+      },
+      "then": {
+        "properties": {
+          "supports_live_submission": { "const": true }
+        }
+      }
+    }
+  ],
+  "properties": {
+    "schema": { "const": "trellm_broker_adapter_capability_v0.1" },
+    "adapter_id": { "type": "string", "pattern": "^\\S+$" },
+    "adapter_name": { "type": "string", "pattern": "\\S" },
+    "adapter_kind": { "enum": ["offline_export", "dry_run", "paper_sandbox", "live_capable"] },
+    "default_mode": { "enum": ["offline_export", "dry_run", "paper_sandbox"] },
+    "supported_modes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": ["offline_export", "dry_run", "paper_sandbox", "live_human_approved"]
+      }
+    },
+    "account_modes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "enum": ["none", "paper", "live"] }
+    },
+    "network_access": { "enum": ["none", "optional", "required_for_paper_sandbox", "required_for_live"] },
+    "supports_live_submission": { "type": "boolean" },
+    "live_submission_default": { "const": false },
+    "requires_credentials": { "type": "boolean" },
+    "credential_policy": {
+      "type": "object",
+      "required": ["no_credentials_in_repo", "redacted_artifacts_only", "env_vars"],
+      "additionalProperties": false,
+      "properties": {
+        "no_credentials_in_repo": { "const": true },
+        "redacted_artifacts_only": { "const": true },
+        "env_vars": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^\\S+$" }
+        }
+      }
+    },
+    "safety_controls": {
+      "type": "object",
+      "required": [
+        "manual_approval_required",
+        "approval_expiry_required",
+        "request_hash_binding_required",
+        "kill_switch_required",
+        "reconciliation_required",
+        "artifact_retention_required"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "manual_approval_required": { "type": "boolean" },
+        "approval_expiry_required": { "type": "boolean" },
+        "request_hash_binding_required": { "type": "boolean" },
+        "kill_switch_required": { "type": "boolean" },
+        "reconciliation_required": { "type": "boolean" },
+        "artifact_retention_required": { "type": "boolean" }
+      }
+    },
+    "supported_order_types": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "enum": ["market", "limit"] }
+    },
+    "supported_time_in_force": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "enum": ["day", "gtc", "ioc", "fok", "opg", "cls"] }
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "pattern": "\\S" }
+    },
+    "safety_note": { "type": "string", "pattern": "\\S" }
+  }
+}

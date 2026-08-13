@@ -1,0 +1,31 @@
+{
+  "accepted_report_count": 0,
+  "artifact_id": "external_reproduction_gate",
+  "artifacts": [
+    "external_reproduction_gate_reports.csv",
+    "external_reproduction_environment_coverage.csv",
+    "external_reproduction_gate_summary.json",
+    "external_reproduction_gate_summary.md",
+    "reports/*.json"
+  ],
+  "blocking_reasons": [
+    "insufficient_independent_report_count",
+    "missing_required_environment_class"
+  ],
+  "claim_boundary": "This gate validates external reproduction reports against the v0.3 protocol. It does not count project-maintainer, failed, private-data, or wrong-environment reports as independent evidence.",
+  "covered_environment_count": 0,
+  "external_reproduction_ready": false,
+  "open_gap_policy": "Amended 2026-07-05 (pre-registered fallback): the protocol's reproduction criterion is satisfied by the pack's machine self-verification (replication_pack_verification artifact) or by at least one accepted independent report. This intake gate remains open either way; full external validation (three independent reports covering windows_or_macos, linux, and colab_or_binder) is tracked as an optional stretch tier via external_reproduction_ready.",
+  "protocol_id": "trellm-v0.3-protocol",
+  "report_count": 0,
+  "report_dirs": [
+    "docs/results/v0_3_external_reproduction_reports/reports"
+  ],
+  "required_environment_classes": [
+    "windows_or_macos",
+    "linux",
+    "colab_or_binder"
+  ],
+  "required_independent_reports": 3,
+  "schema": "trellm_v0_3_external_reproduction_gate_v0.1"
+}

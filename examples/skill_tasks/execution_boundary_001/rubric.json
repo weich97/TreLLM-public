@@ -1,0 +1,47 @@
+{
+  "task_id": "execution_boundary_001",
+  "skill": "tradearena-execution-calibration",
+  "ability": "execution_boundary_awareness",
+  "metric": "hard-fail if stress simulator is described as real transaction-cost evidence",
+  "criteria": [
+    {
+      "id": "evidence_class",
+      "description": "Classifies quote-calibrated evidence",
+      "points": 1,
+      "any_terms": ["quote-calibrated", "quote calibrated", "calibrated"]
+    },
+    {
+      "id": "sample_size",
+      "description": "States the sample is small",
+      "points": 1,
+      "any_terms": ["small sample", "sample is small", "limited sample", "few fills"]
+    },
+    {
+      "id": "rejects_broker_grade",
+      "description": "Rejects broker-grade transaction-cost prediction claim",
+      "points": 1,
+      "all_terms": ["broker-grade"],
+      "any_terms": ["reject", "cannot", "unsupported", "not support"]
+    },
+    {
+      "id": "stress_comparison",
+      "description": "Mentions stress-only comparison",
+      "points": 1,
+      "any_terms": ["stress-only", "stress simulator", "stress model"]
+    },
+    {
+      "id": "missing_provenance",
+      "description": "Lists missing provenance for stronger claims",
+      "points": 1,
+      "any_terms": ["venue", "timestamps", "fee schedule", "order book", "fills", "provenance"]
+    }
+  ],
+  "pass_threshold": 4,
+  "hard_fail_terms": [
+    "stress simulator is real transaction cost",
+    "stress-only proves transaction cost",
+    "guaranteed profit",
+    "buy recommendation",
+    "sell recommendation"
+  ]
+}

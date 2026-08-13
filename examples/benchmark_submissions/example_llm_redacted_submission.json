@@ -1,0 +1,87 @@
+{
+  "schema_version": "0.1",
+  "scenario_id": "crisis_scene_llm_redacted_example",
+  "agent": {
+    "provider": "poe",
+    "agent_type": "llm_policy",
+    "model_family": "frontier-chat-model-redacted",
+    "model_display_name": "frontier-chat-model",
+    "model_identifier_redacted": true,
+    "prompt_mode": "rationale",
+    "risk_feedback_mode": "true",
+    "parse_coverage": 0.967,
+    "response_format": "json_object",
+    "prompt_version": "risk-feedback-v1",
+    "agent_commit": "redacted-or-local"
+  },
+  "data_source": {
+    "name": "yahoo-finance-csv",
+    "frequency": "hourly",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "timestamp_policy": "relative_masked",
+    "data_hash": "sha256:redacted-crisis-hourly-panel"
+  },
+  "execution_config": {
+    "commission_bps": 1.0,
+    "base_slippage_bps": 8.0,
+    "spread_bps": 18.0,
+    "latency_steps": 2,
+    "participation_rate": 0.003,
+    "market_impact": 0.35
+  },
+  "risk_config": {
+    "risk_manager": "max-position",
+    "risk_budget": {
+      "max_position_weight": 0.25,
+      "max_gross_exposure": 1.0,
+      "max_single_step_turnover": 0.75,
+      "risk_feedback_mode": "true"
+    }
+  },
+  "metrics": {
+    "total_return": 0.0108,
+    "max_drawdown": -0.0187,
+    "sharpe": 0.42,
+    "execution_fill_rate": 0.7816,
+    "rejected_order_count": 28,
+    "risk_clipped_decisions": 196,
+    "risk_violation_count": 0,
+    "trajectory_reproducibility_coverage": 1.0
+  },
+  "evidence": {
+    "tags": [
+      "stress-only",
+      "cached-provider",
+      "redacted-prompt"
+    ],
+    "claim_scope": "cached-provider reliability under stress-only execution",
+    "tag_definitions": {
+      "stress-only": "Execution uses shared stress assumptions, not venue-calibrated transaction-cost prediction.",
+      "cached-provider": "Provider-backed behavior is replayed or published through cache/redacted manifest evidence.",
+      "redacted-prompt": "Raw provider prompt/response text is not public; a redacted manifest is provided."
+    }
+  },
+  "trajectory_manifest": {
+    "format": "redacted_manifest",
+    "path_or_uri": "docs/results/crisis/crisis_summary.md",
+    "raw_prompts_included": false,
+    "raw_responses_included": false,
+    "manifest_hash": "sha256:redacted-crisis-scene-llm-manifest",
+    "artifact_hashes": {
+      "metrics_table": "sha256:redacted-crisis-summary-table",
+      "cache_manifest": "sha256:redacted-llm-cache-manifest",
+      "figure": "sha256:redacted-crisis-diagnostic-figure"
+    }
+  },
+  "reproducibility_hash": "sha256:aad1948b44bf9d607641a8b84455224c87d5bcc6446a8acf5bf2fc8f81f29ff0",
+  "redaction": {
+    "provider_secrets_removed": true,
+    "timestamps_masked": true,
+    "raw_provider_text_removed": true,
+    "notes": "Example LLM manifest only; provider prompts, raw responses, credentials, and private portfolios are not included."
+  }
+}

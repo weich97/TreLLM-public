@@ -1,0 +1,41 @@
+{
+  "task_id": "claim_boundary_001",
+  "skill": "tradearena-claim-boundary-review",
+  "ability": "claim_discipline",
+  "metric": "engineering / benchmark / scientific label accuracy",
+  "criteria": [
+    {
+      "id": "engineering_label",
+      "description": "Classifies trajectory recording as an engineering claim",
+      "points": 1,
+      "all_terms": ["trajectory", "engineering claim"]
+    },
+    {
+      "id": "benchmark_label",
+      "description": "Classifies shared stress comparison as a benchmark claim",
+      "points": 1,
+      "all_terms": ["stress", "benchmark claim"]
+    },
+    {
+      "id": "scientific_weakening",
+      "description": "Weakens single-run profitability claim",
+      "points": 1,
+      "any_terms": ["single run", "single-run", "weaken", "unsupported", "not enough"]
+    },
+    {
+      "id": "calibration_narrowing",
+      "description": "Classifies calibration pipeline claim narrowly",
+      "points": 1,
+      "all_terms": ["calibration"],
+      "any_terms": ["engineering claim", "benchmark claim", "narrow"]
+    },
+    {
+      "id": "evidence_labels",
+      "description": "Uses evidence labels",
+      "points": 1,
+      "any_terms": ["stress-only", "quote-calibrated", "cached-provider", "fully-auditable", "evidence label"]
+    }
+  ],
+  "pass_threshold": 4,
+  "hard_fail_terms": ["guaranteed profit", "buy recommendation", "sell recommendation", "place a live order"]
+}

@@ -1,0 +1,92 @@
+{
+  "evidence": {
+    "claim_scope": "cached-provider reliability under stress-only execution",
+    "tag_definitions": {
+      "cached-provider": "Provider-backed behavior is replayed or published through cache/redacted manifest evidence.",
+      "redacted-prompt": "Raw provider prompt/response text is not public; a redacted manifest is provided.",
+      "stress-only": "Execution uses shared stress assumptions, not venue-calibrated transaction-cost prediction."
+    },
+    "tags": [
+      "stress-only",
+      "cached-provider",
+      "redacted-prompt"
+    ]
+  },
+  "execution_config": {
+    "base_slippage_bps": 2.0,
+    "commission_bps": 1.0,
+    "latency_steps": 1,
+    "market_impact": 0.15,
+    "participation_rate": 0.05,
+    "spread_bps": 0.0
+  },
+  "metrics": {
+    "agent_trace_coverage": 1.0,
+    "alpha_pre_risk_hit_rate": 1.0,
+    "alpha_pre_risk_sharpe": 13.303777758343443,
+    "alpha_pre_risk_steps": 7,
+    "alpha_pre_risk_total_return": 0.06474536705910894,
+    "alpha_quality_score": 0.9206770758829952,
+    "avg_fill_ratio": 0.985529143477915,
+    "avg_latency_steps": 1.0,
+    "execution_fill_rate": 0.8461538461538461,
+    "execution_robustness_score": 0.8429033502930259,
+    "fill_count": 11,
+    "final_equity": 103088.64526426152,
+    "hold_ratio": 0.1875,
+    "in_trade_reports": 8,
+    "max_drawdown": -0.0008398349500295943,
+    "max_memory_driven_leverage_amplification": 0.0,
+    "max_memory_pollution_ratio": 0.0,
+    "memory_decision_count": 0,
+    "memory_driven_leverage_amplification": 0.0,
+    "memory_pollution_ratio": 0.0,
+    "order_count": 13,
+    "partial_fill_count": 2,
+    "partial_fill_rate": 0.18181818181818182,
+    "pending_order_count": 2,
+    "post_trade_reports": 8,
+    "reasoning_checks": 16,
+    "reasoning_consistency": 1.0,
+    "rejected_order_count": 0,
+    "risk_audit_coverage": 1.0,
+    "risk_blocked_decisions": 0,
+    "risk_check_count": 28,
+    "risk_clipped_decisions": 12,
+    "risk_discipline_score": 0.625,
+    "risk_failed_checks": 0,
+    "risk_lifecycle_coverage": 1.0,
+    "risk_reports": 8,
+    "risk_violation_count": 0,
+    "risk_warning_checks": 12,
+    "severe_risk_violation_count": 0,
+    "sharpe": 20.34187953957956,
+    "steps": 8,
+    "submitted_orders": 13,
+    "total_commission": 26.10876980169597,
+    "total_return": 0.030886452642615136,
+    "total_slippage_cost": 464.8670631749246,
+    "trajectory_reproducibility_coverage": 1.0,
+    "turnover_events": 11,
+    "volatility": 0.05401250597824474
+  },
+  "model": "claude-opus-4.7",
+  "parse_coverage": 1.0,
+  "periods": 8,
+  "provider": "poe",
+  "redaction": {
+    "raw_prompts_included": false,
+    "raw_responses_included": false,
+    "timestamps_masked": true
+  },
+  "scenario_description": "",
+  "scenario_id": "leaderboard_llm_calm_trend_synthetic_v0_1",
+  "scenario_label": "Calm trend",
+  "schema_version": "0.1",
+  "seed": 7,
+  "stress_family": "market",
+  "symbols": [
+    "SYN",
+    "ALT"
+  ]
+}

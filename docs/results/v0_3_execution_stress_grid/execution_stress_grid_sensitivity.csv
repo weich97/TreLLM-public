@@ -1,0 +1,16 @@
+protocol_id,scenario_id,contamination_tier,baseline_profile,stress_profile,stress_axis,agent,paired_seed_count,spread_bps,latency_steps,participation_rate,market_impact,total_return_delta_mean,sharpe_delta_mean,max_drawdown_delta_mean,fill_rate_delta_mean,rejected_order_delta_mean,slippage_delta_mean,intent_execution_gap_delta_mean,absolute_return_delta_mean
+trellm-v0.3-protocol,synthetic_calm_trend_c0_v0_3,C0,e1_reference,wide_spread,spread,random,2,24.0,1,0.05,0.15,-0.004492,-0.557698,-0.000496,0.0,0.0,422.886044,0.000176,0.004492
+trellm-v0.3-protocol,synthetic_calm_trend_c0_v0_3,C0,e1_reference,latency_spike,latency,random,2,8.0,4,0.05,0.15,-0.00857,1.27606,0.002722,-0.431078,5.5,-839.967778,0.085778,0.033227
+trellm-v0.3-protocol,synthetic_calm_trend_c0_v0_3,C0,e1_reference,thin_liquidity,participation,random,2,8.0,1,0.01,0.15,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+trellm-v0.3-protocol,synthetic_calm_trend_c0_v0_3,C0,e1_reference,high_impact,impact,random,2,8.0,1,0.05,0.35,-0.000325,-0.034782,-3.2e-05,0.0,0.0,30.543382,1.1e-05,0.000325
+trellm-v0.3-protocol,synthetic_calm_trend_c0_v0_3,C0,e1_reference,combined_stress,combined,random,2,24.0,4,0.01,0.35,-0.010683,0.929032,0.002295,-0.449596,6.0,-635.086491,0.085759,0.033061
+trellm-v0.3-protocol,synthetic_calm_trend_c0_v0_3,C0,e1_reference,wide_spread,spread,risk-parity,2,24.0,1,0.05,0.15,-0.00358,-0.665569,-0.000679,0.015625,-0.5,329.378857,-5e-06,0.00358
+trellm-v0.3-protocol,synthetic_calm_trend_c0_v0_3,C0,e1_reference,latency_spike,latency,risk-parity,2,8.0,4,0.05,0.15,-0.021202,-3.728824,0.003262,-0.4375,8.0,-512.703021,0.188007,0.028712
+trellm-v0.3-protocol,synthetic_calm_trend_c0_v0_3,C0,e1_reference,thin_liquidity,participation,risk-parity,2,8.0,1,0.01,0.15,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+trellm-v0.3-protocol,synthetic_calm_trend_c0_v0_3,C0,e1_reference,high_impact,impact,risk-parity,2,8.0,1,0.05,0.35,-0.000189,-0.038921,-4.4e-05,0.0,0.0,17.245125,-1e-06,0.000189
+trellm-v0.3-protocol,synthetic_calm_trend_c0_v0_3,C0,e1_reference,combined_stress,combined,risk-parity,2,24.0,4,0.01,0.35,-0.02332,-4.057731,0.002648,-0.4375,8.0,-319.442728,0.188204,0.028546
+trellm-v0.3-protocol,synthetic_calm_trend_c0_v0_3,C0,e1_reference,wide_spread,spread,signal-weighted,2,24.0,1,0.05,0.15,-0.00165,-0.165086,-0.000183,0.0,0.0,156.400794,-3.6e-05,0.00165
+trellm-v0.3-protocol,synthetic_calm_trend_c0_v0_3,C0,e1_reference,latency_spike,latency,signal-weighted,2,8.0,4,0.05,0.15,-0.038829,-1.988803,-0.001195,-0.43254,2.5,-98.273224,0.123786,0.038829
+trellm-v0.3-protocol,synthetic_calm_trend_c0_v0_3,C0,e1_reference,thin_liquidity,participation,signal-weighted,2,8.0,1,0.01,0.15,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+trellm-v0.3-protocol,synthetic_calm_trend_c0_v0_3,C0,e1_reference,high_impact,impact,signal-weighted,2,8.0,1,0.05,0.35,-6.9e-05,-0.006554,-1.1e-05,0.0,0.0,6.485257,-1e-06,6.9e-05
+trellm-v0.3-protocol,synthetic_calm_trend_c0_v0_3,C0,e1_reference,combined_stress,combined,signal-weighted,2,24.0,4,0.01,0.35,-0.039994,-2.234437,-0.001396,-0.43254,2.5,17.498939,0.123731,0.039994

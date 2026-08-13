@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="520" viewBox="0 0 1100 520" role="img" aria-label="Execution-realistic exposure stress"><rect width="100%" height="100%" fill="#f8fafc"/>
+<text x="40.00" y="46.00" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="800" fill="#0f172a" text-anchor="start">Execution-realistic exposure stress: intended, approved, realized</text>
+<text x="40.00" y="72.00" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" fill="#64748b" text-anchor="start">A compact microstructure proxy: slippage, latency, pending/rejected orders create a gap between model intent and realized exposure.</text>
+<rect x="70" y="105" width="960" height="330" rx="8" fill="#ffffff" stroke="#d9e2ec"/>
+<line x1="122" y1="397" x2="992" y2="397" stroke="#cbd5e1"/>
+<line x1="122" y1="143" x2="122" y2="397" stroke="#cbd5e1"/>
+<polyline fill="none" stroke="#2563eb" stroke-width="2.5" points="122.0,190.8 201.1,384.4 280.2,215.9 359.3,291.4 438.4,356.8 517.5,203.4 596.5,178.2 675.6,319.0 754.7,205.9 833.8,376.9 912.9,143.0 992.0,298.9"/>
+<polyline fill="none" stroke="#059669" stroke-width="2.5" points="122.0,371.9 201.1,394.0 280.2,371.9 359.3,378.9 438.4,391.0 517.5,371.9 596.5,371.9 675.6,381.9 754.7,371.9 833.8,394.0 912.9,371.9 992.0,378.9"/>
+<polyline fill="none" stroke="#d97706" stroke-width="2.5" points="122.0,397.0 201.1,372.0 280.2,371.9 359.3,374.9 438.4,378.2 517.5,387.4 596.5,377.0 675.6,374.7 754.7,383.0 833.8,374.7 912.9,385.5 992.0,374.8"/>
+<rect x="790" y="125" width="10" height="10" fill="#2563eb"/><text x="806.00" y="135.00" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="400" fill="#334155" text-anchor="start">Intended</text><rect x="790" y="143" width="10" height="10" fill="#059669"/><text x="806.00" y="153.00" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="400" fill="#334155" text-anchor="start">Approved</text><rect x="790" y="161" width="10" height="10" fill="#d97706"/><text x="806.00" y="171.00" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="400" fill="#334155" text-anchor="start">Realized</text>
+</svg>

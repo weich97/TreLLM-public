@@ -1,0 +1,29 @@
+name: Research extension
+description: Suggest an experiment that could strengthen the TreLLM system research or TradeArena leaderboard suite
+title: "[Research] "
+labels: ["research", "paper"]
+body:
+  - type: textarea
+    id: claim
+    attributes:
+      label: Research claim
+      description: Which claim, limitation, or reviewer concern would this address?
+    validations:
+      required: true
+  - type: textarea
+    id: design
+    attributes:
+      label: Experimental design
+      description: Models, market data, baselines, metrics, and expected artifacts.
+    validations:
+      required: true
+  - type: textarea
+    id: cost
+    attributes:
+      label: Expected compute or API cost
+      description: Note whether it can run from cache, synthetic data, local models, or paid APIs.
+  - type: textarea
+    id: output
+    attributes:
+      label: Paper, system, or leaderboard output
+      description: Table, figure, appendix note, demo, or benchmark row.

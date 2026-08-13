@@ -1,0 +1,10 @@
+board,scenario,level_a,level_b,agents,seeds,kendall_tau_b,ci_low,ci_high
+scaffold,calm,E0_ideal,E1_default_stress,10,10,0.899,0.629,0.955
+scaffold,calm,E0_ideal,E2_harsh_corner,10,10,0.809,0.584,0.944
+scaffold,high_vol,E0_ideal,E1_default_stress,10,10,0.584,0.27,0.764
+scaffold,high_vol,E0_ideal,E2_harsh_corner,10,10,0.629,0.135,0.727
+scaffold_matched9,calm,E0_ideal,E1_default_stress,9,10,0.889,0.611,0.944
+scaffold_matched9,calm,E0_ideal,E2_harsh_corner,9,10,0.778,0.514,0.944
+scaffold_matched9,high_vol,E0_ideal,E1_default_stress,9,10,0.5,0.167,0.722
+scaffold_matched9,high_vol,E0_ideal,E2_harsh_corner,9,10,0.611,0.0,0.722
+plain_direct,high_vol,E0_ideal,E1_default_stress,9,10,0.444,0.167,0.611

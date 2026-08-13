@@ -1,0 +1,3 @@
+scenario_id,contamination_tier,baseline_level,comparison_level,agent_count,rank_metric,kendall_tau,top_k,top_k_jaccard,mean_return_delta_vs_e0,mean_fill_rate_delta_vs_e0,mean_intent_execution_gap_delta_vs_e0,mean_slippage_delta_vs_e0
+synthetic_high_volatility_c0_v0_3,C0,E0,E1,7,sharpe_mean,0.809524,3,1.0,-0.018071,-0.111056,0.208682,1607.587098
+synthetic_high_volatility_c0_v0_3,C0,E0,E2,7,sharpe_mean,0.809524,3,1.0,-0.017136,-0.395023,0.333414,1670.398416

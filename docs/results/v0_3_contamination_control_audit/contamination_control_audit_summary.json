@@ -1,0 +1,21 @@
+{
+  "artifact_id": "contamination_control_audit",
+  "artifacts": [
+    "contamination_control_audit.csv",
+    "contamination_control_audit_summary.json",
+    "contamination_control_audit.md"
+  ],
+  "claim_boundary": "This audit maps v0.3 contamination tiers to current public evidence. C0 is fixture mechanism evidence; C1 and C2 remain contract-only and must not support scientific contamination-control claims yet.",
+  "contract_only_tier_count": 2,
+  "fixture_ready_tier_count": 1,
+  "forward_freeze_tooling_present": true,
+  "memory_artifact_control_contract_only_tiers": [
+    "C1",
+    "C2"
+  ],
+  "memory_artifact_schema": "trellm_v0_3_memory_contamination_v0.1",
+  "protocol_id": "trellm-v0.3-protocol",
+  "schema": "trellm_v0_3_contamination_control_audit_v0.1",
+  "scientific_ready_tier_count": 0,
+  "tier_count": 3
+}

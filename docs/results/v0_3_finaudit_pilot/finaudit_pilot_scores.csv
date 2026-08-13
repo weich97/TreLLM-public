@@ -1,0 +1,17 @@
+protocol_id,task_id,condition,auditor_id,difficulty,findings,defects,true_positives,precision,recall,f1
+trellm-v0.3-protocol,finaudit_0000,cross-audit,fixture-cross-auditor-v0,L1,1,1,1,1.0,1.0,1.0
+trellm-v0.3-protocol,finaudit_0000,self-audit,fixture-self-auditor-v0,L1,1,1,1,1.0,1.0,1.0
+trellm-v0.3-protocol,finaudit_0001,cross-audit,fixture-cross-auditor-v0,L2,1,1,1,1.0,1.0,1.0
+trellm-v0.3-protocol,finaudit_0001,self-audit,fixture-self-auditor-v0,L2,0,1,0,0.0,0.0,0.0
+trellm-v0.3-protocol,finaudit_0002,cross-audit,fixture-cross-auditor-v0,L2,1,1,1,1.0,1.0,1.0
+trellm-v0.3-protocol,finaudit_0002,self-audit,fixture-self-auditor-v0,L2,1,1,1,1.0,1.0,1.0
+trellm-v0.3-protocol,finaudit_0003,cross-audit,fixture-cross-auditor-v0,L3,0,1,0,0.0,0.0,0.0
+trellm-v0.3-protocol,finaudit_0003,self-audit,fixture-self-auditor-v0,L3,0,1,0,0.0,0.0,0.0
+trellm-v0.3-protocol,finaudit_0004,cross-audit,fixture-cross-auditor-v0,L1,1,1,1,1.0,1.0,1.0
+trellm-v0.3-protocol,finaudit_0004,self-audit,fixture-self-auditor-v0,L1,1,1,1,1.0,1.0,1.0
+trellm-v0.3-protocol,finaudit_0005,cross-audit,fixture-cross-auditor-v0,L2,1,1,1,1.0,1.0,1.0
+trellm-v0.3-protocol,finaudit_0005,self-audit,fixture-self-auditor-v0,L2,0,1,0,0.0,0.0,0.0
+trellm-v0.3-protocol,finaudit_0006,cross-audit,fixture-cross-auditor-v0,L2,1,1,1,1.0,1.0,1.0
+trellm-v0.3-protocol,finaudit_0006,self-audit,fixture-self-auditor-v0,L2,1,1,1,1.0,1.0,1.0
+trellm-v0.3-protocol,finaudit_0007,cross-audit,fixture-cross-auditor-v0,L3,0,1,0,0.0,0.0,0.0
+trellm-v0.3-protocol,finaudit_0007,self-audit,fixture-self-auditor-v0,L3,0,1,0,0.0,0.0,0.0

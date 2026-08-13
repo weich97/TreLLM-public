@@ -1,0 +1,29 @@
+{
+  "schema": "tradearena_public_microstructure_fixture_v1",
+  "purpose": "Small reproducible quote/fill fixture for exercising the quote/fill calibration pipeline.",
+  "symbol": "BTCUSDT",
+  "date": "2026-05-14",
+  "files": {
+    "quotes": "quotes.csv",
+    "fills": "fills.csv"
+  },
+  "columns": {
+    "quotes": ["timestamp", "symbol", "bid", "ask"],
+    "fills": [
+      "timestamp",
+      "symbol",
+      "side",
+      "quantity",
+      "reference_price",
+      "fill_price",
+      "commission",
+      "bar_volume",
+      "bar_high",
+      "bar_low",
+      "bar_close",
+      "submitted_at",
+      "filled_at"
+    ]
+  },
+  "claim_boundary": "This checked-in fixture is for reproducible calibration plumbing tests. It is not a venue-wide transaction-cost claim. Replace it with public exchange quote/order-book data or private broker fills before claiming calibrated execution quality."
+}

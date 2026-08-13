@@ -1,0 +1,34 @@
+{
+  "schema": "tradearena_quote_fill_calibration_v1",
+  "input": {
+    "quote_file": "data/public/microstructure_sample/quotes.csv",
+    "fill_file": "data/public/microstructure_sample/fills.csv",
+    "quote_rows": 6,
+    "fill_rows": 3,
+    "aligned_rows": 3,
+    "symbols": ["BTCUSDT"]
+  },
+  "fitted_parameters": {
+    "spread_bps_median": 1.2,
+    "base_slippage_bps": 0.5,
+    "market_impact": 0.1
+  },
+  "fit_quality": {
+    "residual_mae_bps": 0.8,
+    "residual_p90_abs_bps": 1.1
+  },
+  "stress_only_comparison": {
+    "residual_mae_bps": 3.2,
+    "calibrated_residual_mae_bps": 0.8
+  },
+  "suggested_simulator_config": {
+    "commission_bps": 0.0,
+    "base_slippage_bps": 0.5,
+    "spread_bps": 1.2,
+    "participation_rate": 0.01,
+    "latency_steps": 1,
+    "market_impact": 0.1
+  },
+  "rows": [],
+  "interpretation": "Small public fixture; not venue-wide broker-grade calibration."
+}

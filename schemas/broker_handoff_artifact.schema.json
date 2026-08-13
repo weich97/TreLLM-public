@@ -1,0 +1,292 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/weich97/TreLLM-public/schemas/broker_handoff_artifact.schema.json",
+  "title": "TreLLM Broker Handoff Artifact",
+  "type": "object",
+  "required": [
+    "schema",
+    "adapter",
+    "adapter_mode",
+    "account_mode",
+    "paper_only",
+    "live_submission",
+    "manual_approval_required",
+    "kill_switch",
+    "orders"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "tradearena_broker_handoff_artifact_v0.1" },
+    "adapter": { "type": "string", "pattern": "^\\S+$" },
+    "adapter_mode": {
+      "type": "string",
+      "enum": ["offline_export", "dry_run", "paper_sandbox", "live_human_approved"]
+    },
+    "account_mode": { "type": "string", "enum": ["none", "paper", "live"] },
+    "paper_only": { "type": "boolean" },
+    "live_submission": { "type": "boolean" },
+    "manual_approval_required": { "type": "boolean" },
+    "kill_switch": { "type": "boolean" },
+    "orders": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/handoff_order" }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "adapter_mode": { "enum": ["offline_export", "dry_run"] }
+        },
+        "required": ["adapter_mode"]
+      },
+      "then": {
+        "properties": {
+          "account_mode": { "not": { "const": "live" } },
+          "paper_only": { "const": true },
+          "live_submission": { "const": false },
+          "manual_approval_required": { "const": true }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "adapter_mode": { "const": "offline_export" }
+        },
+        "required": ["adapter_mode"]
+      },
+      "then": {
+        "properties": {
+          "orders": {
+            "items": {
+              "properties": {
+                "adapter_mode": { "const": "offline_export" }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "adapter_mode": { "const": "dry_run" }
+        },
+        "required": ["adapter_mode"]
+      },
+      "then": {
+        "properties": {
+          "orders": {
+            "items": {
+              "properties": {
+                "adapter_mode": { "const": "dry_run" }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "adapter_mode": { "const": "paper_sandbox" }
+        },
+        "required": ["adapter_mode"]
+      },
+      "then": {
+        "properties": {
+          "account_mode": { "not": { "const": "live" } },
+          "paper_only": { "const": false },
+          "live_submission": { "const": false },
+          "manual_approval_required": { "const": true },
+          "orders": {
+            "items": {
+              "properties": {
+                "adapter_mode": { "const": "paper_sandbox" }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "adapter_mode": { "const": "live_human_approved" }
+        },
+        "required": ["adapter_mode"]
+      },
+      "then": {
+        "properties": {
+          "account_mode": { "const": "live" },
+          "paper_only": { "const": false },
+          "live_submission": { "const": true },
+          "manual_approval_required": { "const": false },
+          "kill_switch": { "const": false },
+          "orders": {
+            "items": {
+              "properties": {
+                "adapter_mode": { "const": "live_human_approved" }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "account_mode": { "const": "none" }
+        },
+        "required": ["account_mode"]
+      },
+      "then": {
+        "properties": {
+          "orders": {
+            "items": {
+              "properties": {
+                "account_mode": { "const": "none" }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "account_mode": { "const": "paper" }
+        },
+        "required": ["account_mode"]
+      },
+      "then": {
+        "properties": {
+          "orders": {
+            "items": {
+              "properties": {
+                "account_mode": { "const": "paper" }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "account_mode": { "const": "live" }
+        },
+        "required": ["account_mode"]
+      },
+      "then": {
+        "properties": {
+          "orders": {
+            "items": {
+              "properties": {
+                "account_mode": { "const": "live" }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "handoff_order": {
+      "type": "object",
+      "required": [
+        "client_order_id",
+        "adapter_mode",
+        "account_mode",
+        "symbol",
+        "side",
+        "order_type",
+        "quantity",
+        "time_in_force",
+        "limit_price",
+        "submit_live",
+        "approval_status",
+        "max_notional",
+        "reason"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "client_order_id": { "type": "string", "pattern": "^\\S+$" },
+        "adapter_mode": {
+          "type": "string",
+          "enum": ["offline_export", "dry_run", "paper_sandbox", "live_human_approved"]
+        },
+        "account_mode": { "type": "string", "enum": ["none", "paper", "live"] },
+        "symbol": { "type": "string", "pattern": "^\\S+$" },
+        "side": { "type": "string", "enum": ["buy", "sell"] },
+        "order_type": { "type": "string", "enum": ["market", "limit"] },
+        "quantity": { "type": "number", "exclusiveMinimum": 0 },
+        "time_in_force": { "type": "string", "enum": ["cls", "day", "fok", "gtc", "ioc", "opg"] },
+        "limit_price": { "type": ["number", "null"], "exclusiveMinimum": 0 },
+        "submit_live": { "type": "boolean" },
+        "approval_status": { "type": "string", "enum": ["approved", "requires_human_approval"] },
+        "max_notional": { "type": ["number", "null"], "exclusiveMinimum": 0 },
+        "reason": { "type": "string", "pattern": "\\S" }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "adapter_mode": { "const": "live_human_approved" }
+            },
+            "required": ["adapter_mode"]
+          },
+          "then": {
+            "properties": {
+              "account_mode": { "const": "live" },
+              "submit_live": { "const": true },
+              "approval_status": { "const": "approved" }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "adapter_mode": { "enum": ["offline_export", "dry_run", "paper_sandbox"] }
+            },
+            "required": ["adapter_mode"]
+          },
+          "then": {
+            "properties": {
+              "account_mode": { "not": { "const": "live" } },
+              "submit_live": { "const": false },
+              "approval_status": { "const": "requires_human_approval" }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "order_type": { "const": "limit" }
+            },
+            "required": ["order_type"]
+          },
+          "then": {
+            "properties": {
+              "limit_price": { "type": "number", "exclusiveMinimum": 0 }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "order_type": { "const": "market" }
+            },
+            "required": ["order_type"]
+          },
+          "then": {
+            "properties": {
+              "limit_price": { "type": "null" }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

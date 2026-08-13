@@ -1,0 +1,49 @@
+{
+  "agents": [
+    "signal-weighted",
+    "risk-parity",
+    "random"
+  ],
+  "artifacts": [
+    "execution_stress_grid_rows.csv",
+    "execution_stress_grid_sensitivity.csv",
+    "execution_stress_grid_summary.json",
+    "execution_stress_grid_summary.md"
+  ],
+  "baseline_profile": "e1_reference",
+  "claim_boundary": "This fixture isolates execution-assumption sensitivity across spread, latency, participation, and impact. It supports protocol plumbing and mechanism analysis, not live cost prediction or trading-profit claims.",
+  "contamination_tier": "C0",
+  "execution_levels": [
+    "E1",
+    "E2"
+  ],
+  "max_abs_return_delta_mean": 0.039994,
+  "max_slippage_delta_mean": 422.886044,
+  "method": "paired_seed_delta_vs_e1_reference",
+  "periods": 16,
+  "protocol_id": "trellm-v0.3-protocol",
+  "row_count": 36,
+  "scenario_id": "synthetic_calm_trend_c0_v0_3",
+  "schema": "trellm_v0_3_execution_stress_grid_v0.1",
+  "seeds": [
+    7,
+    11
+  ],
+  "sensitivity_row_count": 15,
+  "stress_axes": [
+    "combined",
+    "impact",
+    "latency",
+    "participation",
+    "reference",
+    "spread"
+  ],
+  "stress_profiles": [
+    "e1_reference",
+    "wide_spread",
+    "latency_spike",
+    "thin_liquidity",
+    "high_impact",
+    "combined_stress"
+  ]
+}

@@ -1,0 +1,9 @@
+curve,x,tau_b,ci_low,ci_high,agents,seeds,board
+universe,2,0.236,0.055,0.527,11,10,fixed 11-policy board
+universe,3,0.709,0.345,0.891,11,10,fixed 11-policy board
+universe,5,0.709,0.455,0.891,11,10,fixed 11-policy board
+universe,10,0.855,0.309,0.855,11,10,fixed 11-policy board
+horizon,12,0.444,0.167,0.611,9,10,direct 9-policy board
+horizon,30,0.833,0.389,0.944,9,10,direct 9-policy board
+horizon,60,0.389,0.056,0.889,9,10,direct 9-policy board
+horizon,120,0.889,0.611,0.944,9,10,direct 9-policy board

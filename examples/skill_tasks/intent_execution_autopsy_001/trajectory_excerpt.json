@@ -1,0 +1,79 @@
+{
+  "case_id": "skill-intent-execution-autopsy-fixture",
+  "trajectory_path": "outputs/examples/autopsy_fixture_trajectory.json",
+  "commit": "fixture-only",
+  "step": 17,
+  "observation": {
+    "market_regime": "high_vol_liquidity_shock",
+    "portfolio_drawdown": -0.091,
+    "cash": 0.08
+  },
+  "raw_decision": {
+    "rationale": "Liquidity worsened, so I will de-risk and avoid concentration.",
+    "confidence": 0.41,
+    "target_weights": {
+      "NVDA": 0.62,
+      "AMD": 0.45,
+      "CASH": -0.07
+    }
+  },
+  "approved_decision": {
+    "target_weights": {
+      "NVDA": 0.35,
+      "AMD": 0.30,
+      "CASH": 0.35
+    },
+    "risk_edits": [
+      "max_abs_weight clipping",
+      "max_gross_exposure scaling",
+      "low_confidence warning"
+    ]
+  },
+  "orders": [
+    {
+      "symbol": "NVDA",
+      "side": "buy",
+      "target_weight": 0.35
+    },
+    {
+      "symbol": "AMD",
+      "side": "buy",
+      "target_weight": 0.30
+    }
+  ],
+  "fills": [
+    {
+      "symbol": "NVDA",
+      "status": "partial",
+      "fill_ratio": 0.52,
+      "slippage_bps": 38.5,
+      "latency_steps": 2
+    },
+    {
+      "symbol": "AMD",
+      "status": "rejected",
+      "reason": "participation cap"
+    }
+  ],
+  "risk_report": {
+    "status": "edited",
+    "violations": [
+      "max_abs_weight",
+      "max_gross_exposure"
+    ],
+    "warnings": [
+      "confidence below preferred threshold"
+    ]
+  },
+  "execution_report": {
+    "mode": "realistic-stress",
+    "participation": 0.19,
+    "latency_steps": 2,
+    "shortfall_bps": 41.8
+  },
+  "portfolio": {
+    "equity_before": 1.0,
+    "equity_after": 0.973,
+    "cash_after": 0.22
+  }
+}

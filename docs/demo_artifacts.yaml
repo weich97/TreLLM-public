@@ -1,0 +1,170 @@
+version: "0.2"
+artifacts:
+  - id: quickstart_core
+    command: python examples/quickstart_core_benchmark.py
+    required_outputs:
+      - outputs/examples/quickstart_core_metrics.json
+    required_json_fields:
+      - outputs/examples/quickstart_core_metrics.json:risk_aware_realistic.total_return
+      - outputs/examples/quickstart_core_metrics.json:risk_aware_realistic.execution_fill_rate
+      - outputs/examples/quickstart_core_metrics.json:risk_aware_realistic.trajectory_reproducibility_coverage
+  - id: audit_report
+    command: python examples/audit_trajectory_walkthrough.py && python scripts/render_audit_report.py && python scripts/render_agent_autopsy_dashboard.py && python scripts/run_failure_autopsy.py
+    required_outputs:
+      - outputs/examples/audit_walkthrough_trajectory.json
+      - outputs/examples/audit_report.html
+      - outputs/examples/agent_autopsy_dashboard.html
+      - outputs/examples/failure_autopsy.json
+    required_json_fields:
+      - outputs/examples/audit_walkthrough_trajectory.json:steps
+  - id: execution_realism_sweep
+    command: python examples/execution_realism_sweep_demo.py
+    required_outputs:
+      - outputs/examples/execution_realism_sweep_summary.json
+      - outputs/examples/execution_realism_sweep.csv
+      - outputs/examples/execution_realism_sweep.svg
+    required_json_fields:
+      - outputs/examples/execution_realism_sweep_summary.json:rows
+      - outputs/examples/execution_realism_sweep_summary.json:interpretation.high_spread
+  - id: benchmark_card
+    command: python scripts/build_quality_decomposition.py && python scripts/build_benchmark_page.py
+    required_outputs:
+      - docs/results/benchmark_v0_2.md
+      - docs/results/quality_decomposition/decision_execution_radar.svg
+      - docs/results/quality_decomposition/quality_decomposition_aggregate.csv
+      - outputs/examples/benchmark-v0.2.html
+  - id: community_registry
+    command: python scripts/build_benchmark_registry.py examples/benchmark_submissions
+    required_outputs:
+      - docs/results/community_registry.md
+      - docs/results/community_registry.csv
+      - docs/results/community_registry.html
+  - id: dry_run_broker_adapter
+    command: python examples/dry_run_broker_adapter_demo.py
+    required_outputs:
+      - outputs/examples/dry_run_broker_adapter/summary.json
+      - outputs/examples/dry_run_broker_adapter/dry_run_orders.json
+      - outputs/examples/dry_run_broker_adapter/dry_run_orders.csv
+    required_json_fields:
+      - outputs/examples/dry_run_broker_adapter/summary.json:adapter_mode
+      - outputs/examples/dry_run_broker_adapter/summary.json:validated
+      - outputs/examples/dry_run_broker_adapter/dry_run_orders.json:orders.client_order_id
+    required_validators:
+      - python scripts/validate_broker_handoff_artifact.py outputs/examples/dry_run_broker_adapter/dry_run_orders.json
+  - id: broker_capability_manifest
+    command: python examples/broker_capability_manifest_demo.py
+    required_outputs:
+      - outputs/examples/broker_capability_manifest/capability_manifest.json
+      - outputs/examples/broker_capability_manifest/capability_manifest.md
+    required_json_fields:
+      - outputs/examples/broker_capability_manifest/capability_manifest.json:schema
+      - outputs/examples/broker_capability_manifest/capability_manifest.json:default_mode
+      - outputs/examples/broker_capability_manifest/capability_manifest.json:supports_live_submission
+      - outputs/examples/broker_capability_manifest/capability_manifest.json:safety_controls.kill_switch_required
+      - outputs/examples/broker_capability_manifest/capability_manifest.json:verification_commands
+    required_validators:
+      - python -m tradearena.cli validate-broker-capability outputs/examples/broker_capability_manifest/capability_manifest.json
+  - id: broker_approval_safety
+    command: python examples/broker_approval_safety_demo.py
+    required_outputs:
+      - outputs/examples/broker_approval_safety/summary.json
+      - outputs/examples/broker_approval_safety/broker_approval_artifact.json
+      - outputs/examples/broker_approval_safety/dry_run_orders.json
+      - outputs/examples/broker_approval_safety/dry_run_orders.csv
+    required_json_fields:
+      - outputs/examples/broker_approval_safety/summary.json:approval_validated
+      - outputs/examples/broker_approval_safety/summary.json:request_hash_bound
+      - outputs/examples/broker_approval_safety/summary.json:approved_order_passed
+      - outputs/examples/broker_approval_safety/summary.json:oversized_order_blocked
+      - outputs/examples/broker_approval_safety/summary.json:request_artifact_hash
+      - outputs/examples/broker_approval_safety/summary.json:verification_commands
+      - outputs/examples/broker_approval_safety/broker_approval_artifact.json:approval_id
+      - outputs/examples/broker_approval_safety/broker_approval_artifact.json:request_artifact_hash
+    required_validators:
+      - python scripts/validate_broker_handoff_artifact.py outputs/examples/broker_approval_safety/dry_run_orders.json
+      - python scripts/hash_broker_handoff_artifact.py outputs/examples/broker_approval_safety/dry_run_orders.json
+      - python scripts/validate_broker_approval_artifact.py outputs/examples/broker_approval_safety/broker_approval_artifact.json --now 2026-05-31T12:30:00Z
+      - python scripts/validate_broker_approval_binding.py outputs/examples/broker_approval_safety/broker_approval_artifact.json outputs/examples/broker_approval_safety/dry_run_orders.json --now 2026-05-31T12:30:00Z
+  - id: broker_response_reconciliation
+    command: python examples/broker_response_reconciliation_demo.py
+    required_outputs:
+      - outputs/examples/broker_response_reconciliation/summary.json
+      - outputs/examples/broker_response_reconciliation/broker_response_artifact.json
+      - outputs/examples/broker_response_reconciliation/alpaca_paper_orders.json
+      - outputs/examples/broker_response_reconciliation/alpaca_paper_orders.csv
+    required_json_fields:
+      - outputs/examples/broker_response_reconciliation/alpaca_paper_orders.json:schema
+      - outputs/examples/broker_response_reconciliation/alpaca_paper_orders.json:orders.client_order_id
+      - outputs/examples/broker_response_reconciliation/summary.json:reconciliation.response_count
+      - outputs/examples/broker_response_reconciliation/summary.json:reconciliation.missing_response_count
+      - outputs/examples/broker_response_reconciliation/broker_response_artifact.json:reconciliation.response_count
+    required_validators:
+      - python scripts/validate_broker_handoff_artifact.py outputs/examples/broker_response_reconciliation/alpaca_paper_orders.json
+      - python scripts/validate_broker_response_artifact.py outputs/examples/broker_response_reconciliation/broker_response_artifact.json
+  - id: broker_response_status_mapping_fixture
+    command: python examples/broker_response_status_mapping_fixture_demo.py
+    required_outputs:
+      - outputs/examples/broker_response_artifact/summary.json
+      - outputs/examples/broker_response_artifact/response_artifact.json
+      - outputs/examples/broker_response_artifact/alpaca_paper_orders.json
+      - outputs/examples/broker_response_artifact/alpaca_paper_orders.csv
+    required_json_fields:
+      - outputs/examples/broker_response_artifact/summary.json:statuses
+      - outputs/examples/broker_response_artifact/summary.json:reconciliation.response_count
+      - outputs/examples/broker_response_artifact/response_artifact.json:reconciliation.accepted_count
+      - outputs/examples/broker_response_artifact/response_artifact.json:reconciliation.rejected_count
+      - outputs/examples/broker_response_artifact/response_artifact.json:reconciliation.partial_fill_count
+      - outputs/examples/broker_response_artifact/response_artifact.json:reconciliation.canceled_count
+      - outputs/examples/broker_response_artifact/response_artifact.json:reconciliation.unknown_count
+    required_validators:
+      - python scripts/validate_broker_handoff_artifact.py outputs/examples/broker_response_artifact/alpaca_paper_orders.json
+      - python scripts/validate_broker_response_artifact.py outputs/examples/broker_response_artifact/response_artifact.json
+  - id: mock_paper_sandbox_client
+    command: python examples/mock_paper_sandbox_client_demo.py
+    required_outputs:
+      - outputs/examples/mock_paper_sandbox_client/summary.json
+      - outputs/examples/mock_paper_sandbox_client/alpaca_paper_orders.json
+      - outputs/examples/mock_paper_sandbox_client/alpaca_paper_orders.csv
+      - outputs/examples/mock_paper_sandbox_client/paper_sandbox_response_artifact.json
+    required_json_fields:
+      - outputs/examples/mock_paper_sandbox_client/summary.json:adapter_mode
+      - outputs/examples/mock_paper_sandbox_client/summary.json:default_network_call
+      - outputs/examples/mock_paper_sandbox_client/summary.json:mock_client_calls
+      - outputs/examples/mock_paper_sandbox_client/summary.json:response_count
+      - outputs/examples/mock_paper_sandbox_client/paper_sandbox_response_artifact.json:reconciliation.accepted_count
+    required_validators:
+      - python scripts/validate_broker_handoff_artifact.py outputs/examples/mock_paper_sandbox_client/alpaca_paper_orders.json
+      - python scripts/validate_broker_response_artifact.py outputs/examples/mock_paper_sandbox_client/paper_sandbox_response_artifact.json
+  - id: operator_runbook
+    command: python examples/operator_runbook_demo.py
+    required_outputs:
+      - outputs/examples/operator_runbook/summary.json
+      - outputs/examples/operator_runbook/operator_runbook.md
+    required_json_fields:
+      - outputs/examples/operator_runbook/summary.json:schema
+      - outputs/examples/operator_runbook/summary.json:live_submission
+      - outputs/examples/operator_runbook/summary.json:manual_approval_required
+      - outputs/examples/operator_runbook/summary.json:kill_switch_required
+      - outputs/examples/operator_runbook/summary.json:artifact_retention_required
+      - outputs/examples/operator_runbook/summary.json:incident_owner_required
+      - outputs/examples/operator_runbook/summary.json:incident_response_drill.kill_switch_action
+      - outputs/examples/operator_runbook/summary.json:incident_response_drill.reenable_approval_gate
+      - outputs/examples/operator_runbook/summary.json:checklist.id
+    required_validators:
+      - python -m tradearena.cli validate-operator-runbook outputs/examples/operator_runbook/summary.json
+  - id: live_readiness_preflight
+    command: python examples/live_readiness_preflight_demo.py
+    required_outputs:
+      - outputs/examples/live_readiness_preflight/preflight_bundle.json
+      - outputs/examples/live_readiness_preflight/preflight_response_artifact.json
+      - outputs/examples/live_readiness_preflight/preflight_summary.json
+    required_json_fields:
+      - outputs/examples/live_readiness_preflight/preflight_bundle.json:schema
+      - outputs/examples/live_readiness_preflight/preflight_bundle.json:capability_manifest
+      - outputs/examples/live_readiness_preflight/preflight_response_artifact.json:request_artifact_hash
+      - outputs/examples/live_readiness_preflight/preflight_response_artifact.json:responses.client_order_id
+      - outputs/examples/live_readiness_preflight/preflight_summary.json:ready
+      - outputs/examples/live_readiness_preflight/preflight_summary.json:components.capability_manifest.valid
+      - outputs/examples/live_readiness_preflight/preflight_summary.json:components.approval_binding.valid
+    required_validators:
+      - python -m tradearena.cli validate-live-readiness outputs/examples/live_readiness_preflight/preflight_bundle.json --now 2026-05-31T12:30:00Z

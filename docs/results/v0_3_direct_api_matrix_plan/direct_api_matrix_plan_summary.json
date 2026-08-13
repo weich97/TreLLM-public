@@ -1,0 +1,79 @@
+{
+  "artifact_id": "direct_api_model_matrix_plan",
+  "artifacts": [
+    "direct_api_matrix_plan_rows.csv",
+    "direct_api_matrix_plan_coverage.csv",
+    "direct_api_matrix_plan_summary.json",
+    "direct_api_matrix_plan_summary.md"
+  ],
+  "claim_boundary": "This is a pre-registered direct API matrix plan and credential preflight, not model-performance evidence. The direct_api_model_matrix gap remains open until non-fixture provider manifests and submissions pass the matrix gate.",
+  "coverage_group_count": 15,
+  "expected_output_root": "outputs/v0_3_direct_api_matrix",
+  "planned_models": [
+    {
+      "api_endpoint_family": "chat_completions",
+      "credential_env_var": "DEEPSEEK_API_KEY",
+      "model_id": "deepseek-v4-pro",
+      "model_version_or_release": "api-pinned-2026-07-02",
+      "provider": "deepseek"
+    },
+    {
+      "api_endpoint_family": "chat_completions",
+      "credential_env_var": "DEEPSEEK_API_KEY",
+      "model_id": "deepseek-v4-flash",
+      "model_version_or_release": "api-pinned-2026-07-02",
+      "provider": "deepseek"
+    },
+    {
+      "api_endpoint_family": "chat_completions",
+      "credential_env_var": "GLM_API_KEY",
+      "model_id": "glm-5",
+      "model_version_or_release": "api-pinned-2026-07-02",
+      "provider": "glm"
+    },
+    {
+      "api_endpoint_family": "chat_completions",
+      "credential_env_var": "GLM_API_KEY",
+      "model_id": "glm-5-turbo",
+      "model_version_or_release": "api-pinned-2026-07-06",
+      "provider": "glm"
+    },
+    {
+      "api_endpoint_family": "chat_completions",
+      "credential_env_var": "GLM_API_KEY",
+      "model_id": "glm-5.2",
+      "model_version_or_release": "api-pinned-2026-07-06",
+      "provider": "glm"
+    }
+  ],
+  "planned_row_count": 450,
+  "planned_samples": [
+    0,
+    1,
+    2
+  ],
+  "planned_scenarios": [
+    "synthetic_calm_trend_c0_v0_3",
+    "synthetic_high_volatility_c0_v0_3",
+    "synthetic_jump_tail_c0_v0_3"
+  ],
+  "planned_seeds": [
+    7,
+    11,
+    17,
+    23,
+    31,
+    37,
+    41,
+    43,
+    47,
+    53
+  ],
+  "protocol_id": "trellm-v0.3-protocol",
+  "ready_group_count": 0,
+  "ready_to_run": false,
+  "required_samples_per_seed": 3,
+  "required_seed_count": 10,
+  "schema": "trellm_v0_3_direct_api_matrix_plan_v0.1",
+  "threshold_target_group_count": 15
+}

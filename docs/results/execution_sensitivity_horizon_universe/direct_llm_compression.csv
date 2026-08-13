@@ -1,0 +1,19 @@
+board,n_assets,tau_b_E0_E1,provenance
+deepseek-direct+cls,2,0.5,direct-fixed
+deepseek-direct+cls,3,0.929,direct-fixed
+deepseek-direct+cls,5,0.786,direct-fixed
+deepseek-direct+cls,10,0.929,direct-fixed
+glm-direct+cls,3,0.786,direct-fixed
+glm-direct+cls,5,0.929,direct-fixed
+glm-direct+cls,10,0.786,direct-fixed
+deepseek+glm-direct+cls,3,0.778,direct-fixed
+deepseek+glm-direct+cls,5,0.778,direct-fixed
+deepseek+glm-direct+cls,10,0.833,direct-fixed
+consistent11 (fixed identities; no GLM route swap),2,0.236,fixed-identities-mixed-access
+consistent11 (fixed identities; no GLM route swap),3,0.709,fixed-identities-mixed-access
+consistent11 (fixed identities; no GLM route swap),5,0.709,fixed-identities-mixed-access
+consistent11 (fixed identities; no GLM route swap),10,0.855,fixed-identities-mixed-access
+mixed-interface full12 (GLM routed at N=2; diagnostic only),2,0.212,mixed-glm-route-swap-diagnostic
+mixed-interface full12 (GLM routed at N=2; diagnostic only),3,0.636,mixed-glm-route-swap-diagnostic
+mixed-interface full12 (GLM routed at N=2; diagnostic only),5,0.697,mixed-glm-route-swap-diagnostic
+mixed-interface full12 (GLM routed at N=2; diagnostic only),10,0.758,mixed-glm-route-swap-diagnostic

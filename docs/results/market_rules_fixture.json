@@ -1,0 +1,158 @@
+{
+  "schema": "tradearena_market_rules_fixture_v0.1",
+  "claim_boundary": "These are deterministic exchange-rule fixtures for auditability. They are not live-trading advice and do not claim full regulatory coverage for any venue.",
+  "cases": [
+    {
+      "case_id": "ashare_same_day_sell",
+      "package": "ashare_t_plus_one_price_limit_board_lot",
+      "symbol": "600000.SH",
+      "side": "sell",
+      "requested_quantity": 500.0,
+      "approved_quantity": 100,
+      "status": "clipped",
+      "reasons": [
+        "t_plus_one_sellable_clip"
+      ],
+      "estimated_fee": 0.0,
+      "estimated_funding": 0.0,
+      "estimated_market_impact": 0.0,
+      "estimated_margin_required": 0.0,
+      "metadata": {
+        "package": "ashare_t_plus_one_price_limit_board_lot",
+        "lot_size": 100,
+        "price": 9.85,
+        "volume": null,
+        "participation": 100.0,
+        "market": "CN",
+        "session": "cash_equity"
+      }
+    },
+    {
+      "case_id": "ashare_limit_up_buy",
+      "package": "ashare_t_plus_one_price_limit_board_lot",
+      "symbol": "600000.SH",
+      "side": "buy",
+      "requested_quantity": 300.0,
+      "approved_quantity": 0.0,
+      "status": "blocked",
+      "reasons": [
+        "limit_up_buy_block"
+      ],
+      "estimated_fee": 0.0,
+      "estimated_funding": 0.0,
+      "estimated_market_impact": 0.0,
+      "estimated_margin_required": 0.0,
+      "metadata": {
+        "package": "ashare_t_plus_one_price_limit_board_lot",
+        "lot_size": 100,
+        "price": 11.0,
+        "volume": null,
+        "participation": 0.0,
+        "market": "CN",
+        "session": "cash_equity"
+      }
+    },
+    {
+      "case_id": "hk_board_lot_rounding",
+      "package": "hong_kong_board_lot_stamp_duty",
+      "symbol": "0700.HK",
+      "side": "buy",
+      "requested_quantity": 760.0,
+      "approved_quantity": 500.0,
+      "status": "clipped",
+      "reasons": [
+        "lot_size_500"
+      ],
+      "estimated_fee": 208.0,
+      "estimated_funding": 0.0,
+      "estimated_market_impact": 0.0,
+      "estimated_margin_required": 0.0,
+      "metadata": {
+        "package": "hong_kong_board_lot_stamp_duty",
+        "lot_size": 500,
+        "price": 320.0,
+        "volume": null,
+        "participation": 500.0,
+        "market": "HK",
+        "session": "cash_equity"
+      }
+    },
+    {
+      "case_id": "crypto_fee_funding",
+      "package": "crypto_fee_tier_funding",
+      "symbol": "BTCUSDT",
+      "side": "buy",
+      "requested_quantity": 2.0,
+      "approved_quantity": 2.0,
+      "status": "approved",
+      "reasons": [],
+      "estimated_fee": 73.44,
+      "estimated_funding": 18.36,
+      "estimated_market_impact": 0.0,
+      "estimated_margin_required": 0.0,
+      "metadata": {
+        "package": "crypto_fee_tier_funding",
+        "lot_size": 1,
+        "price": 61200.0,
+        "volume": 120.0,
+        "participation": 0.016666666666666666,
+        "market": "crypto",
+        "session": "24x7"
+      }
+    },
+    {
+      "case_id": "liquidity_halt_clip",
+      "package": "suspension_circuit_liquidity_halt",
+      "symbol": "SYN",
+      "side": "buy",
+      "requested_quantity": 4000.0,
+      "approved_quantity": 1000.0,
+      "status": "clipped",
+      "reasons": [
+        "liquidity_participation_clip"
+      ],
+      "estimated_fee": 0.0,
+      "estimated_funding": 0.0,
+      "estimated_market_impact": 100.0,
+      "estimated_margin_required": 0.0,
+      "metadata": {
+        "package": "suspension_circuit_liquidity_halt",
+        "lot_size": 1,
+        "price": 25.0,
+        "volume": 50000,
+        "participation": 0.02,
+        "stress": "liquidity_halt"
+      }
+    },
+    {
+      "case_id": "suspension_block",
+      "package": "suspension_circuit_liquidity_halt",
+      "symbol": "SYN",
+      "side": "sell",
+      "requested_quantity": 1000.0,
+      "approved_quantity": 0.0,
+      "status": "blocked",
+      "reasons": [
+        "suspension"
+      ],
+      "estimated_fee": 0.0,
+      "estimated_funding": 0.0,
+      "estimated_market_impact": 0.0,
+      "estimated_margin_required": 0.0,
+      "metadata": {
+        "package": "suspension_circuit_liquidity_halt",
+        "lot_size": 1,
+        "price": 25.0,
+        "volume": 50000,
+        "participation": 0.0,
+        "stress": "liquidity_halt"
+      }
+    }
+  ],
+  "summary": {
+    "case_count": 6,
+    "blocked": 2,
+    "clipped": 3,
+    "approved": 1
+  }
+}

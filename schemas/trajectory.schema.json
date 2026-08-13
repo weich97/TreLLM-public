@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/weich97/TreLLM-public/schemas/trajectory.schema.json",
+  "title": "TreLLM trajectory",
+  "type": "object",
+  "required": ["schema_version", "experiment_name", "seed", "steps"],
+  "properties": {
+    "schema_version": { "const": "tradearena_trajectory_v1" },
+    "experiment_name": { "type": "string" },
+    "seed": { "type": "integer" },
+    "metadata": { "type": "object" },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "timestamp",
+          "observation",
+          "signals",
+          "decisions",
+          "approved_decisions",
+          "orders",
+          "fills",
+          "portfolio"
+        ],
+        "properties": {
+          "timestamp": { "type": "string" },
+          "observation": { "type": "object" },
+          "signals": { "type": "array" },
+          "decisions": { "type": "array" },
+          "approved_decisions": { "type": "array" },
+          "orders": { "type": "array" },
+          "fills": { "type": "array" },
+          "portfolio": {
+            "type": "object",
+            "required": ["equity"],
+            "properties": {
+              "equity": { "type": "number" },
+              "cash": { "type": "number" },
+              "positions": { "type": "object" }
+            },
+            "additionalProperties": true
+          },
+          "reproducibility_state": { "type": "object" },
+          "agent_trace": { "type": "object" },
+          "risk_report": { "type": "object" },
+          "in_trade_report": { "type": "object" },
+          "post_trade_report": { "type": "object" },
+          "execution_report": { "type": "object" },
+          "risk_violations": { "type": "array" },
+          "memory_events": { "type": "array" }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

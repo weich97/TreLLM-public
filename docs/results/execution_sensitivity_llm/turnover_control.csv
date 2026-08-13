@@ -1,0 +1,10 @@
+scenario,turnover_bin,bin_agents,bin_size,mean_turnover,within_bin_tau_e0_e1,full_leaderboard_tau
+calm,T1,mean-reversion;signal-weighted;deepseek:deepseek-v4-pro;poe:gemini-3.1-pro,4,10.5,1.0,0.818
+calm,T2,naive-momentum;poe:gpt-5.5;random;poe:glm-5,4,18.73,0.667,0.818
+calm,T3,poe:claude-opus-4.7;buy-and-hold;minimum-variance;risk-parity,4,20.25,0.333,0.818
+high_vol,T1,mean-reversion;signal-weighted;naive-momentum;deepseek:deepseek-v4-pro,4,11.53,0.667,0.212
+high_vol,T2,poe:glm-5;poe:gemini-3.1-pro;poe:gpt-5.5;poe:claude-opus-4.7,4,17.48,0.667,0.212
+high_vol,T3,random;minimum-variance;buy-and-hold;risk-parity,4,19.52,0.667,0.212
+jump_tail,T1,mean-reversion;signal-weighted;naive-momentum;deepseek:deepseek-v4-pro,4,11.43,0.667,0.515
+jump_tail,T2,poe:gemini-3.1-pro;poe:glm-5;random;poe:claude-opus-4.7,4,17.85,0.0,0.515
+jump_tail,T3,poe:gpt-5.5;minimum-variance;buy-and-hold;risk-parity,4,19.75,1.0,0.515

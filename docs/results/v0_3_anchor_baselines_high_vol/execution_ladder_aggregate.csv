@@ -1,0 +1,22 @@
+scenario_id,contamination_tier,execution_level,execution_label,agent,run_count,rank,sharpe_mean,sharpe_std,sharpe_ci_low,sharpe_ci_high,total_return_mean,max_drawdown_mean,execution_fill_rate_mean,rejected_order_count_mean,total_slippage_cost_mean,intent_execution_gap_l1_mean,intent_risk_gap_l1_mean,risk_execution_gap_l1_mean
+synthetic_high_volatility_c0_v0_3,C0,E0,ideal execution,buy-and-hold,30,1,13.925295,4.204552,12.503511,15.428727,0.248932,-0.015007,1.0,0.0,18.85693,0.299992,0.3,1.4e-05
+synthetic_high_volatility_c0_v0_3,C0,E0,ideal execution,risk-parity,30,2,13.831815,4.181046,12.455235,15.310298,0.245755,-0.015013,1.0,0.0,24.039453,1.6e-05,0.0,1.6e-05
+synthetic_high_volatility_c0_v0_3,C0,E0,ideal execution,minimum-variance,30,3,13.826848,4.357857,12.362556,15.344421,0.244806,-0.015144,1.0,0.0,26.255634,1.7e-05,0.0,1.7e-05
+synthetic_high_volatility_c0_v0_3,C0,E0,ideal execution,naive-momentum,30,4,13.130472,4.323748,11.609333,14.59625,0.200449,-0.009898,1.0,0.0,50.338461,1.9e-05,0.0,1.9e-05
+synthetic_high_volatility_c0_v0_3,C0,E0,ideal execution,random,30,5,11.015969,3.22496,9.887495,12.130316,0.170399,-0.01153,1.0,0.0,156.111472,3.9e-05,0.0,3.9e-05
+synthetic_high_volatility_c0_v0_3,C0,E0,ideal execution,signal-weighted,30,6,10.8011,2.812593,9.812231,11.772392,0.158436,-0.008014,1.0,0.0,36.019633,0.329185,0.32919,1.3e-05
+synthetic_high_volatility_c0_v0_3,C0,E0,ideal execution,mean-reversion,30,7,3.502902,2.683573,2.527571,4.408799,0.021534,-0.008203,1.0,0.0,35.589381,7e-06,0.0,7e-06
+synthetic_high_volatility_c0_v0_3,C0,E1,paper stress execution,risk-parity,30,1,11.671616,4.075672,10.321477,13.069378,0.222978,-0.01712,0.922486,1.7,1753.285258,0.239943,0.0,0.239943
+synthetic_high_volatility_c0_v0_3,C0,E1,paper stress execution,buy-and-hold,30,2,11.550751,3.417104,10.41058,12.726517,0.233732,-0.017586,0.920738,1.8,1731.574619,0.40545,0.3,0.222916
+synthetic_high_volatility_c0_v0_3,C0,E1,paper stress execution,minimum-variance,30,3,11.259152,3.380279,10.13744,12.410637,0.219712,-0.018166,0.919222,1.866667,1806.597513,0.246087,0.0,0.246087
+synthetic_high_volatility_c0_v0_3,C0,E1,paper stress execution,naive-momentum,30,4,10.063688,3.644673,8.788075,11.308664,0.177286,-0.015715,0.904875,1.933333,1994.884746,0.275315,0.0,0.275315
+synthetic_high_volatility_c0_v0_3,C0,E1,paper stress execution,signal-weighted,30,5,8.676065,2.844107,7.6741,9.61232,0.140927,-0.010478,0.912162,1.266667,1263.099907,0.418228,0.32919,0.184936
+synthetic_high_volatility_c0_v0_3,C0,E1,paper stress execution,random,30,6,8.132734,3.010668,7.11184,9.176805,0.139771,-0.016974,0.850051,4.666667,2347.733651,0.384845,0.0,0.384845
+synthetic_high_volatility_c0_v0_3,C0,E1,paper stress execution,mean-reversion,30,7,2.830863,2.808009,1.825544,3.772424,0.029405,-0.012499,0.793076,2.066667,703.144956,0.12018,0.0,0.12018
+synthetic_high_volatility_c0_v0_3,C0,E2,harsh friction sweep corner,risk-parity,30,1,10.625705,3.597959,9.350259,11.8908,0.209338,-0.013974,0.660358,10.233333,1704.042814,0.364091,0.0,0.364091
+synthetic_high_volatility_c0_v0_3,C0,E2,harsh friction sweep corner,minimum-variance,30,2,10.623512,3.747352,9.344334,11.922052,0.209568,-0.013507,0.66101,10.066667,1764.40455,0.378522,0.0,0.378522
+synthetic_high_volatility_c0_v0_3,C0,E2,harsh friction sweep corner,buy-and-hold,30,3,10.318791,2.776912,9.360261,11.294629,0.209896,-0.016886,0.611068,12.6,1638.879334,0.508132,0.3,0.341126
+synthetic_high_volatility_c0_v0_3,C0,E2,harsh friction sweep corner,naive-momentum,30,4,8.942333,3.073337,7.890828,10.024225,0.199669,-0.016798,0.594272,10.9,2350.632857,0.502737,0.0,0.502737
+synthetic_high_volatility_c0_v0_3,C0,E2,harsh friction sweep corner,random,30,5,8.325354,2.96065,7.292165,9.405444,0.157528,-0.014781,0.596535,11.966667,2083.441124,0.446008,0.0,0.446008
+synthetic_high_volatility_c0_v0_3,C0,E2,harsh friction sweep corner,signal-weighted,30,6,7.254275,2.597541,6.32407,8.140444,0.11988,-0.011927,0.586016,9.366667,1474.451907,0.515383,0.32919,0.314153
+synthetic_high_volatility_c0_v0_3,C0,E2,harsh friction sweep corner,mean-reversion,30,7,4.502806,1.796136,3.869326,5.109493,0.064479,-0.015449,0.525579,6.366667,1024.147289,0.248303,0.0,0.248303

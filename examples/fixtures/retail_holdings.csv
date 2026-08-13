@@ -1,0 +1,5 @@
+symbol,market_value,quantity,cost_basis
+CASH,12000,12000,1
+VTI,44000,153.74,251.10
+AAPL,24000,127.39,171.25
+MSFT,20000,47.43,355.80

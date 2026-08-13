@@ -1,0 +1,4 @@
+protocol_id,contamination_tier,tier_name,status_in_this_artifact,required_controls,claim_scope
+trellm-v0.3-protocol,C0,synthetic,implemented,repository-generated paths; published seeds; no historical symbol identity,no-known-training-contamination controlled memory mechanism evaluation
+trellm-v0.3-protocol,C1,anonymized_real,control-contract-only,symbol anonymization; relative timestamp masking; memorization probe; data hash,residual contamination risk must be measured before C1 rows support scientific claims
+trellm-v0.3-protocol,C2,forward_frozen,control-contract-only,dated hash commitment; future evaluation window; no post-freeze scenario edits; walk-forward provenance,"strongest public contamination evidence, not produced by this fixture bundle"

@@ -1,0 +1,9 @@
+auditor,variant,n_pairs,confounded_recall,clean_recall,fixed_pairs,regressed_pairs,mcnemar_p
+deepseek:deepseek-v4-pro,default,60,0.333,0.917,0,0,
+deepseek:deepseek-v4-pro,constraint,60,0.950,1.000,38,1,1.46e-10
+deepseek:deepseek-v4-pro,cot,60,0.467,0.967,11,3,0.0574
+deepseek:deepseek-v4-pro,selfcons,60,0.500,0.950,14,4,0.0309
+glm:glm-5,default,60,0.300,0.717,0,0,
+glm:glm-5,constraint,60,0.800,0.783,31,1,1.54e-08
+glm:glm-5,cot,60,0.433,0.733,16,8,0.152
+glm:glm-5,selfcons,60,0.167,0.550,4,12,0.0768

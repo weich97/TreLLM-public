@@ -1,0 +1,10 @@
+provider,model,prompt_variant,repeat,tasks,tasks_passed,score,max_score,score_pct,hard_failed
+poe,gpt-5.5,standard,3,8,6,28,40,0.7,2
+poe,gpt-5.5,skeptical_reviewer,3,8,6,28,40,0.7,2
+poe,gpt-5.5,adversarial_claim_boundary,3,8,6,31,40,0.775,1
+poe,gemini-3.1-pro,standard,3,8,6,32,40,0.8,1
+poe,gemini-3.1-pro,skeptical_reviewer,3,8,7,32,40,0.8,1
+poe,gemini-3.1-pro,adversarial_claim_boundary,3,8,7,35,40,0.875,0
+poe,kimi-k2.5,standard,3,8,6,31,40,0.775,1
+poe,kimi-k2.5,skeptical_reviewer,3,8,7,32,40,0.8,1
+poe,kimi-k2.5,adversarial_claim_boundary,3,8,6,33,40,0.825,1

@@ -1,0 +1,16 @@
+protocol_id,provider,model_id,scenario_id,contamination_tier,execution_level,planned_row_count,planned_seed_count,planned_minimum_samples_per_seed,required_seed_count,required_samples_per_seed,main_threshold_target_met_by_plan,credential_env_var,credential_env_var_present,preflight_status,blocking_reasons
+trellm-v0.3-protocol,deepseek,deepseek-v4-flash,synthetic_calm_trend_c0_v0_3,C0,E1,30,10,3,10,3,true,DEEPSEEK_API_KEY,false,blocked,credential_env_var_missing
+trellm-v0.3-protocol,deepseek,deepseek-v4-flash,synthetic_high_volatility_c0_v0_3,C0,E1,30,10,3,10,3,true,DEEPSEEK_API_KEY,false,blocked,credential_env_var_missing
+trellm-v0.3-protocol,deepseek,deepseek-v4-flash,synthetic_jump_tail_c0_v0_3,C0,E1,30,10,3,10,3,true,DEEPSEEK_API_KEY,false,blocked,credential_env_var_missing
+trellm-v0.3-protocol,deepseek,deepseek-v4-pro,synthetic_calm_trend_c0_v0_3,C0,E1,30,10,3,10,3,true,DEEPSEEK_API_KEY,false,blocked,credential_env_var_missing
+trellm-v0.3-protocol,deepseek,deepseek-v4-pro,synthetic_high_volatility_c0_v0_3,C0,E1,30,10,3,10,3,true,DEEPSEEK_API_KEY,false,blocked,credential_env_var_missing
+trellm-v0.3-protocol,deepseek,deepseek-v4-pro,synthetic_jump_tail_c0_v0_3,C0,E1,30,10,3,10,3,true,DEEPSEEK_API_KEY,false,blocked,credential_env_var_missing
+trellm-v0.3-protocol,glm,glm-5,synthetic_calm_trend_c0_v0_3,C0,E1,30,10,3,10,3,true,GLM_API_KEY,false,blocked,credential_env_var_missing
+trellm-v0.3-protocol,glm,glm-5,synthetic_high_volatility_c0_v0_3,C0,E1,30,10,3,10,3,true,GLM_API_KEY,false,blocked,credential_env_var_missing
+trellm-v0.3-protocol,glm,glm-5,synthetic_jump_tail_c0_v0_3,C0,E1,30,10,3,10,3,true,GLM_API_KEY,false,blocked,credential_env_var_missing
+trellm-v0.3-protocol,glm,glm-5-turbo,synthetic_calm_trend_c0_v0_3,C0,E1,30,10,3,10,3,true,GLM_API_KEY,false,blocked,credential_env_var_missing
+trellm-v0.3-protocol,glm,glm-5-turbo,synthetic_high_volatility_c0_v0_3,C0,E1,30,10,3,10,3,true,GLM_API_KEY,false,blocked,credential_env_var_missing
+trellm-v0.3-protocol,glm,glm-5-turbo,synthetic_jump_tail_c0_v0_3,C0,E1,30,10,3,10,3,true,GLM_API_KEY,false,blocked,credential_env_var_missing
+trellm-v0.3-protocol,glm,glm-5.2,synthetic_calm_trend_c0_v0_3,C0,E1,30,10,3,10,3,true,GLM_API_KEY,false,blocked,credential_env_var_missing
+trellm-v0.3-protocol,glm,glm-5.2,synthetic_high_volatility_c0_v0_3,C0,E1,30,10,3,10,3,true,GLM_API_KEY,false,blocked,credential_env_var_missing
+trellm-v0.3-protocol,glm,glm-5.2,synthetic_jump_tail_c0_v0_3,C0,E1,30,10,3,10,3,true,GLM_API_KEY,false,blocked,credential_env_var_missing

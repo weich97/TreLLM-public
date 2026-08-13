@@ -1,0 +1,117 @@
+{
+  "schema": "tradearena_llm_cache_manifest_v1",
+  "cache_name": "deepseek_analyst.jsonl",
+  "cache_path_hint": "data/llm_cache/deepseek_analyst.jsonl",
+  "rows": 2915,
+  "provider_model_counts": {
+    "deepseek:deepseek-v4-flash": 411,
+    "deepseek:deepseek-v4-pro": 463,
+    "poe:claude-opus-4.7": 259,
+    "poe:gemini-3.1-pro": 677,
+    "poe:glm-5": 186,
+    "poe:gpt-5.5": 629,
+    "poe:kimi-k2.5": 290
+  },
+  "prompt_mode_counts": {
+    "hidden_risk_feedback": 396,
+    "initial_or_no_recent_feedback": 127,
+    "visible_risk_feedback": 2392
+  },
+  "timestamp_masked_rows": 0,
+  "parsed_response_rate": 1.0,
+  "average_signals_per_parsed_response": 4.830531732418525,
+  "sample_rows": [
+    {
+      "provider_model": "deepseek:deepseek-v4-flash",
+      "timestamp": "2025-05-02T00:00:00",
+      "symbols": 3,
+      "prompt_hash_prefix": "b95dd86677a1",
+      "cache_key_prefix": "deepseek-v4-flash:b95dd8",
+      "prompt_mode": "initial_or_no_recent_feedback",
+      "parsed_signals": 3
+    },
+    {
+      "provider_model": "deepseek:deepseek-v4-flash",
+      "timestamp": "2025-05-09T00:00:00",
+      "symbols": 3,
+      "prompt_hash_prefix": "a99615837db8",
+      "cache_key_prefix": "deepseek-v4-flash:a99615",
+      "prompt_mode": "initial_or_no_recent_feedback",
+      "parsed_signals": 3
+    },
+    {
+      "provider_model": "deepseek:deepseek-v4-flash",
+      "timestamp": "2025-05-16T00:00:00",
+      "symbols": 3,
+      "prompt_hash_prefix": "08cf2c37b0b3",
+      "cache_key_prefix": "deepseek-v4-flash:08cf2c",
+      "prompt_mode": "initial_or_no_recent_feedback",
+      "parsed_signals": 3
+    },
+    {
+      "provider_model": "deepseek:deepseek-v4-flash",
+      "timestamp": "2025-05-23T00:00:00",
+      "symbols": 3,
+      "prompt_hash_prefix": "aeb8eb1a7bbd",
+      "cache_key_prefix": "deepseek-v4-flash:aeb8eb",
+      "prompt_mode": "initial_or_no_recent_feedback",
+      "parsed_signals": 3
+    },
+    {
+      "provider_model": "deepseek:deepseek-v4-flash",
+      "timestamp": "2025-06-02T00:00:00",
+      "symbols": 3,
+      "prompt_hash_prefix": "0ceee64efadf",
+      "cache_key_prefix": "deepseek-v4-flash:0ceee6",
+      "prompt_mode": "initial_or_no_recent_feedback",
+      "parsed_signals": 3
+    },
+    {
+      "provider_model": "deepseek:deepseek-v4-flash",
+      "timestamp": "2025-06-09T00:00:00",
+      "symbols": 3,
+      "prompt_hash_prefix": "4110ec26ee53",
+      "cache_key_prefix": "deepseek-v4-flash:4110ec",
+      "prompt_mode": "initial_or_no_recent_feedback",
+      "parsed_signals": 3
+    },
+    {
+      "provider_model": "deepseek:deepseek-v4-flash",
+      "timestamp": "2025-06-16T00:00:00",
+      "symbols": 3,
+      "prompt_hash_prefix": "e697bc6fdfc6",
+      "cache_key_prefix": "deepseek-v4-flash:e697bc",
+      "prompt_mode": "initial_or_no_recent_feedback",
+      "parsed_signals": 3
+    },
+    {
+      "provider_model": "deepseek:deepseek-v4-flash",
+      "timestamp": "2025-06-24T00:00:00",
+      "symbols": 3,
+      "prompt_hash_prefix": "d2e212bb4a05",
+      "cache_key_prefix": "deepseek-v4-flash:d2e212",
+      "prompt_mode": "initial_or_no_recent_feedback",
+      "parsed_signals": 3
+    }
+  ],
+  "redaction": {
+    "raw_prompts_included": false,
+    "raw_responses_included": false,
+    "api_keys_included": false,
+    "retained_fields": [
+      "provider_model_counts",
+      "prompt_mode_counts",
+      "timestamp_masked_rows",
+      "parsed_response_rate",
+      "average_signals_per_parsed_response",
+      "prompt_hash_prefix",
+      "cache_key_prefix",
+      "parsed_signal_count"
+    ]
+  },
+  "notes": [
+    "This manifest is derived from a local prompt/response cache but does not include raw prompts or raw model outputs.",
+    "Raw JSONL caches are intentionally ignored by Git; keep them local or distribute them through an explicit external artifact if licensing permits.",
+    "Hash prefixes are included only as lightweight replay fingerprints."
+  ]
+}

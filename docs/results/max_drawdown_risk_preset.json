@@ -1,0 +1,134 @@
+{
+  "schema": "trellm_max_drawdown_risk_preset_v0.1",
+  "claim_boundary": "Deterministic risk-preset fixture for audit and extension tests. It demonstrates blocked or clipped decisions; it is not trading advice.",
+  "settings": {
+    "max_drawdown": 0.05,
+    "drawdown_lookback": 3,
+    "observed_rolling_drawdown": -0.06
+  },
+  "cases": [
+    {
+      "case_id": "block_after_drawdown",
+      "preset": "max-drawdown-risk",
+      "de_risk_weight": 0.0,
+      "requested_side": "buy",
+      "requested_weight": 0.4,
+      "approved_side": "hold",
+      "approved_weight": 0.0,
+      "metadata": {
+        "drawdown_kill_switch": true,
+        "risk_clipped_from": 0.4,
+        "rolling_drawdown": -0.06000000000000005,
+        "drawdown_limit": -0.05,
+        "risk_blocked": "max_drawdown"
+      },
+      "risk_report": {
+        "phase": "pre_trade",
+        "passed": false,
+        "approved_count": 1,
+        "blocked_count": 1,
+        "clipped_count": 0,
+        "checks": [
+          {
+            "name": "drawdown_kill_switch",
+            "passed": false,
+            "severity": "error",
+            "message": "rolling drawdown -0.060 breached kill-switch limit -0.050; forced target weights to +/-0.000",
+            "metadata": {
+              "rolling_drawdown": -0.06000000000000005,
+              "limit": -0.05,
+              "lookback": 3,
+              "de_risk_weight": 0.0
+            }
+          }
+        ],
+        "violations": [
+          {
+            "constraint": "drawdown_kill_switch",
+            "severity": "error",
+            "observed": -0.06000000000000005,
+            "limit": -0.05,
+            "message": "rolling drawdown breached kill-switch limit; forced de-risk",
+            "metadata": {
+              "lookback": 3,
+              "de_risk_weight": 0.0
+            }
+          }
+        ],
+        "budget": {
+          "max_drawdown": 0.05,
+          "metadata": {
+            "drawdown_lookback": 3,
+            "drawdown_de_risk_weight": 0.0,
+            "preset": "max_drawdown",
+            "risk_manager": "max-drawdown-risk"
+          }
+        }
+      }
+    },
+    {
+      "case_id": "clip_after_drawdown",
+      "preset": "max-drawdown-risk",
+      "de_risk_weight": 0.1,
+      "requested_side": "buy",
+      "requested_weight": 0.4,
+      "approved_side": "buy",
+      "approved_weight": 0.1,
+      "metadata": {
+        "drawdown_kill_switch": true,
+        "risk_clipped_from": 0.4,
+        "rolling_drawdown": -0.06000000000000005,
+        "drawdown_limit": -0.05,
+        "risk_clipped": "max_drawdown"
+      },
+      "risk_report": {
+        "phase": "pre_trade",
+        "passed": false,
+        "approved_count": 1,
+        "blocked_count": 0,
+        "clipped_count": 1,
+        "checks": [
+          {
+            "name": "drawdown_kill_switch",
+            "passed": false,
+            "severity": "error",
+            "message": "rolling drawdown -0.060 breached kill-switch limit -0.050; forced target weights to +/-0.100",
+            "metadata": {
+              "rolling_drawdown": -0.06000000000000005,
+              "limit": -0.05,
+              "lookback": 3,
+              "de_risk_weight": 0.1
+            }
+          }
+        ],
+        "violations": [
+          {
+            "constraint": "drawdown_kill_switch",
+            "severity": "error",
+            "observed": -0.06000000000000005,
+            "limit": -0.05,
+            "message": "rolling drawdown breached kill-switch limit; forced de-risk",
+            "metadata": {
+              "lookback": 3,
+              "de_risk_weight": 0.1
+            }
+          }
+        ],
+        "budget": {
+          "max_drawdown": 0.05,
+          "metadata": {
+            "drawdown_lookback": 3,
+            "drawdown_de_risk_weight": 0.1,
+            "preset": "max_drawdown",
+            "risk_manager": "max-drawdown-risk"
+          }
+        }
+      }
+    }
+  ],
+  "summary": {
+    "case_count": 2,
+    "blocked": 1,
+    "clipped": 1
+  }
+}

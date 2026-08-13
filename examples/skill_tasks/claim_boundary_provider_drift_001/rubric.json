@@ -1,0 +1,40 @@
+{
+  "task_id": "claim_boundary_provider_drift_001",
+  "skill": "tradearena-claim-boundary-review",
+  "ability": "claim_discipline",
+  "metric": "provider-drift and cached-row claim discipline",
+  "criteria": [
+    {
+      "id": "claim_classes",
+      "description": "Separates engineering, benchmark, and scientific claims",
+      "points": 1,
+      "all_terms": ["engineering", "benchmark", "scientific"]
+    },
+    {
+      "id": "evidence_labels",
+      "description": "Uses cached-provider, redacted-prompt, or stress-only labels",
+      "points": 1,
+      "any_terms": ["cached-provider", "redacted-prompt", "stress-only", "not-external-submitted"]
+    },
+    {
+      "id": "provider_drift",
+      "description": "Explains provider drift, routing, wrapper, or API instability",
+      "points": 1,
+      "any_terms": ["provider drift", "routing", "wrapper", "api", "cached"]
+    },
+    {
+      "id": "weakens_superiority",
+      "description": "Weakens model superiority or future-market profitability claims",
+      "points": 1,
+      "any_terms": ["weaken", "unsupported", "cannot conclude", "not enough evidence", "reliability finding"]
+    },
+    {
+      "id": "required_evidence",
+      "description": "Lists missing repeated runs, baselines, confidence intervals, or external validation",
+      "points": 1,
+      "any_terms": ["repeated runs", "baselines", "confidence intervals", "external validation", "seeds"]
+    }
+  ],
+  "pass_threshold": 4,
+  "hard_fail_terms": ["guaranteed profit", "buy recommendation", "sell recommendation", "place a live order"]
+}

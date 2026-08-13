@@ -1,0 +1,336 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/weich97/TreLLM-public/schemas/broker_response_artifact.schema.json",
+  "title": "TreLLM Broker Response Artifact",
+  "type": "object",
+  "required": [
+    "schema",
+    "adapter",
+    "adapter_mode",
+    "account_mode",
+    "live_submission",
+    "reconciliation",
+    "responses"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "tradearena_broker_response_artifact_v0.1" },
+    "adapter": { "type": "string", "pattern": "^\\S+$" },
+    "adapter_mode": {
+      "type": "string",
+      "enum": ["offline_export", "dry_run", "paper_sandbox", "live_human_approved"]
+    },
+    "account_mode": { "type": "string", "enum": ["none", "paper", "live"] },
+    "live_submission": { "type": "boolean" },
+    "reconciliation": {
+      "type": "object",
+      "required": [
+        "response_count",
+        "accepted_count",
+        "rejected_count",
+        "partial_fill_count",
+        "filled_count",
+        "canceled_count",
+        "expired_count",
+        "unknown_count",
+        "unmatched_response_count",
+        "missing_response_count",
+        "fill_ratio_mean"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "response_count": { "type": "integer", "minimum": 0 },
+        "accepted_count": { "type": "integer", "minimum": 0 },
+        "rejected_count": { "type": "integer", "minimum": 0 },
+        "partial_fill_count": { "type": "integer", "minimum": 0 },
+        "filled_count": { "type": "integer", "minimum": 0 },
+        "canceled_count": { "type": "integer", "minimum": 0 },
+        "expired_count": { "type": "integer", "minimum": 0 },
+        "unknown_count": { "type": "integer", "minimum": 0 },
+        "unmatched_response_count": { "type": "integer", "minimum": 0 },
+        "missing_response_count": { "type": "integer", "minimum": 0 },
+        "fill_ratio_mean": { "type": ["number", "null"], "minimum": 0 }
+      }
+    },
+    "responses": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/broker_response" }
+    },
+    "request_artifact_hash": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "adapter_mode": { "const": "live_human_approved" }
+        },
+        "required": ["adapter_mode"]
+      },
+      "then": {
+        "properties": {
+          "account_mode": { "const": "live" },
+          "live_submission": { "const": true },
+          "responses": {
+            "items": {
+              "properties": {
+                "account_mode": { "const": "live" }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "adapter_mode": { "enum": ["offline_export", "dry_run", "paper_sandbox"] }
+        },
+        "required": ["adapter_mode"]
+      },
+      "then": {
+        "properties": {
+          "account_mode": { "not": { "const": "live" } },
+          "live_submission": { "const": false },
+          "responses": {
+            "items": {
+              "properties": {
+                "account_mode": { "not": { "const": "live" } }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "account_mode": { "const": "none" }
+        },
+        "required": ["account_mode"]
+      },
+      "then": {
+        "properties": {
+          "responses": {
+            "items": {
+              "properties": {
+                "account_mode": { "const": "none" }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "account_mode": { "const": "paper" }
+        },
+        "required": ["account_mode"]
+      },
+      "then": {
+        "properties": {
+          "responses": {
+            "items": {
+              "properties": {
+                "account_mode": { "const": "paper" }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "account_mode": { "const": "live" }
+        },
+        "required": ["account_mode"]
+      },
+      "then": {
+        "properties": {
+          "responses": {
+            "items": {
+              "properties": {
+                "account_mode": { "const": "live" }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "broker_response": {
+      "type": "object",
+      "required": [
+        "client_order_id",
+        "status",
+        "broker_order_id",
+        "submitted_quantity",
+        "accepted_quantity",
+        "fill_quantity",
+        "fill_price",
+        "fees",
+        "rejection_reason",
+        "submitted_at",
+        "broker_timestamp",
+        "account_mode"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "client_order_id": { "type": "string", "pattern": "^\\S+$" },
+        "status": {
+          "type": "string",
+          "enum": ["accepted", "rejected", "partially_filled", "filled", "canceled", "expired", "unknown"]
+        },
+        "broker_order_id": { "type": ["string", "null"], "pattern": "^\\S*$" },
+        "submitted_quantity": { "type": "number", "exclusiveMinimum": 0 },
+        "accepted_quantity": { "type": ["number", "null"], "minimum": 0 },
+        "fill_quantity": { "type": ["number", "null"], "minimum": 0 },
+        "fill_price": { "type": ["number", "null"], "minimum": 0 },
+        "fees": { "type": ["number", "null"], "minimum": 0 },
+        "rejection_reason": { "type": ["string", "null"] },
+        "submitted_at": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:Z|[+-]\\d{2}:\\d{2})$"
+        },
+        "broker_timestamp": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:Z|[+-]\\d{2}:\\d{2})$"
+        },
+        "account_mode": { "type": "string", "enum": ["none", "paper", "live"] }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": { "enum": ["accepted", "partially_filled", "filled"] }
+            },
+            "required": ["status"]
+          },
+          "then": {
+            "properties": {
+              "accepted_quantity": { "type": "number", "exclusiveMinimum": 0 }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": { "const": "rejected" }
+            },
+            "required": ["status"]
+          },
+          "then": {
+            "properties": {
+              "rejection_reason": { "type": "string", "pattern": "\\S" }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": { "const": "unknown" }
+            },
+            "required": ["status"]
+          },
+          "then": {
+            "properties": {
+              "rejection_reason": { "type": "string", "pattern": "\\S" }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": { "enum": ["accepted", "partially_filled", "filled", "canceled", "expired"] }
+            },
+            "required": ["status"]
+          },
+          "then": {
+            "properties": {
+              "broker_order_id": { "type": "string", "pattern": "^\\S+$" }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": { "enum": ["partially_filled", "filled"] }
+            },
+            "required": ["status"]
+          },
+          "then": {
+            "properties": {
+              "fill_quantity": { "type": "number", "exclusiveMinimum": 0 },
+              "fill_price": { "type": "number", "exclusiveMinimum": 0 }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": { "const": "accepted" }
+            },
+            "required": ["status"]
+          },
+          "then": {
+            "properties": {
+              "fill_quantity": { "type": ["number", "null"], "maximum": 0 },
+              "fill_price": { "type": ["number", "null"], "maximum": 0 }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": { "const": "rejected" }
+            },
+            "required": ["status"]
+          },
+          "then": {
+            "properties": {
+              "accepted_quantity": { "type": ["number", "null"], "maximum": 0 },
+              "fill_quantity": { "type": ["number", "null"], "maximum": 0 },
+              "fill_price": { "type": ["number", "null"], "maximum": 0 },
+              "fees": { "type": ["number", "null"], "maximum": 0 }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": { "const": "unknown" }
+            },
+            "required": ["status"]
+          },
+          "then": {
+            "properties": {
+              "accepted_quantity": { "type": ["number", "null"], "maximum": 0 },
+              "fill_quantity": { "type": ["number", "null"], "maximum": 0 },
+              "fill_price": { "type": ["number", "null"], "maximum": 0 },
+              "fees": { "type": ["number", "null"], "maximum": 0 }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": { "enum": ["canceled", "expired"] }
+            },
+            "required": ["status"]
+          },
+          "then": {
+            "properties": {
+              "fill_quantity": { "type": ["number", "null"], "maximum": 0 },
+              "fill_price": { "type": ["number", "null"], "maximum": 0 }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

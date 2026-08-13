@@ -1,0 +1,54 @@
+# Routine version-update pull requests are disabled.
+#
+# `open-pull-requests-limit: 0` stops Dependabot from opening scheduled version
+# bumps. Dependabot *security* updates are governed by the repository's security
+# settings, not by this file, so vulnerability fixes are still raised.
+#
+# Dependencies here are declared as `>=` lower bounds, so a routine bump only
+# raises the floor and does not change what CI actually installs -- CI resolves
+# to the newest compatible release either way. Bumping the floor is therefore a
+# deliberate, reviewed act, not something to automate.
+#
+# The groups below are kept so that re-enabling updates (raise the limits) yields
+# a few grouped pull requests rather than one per package.
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 0
+    groups:
+      python-data:
+        patterns:
+          - "pandas"
+          - "yfinance"
+          - "akshare"
+      python-dev-tools:
+        patterns:
+          - "pytest"
+          - "pytest-cov"
+          - "pillow"
+          - "ruff"
+          - "mypy"
+          - "hypothesis"
+          - "jsonschema"
+      python-embeddings:
+        patterns:
+          - "sentence-transformers"
+      python-build:
+        patterns:
+          - "setuptools"
+      python-runtime:
+        patterns:
+          - "cryptography"
+          - "matplotlib"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 0
+    groups:
+      github-actions:
+        patterns:
+          - "*"

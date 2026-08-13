@@ -1,0 +1,94 @@
+{
+  "agent": {
+    "agent_commit": "redacted-or-local",
+    "agent_type": "llm_policy",
+    "model_display_name": "glm-5",
+    "model_family": "glm-5",
+    "model_identifier_redacted": false,
+    "parse_coverage": 0.875,
+    "prompt_mode": "rationale",
+    "prompt_version": "risk-feedback-v1",
+    "provider": "poe",
+    "response_format": "json_object",
+    "risk_feedback_mode": "true"
+  },
+  "data_source": {
+    "data_hash": "sha256:latency_spike-synthetic-seed-65-symbols-SYN-ALT-periods-8",
+    "frequency": "daily",
+    "name": "synthetic-market",
+    "symbols": [
+      "SYN",
+      "ALT"
+    ],
+    "timestamp_policy": "relative_masked"
+  },
+  "evidence": {
+    "claim_scope": "cached-provider reliability under stress-only execution",
+    "tag_definitions": {
+      "cached-provider": "Provider-backed behavior is replayed or published through cache/redacted manifest evidence.",
+      "redacted-prompt": "Raw provider prompt/response text is not public; a redacted manifest is provided.",
+      "stress-only": "Execution uses shared stress assumptions, not venue-calibrated transaction-cost prediction."
+    },
+    "tags": [
+      "stress-only",
+      "cached-provider",
+      "redacted-prompt"
+    ]
+  },
+  "execution_config": {
+    "base_slippage_bps": 4.0,
+    "commission_bps": 1.0,
+    "latency_steps": 4,
+    "market_impact": 0.3,
+    "participation_rate": 0.03,
+    "spread_bps": 25.0
+  },
+  "metrics": {
+    "alpha_pre_risk_hit_rate": 0.6,
+    "alpha_pre_risk_sharpe": 5.479229878951071,
+    "alpha_pre_risk_steps": 5,
+    "alpha_pre_risk_total_return": 0.03909761098814735,
+    "alpha_quality_score": 0.7829696247233315,
+    "execution_fill_rate": 0.3,
+    "execution_robustness_score": 0.4957510124053429,
+    "max_drawdown": -0.01326271723652983,
+    "rejected_order_count": 0,
+    "risk_clipped_decisions": 9,
+    "risk_discipline_score": 0.34375,
+    "risk_violation_count": 2,
+    "sharpe": 0.3667793375159909,
+    "total_return": 0.0010006922786887085,
+    "trajectory_reproducibility_coverage": 1.0
+  },
+  "redaction": {
+    "notes": "Leaderboard smoke manifest generated from a live or cache-backed provider run; raw prompts and responses remain in ignored local cache files.",
+    "provider_secrets_removed": true,
+    "raw_provider_text_removed": true,
+    "timestamps_masked": true
+  },
+  "reproducibility_hash": "sha256:6dd5c84b914274571c34c5e89aca8e0a42baa7664f188959d7590e18f53bd8c2",
+  "risk_config": {
+    "risk_budget": {
+      "drawdown_de_risk_weight": 0.0,
+      "drawdown_lookback": 5,
+      "max_drawdown": 0.2,
+      "max_gross_exposure": 1.0,
+      "max_position_weight": 0.35,
+      "max_single_step_turnover": 0.75,
+      "risk_feedback_mode": "true"
+    },
+    "risk_manager": "max-position"
+  },
+  "scenario_id": "leaderboard_llm_latency_spike_synthetic_v0_1",
+  "schema_version": "0.1",
+  "trajectory_manifest": {
+    "artifact_hashes": {
+      "redacted_summary": "sha256:d77e4acb278a9b14edc5c36e0e9ee7da604b5a5b0a91bfd13f4745979a57d936"
+    },
+    "format": "redacted_manifest",
+    "manifest_hash": "sha256:d77e4acb278a9b14edc5c36e0e9ee7da604b5a5b0a91bfd13f4745979a57d936",
+    "path_or_uri": "docs/results/model_matrix/latency_spike__poe_glm_5_summary.json",
+    "raw_prompts_included": false,
+    "raw_responses_included": false
+  }
+}

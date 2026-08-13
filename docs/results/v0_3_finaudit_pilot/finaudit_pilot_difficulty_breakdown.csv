@@ -1,0 +1,9 @@
+protocol_id,condition,auditor_id,difficulty,tasks,findings,defects,true_positives,precision,precision_wilson_low,precision_wilson_high,recall,recall_wilson_low,recall_wilson_high,f1
+trellm-v0.3-protocol,cross-audit,fixture-cross-auditor-v0,L1,2,2,2,2,1.0,0.34238,1.0,1.0,0.34238,1.0,1.0
+trellm-v0.3-protocol,cross-audit,fixture-cross-auditor-v0,L2,4,4,4,4,1.0,0.510109,1.0,1.0,0.510109,1.0,1.0
+trellm-v0.3-protocol,cross-audit,fixture-cross-auditor-v0,L3,2,0,2,0,0.0,0.0,0.0,0.0,0.0,0.65762,0.0
+trellm-v0.3-protocol,cross-audit,fixture-cross-auditor-v0,all,8,6,8,6,1.0,0.609666,1.0,0.75,0.409275,0.928521,0.857143
+trellm-v0.3-protocol,self-audit,fixture-self-auditor-v0,L1,2,2,2,2,1.0,0.34238,1.0,1.0,0.34238,1.0,1.0
+trellm-v0.3-protocol,self-audit,fixture-self-auditor-v0,L2,4,2,4,2,1.0,0.34238,1.0,0.5,0.150039,0.849961,0.666667
+trellm-v0.3-protocol,self-audit,fixture-self-auditor-v0,L3,2,0,2,0,0.0,0.0,0.0,0.0,0.0,0.65762,0.0
+trellm-v0.3-protocol,self-audit,fixture-self-auditor-v0,all,8,4,8,4,1.0,0.510109,1.0,0.5,0.215216,0.784784,0.666667

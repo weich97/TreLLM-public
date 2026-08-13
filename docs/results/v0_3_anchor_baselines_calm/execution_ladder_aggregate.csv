@@ -1,0 +1,22 @@
+scenario_id,contamination_tier,execution_level,execution_label,agent,run_count,rank,sharpe_mean,sharpe_std,sharpe_ci_low,sharpe_ci_high,total_return_mean,max_drawdown_mean,execution_fill_rate_mean,rejected_order_count_mean,total_slippage_cost_mean,intent_execution_gap_l1_mean,intent_risk_gap_l1_mean,risk_execution_gap_l1_mean
+synthetic_calm_trend_c0_v0_3,C0,E0,ideal execution,buy-and-hold,30,1,27.239169,4.646332,25.66222,28.850977,0.235525,-0.001972,1.0,0.0,16.472595,0.299991,0.3,1.9e-05
+synthetic_calm_trend_c0_v0_3,C0,E0,ideal execution,minimum-variance,30,2,27.214218,4.649264,25.639638,28.830492,0.235391,-0.001974,1.0,0.0,16.874927,2e-05,0.0,2e-05
+synthetic_calm_trend_c0_v0_3,C0,E0,ideal execution,risk-parity,30,3,26.912229,4.570918,25.354006,28.508522,0.232497,-0.001909,1.0,0.0,22.383475,2.1e-05,0.0,2.1e-05
+synthetic_calm_trend_c0_v0_3,C0,E0,ideal execution,naive-momentum,30,4,24.78784,3.604155,23.524524,26.027453,0.216642,-0.001094,1.0,0.0,29.689765,1.7e-05,0.0,1.7e-05
+synthetic_calm_trend_c0_v0_3,C0,E0,ideal execution,random,30,5,17.702424,3.653555,16.420775,18.976171,0.157586,-0.00138,1.0,0.0,155.014076,3.9e-05,0.0,3.9e-05
+synthetic_calm_trend_c0_v0_3,C0,E0,ideal execution,signal-weighted,30,6,15.874876,1.315205,15.416158,16.331619,0.152676,-0.000657,1.0,0.0,29.375998,0.328059,0.328064,1.3e-05
+synthetic_calm_trend_c0_v0_3,C0,E0,ideal execution,mean-reversion,30,7,2.689171,1.787081,2.032036,3.328916,0.005127,-0.000877,0.8,0.0,14.986521,3e-06,0.0,3e-06
+synthetic_calm_trend_c0_v0_3,C0,E1,paper stress execution,minimum-variance,30,1,21.008422,3.734232,19.751348,22.289212,0.218913,-0.003022,0.933107,1.166667,1301.890161,0.222949,0.0,0.222949
+synthetic_calm_trend_c0_v0_3,C0,E1,paper stress execution,buy-and-hold,30,2,20.891904,2.996416,19.851966,21.87987,0.223532,-0.00284,0.924174,1.6,1279.098386,0.409015,0.3,0.219056
+synthetic_calm_trend_c0_v0_3,C0,E1,paper stress execution,risk-parity,30,3,20.699607,3.711692,19.405604,21.932148,0.214909,-0.00315,0.928539,1.4,1363.586912,0.239393,0.0,0.239393
+synthetic_calm_trend_c0_v0_3,C0,E1,paper stress execution,naive-momentum,30,4,19.183431,2.91773,18.224491,20.183317,0.200609,-0.002418,0.933297,0.933333,1482.144256,0.261184,0.0,0.261184
+synthetic_calm_trend_c0_v0_3,C0,E1,paper stress execution,random,30,5,14.007866,2.870616,13.025136,15.028465,0.141231,-0.003408,0.849825,4.666667,1786.447354,0.384289,0.0,0.384289
+synthetic_calm_trend_c0_v0_3,C0,E1,paper stress execution,signal-weighted,30,6,13.381938,1.276575,12.947742,13.819903,0.140536,-0.001651,0.922479,0.9,913.233192,0.407235,0.328064,0.16876
+synthetic_calm_trend_c0_v0_3,C0,E1,paper stress execution,mean-reversion,30,7,2.497308,2.237595,1.673354,3.252639,0.007203,-0.001787,0.612064,1.0,197.430661,0.050744,0.0,0.050744
+synthetic_calm_trend_c0_v0_3,C0,E2,harsh friction sweep corner,minimum-variance,30,1,17.884702,2.667218,16.948982,18.804849,0.203197,-0.002386,0.6823,9.166667,1265.744202,0.329207,0.0,0.329207
+synthetic_calm_trend_c0_v0_3,C0,E2,harsh friction sweep corner,risk-parity,30,2,17.508379,2.549212,16.595759,18.337597,0.199447,-0.0025,0.664648,10.033333,1304.18757,0.335624,0.0,0.335624
+synthetic_calm_trend_c0_v0_3,C0,E2,harsh friction sweep corner,buy-and-hold,30,3,16.550668,2.029201,15.881183,17.269237,0.19591,-0.002552,0.594888,13.4,1248.193704,0.502964,0.3,0.318479
+synthetic_calm_trend_c0_v0_3,C0,E2,harsh friction sweep corner,naive-momentum,30,4,15.897986,2.844883,14.896471,16.888703,0.205182,-0.003061,0.60802,11.2,1986.365882,0.495788,0.0,0.495788
+synthetic_calm_trend_c0_v0_3,C0,E2,harsh friction sweep corner,random,30,5,12.840739,2.180942,12.106529,13.606674,0.149254,-0.003084,0.59602,12.0,1723.394146,0.444116,0.0,0.444116
+synthetic_calm_trend_c0_v0_3,C0,E2,harsh friction sweep corner,signal-weighted,30,6,10.265551,1.296705,9.822011,10.698135,0.109809,-0.001792,0.579335,9.666667,1203.673083,0.521691,0.328064,0.302791
+synthetic_calm_trend_c0_v0_3,C0,E2,harsh friction sweep corner,mean-reversion,30,7,4.63926,2.553424,3.719545,5.480565,0.03128,-0.001746,0.407591,3.266667,422.441639,0.125417,0.0,0.125417

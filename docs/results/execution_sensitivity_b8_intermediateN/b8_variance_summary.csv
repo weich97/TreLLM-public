@@ -1,0 +1,9 @@
+n_assets,agent,level,n_seeds,n_samples,within_seed_var,between_seed_var,within_seed_share
+3,deepseek:deepseek-v4-pro,E0_ideal,10,30,0.000181711,0.00535298,0.0328
+3,deepseek:deepseek-v4-pro,E1_default_stress,10,30,0.000119732,0.00433074,0.0269
+3,glm:glm-5,E0_ideal,10,30,5.64497e-05,0.00458675,0.0122
+3,glm:glm-5,E1_default_stress,10,30,3.18525e-05,0.00444408,0.0071
+5,deepseek:deepseek-v4-pro,E0_ideal,10,30,0.000250947,0.0021132,0.1061
+5,deepseek:deepseek-v4-pro,E1_default_stress,10,30,0.000182388,0.00198987,0.084
+5,glm:glm-5,E0_ideal,10,30,6.98928e-06,0.00132674,0.0052
+5,glm:glm-5,E1_default_stress,10,30,8.33705e-06,0.00235505,0.0035

@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/weich97/TreLLM-public/schemas/direct_provider_manifest.schema.json",
+  "title": "TreLLM Direct Provider Manifest",
+  "type": "object",
+  "required": [
+    "schema",
+    "protocol_id",
+    "provider_route",
+    "provider",
+    "model_id",
+    "model_version_or_release",
+    "api_endpoint_family",
+    "call_window",
+    "sampling",
+    "prompt",
+    "response",
+    "redaction",
+    "cache",
+    "run_binding",
+    "evidence"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "trellm_direct_provider_manifest_v0.1" },
+    "protocol_id": { "type": "string", "pattern": "\\S" },
+    "provider_route": {
+      "const": "direct-api",
+      "description": "Headline v0.3 results must use direct provider APIs, not routed provider surfaces."
+    },
+    "provider": { "type": "string", "pattern": "\\S" },
+    "model_id": { "type": "string", "pattern": "\\S" },
+    "model_version_or_release": { "type": "string", "pattern": "\\S" },
+    "api_endpoint_family": { "type": "string", "pattern": "\\S" },
+    "call_window": {
+      "type": "object",
+      "required": ["call_started_at", "call_completed_at", "request_id_redacted", "retry_count"],
+      "additionalProperties": false,
+      "properties": {
+        "call_started_at": { "type": "string", "format": "date-time" },
+        "call_completed_at": { "type": "string", "format": "date-time" },
+        "request_id_redacted": { "type": "boolean" },
+        "retry_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "sampling": {
+      "type": "object",
+      "required": ["temperature", "top_p", "max_tokens"],
+      "additionalProperties": false,
+      "properties": {
+        "temperature": { "type": "number", "minimum": 0 },
+        "top_p": { "type": "number", "minimum": 0, "maximum": 1 },
+        "max_tokens": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "prompt": {
+      "type": "object",
+      "required": ["prompt_template_id", "prompt_version", "prompt_sha256", "raw_prompt_public"],
+      "additionalProperties": false,
+      "properties": {
+        "prompt_template_id": { "type": "string", "pattern": "\\S" },
+        "prompt_version": { "type": "string", "pattern": "\\S" },
+        "prompt_sha256": { "$ref": "#/$defs/sha256" },
+        "system_prompt_sha256": { "$ref": "#/$defs/sha256" },
+        "raw_prompt_public": { "const": false }
+      }
+    },
+    "response": {
+      "type": "object",
+      "required": ["response_sha256", "response_format", "parse_status", "raw_response_public"],
+      "additionalProperties": false,
+      "properties": {
+        "response_sha256": { "$ref": "#/$defs/sha256" },
+        "response_format": { "enum": ["json_object", "jsonl", "tool_call", "text", "structured_policy"] },
+        "parse_status": { "enum": ["parsed", "partial", "failed"] },
+        "parse_error_class": { "type": "string" },
+        "raw_response_public": { "const": false }
+      }
+    },
+    "redaction": {
+      "type": "object",
+      "required": [
+        "provider_secrets_removed",
+        "raw_prompt_public",
+        "raw_response_public",
+        "private_account_data_removed",
+        "redaction_policy"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "provider_secrets_removed": { "const": true },
+        "raw_prompt_public": { "const": false },
+        "raw_response_public": { "const": false },
+        "private_account_data_removed": { "const": true },
+        "redaction_policy": { "type": "string", "pattern": "\\S" },
+        "notes": { "type": "string" }
+      }
+    },
+    "cache": {
+      "type": "object",
+      "required": ["cache_status"],
+      "additionalProperties": false,
+      "properties": {
+        "cache_status": { "enum": ["live_call", "cache_hit", "cache_replay"] },
+        "cache_key_sha256": { "$ref": "#/$defs/sha256" },
+        "original_call_manifest_sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "run_binding": {
+      "type": "object",
+      "required": [
+        "scenario_id",
+        "contamination_tier",
+        "execution_level",
+        "seed",
+        "sample_index",
+        "trajectory_manifest_sha256"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "scenario_id": { "type": "string", "pattern": "\\S" },
+        "contamination_tier": { "enum": ["C0", "C1", "C2"] },
+        "execution_level": { "enum": ["E0", "E1", "E2", "E3"] },
+        "seed": { "type": "integer" },
+        "sample_index": { "type": "integer", "minimum": 0 },
+        "trajectory_manifest_sha256": { "$ref": "#/$defs/sha256" },
+        "benchmark_submission_sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["evidence_label", "claim_scope"],
+      "additionalProperties": false,
+      "properties": {
+        "evidence_label": { "const": "direct-api" },
+        "claim_scope": { "type": "string", "pattern": "\\S" },
+        "appendix_only": { "type": "boolean" }
+      }
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

@@ -1,0 +1,197 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install
+        run: python -m pip install -e ".[dev]"
+      - name: Compile sources
+        run: python -m compileall src scripts examples tests -q
+      - name: Ruff maintainability checks
+        run: python -m ruff check src scripts examples tests
+      - name: Mypy core/tools checks
+        run: python -m mypy
+      - name: Unit tests
+        run: python -m pytest tests -q --cov=tradearena --cov-report=xml --cov-report=term-missing
+      - name: Core/execution/tools coverage threshold
+        run: python -m coverage report --include="src/tradearena/core/*,src/tradearena/execution/*,src/tradearena/tools/*" --fail-under=80
+      - name: Upload coverage
+        if: matrix.python-version == '3.12'
+        uses: codecov/codecov-action@v7
+        continue-on-error: true
+        with:
+          files: ./coverage.xml
+          flags: unit-tests
+          name: python-3.12
+          use_oidc: true
+          fail_ci_if_error: false
+      - name: Launch demo smoke test
+        run: python scripts/run_launch_demo.py --skip-paper-figures
+      - name: Showcase index smoke test
+        run: python scripts/run_showcase.py --reuse-existing
+      - name: Validate demo artifact contract
+        run: python scripts/validate_demo_artifacts.py
+      - name: Validate benchmark protocols
+        run: |
+          python scripts/validate_benchmark_spec.py benchmarks/v0.2/spec.json
+          python scripts/validate_benchmark_spec.py benchmarks/v0.3/protocol.json
+      - name: Validate direct provider manifest contract
+        run: python scripts/validate_direct_provider_manifest.py examples/provider_manifests/direct_openai_example.json
+      - name: Validate v0.3 direct API pilot
+        run: python scripts/run_v03_direct_api_pilot.py --output-dir outputs/ci_v0_3_direct_api_pilot --seeds 7 --samples 0
+      - name: Build v0.3 direct API matrix plan
+        run: python scripts/build_v03_direct_api_matrix_plan.py --output-dir outputs/ci_v0_3_direct_api_matrix_plan --models openai:gpt-5.5:fixture-2026-05-17:responses:OPENAI_API_KEY --seeds 7,11 --samples 0,1
+      - name: Build v0.3 direct API call packets
+        run: python scripts/build_v03_direct_api_call_packets.py --plan-rows outputs/ci_v0_3_direct_api_matrix_plan/direct_api_matrix_plan_rows.csv --output-dir outputs/ci_v0_3_direct_api_call_packets
+      - name: Build v0.3 direct API submission checklist
+        run: python scripts/build_v03_direct_api_submission_checklist.py --output-dir outputs/ci_v0_3_direct_api_submission_checklist
+      - name: Build v0.3 direct API matrix gate
+        run: python scripts/build_v03_direct_api_matrix_gate.py --output-dir outputs/ci_v0_3_direct_api_matrix_gate --submission-dirs outputs/ci_v0_3_direct_api_pilot/submissions --provider-manifest-dirs outputs/ci_v0_3_direct_api_pilot/provider_manifests
+      - name: Validate v0.3 execution ladder
+        run: python scripts/run_v03_execution_ladder.py --output-dir outputs/ci_v0_3_execution_ladder --agents signal-weighted,random --seeds 7 --periods 8 --top-k 2
+      - name: Validate v0.3 execution stress grid
+        run: python scripts/run_v03_execution_stress_grid.py --output-dir outputs/ci_v0_3_execution_stress_grid --agents signal-weighted,random --seeds 7 --periods 8
+      - name: Validate v0.3 FinAudit pilot
+        run: python scripts/run_v03_finaudit_pilot.py --output-dir outputs/ci_v0_3_finaudit_pilot --tasks 4 --periods 16 --base-seed 410
+      - name: Build v0.3 FinAudit direct-model plan
+        run: python scripts/build_v03_finaudit_direct_model_plan.py --task-manifest outputs/ci_v0_3_finaudit_pilot/finaudit_pilot_task_manifest.csv --output-dir outputs/ci_v0_3_finaudit_direct_model_plan --models openai:gpt-5.5:fixture-2026-05-17:responses:OPENAI_API_KEY
+      - name: Validate v0.3 memory contamination pilot
+        run: python scripts/run_v03_memory_contamination.py --output-dir outputs/ci_v0_3_memory_contamination --kinds fake_rejections --doses 0,0.5 --decays 1.0 --risks max-position --seeds 7 --periods 12
+      - name: Build v0.3 contamination control audit
+        run: python scripts/build_v03_contamination_control_audit.py --output-dir outputs/ci_v0_3_contamination_control_audit
+      - name: Validate v0.3 power note
+        run: python scripts/run_v03_power_note.py --output-dir outputs/ci_v0_3_power_note --repeat-levels 6,10 --effect-sizes 0.8,1.2 --target-powers 0.5 --draws 30 --permutation-draws 128 --seed 3
+      - name: Build v0.3 variance decomposition
+        run: python scripts/build_v03_variance_decomposition.py --output-dir outputs/ci_v0_3_variance_decomposition
+      - name: Build v0.3 claim boundary audit
+        run: python scripts/build_v03_claim_boundary_audit.py --output-dir outputs/ci_v0_3_claim_boundary_audit
+      - name: Build v0.3 external reproduction gate
+        run: python scripts/build_v03_external_reproduction_gate.py --output-dir outputs/ci_v0_3_external_reproduction_reports
+      - name: Build v0.3 external reproduction pack
+        run: python scripts/run_v03_external_reproduction_pack.py --output-dir outputs/ci_v0_3_reproduction_pack --environment-class linux
+      - name: Build v0.3 evidence index
+        run: python scripts/build_v03_evidence_index.py --output-dir outputs/ci_v0_3_evidence_index
+      - name: Scan public artifacts for private LLM fields
+        run: python scripts/scan_public_artifacts.py outputs docs/results examples/benchmark_submissions
+      - name: Validate agent skills
+        run: |
+          python scripts/validate_skill_contract.py skills
+          python scripts/build_skill_index.py skills --output docs/agent_skills_index.md --check
+          python scripts/score_skill_task.py --tasks-dir examples/skill_tasks --validate-only
+          python scripts/score_skill_task.py --tasks-dir examples/skill_tasks --answers-dir examples/skill_task_answers/reference
+          python scripts/score_skill_task_report.py --tasks-dir examples/skill_tasks --output docs/results/skill_task_matrix.md --check
+      - name: Validate example benchmark submission
+        run: python scripts/validate_benchmark_submission.py examples/benchmark_submissions/example_redacted_submission.json
+      - name: Build TradeArena leaderboard registry
+        run: python scripts/build_benchmark_registry.py examples/benchmark_submissions
+      - name: Release readiness smoke test
+        run: python scripts/check_release_readiness.py
+
+  fresh-environment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+      - name: Install public PyPI package in a clean venv
+        run: |
+          python -m venv /tmp/ta-clean
+          /tmp/ta-clean/bin/python -m pip install --upgrade pip
+          /tmp/ta-clean/bin/python -m pip install tradearena-benchmark==0.2.0
+      - name: Run first-contact benchmark path
+        run: |
+          mkdir -p outputs/fresh
+          /tmp/ta-clean/bin/tradearena \
+            --benchmark tradearena-core \
+            --periods 30 \
+            --output outputs/fresh/quickstart_trajectory.json
+      - name: Build external reproduction pack from clean venv
+        run: |
+          /tmp/ta-clean/bin/python scripts/run_external_reproduction_pack.py \
+            --output-dir outputs/fresh/reproduction
+          /tmp/ta-clean/bin/python scripts/validate_reproduction_report.py \
+            outputs/fresh/reproduction/manifest.json
+      - name: Hash and replay first-contact artifact
+        run: |
+          /tmp/ta-clean/bin/tradearena \
+            hash-run outputs/fresh/quickstart_trajectory.json \
+            > outputs/fresh/hash.json
+          /tmp/ta-clean/bin/tradearena \
+            replay outputs/fresh/quickstart_trajectory.json \
+            --case risk_aware_realistic_agent \
+            --step 2 \
+            --json \
+            > outputs/fresh/replay.json
+      - name: Validate fresh-environment artifacts
+        run: |
+          cat > /tmp/validate_fresh_environment.py <<'PY'
+          import json
+          from pathlib import Path
+
+          required = [
+              Path("outputs/fresh/quickstart_trajectory.json"),
+              Path("outputs/fresh/reproduction/manifest.json"),
+              Path("outputs/fresh/reproduction/README.md"),
+              Path("outputs/fresh/hash.json"),
+              Path("outputs/fresh/replay.json"),
+              Path("outputs/examples/audit_report.html"),
+              Path("outputs/examples/agent_autopsy_dashboard.html"),
+              Path("outputs/examples/failure_autopsy.json"),
+              Path("outputs/examples/failure_autopsy.md"),
+          ]
+          missing = [str(path) for path in required if not path.exists() or path.stat().st_size == 0]
+          if missing:
+              raise SystemExit(f"missing or empty fresh-environment artifacts: {missing}")
+
+          manifest = json.loads(Path("outputs/fresh/reproduction/manifest.json").read_text())
+          if manifest["schema"] != "tradearena_external_reproduction_pack_v1":
+              raise SystemExit("unexpected reproduction-pack schema")
+          failed = [command for command in manifest["commands"] if command.get("returncode") not in {0, None}]
+          if failed:
+              raise SystemExit(f"reproduction-pack command failures: {failed}")
+
+          trajectory_hash = json.loads(Path("outputs/fresh/hash.json").read_text())
+          if not str(trajectory_hash.get("reproducibility_hash", "")).startswith("sha256:"):
+              raise SystemExit("hash-run did not emit a reproducibility hash")
+
+          replay = json.loads(Path("outputs/fresh/replay.json").read_text())
+          if replay.get("step") != 2 or not replay.get("decisions"):
+              raise SystemExit("replay did not return the requested step with decisions")
+
+          for html_path in [
+              Path("outputs/examples/audit_report.html"),
+              Path("outputs/examples/agent_autopsy_dashboard.html"),
+          ]:
+              text = html_path.read_text(encoding="utf-8", errors="ignore").lower()
+              if "<html" not in text or "</html>" not in text:
+                  raise SystemExit(f"{html_path} is not a complete HTML document")
+          PY
+          /tmp/ta-clean/bin/python /tmp/validate_fresh_environment.py
+      - name: Upload fresh-environment artifacts
+        uses: actions/upload-artifact@v7
+        with:
+          name: fresh-environment-artifacts
+          path: |
+            outputs/fresh
+            outputs/examples/audit_report.html
+            outputs/examples/agent_autopsy_dashboard.html
+            outputs/examples/failure_autopsy.json
+            outputs/examples/failure_autopsy.md

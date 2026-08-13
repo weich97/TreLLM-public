@@ -1,0 +1,62 @@
+{
+  "aggregate_row_count": 8,
+  "artifacts": [
+    "memory_contamination_rows.csv",
+    "memory_contamination_aggregate.csv",
+    "memory_contamination_dose_response.csv",
+    "contamination_tier_controls.csv",
+    "memory_contamination_summary.json",
+    "memory_contamination_summary.md"
+  ],
+  "claim_boundary": "Memory-contamination protocol fixture for C0 mechanism validation. It quantifies read-time memory pollution effects and tier controls; it is not model-performance or trading-profit evidence.",
+  "contamination_tier": "C0",
+  "contamination_tiers_declared": [
+    "C0",
+    "C1",
+    "C2"
+  ],
+  "control_contract_only_tiers": [
+    "C1",
+    "C2"
+  ],
+  "dose_response_row_count": 24,
+  "implemented_tiers": [
+    "C0"
+  ],
+  "max_abs_primary_delta_vs_dose0": 0.375,
+  "memory_contamination_doses": [
+    0.0,
+    0.5
+  ],
+  "memory_contamination_kinds": [
+    "fake_rejections",
+    "fake_violations"
+  ],
+  "memory_decay_rates": [
+    1.0,
+    0.6
+  ],
+  "periods": 24,
+  "primary_outcome": "memory_driven_leverage_amplification",
+  "protocol_id": "trellm-v0.3-protocol",
+  "required_metrics": [
+    "memory_pollution_ratio",
+    "memory_driven_leverage_amplification",
+    "paired_bootstrap_delta",
+    "BH-FDR q_value"
+  ],
+  "risk_managers": [
+    "max-position"
+  ],
+  "row_count": 16,
+  "scenario_id": "synthetic_memory_contamination_c0_v0_3",
+  "schema": "trellm_v0_3_memory_contamination_v0.1",
+  "seeds": [
+    7,
+    11
+  ],
+  "symbols": [
+    "SYN",
+    "ALT"
+  ]
+}

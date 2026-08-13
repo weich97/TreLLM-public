@@ -1,0 +1,10 @@
+regime,scenario_id,baseline,comparison,kendall_tau,top3_jaccard,e0_winner,cmp_winner,winner_changed,e0_top_sharpe,cmp_top_sharpe
+calm,synthetic_calm_trend_c0_v0_3,E0,E1,0.667,1.000,risk-parity,naive-momentum,yes,26.77,23.31
+calm,synthetic_calm_trend_c0_v0_3,E0,E2,0.667,1.000,risk-parity,naive-momentum,yes,26.77,19.11
+calm,synthetic_calm_trend_c0_v0_3,E0,E3,0.667,1.000,risk-parity,naive-momentum,yes,26.77,19.66
+high_vol,synthetic_high_volatility_c0_v0_3,E0,E1,1.000,1.000,naive-momentum,naive-momentum,no,15.14,13.65
+high_vol,synthetic_high_volatility_c0_v0_3,E0,E2,0.333,0.500,naive-momentum,risk-parity,yes,15.14,11.53
+high_vol,synthetic_high_volatility_c0_v0_3,E0,E3,1.000,1.000,naive-momentum,naive-momentum,no,15.14,14.12
+jump_tail,synthetic_jump_tail_c0_v0_3,E0,E1,0.667,1.000,risk-parity,risk-parity,no,11.97,10.96
+jump_tail,synthetic_jump_tail_c0_v0_3,E0,E2,0.333,0.500,risk-parity,risk-parity,no,11.97,9.59
+jump_tail,synthetic_jump_tail_c0_v0_3,E0,E3,0.667,1.000,risk-parity,risk-parity,no,11.97,10.29

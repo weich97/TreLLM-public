@@ -1,0 +1,9 @@
+capital,level,kill_triggers,decision_steps,kill_rate_pct
+100k,E0,0,840,0.0
+100k,E1,0,840,0.0
+100k,harsh,0,840,0.0
+100k,participation_1pct,0,840,0.0
+30M,E0,0,840,0.0
+30M,E1,0,840,0.0
+30M,harsh,0,840,0.0
+30M,participation_1pct,0,840,0.0

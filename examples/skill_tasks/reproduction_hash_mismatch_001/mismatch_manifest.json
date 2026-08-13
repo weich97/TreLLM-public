@@ -1,0 +1,36 @@
+{
+  "schema_version": "tradearena.reproduction_report.v0.2",
+  "report_id": "skill-hash-mismatch-fixture",
+  "commit": "c12366c",
+  "tag": "v0.2.0",
+  "python": {
+    "version": "3.11.9",
+    "platform": "Ubuntu 22.04"
+  },
+  "commands": [
+    {
+      "command": "python scripts/run_external_reproduction_pack.py --output-dir outputs/reproduction/v0_2_external",
+      "status": "success"
+    },
+    {
+      "command": "tradearena hash-run outputs/reproduction/v0_2_external/trajectory.json",
+      "status": "success"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "outputs/reproduction/v0_2_external/trajectory.json",
+      "sha256": "sha256:observed-different"
+    },
+    {
+      "path": "outputs/reproduction/v0_2_external/dashboard.html",
+      "sha256": "sha256:dashboard-ok"
+    }
+  ],
+  "expected_trajectory_hash": "sha256:expected-reference",
+  "observed_trajectory_hash": "sha256:observed-different",
+  "live_api": false,
+  "downloaded_market_data": true,
+  "private_fills": false,
+  "notes": "Fresh environment succeeded but hash mismatch needs triage."
+}

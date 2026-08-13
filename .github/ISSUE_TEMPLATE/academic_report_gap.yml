@@ -1,0 +1,44 @@
+name: Academic report gap
+description: Identify a paper-readiness gap, missing baseline, or reviewer-risk item
+title: "[Paper Gap] "
+labels: ["paper", "research", "documentation"]
+body:
+  - type: textarea
+    id: concern
+    attributes:
+      label: Reviewer concern
+      description: What would a reviewer, external validator, or benchmark user challenge?
+    validations:
+      required: true
+  - type: dropdown
+    id: track
+    attributes:
+      label: Maturity track
+      options:
+        - Academic report
+        - External validation
+        - Community participation
+        - Execution calibration
+        - LLM baseline matrix
+        - Reproducibility or artifact policy
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Missing evidence
+      description: Which table, figure, experiment, citation, command, or validation artifact is missing?
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_fix
+    attributes:
+      label: Proposed fix
+      description: A concrete experiment, doc update, script, or artifact that would address the gap.
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation command or acceptance criterion
+      placeholder: |
+        python scripts/check_release_readiness.py
+        python -m pytest tests/test_new_case.py -q

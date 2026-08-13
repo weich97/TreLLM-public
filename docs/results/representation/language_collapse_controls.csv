@@ -1,0 +1,7 @@
+anchors,cohort,lexical_collapse_rate,mean_effective_rank_delta,mean_entropy_delta,mean_ttr_delta,rank_contraction_rate,rank_contraction_without_lexical_collapse,trajectories,view
+200,all_llm,0.19,9.0254583,0.045088929,-0.0022856129,0.97,0.79,20,plan
+40,deepseek,0.25,7.8128275,0.079643396,0.0061906,0.975,0.725,4,plan
+160,frontier_matrix,0.175,9.328616,0.036450313,-0.0044046662,0.96875,0.80625,16,plan
+200,all_llm,0.19,0.56790504,0.045088929,-0.0022856129,0.7,0.595,20,fused
+40,deepseek,0.25,1.118054,0.079643396,0.0061906,0.7,0.525,4,fused
+160,frontier_matrix,0.175,0.4303678,0.036450313,-0.0044046662,0.7,0.6125,16,fused

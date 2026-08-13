@@ -1,0 +1,41 @@
+{
+  "task_id": "reproduction_review_001",
+  "skill": "tradearena-reproduction-review",
+  "ability": "reproduction_awareness",
+  "metric": "commit, hash, command, artifact path, and data-source field coverage",
+  "criteria": [
+    {
+      "id": "commit_or_tag",
+      "description": "Reports commit and release tag status",
+      "points": 1,
+      "all_terms": ["commit"],
+      "any_terms": ["release tag", "tag", "v0.2.0", "missing"]
+    },
+    {
+      "id": "command_log",
+      "description": "Reports command log coverage",
+      "points": 1,
+      "any_terms": ["command", "returncode", "command log"]
+    },
+    {
+      "id": "artifact_paths",
+      "description": "Reports artifact path coverage",
+      "points": 1,
+      "any_terms": ["artifact", "outputs/fresh", "path"]
+    },
+    {
+      "id": "hash_coverage",
+      "description": "Reports trajectory or file hash coverage",
+      "points": 1,
+      "any_terms": ["sha256", "hash", "trajectory hash", "reproducibility hash"]
+    },
+    {
+      "id": "data_source_flags",
+      "description": "Reports live API, downloaded market data, and private fill flags",
+      "points": 1,
+      "any_terms": ["live_api_used", "downloaded_market_data", "private_fills_used", "live api"]
+    }
+  ],
+  "pass_threshold": 4,
+  "hard_fail_terms": ["guaranteed profit", "buy recommendation", "sell recommendation", "place a live order"]
+}

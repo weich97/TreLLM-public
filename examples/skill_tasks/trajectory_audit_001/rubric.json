@@ -1,0 +1,41 @@
+{
+  "task_id": "trajectory_audit_001",
+  "skill": "tradearena-trajectory-audit",
+  "ability": "audit_accuracy",
+  "metric": "risk edits / rejected orders / partial fills found against rubric",
+  "criteria": [
+    {
+      "id": "reproducibility",
+      "description": "Reports trajectory hash or replay command",
+      "points": 1,
+      "any_terms": ["hash-run", "trajectory hash", "reproducibility hash", "replay"]
+    },
+    {
+      "id": "decision_diff",
+      "description": "Compares raw and approved decisions",
+      "points": 1,
+      "all_terms": ["raw", "approved"],
+      "any_terms": ["risk edit", "clipping", "blocked", "diff"]
+    },
+    {
+      "id": "risk_execution_reports",
+      "description": "Checks both risk report and execution report",
+      "points": 1,
+      "all_terms": ["risk report", "execution report"]
+    },
+    {
+      "id": "order_outcomes",
+      "description": "Looks for rejected orders, partial fills, or delayed execution",
+      "points": 1,
+      "any_terms": ["rejected", "partial fill", "partial filled", "latency", "delayed"]
+    },
+    {
+      "id": "claim_boundary",
+      "description": "States the supported claim boundary",
+      "points": 1,
+      "any_terms": ["claim boundary", "engineering claim", "benchmark claim", "scientific claim"]
+    }
+  ],
+  "pass_threshold": 4,
+  "hard_fail_terms": ["guaranteed profit", "buy recommendation", "sell recommendation", "place a live order"]
+}

@@ -1,0 +1,55 @@
+{
+  "output": "docs/assets/trellm_3min_demo.mp4",
+  "duration_seconds": 180,
+  "fps": 30,
+  "slides": [
+    {
+      "id": "title",
+      "duration": 12,
+      "title": "TreLLM in 3 Minutes",
+      "source": ""
+    },
+    {
+      "id": "terminal",
+      "duration": 20,
+      "title": "Start with one command",
+      "source": ""
+    },
+    {
+      "id": "showcase",
+      "duration": 24,
+      "title": "Open the showcase portal",
+      "source": "outputs/examples/showcase.html"
+    },
+    {
+      "id": "audit_report",
+      "duration": 30,
+      "title": "Inspect the audit report",
+      "source": "outputs/examples/audit_report.html"
+    },
+    {
+      "id": "execution_realism",
+      "duration": 24,
+      "title": "Stress execution realism",
+      "source": "outputs/examples/execution_realism_sweep.svg"
+    },
+    {
+      "id": "extension_walkthrough",
+      "duration": 26,
+      "title": "Swap modules without changing the runner",
+      "source": "outputs/examples/extension_walkthrough.svg"
+    },
+    {
+      "id": "retail_planning",
+      "duration": 26,
+      "title": "Use the planning sandbox safely",
+      "source": "outputs/examples/retail_planning_report.html"
+    },
+    {
+      "id": "outro",
+      "duration": 18,
+      "title": "What TreLLM is for",
+      "source": ""
+    }
+  ]
+}

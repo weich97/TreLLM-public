@@ -1,0 +1,271 @@
+{
+  "schema_version": "trellm_protocol_v0.3",
+  "protocol_id": "trellm-v0.3-protocol",
+  "status": "draft",
+  "system_identity": {
+    "system_name": "TreLLM",
+    "leaderboard_name": "TradeArena",
+    "system_scope": "LLM financial-agent audit, reliability evaluation, risk-control, execution-calibration, and replayable evidence generation",
+    "leaderboard_scope": "public ranking and benchmark-card surface for comparable auditable agent runs",
+    "forbidden_headline_claim": "TradeArena proves that an LLM can trade profitably"
+  },
+  "paper_positioning": {
+    "primary_route": "agent evaluation and reliability research",
+    "main_thesis": "LLM financial-agent evaluation is not stable unless execution assumptions, memory contamination, risk intervention, auditability, and provider drift are first-class protocol variables.",
+    "negative_result_policy": "LLM underperformance against simple anchors is a publishable reliability finding when the protocol explains why apparent trading skill disappears under realistic constraints.",
+    "not_in_scope": [
+      "investment advice",
+      "live profitability claim",
+      "broker-grade transaction-cost prediction",
+      "model-level trading skill claim from routed-provider rows"
+    ]
+  },
+  "provider_protocol": {
+    "headline_results": {
+      "required_evidence_label": "direct-api",
+      "allow_routed_providers": false,
+      "routed_provider_policy": "Poe or other routed-provider rows may appear only as historical, appendix, or provider-drift evidence.",
+      "cache_policy": "Cache hits must retain the original direct-provider manifest hash and call window."
+    },
+    "required_manifest_fields": [
+      "provider",
+      "model_id",
+      "model_version_or_release",
+      "api_endpoint_family",
+      "temperature",
+      "top_p",
+      "max_tokens",
+      "call_started_at",
+      "call_completed_at",
+      "prompt_template_id",
+      "prompt_sha256",
+      "response_sha256",
+      "redaction_policy",
+      "retry_count",
+      "parse_status",
+      "cache_status"
+    ],
+    "failure_accounting": {
+      "provider_call_failure": "record a failure row with provider, model, scenario, seed, sample index, and error class",
+      "retry": "record retry_count and retain the final accepted response hash",
+      "parse_failure": "count parse coverage and use documented fallback behavior",
+      "dropped_row": "allowed only when the pre-registered invalid-row rule applies"
+    }
+  },
+  "execution_ladder": [
+    {
+      "id": "E0",
+      "name": "ideal",
+      "simulator": "SimpleOrderSimulator",
+      "claim_scope": "upper-bound comparison under idealized close-price execution"
+    },
+    {
+      "id": "E1",
+      "name": "paper_stress",
+      "simulator": "RealisticOrderSimulator",
+      "claim_scope": "shared stress comparison with fees, spread, slippage, latency, liquidity caps, and market impact"
+    },
+    {
+      "id": "E2",
+      "name": "stress_grid",
+      "simulator": "RealisticOrderSimulator parameter grid",
+      "claim_scope": "sensitivity analysis over spread, latency, participation, and impact assumptions"
+    },
+    {
+      "id": "E3",
+      "name": "quote_or_fill_replay",
+      "simulator": "QuoteReplayOrderSimulator or CalibratedOrderSimulator",
+      "claim_scope": "calibrated or replay evidence with venue, symbol, timestamp, and quote/fill provenance"
+    }
+  ],
+  "contamination_tiers": [
+    {
+      "id": "C0",
+      "name": "synthetic",
+      "required_controls": [
+        "repository-generated future paths",
+        "published scenario generator seed",
+        "no historical symbol identity"
+      ],
+      "claim_scope": "no-known-training-contamination controlled evaluation"
+    },
+    {
+      "id": "C1",
+      "name": "anonymized_real",
+      "required_controls": [
+        "symbol anonymization",
+        "relative timestamp masking",
+        "memorization probe",
+        "data hash"
+      ],
+      "claim_scope": "pattern-recognition evaluation with residual contamination risk measured by probes"
+    },
+    {
+      "id": "C2",
+      "name": "forward_frozen",
+      "required_controls": [
+        "dated hash commitment",
+        "future evaluation window",
+        "no post-freeze scenario edits",
+        "walk-forward provenance table"
+      ],
+      "claim_scope": "strongest public evidence against memorized historical answers"
+    }
+  ],
+  "metrics": {
+    "outcome": [
+      "total_return",
+      "max_drawdown",
+      "sharpe",
+      "turnover",
+      "fill_rate",
+      "rejected_order_count"
+    ],
+    "mechanism": [
+      "intent_to_execution_gap",
+      "risk_edit_rate",
+      "pre_risk_leverage",
+      "post_risk_leverage",
+      "slippage_cost_bps",
+      "memory_pollution_ratio",
+      "memory_driven_leverage_amplification"
+    ],
+    "audit": [
+      "trajectory_reproducibility_coverage",
+      "manifest_hash",
+      "prompt_hash",
+      "response_hash",
+      "data_hash",
+      "claim_boundary_label"
+    ]
+  },
+  "statistics": {
+    "deterministic_baseline": {
+      "minimum_seeds": 30,
+      "required_rows": "all C0 main scenarios across E0, E1, and E2"
+    },
+    "llm_main_comparison": {
+      "minimum_seeds": 10,
+      "samples_per_seed": 3,
+      "pilot_label_below_threshold": true
+    },
+    "required_methods": [
+      "bootstrap_ci",
+      "paired_bootstrap",
+      "paired_sign_flip_permutation",
+      "BH-FDR",
+      "effect_size",
+      "power_curve_or_detectable_effect_note",
+      "variance_decomposition"
+    ],
+    "ranking_stability": [
+      "kendall_tau",
+      "top_k_jaccard",
+      "cluster_bootstrap_ci"
+    ],
+    "comparison_keys": [
+      "contamination_tier",
+      "execution_level",
+      "scenario_id",
+      "seed",
+      "sample_index"
+    ]
+  },
+  "finaudit_track": {
+    "task_families": [
+      "risk_violation_detection",
+      "silent_risk_edit_detection",
+      "provenance_drift_detection",
+      "tampered_fill_price_detection",
+      "claim_boundary_review"
+    ],
+    "required_metrics": [
+      "precision",
+      "recall",
+      "f1",
+      "wilson_interval",
+      "difficulty_breakdown"
+    ],
+    "required_analyses": [
+      "cross_audit_performance",
+      "self_audit_performance",
+      "self_audit_bias",
+      "trading_vs_audit_rank_correlation"
+    ],
+    "ground_truth_policy": "Defects must be injected with machine-checkable answer keys before model evaluation."
+  },
+  "claim_boundaries": {
+    "engineering": "TreLLM records replayable trajectories, risk reports, execution reports, manifests, and hashes.",
+    "benchmark": "Under a frozen protocol, execution assumptions, contamination controls, and risk gates can change measured outcomes.",
+    "scientific": "Model-specific reliability claims require direct APIs, repeated seeds and samples, contamination labels, statistical tests, and comparisons against fixed non-LLM baselines."
+  },
+  "external_reproduction": {
+    "minimum_independent_reports": 3,
+    "required_environment_classes": [
+      "windows_or_macos",
+      "linux",
+      "colab_or_binder"
+    ],
+    "required_report_fields": [
+      "command_log",
+      "python_version",
+      "package_versions",
+      "commit_or_protocol_hash",
+      "artifact_hashes",
+      "deviations",
+      "live_api_used",
+      "private_data_used"
+    ],
+    "public_artifact_policy": "Public reproduction bundles must exclude private prompts, API keys, raw private caches, and account-specific files."
+  },
+  "required_artifacts": [
+    "protocol JSON",
+    "direct-provider manifest schema or contract",
+    "raw seed rows",
+    "aggregate rows",
+    "significance table",
+    "ranking-stability table",
+    "contamination probe report",
+    "contamination-control readiness audit",
+    "execution-sensitivity report",
+    "execution stress-grid report",
+    "FinAudit pilot report",
+    "FinAudit direct-model audit plan",
+    "power curve or detectable effect note",
+    "variance decomposition table",
+    "claim-boundary audit",
+    "direct API redaction and submission checklist",
+    "direct API model matrix plan",
+    "direct API call packet manifest",
+    "direct API model matrix gate",
+    "external reproduction report gate",
+    "external reproduction bundle"
+  ],
+  "milestones": [
+    {
+      "id": "M1",
+      "name": "freeze-protocol-fields",
+      "exit_criteria": "Protocol fields for provider provenance, execution level, contamination tier, statistics, and claim boundaries are validator-enforced."
+    },
+    {
+      "id": "M2",
+      "name": "direct-api-pilot",
+      "exit_criteria": "At least two direct-provider models produce redacted manifests through the v0.3 fields."
+    },
+    {
+      "id": "M3",
+      "name": "execution-sensitivity-main-table",
+      "exit_criteria": "E0-E3 evidence produces ranking stability and intent-to-execution gap tables."
+    },
+    {
+      "id": "M4",
+      "name": "finaudit-pilot",
+      "exit_criteria": "Injected-defect audit tasks report cross-audit and self-audit performance."
+    },
+    {
+      "id": "M5",
+      "name": "external-reproduction",
+      "exit_criteria": "At least three independent reproduction reports validate public artifacts."
+    }
+  ]
+}

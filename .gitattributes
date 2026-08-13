@@ -1,0 +1,10 @@
+/scripts/run_v03_fixed_intent_replay.py text eol=lf
+/scripts/analyze_v03_fixed_intent_replay.py text eol=lf
+/scripts/run_v03_direct_api_submission.py text eol=lf
+/scripts/validate_direct_provider_manifest.py text eol=lf
+/src/tradearena/** text eol=lf
+/docs/results/v0_3_direct_api_call_packets/direct_api_call_packets.jsonl text eol=lf
+/docs/results/v0_3_direct_api_matrix_plan/direct_api_matrix_plan_rows.csv text eol=lf
+/docs/results/v0_3_fixed_intent_replay/** text eol=lf
+/tests/test_v03_fixed_intent_replay.py text eol=lf
+/tests/test_v03_fixed_intent_analysis.py text eol=lf

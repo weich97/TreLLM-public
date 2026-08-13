@@ -1,0 +1,5 @@
+auditor,n_confounded,confounded_default,confounded_constraint,clean_constraint,fixed_pairs,regressed_pairs,mcnemar_p
+deepseek:deepseek-v4-pro,60,0.333,0.950,1.000,38,1,1.46e-10
+glm:glm-5,60,0.300,0.800,0.783,31,1,1.54e-08
+poe:claude-opus-4.7,60,0.917,1.000,1.000,5,0,0.0625
+poe:gemini-3.1-pro,60,0.883,0.967,1.000,7,2,0.18

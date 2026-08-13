@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">TreLLM system architecture</title>
+  <desc id="desc">A system architecture diagram showing data, agent lifecycle, risk layer, execution simulator, memory, logging, and evaluation outputs.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#26384f"/>
+    </marker>
+    <style>
+      .bg { fill: #ffffff; }
+      .frame { fill: #fbfcfd; stroke: #c5d0da; stroke-width: 1.5; rx: 18; }
+      .box { fill: #ffffff; stroke: #b8c6d4; stroke-width: 1.3; rx: 12; }
+      .data { fill: #eef6ff; stroke: #8ab4df; }
+      .agent { fill: #f4f0ff; stroke: #a99ad7; }
+      .risk { fill: #fff5eb; stroke: #dfa76f; }
+      .exec { fill: #eefaf4; stroke: #8dc2a2; }
+      .log { fill: #f6f7f9; stroke: #adb8c4; }
+      .out { fill: #fffdf0; stroke: #d8c46a; }
+      .title { fill: #172033; font: 700 28px Arial, Helvetica, sans-serif; }
+      .section { fill: #172033; font: 700 19px Arial, Helvetica, sans-serif; }
+      .text { fill: #39495c; font: 400 15px Arial, Helvetica, sans-serif; }
+      .tiny { fill: #5a6978; font: 400 13px Arial, Helvetica, sans-serif; }
+      .arrow { stroke: #26384f; stroke-width: 2.2; fill: none; marker-end: url(#arrow); }
+      .dash { stroke: #68788a; stroke-width: 1.5; stroke-dasharray: 6 6; fill: none; marker-end: url(#arrow); }
+      .loop { stroke: #7d6bb1; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="720"/>
+  <text class="title" x="600" y="48" text-anchor="middle">TreLLM: Trading Audit and Control Architecture</text>
+
+  <rect class="frame" x="42" y="82" width="1116" height="560"/>
+
+  <rect class="box data" x="78" y="130" width="190" height="120"/>
+  <text class="section" x="173" y="164" text-anchor="middle">Data Layer</text>
+  <text class="text" x="104" y="194">Market candles</text>
+  <text class="text" x="104" y="219">News and macro signals</text>
+  <text class="text" x="104" y="244">Synthetic or real adapters</text>
+
+  <rect class="box agent" x="335" y="108" width="360" height="190"/>
+  <text class="section" x="515" y="142" text-anchor="middle">Agent Lifecycle</text>
+  <rect class="box agent" x="365" y="166" width="135" height="44"/>
+  <text class="text" x="432" y="194" text-anchor="middle">Observe</text>
+  <rect class="box agent" x="530" y="166" width="135" height="44"/>
+  <text class="text" x="598" y="194" text-anchor="middle">Plan</text>
+  <rect class="box agent" x="365" y="228" width="135" height="44"/>
+  <text class="text" x="432" y="256" text-anchor="middle">Propose Order</text>
+  <rect class="box agent" x="530" y="228" width="135" height="44"/>
+  <text class="text" x="598" y="256" text-anchor="middle">Reflect</text>
+  <path class="loop" d="M500 188 H526"/>
+  <path class="loop" d="M598 211 V225"/>
+  <path class="loop" d="M530 250 H504"/>
+  <path class="loop" d="M432 225 V212"/>
+
+  <rect class="box risk" x="765" y="130" width="170" height="120"/>
+  <text class="section" x="850" y="164" text-anchor="middle">Risk Layer</text>
+  <text class="text" x="790" y="194">Budget checks</text>
+  <text class="text" x="790" y="219">Pre/in/post trade</text>
+  <text class="text" x="790" y="244">Structured reports</text>
+
+  <rect class="box exec" x="975" y="130" width="145" height="120"/>
+  <text class="section" x="1048" y="164" text-anchor="middle">Execution</text>
+  <text class="text" x="996" y="194">Slippage</text>
+  <text class="text" x="996" y="219">Latency</text>
+  <text class="text" x="996" y="244">Partial fills</text>
+
+  <rect class="box" x="335" y="352" width="170" height="118"/>
+  <text class="section" x="420" y="386" text-anchor="middle">Tools</text>
+  <text class="text" x="360" y="416">Backtester</text>
+  <text class="text" x="360" y="441">Feature store</text>
+  <text class="text" x="360" y="466">Risk calculator</text>
+
+  <rect class="box" x="535" y="352" width="170" height="118"/>
+  <text class="section" x="620" y="386" text-anchor="middle">Memory</text>
+  <text class="text" x="560" y="416">Signals</text>
+  <text class="text" x="560" y="441">Decisions</text>
+  <text class="text" x="560" y="466">State digest</text>
+
+  <rect class="box log" x="765" y="340" width="355" height="145"/>
+  <text class="section" x="943" y="374" text-anchor="middle">Trajectory and Audit Log</text>
+  <text class="text" x="795" y="405">Observations, rationales, tool calls</text>
+  <text class="text" x="795" y="430">Risk reports, orders, fills, portfolio state</text>
+  <text class="text" x="795" y="455">Prompt/model versions and random seeds</text>
+
+  <rect class="box out" x="120" y="535" width="960" height="70"/>
+  <text class="section" x="180" y="577">Paper Artifacts</text>
+  <text class="text" x="360" y="577">metrics tables</text>
+  <text class="text" x="520" y="577">equity curves</text>
+  <text class="text" x="675" y="577">execution events</text>
+  <text class="text" x="855" y="577">risk audit charts</text>
+
+  <path class="arrow" d="M268 190 H330"/>
+  <path class="arrow" d="M695 190 H760"/>
+  <path class="arrow" d="M935 190 H970"/>
+  <path class="arrow" d="M1048 252 V334"/>
+  <path class="arrow" d="M850 252 V334"/>
+  <path class="dash" d="M515 300 V346"/>
+  <path class="dash" d="M420 352 V304"/>
+  <path class="dash" d="M620 352 V304"/>
+  <path class="arrow" d="M943 486 V530"/>
+  <path class="dash" d="M173 252 C173 410, 260 570, 116 570"/>
+  <path class="dash" d="M705 414 H760"/>
+
+  <text class="tiny" x="600" y="672" text-anchor="middle">The same TreLLM run produces TradeArena leaderboard metrics and a replayable evidence trail for every trading decision.</text>
+</svg>

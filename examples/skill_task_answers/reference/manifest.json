@@ -1,0 +1,27 @@
+{
+  "schema": "tradearena_skill_answer_set_v0.1",
+  "answer_set_id": "reference",
+  "evaluator_type": "reference",
+  "model_name": "maintainer-reference-answer-key",
+  "provider": "tradearena",
+  "prompt_version": "reference-answer-key-v0.2",
+  "skill_commit_or_version": "repo-main-skills",
+  "task_inputs_commit_or_version": "repo-main-skill-tasks",
+  "skill_files_used": true,
+  "hidden_artifacts_used": false,
+  "task_ids": [
+    "claim_boundary_001",
+    "claim_boundary_provider_drift_001",
+    "execution_attribution_001",
+    "execution_boundary_001",
+    "intent_execution_autopsy_001",
+    "market_rule_plugin_review_001",
+    "plugin_author_001",
+    "reproduction_hash_mismatch_001",
+    "reproduction_review_001",
+    "risk_feedback_learning_001",
+    "risk_gate_review_001",
+    "trajectory_audit_001"
+  ],
+  "notes": "Deterministic maintainer-authored answer key for CI and report generation. It is not a trading strategy."
+}

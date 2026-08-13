@@ -1,0 +1,42 @@
+{
+  "task_id": "market_rule_plugin_review_001",
+  "skill": "tradearena-plugin-author",
+  "ability": "plugin_engineering",
+  "metric": "market-rule plugin boundary and deterministic-test review",
+  "criteria": [
+    {
+      "id": "market_rule_protocol",
+      "description": "Uses the MarketRule validate/transform/explain boundary",
+      "points": 1,
+      "any_terms": ["MarketRule", "validate_order", "transform_order", "explain_block", "market rule"]
+    },
+    {
+      "id": "separates_boundaries",
+      "description": "Keeps exchange rules separate from risk manager and simulator behavior",
+      "points": 1,
+      "all_terms": ["risk"],
+      "any_terms": ["simulator", "execution", "separate", "boundary"]
+    },
+    {
+      "id": "deterministic_tests",
+      "description": "Proposes deterministic tests for T+1, lot size, and price-limit rules",
+      "points": 1,
+      "all_terms": ["deterministic", "T+1"],
+      "any_terms": ["lot", "limit-up", "limit-down", "price limit"]
+    },
+    {
+      "id": "safety",
+      "description": "Rejects live API access or broker credentials",
+      "points": 1,
+      "any_terms": ["no live API", "without live API", "broker credentials", "paper-only"]
+    },
+    {
+      "id": "registration_docs",
+      "description": "Mentions schema, docs, fixture, or registration updates",
+      "points": 1,
+      "any_terms": ["schema", "docs", "fixture", "registration", "example"]
+    }
+  ],
+  "pass_threshold": 4,
+  "hard_fail_terms": ["live order", "broker password", "guaranteed profit", "buy recommendation", "sell recommendation"]
+}

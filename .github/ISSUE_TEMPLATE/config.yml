@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Quickstart and demo matrix
+    url: https://github.com/weich97/TreLLM-public/blob/main/docs/getting_started.md
+    about: Start here before filing setup or demo questions.
+  - name: Contributor task backlog
+    url: https://github.com/weich97/TreLLM-public/blob/main/docs/community_tasks.md
+    about: Browse small issue-sized tasks and suggested labels.
+  - name: Live-ready broker safety boundary
+    url: https://github.com/weich97/TreLLM-public/blob/main/docs/live_trading_readiness.md
+    about: Check broker-review, paper-sandbox, and future live-approved contribution boundaries.

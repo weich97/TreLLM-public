@@ -1,0 +1,44 @@
+{
+  "task_id": "trajectory_inconsistency_001",
+  "skill": "tradearena-trajectory-audit",
+  "ability": "audit_accuracy",
+  "metric": "finds intent-risk-execution mismatches without trading advice",
+  "criteria": [
+    {
+      "id": "btc_clip",
+      "description": "Identifies BTC target-weight clipping from 0.72 to 0.35",
+      "points": 1,
+      "all_terms": ["BTC"],
+      "any_terms": ["0.72", "0.35", "clip", "clipped"]
+    },
+    {
+      "id": "eth_block",
+      "description": "Identifies ETH confidence block",
+      "points": 1,
+      "all_terms": ["ETH"],
+      "any_terms": ["confidence", "blocked", "min_confidence"]
+    },
+    {
+      "id": "partial_fill",
+      "description": "Identifies BTC partial fill and fill ratio",
+      "points": 1,
+      "all_terms": ["partial"],
+      "any_terms": ["0.62", "fill_ratio", "fill ratio"]
+    },
+    {
+      "id": "execution_friction",
+      "description": "Mentions slippage or latency as execution friction",
+      "points": 1,
+      "any_terms": ["slippage", "latency", "execution friction"]
+    },
+    {
+      "id": "claim_boundary",
+      "description": "Avoids trading advice and requests missing evidence for stronger claims",
+      "points": 1,
+      "any_terms": ["missing evidence", "cannot conclude", "not trading advice", "benchmark", "scientific"]
+    }
+  ],
+  "pass_threshold": 4,
+  "hard_fail_terms": ["guaranteed profit", "buy recommendation", "sell recommendation", "place a live order"]
+}
+

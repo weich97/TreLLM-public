@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/weich97/TreLLM-public/schemas/broker_approval_artifact.schema.json",
+  "title": "TreLLM Broker Approval Artifact",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "approval_id",
+    "approval_status",
+    "approved_by",
+    "approved_at",
+    "expires_at",
+    "account_mode",
+    "max_notional",
+    "max_quantity",
+    "allowed_symbols",
+    "allowed_order_types",
+    "approval_reason",
+    "request_artifact_hash"
+  ],
+  "properties": {
+    "schema": { "const": "tradearena_broker_approval_artifact_v0.1" },
+    "approval_id": { "type": "string", "pattern": "^\\S+$" },
+    "approval_status": { "const": "approved" },
+    "approved_by": {
+      "type": "string",
+      "pattern": "^\\S+$",
+      "not": { "pattern": "@" }
+    },
+    "approved_at": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:Z|[+-]\\d{2}:\\d{2})$"
+    },
+    "expires_at": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:Z|[+-]\\d{2}:\\d{2})$"
+    },
+    "account_mode": { "const": "live" },
+    "max_notional": { "type": "number", "exclusiveMinimum": 0 },
+    "max_quantity": { "type": "number", "exclusiveMinimum": 0 },
+    "allowed_symbols": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^\\S+$" }
+    },
+    "allowed_order_types": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "enum": ["market", "limit"] }
+    },
+    "approval_reason": { "type": "string", "pattern": "\\S" },
+    "request_artifact_hash": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

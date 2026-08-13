@@ -1,0 +1,42 @@
+{
+  "task_id": "leaderboard_misread_001",
+  "skill": "tradearena-claim-boundary-review",
+  "ability": "claim_discipline",
+  "metric": "prevents audit-score leaderboard misread as trading profitability",
+  "criteria": [
+    {
+      "id": "audit_not_trading",
+      "description": "States that the matrix evaluates financial-audit agents rather than stock pickers",
+      "points": 1,
+      "all_terms": ["audit"],
+      "any_terms": ["not as stock pickers", "not a trading", "not profitability", "financial-audit"]
+    },
+    {
+      "id": "weakens_best_claim",
+      "description": "Weakens or rejects the best trader / outperform claim",
+      "points": 1,
+      "any_terms": ["weaken", "unsupported", "cannot conclude", "does not show", "should not claim"]
+    },
+    {
+      "id": "provider_drift",
+      "description": "Mentions Poe/provider drift, routing, wrapper, or version instability",
+      "points": 1,
+      "any_terms": ["provider drift", "routing", "wrapper", "version drift", "Poe-hosted"]
+    },
+    {
+      "id": "keeps_useful_finding",
+      "description": "Keeps the supported reliability/audit finding",
+      "points": 1,
+      "any_terms": ["reliability", "audit", "claim-boundary", "execution-boundary", "reproduction"]
+    },
+    {
+      "id": "no_live_claim",
+      "description": "Avoids live trading or market outperformance language",
+      "points": 1,
+      "any_terms": ["no live trading", "not live", "not market outperformance", "paper-only"]
+    }
+  ],
+  "pass_threshold": 4,
+  "hard_fail_terms": ["guaranteed profit", "buy recommendation", "sell recommendation", "place a live order"]
+}
+

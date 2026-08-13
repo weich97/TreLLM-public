@@ -1,0 +1,45 @@
+{
+  "agents": [
+    "signal-weighted",
+    "naive-momentum",
+    "risk-parity",
+    "random"
+  ],
+  "aggregate_row_count": 16,
+  "artifacts": [
+    "execution_ladder_rows.csv",
+    "execution_ladder_aggregate.csv",
+    "execution_ladder_ranking_stability.csv",
+    "execution_ladder_summary.json",
+    "execution_ladder_summary.md"
+  ],
+  "claim_boundary": "Execution ladder protocol fixture for TreLLM reliability analysis. It reports how rankings and mechanism metrics move under execution assumptions; it is not a trading-profit claim.",
+  "contamination_tier": "C0",
+  "e3_boundary": "Calibrated replay fixture path. Venue-wide E3 claims require external quote/fill provenance.",
+  "execution_levels": [
+    "E0",
+    "E1",
+    "E2",
+    "E3"
+  ],
+  "mechanism_metrics": [
+    "execution_fill_rate",
+    "rejected_order_count",
+    "total_slippage_cost",
+    "intent_risk_gap_l1",
+    "risk_execution_gap_l1",
+    "intent_execution_gap_l1"
+  ],
+  "periods": 24,
+  "protocol_id": "trellm-v0.3-protocol",
+  "rank_metric": "sharpe_mean",
+  "ranking_stability_row_count": 3,
+  "row_count": 32,
+  "scenario_id": "synthetic_high_volatility_c0_v0_3",
+  "schema": "trellm_v0_3_execution_ladder_v0.1",
+  "seeds": [
+    7,
+    11
+  ],
+  "top_k": 3
+}

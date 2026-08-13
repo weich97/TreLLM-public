@@ -1,0 +1,27 @@
+{
+  "artifact_id": "direct_api_matrix_gate",
+  "artifacts": [
+    "direct_api_matrix_gate_rows.csv",
+    "direct_api_matrix_gate_coverage.csv",
+    "direct_api_matrix_gate_summary.json",
+    "direct_api_matrix_gate_summary.md"
+  ],
+  "claim_boundary": "This gate verifies direct API row provenance and seed/sample coverage. Rows tagged as protocol fixtures or below the threshold remain pilot evidence.",
+  "coverage_group_count": 30,
+  "headline_scientific_claim_ready": true,
+  "invalid_row_count": 0,
+  "main_threshold_group_count": 30,
+  "minimum_seeds": 10,
+  "open_gap_policy": "The direct_api_model_matrix gap remains open until at least one non-fixture direct API group meets the v0.3 threshold of 10 seeds and 3 samples per seed.",
+  "protocol_id": "trellm-v0.3-protocol",
+  "provider_manifest_dirs": [
+    "outputs/v0_3_direct_api_matrix/provider_manifests"
+  ],
+  "row_count": 900,
+  "samples_per_seed": 3,
+  "schema": "trellm_v0_3_direct_api_matrix_gate_v0.1",
+  "submission_dirs": [
+    "outputs/v0_3_direct_api_matrix/submissions"
+  ],
+  "valid_row_count": 900
+}

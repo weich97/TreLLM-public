@@ -1,0 +1,47 @@
+{
+  "claim_boundary": "This sample upgrades TreLLM from an OHLCV-only smoke test to a public quote/fill replay calibration example. It is still a small Binance BTCUSDT perpetual sample, not a venue-wide transaction-cost model.",
+  "date": "2024-03-01",
+  "files": {
+    "fills": "fills.csv",
+    "quotes": "quotes.csv"
+  },
+  "max_fills": 500,
+  "provenance": {
+    "downloaded_market_data_used": true,
+    "fill_interpretation": "Public exchange trades are used as realized market fills for calibration plumbing. They are not broker-specific fills and do not reveal hidden queue position or private order intent.",
+    "latency_interpretation": "bookTicker transaction_time to event_time is a public market-data lag proxy. It is not broker order-routing latency.",
+    "live_api_used": false,
+    "private_fills_used": false
+  },
+  "quote_stride_ms": 1000,
+  "rows": {
+    "fills": 500,
+    "quotes": 884
+  },
+  "schema": "tradearena_public_binance_microstructure_sample_v1",
+  "source": "Binance public-data USD-M futures daily files",
+  "source_files": [
+    {
+      "bytes": 341220692,
+      "key": "book_ticker",
+      "sha256": "sha256:38481845ba8d5bf4de0d88e0a42c84594a8859290a5fb55e95d49f5e17dcbd18",
+      "url": "https://data.binance.vision/data/futures/um/daily/bookTicker/BTCUSDT/BTCUSDT-bookTicker-2024-03-01.zip"
+    },
+    {
+      "bytes": 33969283,
+      "key": "trades",
+      "sha256": "sha256:6d7052e9740a414edd6a12f39ac1c664f1712d5c5c08f6d95787b83053538c02",
+      "url": "https://data.binance.vision/data/futures/um/daily/trades/BTCUSDT/BTCUSDT-trades-2024-03-01.zip"
+    },
+    {
+      "bytes": 63721,
+      "key": "klines",
+      "sha256": "sha256:0bc57481cdd27f873a97091896bae2a40cf00a62af50201c3b0ccd29e14c52fb",
+      "url": "https://data.binance.vision/data/futures/um/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2024-03-01.zip"
+    }
+  ],
+  "symbol": "BTCUSDT",
+  "venue": "Binance USD-M Futures",
+  "window_end_utc": "2024-03-01T00:15:00Z",
+  "window_start_utc": "2024-03-01T00:00:00Z"
+}

@@ -1,0 +1,94 @@
+{
+  "agent": {
+    "agent_commit": "redacted-or-local",
+    "agent_type": "llm_policy",
+    "model_display_name": "kimi-k2.5",
+    "model_family": "kimi-k2.5",
+    "model_identifier_redacted": false,
+    "parse_coverage": 1.0,
+    "prompt_mode": "rationale",
+    "prompt_version": "risk-feedback-v1",
+    "provider": "poe",
+    "response_format": "json_object",
+    "risk_feedback_mode": "true"
+  },
+  "data_source": {
+    "data_hash": "sha256:liquidity_collapse-synthetic-seed-41-symbols-SYN-ALT-periods-8",
+    "frequency": "daily",
+    "name": "synthetic-market",
+    "symbols": [
+      "SYN",
+      "ALT"
+    ],
+    "timestamp_policy": "relative_masked"
+  },
+  "evidence": {
+    "claim_scope": "cached-provider reliability under stress-only execution",
+    "tag_definitions": {
+      "cached-provider": "Provider-backed behavior is replayed or published through cache/redacted manifest evidence.",
+      "redacted-prompt": "Raw provider prompt/response text is not public; a redacted manifest is provided.",
+      "stress-only": "Execution uses shared stress assumptions, not venue-calibrated transaction-cost prediction."
+    },
+    "tags": [
+      "stress-only",
+      "cached-provider",
+      "redacted-prompt"
+    ]
+  },
+  "execution_config": {
+    "base_slippage_bps": 4.0,
+    "commission_bps": 1.0,
+    "latency_steps": 1,
+    "market_impact": 0.35,
+    "participation_rate": 0.005,
+    "spread_bps": 15.0
+  },
+  "metrics": {
+    "alpha_pre_risk_hit_rate": 1.0,
+    "alpha_pre_risk_sharpe": 12.21863344055332,
+    "alpha_pre_risk_steps": 5,
+    "alpha_pre_risk_total_return": 0.17786427826645768,
+    "alpha_quality_score": 1.0,
+    "execution_fill_rate": 0.8,
+    "execution_robustness_score": 0.7494414611523081,
+    "max_drawdown": -0.0011713690842416469,
+    "rejected_order_count": 0,
+    "risk_clipped_decisions": 9,
+    "risk_discipline_score": 0.71875,
+    "risk_violation_count": 0,
+    "sharpe": 12.568451829594096,
+    "total_return": 0.04416006916041204,
+    "trajectory_reproducibility_coverage": 1.0
+  },
+  "redaction": {
+    "notes": "Leaderboard smoke manifest generated from a live or cache-backed provider run; raw prompts and responses remain in ignored local cache files.",
+    "provider_secrets_removed": true,
+    "raw_provider_text_removed": true,
+    "timestamps_masked": true
+  },
+  "reproducibility_hash": "sha256:4a456013198b2779569bf94b150144f3b0dcc4c21e1cf60e68a74e86d68224d6",
+  "risk_config": {
+    "risk_budget": {
+      "drawdown_de_risk_weight": 0.0,
+      "drawdown_lookback": 5,
+      "max_drawdown": 0.2,
+      "max_gross_exposure": 1.0,
+      "max_position_weight": 0.35,
+      "max_single_step_turnover": 0.75,
+      "risk_feedback_mode": "true"
+    },
+    "risk_manager": "max-position"
+  },
+  "scenario_id": "leaderboard_llm_liquidity_collapse_synthetic_v0_1",
+  "schema_version": "0.1",
+  "trajectory_manifest": {
+    "artifact_hashes": {
+      "redacted_summary": "sha256:1b49135894613a86c53c31ff4ed95d7b5226ce943f62a075af0bf3a35568edf4"
+    },
+    "format": "redacted_manifest",
+    "manifest_hash": "sha256:1b49135894613a86c53c31ff4ed95d7b5226ce943f62a075af0bf3a35568edf4",
+    "path_or_uri": "docs/results/model_matrix/liquidity_collapse__poe_kimi_k2_5_summary.json",
+    "raw_prompts_included": false,
+    "raw_responses_included": false
+  }
+}

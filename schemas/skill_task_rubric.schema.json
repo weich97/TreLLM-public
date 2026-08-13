@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/weich97/TreLLM-public/schemas/skill_task_rubric.schema.json",
+  "title": "TreLLM skill task rubric",
+  "type": "object",
+  "required": ["task_id", "skill", "ability", "metric", "criteria", "pass_threshold"],
+  "additionalProperties": false,
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$"
+    },
+    "skill": {
+      "type": "string",
+      "pattern": "^tradearena-[a-z0-9-]+$"
+    },
+    "ability": {
+      "type": "string",
+      "enum": [
+        "audit_accuracy",
+        "risk_understanding",
+        "execution_boundary_awareness",
+        "claim_discipline",
+        "reproduction_awareness",
+        "plugin_engineering"
+      ]
+    },
+    "metric": {
+      "type": "string"
+    },
+    "criteria": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["id", "description", "points"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$"
+          },
+          "description": {
+            "type": "string"
+          },
+          "points": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "any_terms": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "all_terms": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "anyOf": [
+          {
+            "required": ["any_terms"]
+          },
+          {
+            "required": ["all_terms"]
+          }
+        ]
+      }
+    },
+    "pass_threshold": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "hard_fail_terms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/weich97/TreLLM-public/schemas/skill_answer_set.schema.json",
+  "title": "TreLLM skill task answer set",
+  "type": "object",
+  "required": [
+    "schema",
+    "answer_set_id",
+    "evaluator_type",
+    "model_name",
+    "provider",
+    "prompt_version",
+    "skill_commit_or_version",
+    "task_inputs_commit_or_version",
+    "skill_files_used",
+    "hidden_artifacts_used",
+    "task_ids"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "tradearena_skill_answer_set_v0.1" },
+    "answer_set_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_.-]+$"
+    },
+    "evaluator_type": {
+      "type": "string",
+      "enum": ["human", "llm", "coding-agent", "reference"]
+    },
+    "model_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provider": {
+      "type": "string",
+      "minLength": 1
+    },
+    "prompt_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "skill_commit_or_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_inputs_commit_or_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "skill_files_used": {
+      "type": "boolean"
+    },
+    "hidden_artifacts_used": {
+      "type": "boolean",
+      "const": false
+    },
+    "task_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9_]+$"
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

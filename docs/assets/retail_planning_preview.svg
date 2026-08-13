@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="540" viewBox="0 0 1040 540" role="img" aria-label="Retail planning allocation demo">
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<text x="42" y="52" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="800" fill="#0f172a">Retail planning sandbox: suitability first, paper execution only</text>
+<text x="42" y="82" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="500" fill="#64748b">Two profiles flow through the same planner, suitability gate, rebalance planner, futures margin estimator, and audit report.</text>
+<rect x="42" y="124" width="460" height="336" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="60" y="158" font-family="Inter,Arial,sans-serif" font-size="17" font-weight="800" fill="#0f172a">Ordinary Stock Etf Plan</text>
+<text x="60" y="182" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="700" fill="#64748b">risk score 0.51 | orders 7 | futures estimates 0</text>
+<rect x="60" y="216" width="360" height="18" rx="5" fill="#e2e8f0"/>
+<rect x="60" y="216" width="148.5" height="18" rx="5" fill="#2563eb"/>
+<text x="432" y="230" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="800" fill="#334155">BND 41.3%</text>
+<rect x="60" y="248" width="360" height="18" rx="5" fill="#e2e8f0"/>
+<rect x="60" y="248" width="46.9" height="18" rx="5" fill="#059669"/>
+<text x="432" y="262" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="800" fill="#334155">VTI 13.0%</text>
+<rect x="60" y="280" width="360" height="18" rx="5" fill="#e2e8f0"/>
+<rect x="60" y="280" width="38.9" height="18" rx="5" fill="#f59e0b"/>
+<text x="432" y="294" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="800" fill="#334155">XLK 10.8%</text>
+<rect x="60" y="312" width="360" height="18" rx="5" fill="#e2e8f0"/>
+<rect x="60" y="312" width="37.8" height="18" rx="5" fill="#7c3aed"/>
+<text x="432" y="326" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="800" fill="#334155">VXUS 10.5%</text>
+<rect x="60" y="344" width="360" height="18" rx="5" fill="#e2e8f0"/>
+<rect x="60" y="344" width="29.3" height="18" rx="5" fill="#dc2626"/>
+<text x="432" y="358" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="800" fill="#334155">SGOV 8.1%</text>
+<rect x="60" y="376" width="360" height="18" rx="5" fill="#e2e8f0"/>
+<rect x="60" y="376" width="29.3" height="18" rx="5" fill="#0f766e"/>
+<text x="432" y="390" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="800" fill="#334155">AAPL 8.1%</text>
+<rect x="60" y="408" width="360" height="18" rx="5" fill="#e2e8f0"/>
+<rect x="60" y="408" width="29.3" height="18" rx="5" fill="#64748b"/>
+<text x="432" y="422" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="800" fill="#334155">MSFT 8.1%</text>
+<text x="60" y="426" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="800" fill="#dc2626">blocked: none</text>
+<text x="60" y="448" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="500" fill="#64748b">all outputs are paper recommendations requiring human approval</text>
+<rect x="542" y="124" width="460" height="336" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="560" y="158" font-family="Inter,Arial,sans-serif" font-size="17" font-weight="800" fill="#0f172a">Experienced Futures Overlay</text>
+<text x="560" y="182" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="700" fill="#64748b">risk score 0.95 | orders 8 | futures estimates 1</text>
+<rect x="560" y="216" width="360" height="18" rx="5" fill="#e2e8f0"/>
+<rect x="560" y="216" width="92.6" height="18" rx="5" fill="#2563eb"/>
+<text x="932" y="230" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="800" fill="#334155">VTI 25.7%</text>
+<rect x="560" y="248" width="360" height="18" rx="5" fill="#e2e8f0"/>
+<rect x="560" y="248" width="76.7" height="18" rx="5" fill="#059669"/>
+<text x="932" y="262" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="800" fill="#334155">XLK 21.3%</text>
+<rect x="560" y="280" width="360" height="18" rx="5" fill="#e2e8f0"/>
+<rect x="560" y="280" width="74.6" height="18" rx="5" fill="#f59e0b"/>
+<text x="932" y="294" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="800" fill="#334155">VXUS 20.7%</text>
+<rect x="560" y="312" width="360" height="18" rx="5" fill="#e2e8f0"/>
+<rect x="560" y="312" width="28.6" height="18" rx="5" fill="#7c3aed"/>
+<text x="932" y="326" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="800" fill="#334155">BND 7.9%</text>
+<rect x="560" y="344" width="360" height="18" rx="5" fill="#e2e8f0"/>
+<rect x="560" y="344" width="26.4" height="18" rx="5" fill="#dc2626"/>
+<text x="932" y="358" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="800" fill="#334155">AAPL 7.3%</text>
+<rect x="560" y="376" width="360" height="18" rx="5" fill="#e2e8f0"/>
+<rect x="560" y="376" width="26.4" height="18" rx="5" fill="#0f766e"/>
+<text x="932" y="390" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="800" fill="#334155">MSFT 7.3%</text>
+<rect x="560" y="408" width="360" height="18" rx="5" fill="#e2e8f0"/>
+<rect x="560" y="408" width="22.0" height="18" rx="5" fill="#64748b"/>
+<text x="932" y="422" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="800" fill="#334155">SGOV 6.1%</text>
+<text x="560" y="426" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="800" fill="#dc2626">blocked: MCL</text>
+<text x="560" y="448" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="500" fill="#64748b">all outputs are paper recommendations requiring human approval</text>
+</svg>

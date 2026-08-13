@@ -1,0 +1,4 @@
+protocol_id,environment_class,required,accepted_report_count,coverage_status,accepted_reports
+trellm-v0.3-protocol,windows_or_macos,true,0,missing,
+trellm-v0.3-protocol,linux,true,0,missing,
+trellm-v0.3-protocol,colab_or_binder,true,0,missing,

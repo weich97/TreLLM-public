@@ -1,0 +1,41 @@
+{
+  "task_id": "risk_gate_review_001",
+  "skill": "tradearena-risk-gate-review",
+  "ability": "risk_understanding",
+  "metric": "risk report completeness and missed-control checklist score",
+  "criteria": [
+    {
+      "id": "confidence_block",
+      "description": "Identifies low-confidence block or confidence floor",
+      "points": 1,
+      "any_terms": ["low-confidence", "low confidence", "confidence floor", "min_confidence"]
+    },
+    {
+      "id": "target_weight_clipping",
+      "description": "Identifies target-weight clipping",
+      "points": 1,
+      "any_terms": ["target-weight clipping", "target weight clipping", "max_abs_weight", "clipped"]
+    },
+    {
+      "id": "risk_budget_fields",
+      "description": "States risk budget fields",
+      "points": 1,
+      "any_terms": ["max_gross_exposure", "turnover", "drawdown", "participation", "latency", "slippage"]
+    },
+    {
+      "id": "warning_vs_error",
+      "description": "Distinguishes warning from error or hard block",
+      "points": 1,
+      "all_terms": ["warning"],
+      "any_terms": ["error", "block", "hard"]
+    },
+    {
+      "id": "missing_evidence",
+      "description": "States missing evidence before conclusions",
+      "points": 1,
+      "any_terms": ["missing evidence", "not enough evidence", "cannot conclude", "unsupported"]
+    }
+  ],
+  "pass_threshold": 4,
+  "hard_fail_terms": ["guaranteed profit", "buy recommendation", "sell recommendation", "place a live order"]
+}

@@ -1,0 +1,42 @@
+{
+  "task_id": "market_rules_overgeneralization_001",
+  "skill": "tradearena-plugin-author",
+  "ability": "plugin_engineering",
+  "metric": "prevents deterministic market-rule fixture overgeneralization",
+  "criteria": [
+    {
+      "id": "fixture_boundary",
+      "description": "States that the current artifact is a deterministic fixture or starter slice",
+      "points": 1,
+      "any_terms": ["fixture", "starter", "slice", "deterministic"]
+    },
+    {
+      "id": "rejects_full_rules",
+      "description": "Rejects fully implements / real brokerage rule coverage",
+      "points": 1,
+      "any_terms": ["not fully", "does not fully", "unsupported", "not real brokerage", "not complete"]
+    },
+    {
+      "id": "boundary_split",
+      "description": "Keeps market rules separate from risk manager and execution simulator",
+      "points": 1,
+      "all_terms": ["market rule"],
+      "any_terms": ["risk manager", "execution", "simulator", "separate"]
+    },
+    {
+      "id": "tests",
+      "description": "Lists deterministic tests for calendars, lot sizes, price limits, suspension, or fee tiers",
+      "points": 1,
+      "any_terms": ["calendar", "lot size", "price limit", "suspension", "fee tier", "T+1"]
+    },
+    {
+      "id": "references",
+      "description": "Requests exchange references or venue-rule provenance",
+      "points": 1,
+      "any_terms": ["exchange", "reference", "venue", "provenance", "rulebook"]
+    }
+  ],
+  "pass_threshold": 4,
+  "hard_fail_terms": ["live order", "broker password", "guaranteed profit", "buy recommendation", "sell recommendation"]
+}
+

@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">TreLLM motivation</title>
+  <desc id="desc">A paper-style motivation diagram contrasting narrow return-only evaluation with TreLLM's agent reliability and intent-to-execution audit framing.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#24415f"/>
+    </marker>
+    <linearGradient id="leftPanel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7fafc"/>
+      <stop offset="1" stop-color="#eef4f8"/>
+    </linearGradient>
+    <linearGradient id="rightPanel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f5fbf7"/>
+      <stop offset="1" stop-color="#e8f5ee"/>
+    </linearGradient>
+    <style>
+      .bg { fill: #ffffff; }
+      .panel { stroke: #c7d2dc; stroke-width: 1.4; rx: 18; }
+      .title { fill: #172033; font: 700 28px Arial, Helvetica, sans-serif; }
+      .subtitle { fill: #506070; font: 400 17px Arial, Helvetica, sans-serif; }
+      .label { fill: #172033; font: 700 20px Arial, Helvetica, sans-serif; }
+      .small { fill: #425466; font: 400 16px Arial, Helvetica, sans-serif; }
+      .note { fill: #324459; font: 700 18px Arial, Helvetica, sans-serif; }
+      .pill { stroke-width: 1.2; rx: 12; }
+      .weak { fill: #fff4f2; stroke: #e4b7ae; }
+      .strong { fill: #effaf4; stroke: #9dccb2; }
+      .center { fill: #fffaf0; stroke: #e1bf78; }
+      .arrow { stroke: #24415f; stroke-width: 2.4; fill: none; marker-end: url(#arrow); }
+      .thin { stroke: #8190a0; stroke-width: 1.2; fill: none; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="560"/>
+  <text class="title" x="600" y="50" text-anchor="middle">From Leaderboard Returns to Agent Reliability</text>
+  <text class="subtitle" x="600" y="80" text-anchor="middle">Financial AI agents need evaluation that captures intent, constraints, execution, and auditability.</text>
+
+  <rect class="panel" x="55" y="120" width="435" height="330" fill="url(#leftPanel)"/>
+  <text class="label" x="85" y="160">Common evaluation shortcut</text>
+  <text class="small" x="85" y="188">Treat the agent as a return generator</text>
+
+  <rect class="pill weak" x="95" y="225" width="320" height="48"/>
+  <text class="small" x="120" y="255">Predictor-only or strategy-only scoring</text>
+  <rect class="pill weak" x="95" y="287" width="320" height="48"/>
+  <text class="small" x="120" y="317">Idealized fills and frictionless markets</text>
+  <rect class="pill weak" x="95" y="349" width="320" height="48"/>
+  <text class="small" x="120" y="379">Sparse logs with limited reproducibility</text>
+
+  <path class="thin" d="M130 430 C190 408, 250 435, 315 411 S410 409, 450 384"/>
+  <circle cx="130" cy="430" r="5" fill="#d26b5d"/>
+  <circle cx="450" cy="384" r="5" fill="#d26b5d"/>
+  <text class="small" x="175" y="472">Headline performance can hide</text>
+  <text class="small" x="175" y="493">fragile or unauditable behavior.</text>
+
+  <rect class="pill center" x="535" y="220" width="130" height="130"/>
+  <text class="note" x="600" y="268" text-anchor="middle">Evaluation</text>
+  <text class="note" x="600" y="294" text-anchor="middle">gap</text>
+  <text class="small" x="600" y="323" text-anchor="middle">What happened?</text>
+  <path class="arrow" d="M490 285 H532"/>
+  <path class="arrow" d="M668 285 H710"/>
+
+  <rect class="panel" x="710" y="120" width="435" height="330" fill="url(#rightPanel)"/>
+  <text class="label" x="740" y="160">TreLLM framing</text>
+  <text class="small" x="740" y="188">Evaluate the full decision-making system</text>
+
+  <rect class="pill strong" x="750" y="225" width="320" height="48"/>
+  <text class="small" x="775" y="255">Observe-plan-risk-act-reflect traces</text>
+  <rect class="pill strong" x="750" y="287" width="320" height="48"/>
+  <text class="small" x="775" y="317">Commissions, slippage, latency, liquidity</text>
+  <rect class="pill strong" x="750" y="349" width="320" height="48"/>
+  <text class="small" x="775" y="379">Risk reports and reproducible trajectories</text>
+
+  <path class="thin" d="M785 430 C845 432, 900 395, 965 410 S1055 365, 1100 348"/>
+  <circle cx="785" cy="430" r="5" fill="#38a169"/>
+  <circle cx="1100" cy="348" r="5" fill="#38a169"/>
+  <text class="small" x="805" y="472">Performance is interpreted with</text>
+  <text class="small" x="805" y="493">risk, execution, and audit evidence.</text>
+
+  <text class="subtitle" x="600" y="525" text-anchor="middle">Research question: Can an agent trade well while remaining realistic, risk-aware, and reproducible?</text>
+</svg>

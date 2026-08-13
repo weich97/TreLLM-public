@@ -1,0 +1,44 @@
+{
+  "schema": "trellm_v0_3_c2_window_v0.1",
+  "mode": "dry-run",
+  "commitment": {
+    "declaration_hash": "sha256:e342a26ec6e317d7f5e14498bc4fe29ee5d545e75d21171b118969cad75527c4",
+    "execution_mode": "realistic-stress",
+    "frequency": "weekly",
+    "frozen_at_commit": "efb60f9eab2bfe23584ce80929a3f8069393decb",
+    "frozen_at_utc": "2026-06-11T08:18:01.992606+00:00",
+    "protocol_note": "Forward window evaluated with the leaderboard matrix protocol pinned at the committed revision.",
+    "rank_metric": "sharpe",
+    "risk_profile": "max-position-default",
+    "symbols": [
+      "BTC-USD",
+      "BTC=F",
+      "GSPC"
+    ],
+    "verification": "Recompute with scripts/freeze_forward_window.py --verify <file>; the git history date of this file must precede window_start.",
+    "window_end": "2026-09-15",
+    "window_start": "2026-07-01"
+  },
+  "commitment_git_date": "2026-06-11",
+  "hash_verified": true,
+  "data_provenance": {
+    "source": "Yahoo Finance v8 chart API (daily, back-adjusted close)",
+    "fetched_at_utc": "2026-07-08T02:48:14.506917+00:00",
+    "window_start": "2026-07-01",
+    "window_end": "2026-09-15",
+    "effective_end": "2026-07-08",
+    "complete": false,
+    "symbol_row_counts": {
+      "BTC-USD": 7,
+      "BTC=F": 4,
+      "GSPC": 4
+    },
+    "data_sha256": "sha256:f9cc15dbf8f12d93abae020130cbdef3d729b757c20cec331718ce9765b04cc1"
+  },
+  "window_complete": false,
+  "models_evaluated": [
+    "baseline:always-hold",
+    "baseline:random"
+  ],
+  "claim_boundary": "The commitment pins the window, symbols, cadence, execution, risk, and metric, not a model set; models are evaluated on future data they could not have memorized. Dry-run rows are deterministic baselines proving the pipeline, not C2 evidence."
+}

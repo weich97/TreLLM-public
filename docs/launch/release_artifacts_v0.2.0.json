@@ -1,0 +1,65 @@
+{
+  "artifact_hashes": [
+    {
+      "bytes": 6086,
+      "path": "benchmarks/v0.2/spec.json",
+      "sha256": "sha256:8e688190ff17bc0fca691bcd600bc56bb13d1215d2b5d6a8ac611ae70e17b156"
+    },
+    {
+      "bytes": 6019599,
+      "path": "outputs/examples/audit_walkthrough_trajectory.json",
+      "sha256": "sha256:cd34f609ffebc373341c923b5242c4d90d1a532733eb3feca01e0343415b438c"
+    },
+    {
+      "bytes": 14822,
+      "path": "outputs/examples/audit_report.html",
+      "sha256": "sha256:2c468f2f14eb9f2bec8003fe7366b5da60132f0871a7e9ade52743ead764bab6"
+    },
+    {
+      "bytes": 50069,
+      "path": "outputs/examples/agent_autopsy_dashboard.html",
+      "sha256": "sha256:863e69301d44b8b8db8f30fb9694ffe4961bd5a22cec797ed05403cee6ce6235"
+    },
+    {
+      "bytes": 59420,
+      "path": "outputs/examples/failure_autopsy.json",
+      "sha256": "sha256:3b3b34fc2529322006198cf2c39a64619233ffdd99d05fcd4a2e928ce4caad7b"
+    },
+    {
+      "bytes": 28064,
+      "path": "outputs/examples/failure_autopsy.md",
+      "sha256": "sha256:ac767839b4e6a1a0c020258b7fc31bd7b0cfc9550430a5f23babd7d5030d944d"
+    },
+    {
+      "bytes": 2184,
+      "path": "examples/benchmark_submissions/example_redacted_submission.json",
+      "sha256": "sha256:c5221c49a5b6d01215325561cd0ed4811b8a0fbf03cff2c8a47f0474b9a95395"
+    }
+  ],
+  "benchmark_spec": {
+    "canonical_sha256": "sha256:a777cdfb962a07e658996c9366070d4b0ffb867659c2ccc45685a5c788bf6204",
+    "path": "benchmarks/v0.2/spec.json",
+    "schema_version": "tradearena_benchmark_spec_v0.2",
+    "spec_id": "tradearena-v0.2"
+  },
+  "distribution_files": [
+    {
+      "bytes": 133274,
+      "path": "tradearena_benchmark-0.2.0-py3-none-any.whl",
+      "sha256": "sha256:2d21b11554100a9c52fd3b934e2919976e7e5ce4f2912aa7df0ff9110eda621e",
+      "source": "GitHub Release and PyPI"
+    },
+    {
+      "bytes": 144573,
+      "path": "tradearena_benchmark-0.2.0.tar.gz",
+      "sha256": "sha256:25d0fc6a58914558e3197a17d85ed64dd754e67a09d4aa176c48f7a8544a2568",
+      "source": "GitHub Release and PyPI"
+    }
+  ],
+  "release": "v0.2.0",
+  "reproduction_pack": {
+    "command": "python scripts/run_external_reproduction_pack.py --output-dir outputs/reproduction/v0_2",
+    "manifest_path": "outputs/reproduction/v0_2/manifest.json",
+    "trajectory_reproducibility_hash": "sha256:bf3b1084aeec89f3bf0f99ab91b6c16a989dc8c8a29d9e93c8c72109548e442f"
+  }
+}

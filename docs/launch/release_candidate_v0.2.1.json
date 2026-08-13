@@ -1,0 +1,110 @@
+{
+  "artifact_hashes": [
+    {
+      "bytes": 43567,
+      "exists": true,
+      "path": "README.md",
+      "sha256": "sha256:7ec902d34ed25104ee56063e19d7f1cc87c6e2b890619e9ac6098b9bc42b1a6d"
+    },
+    {
+      "bytes": 6086,
+      "exists": true,
+      "path": "benchmarks/v0.2/spec.json",
+      "sha256": "sha256:8e688190ff17bc0fca691bcd600bc56bb13d1215d2b5d6a8ac611ae70e17b156"
+    },
+    {
+      "bytes": 12484,
+      "exists": true,
+      "path": "docs/results/benchmark_v0_2.md",
+      "sha256": "sha256:319a45938b5708862ea06e280b78089bfe5b08f37a69006fe3707d1796126122"
+    },
+    {
+      "bytes": 6924,
+      "exists": true,
+      "path": "docs/results/execution_replay_calibration_loop.json",
+      "sha256": "sha256:afed5a3dd9940f654b0d28186dca2ca6bdafaf4e3da119308efe397aa47a9705"
+    },
+    {
+      "bytes": 3353,
+      "exists": true,
+      "path": "docs/results/execution_calibration_stability.json",
+      "sha256": "sha256:f3c3ea588ca6a0bb7a7e4c9123aac73a7907a5664522dd6da0e2490cbc04006d"
+    },
+    {
+      "bytes": 4417,
+      "exists": true,
+      "path": "docs/results/market_rules_fixture.json",
+      "sha256": "sha256:cd79f3c9b0bfe5061a8c835d721973f607b557b1292bc5b0be2e084f0946216f"
+    },
+    {
+      "bytes": 2253,
+      "exists": true,
+      "path": "docs/results/external_validation_bundle.md",
+      "sha256": "sha256:73827281f52acc3dbc87e45ef0a98459fa52299242fc77fa1cde6040282af9db"
+    },
+    {
+      "bytes": 12392,
+      "exists": true,
+      "path": "docs/results/poe_skill_task_matrix.md",
+      "sha256": "sha256:b65ad15ca310f8b3af18e03bd69eaa16301017e12d9f2dfef83731ee175ca3f4"
+    },
+    {
+      "bytes": 22034,
+      "exists": true,
+      "path": "docs/results/poe_skill_challenge_matrix.md",
+      "sha256": "sha256:6a15c24a0c355c2ddc21aa7b915854e94796c91a181e11b1ae2897841d88f6d2"
+    },
+    {
+      "bytes": 8213,
+      "exists": true,
+      "path": "docs/results/poe_skill_challenge_followup_matrix.md",
+      "sha256": "sha256:be2e3fe9c9186367b59c65110da159047b24909730b11f83abb0362e08394b47"
+    },
+    {
+      "bytes": 2738,
+      "exists": true,
+      "path": "docs/results/poe_skill_challenge_followup_claude_adversarial.md",
+      "sha256": "sha256:de116d52697da541083dab9193e79d0a4b931e233b2f26846e4c34b0dbf5e4e9"
+    },
+    {
+      "bytes": 6612,
+      "exists": true,
+      "path": "docs/results/skill_task_matrix.md",
+      "sha256": "sha256:560dd7f8427e44af316f90a84765acb80fd931b4862cf32cd6f41a73ecce26ae"
+    },
+    {
+      "bytes": 67568,
+      "exists": true,
+      "path": "docs/results/community_registry.md",
+      "sha256": "sha256:790375b7a67b881b58206cd9f7a34303ed0f2fa3c238e84e1df063764afe06f9"
+    },
+    {
+      "bytes": 1221,
+      "exists": true,
+      "path": "docs/public_artifact_privacy.md",
+      "sha256": "sha256:4c52add96868290eab0b2f17aa060aaf94db052dd5a0bc048974e8b240b60d94"
+    },
+    {
+      "bytes": 2020,
+      "exists": true,
+      "path": "docs/launch/release_notes_v0.2.1.md",
+      "sha256": "sha256:8a0d326255aacca2f55cb32f0b822ce5ef7501e0d545f1e4a8dabf86a6fd6b60"
+    }
+  ],
+  "commit": "690817ae737ae3a65bf36083153286d919110334",
+  "created_at": "2026-06-11T23:08:03.119894+00:00",
+  "current_package_version": "0.2.0",
+  "dirty_file_count": 21,
+  "git_status_sha256": "sha256:86036e2fd4c3ecaec95a2f5c4af446dfd2fa1e61ed2dc67f4fdb9e19ed378740",
+  "pre_release_commands": [
+    "python -m compileall src scripts examples tests -q",
+    "python -m ruff check src scripts examples tests",
+    "python -m mypy",
+    "python -m pytest tests -q",
+    "python scripts/check_release_readiness.py",
+    "python scripts/scan_public_artifacts.py outputs docs/results examples/benchmark_submissions"
+  ],
+  "publish_boundary": "This is a local release-candidate manifest. Tagging and PyPI publication are separate maintainer actions and require CI plus trusted-publishing credentials.",
+  "schema": "tradearena_release_candidate_manifest_v0.1",
+  "target_release": "v0.2.1"
+}

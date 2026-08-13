@@ -1,0 +1,7 @@
+scenario,level_a,level_b,agent_count,rank_metric,kendall_tau,top_3_jaccard
+high_vol,E2_harsh_corner,E2_latency_3,11,sharpe_mean,0.7818181818181819,1.0
+high_vol,E2_harsh_corner,E2_participation_1pct,11,sharpe_mean,0.5272727272727272,0.5
+high_vol,E2_harsh_corner,E2_spread_20bps,11,sharpe_mean,0.38181818181818183,0.5
+high_vol,E2_latency_3,E2_participation_1pct,11,sharpe_mean,0.6,0.5
+high_vol,E2_latency_3,E2_spread_20bps,11,sharpe_mean,0.6,0.5
+high_vol,E2_participation_1pct,E2_spread_20bps,11,sharpe_mean,0.7818181818181819,1.0

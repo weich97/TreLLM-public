@@ -1,0 +1,26 @@
+{
+  "schema": "tradearena_external_reproduction_pack_v1",
+  "release_tag": "v0.2.0",
+  "commit": "",
+  "platform": "Ubuntu 24.04",
+  "python": "3.11.9",
+  "commands": [
+    {
+      "command": "tradearena --benchmark tradearena-core --periods 30 --output outputs/fresh/quickstart_trajectory.json",
+      "returncode": 0
+    },
+    {
+      "command": "tradearena hash-run outputs/fresh/quickstart_trajectory.json",
+      "returncode": 0
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "outputs/fresh/quickstart_trajectory.json",
+      "sha256": "sha256:example"
+    }
+  ],
+  "live_api_used": false,
+  "downloaded_market_data": false,
+  "private_fills_used": false
+}

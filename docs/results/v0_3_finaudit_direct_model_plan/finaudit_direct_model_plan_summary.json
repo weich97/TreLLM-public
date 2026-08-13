@@ -1,0 +1,32 @@
+{
+  "all_rows_not_run": true,
+  "answer_key_public": false,
+  "artifact_id": "finaudit_direct_model_plan",
+  "artifacts": [
+    "finaudit_direct_model_plan_rows.csv",
+    "finaudit_direct_model_plan_coverage.csv",
+    "finaudit_direct_model_plan_summary.json",
+    "finaudit_direct_model_plan.md"
+  ],
+  "claim_boundary": "This artifact pre-registers direct-model FinAudit auditor calls. It does not call providers, publish answer keys, publish raw responses, or support model audit-performance claims.",
+  "conditions": [
+    "cross-audit",
+    "self-audit"
+  ],
+  "coverage_group_count": 2,
+  "planned_models": [
+    {
+      "api_endpoint_family": "responses",
+      "credential_env_var": "OPENAI_API_KEY",
+      "model_id": "gpt-5.5",
+      "model_version_or_release": "fixture-2026-05-17",
+      "provider": "openai"
+    }
+  ],
+  "planned_row_count": 16,
+  "protocol_id": "trellm-v0.3-protocol",
+  "ready_group_count": 0,
+  "schema": "trellm_v0_3_finaudit_direct_model_plan_v0.1",
+  "source_task_manifest": "docs/results/v0_3_finaudit_pilot/finaudit_pilot_task_manifest.csv",
+  "task_count": 8
+}

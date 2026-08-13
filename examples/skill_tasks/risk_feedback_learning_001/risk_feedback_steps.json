@@ -1,0 +1,41 @@
+{
+  "case_id": "skill-risk-feedback-learning-fixture",
+  "mode": "paper-only",
+  "steps": [
+    {
+      "step": 8,
+      "raw_target_weights": {
+        "BTC-USD": 0.74,
+        "ETH-USD": 0.51,
+        "CASH": -0.25
+      },
+      "risk_report": {
+        "status": "edited",
+        "edits": [
+          "max_abs_weight clipped BTC-USD from 0.74 to 0.40",
+          "max_gross_exposure scaled portfolio from 1.50 to 0.80"
+        ],
+        "structured_feedback": "Concentration and gross exposure breached policy."
+      },
+      "reflection": "I should reduce gross exposure and stop adding correlated crypto risk."
+    },
+    {
+      "step": 9,
+      "raw_target_weights": {
+        "BTC-USD": 0.32,
+        "ETH-USD": 0.22,
+        "CASH": 0.46
+      },
+      "risk_report": {
+        "status": "approved",
+        "edits": []
+      },
+      "reflection": "The prior risk feedback changed the plan toward lower concentration."
+    }
+  ],
+  "missing_evidence": [
+    "more seeds",
+    "longer rolling windows",
+    "counterfactual run without structured risk feedback"
+  ]
+}

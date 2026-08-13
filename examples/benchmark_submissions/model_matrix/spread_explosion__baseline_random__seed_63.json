@@ -1,0 +1,92 @@
+{
+  "agent": {
+    "agent_commit": "redacted-or-local",
+    "agent_type": "control_policy",
+    "model_display_name": "random",
+    "model_family": "random",
+    "model_identifier_redacted": false,
+    "parse_coverage": 1.0,
+    "prompt_mode": "rationale",
+    "prompt_version": "risk-feedback-v1",
+    "provider": "baseline",
+    "response_format": "json_object",
+    "risk_feedback_mode": "true"
+  },
+  "data_source": {
+    "data_hash": "sha256:spread_explosion-synthetic-seed-63-symbols-SYN-ALT-periods-8",
+    "frequency": "daily",
+    "name": "synthetic-market",
+    "symbols": [
+      "SYN",
+      "ALT"
+    ],
+    "timestamp_policy": "relative_masked"
+  },
+  "evidence": {
+    "claim_scope": "deterministic baseline under stress-only execution",
+    "tag_definitions": {
+      "deterministic-baseline": "Policy is deterministic or seeded local code, not an LLM provider.",
+      "stress-only": "Execution uses shared stress assumptions, not venue-calibrated transaction-cost prediction."
+    },
+    "tags": [
+      "stress-only",
+      "deterministic-baseline"
+    ]
+  },
+  "execution_config": {
+    "base_slippage_bps": 6.0,
+    "commission_bps": 1.0,
+    "latency_steps": 1,
+    "market_impact": 0.25,
+    "participation_rate": 0.05,
+    "spread_bps": 150.0
+  },
+  "metrics": {
+    "alpha_pre_risk_hit_rate": 0.5,
+    "alpha_pre_risk_sharpe": 1.8282082176212096,
+    "alpha_pre_risk_steps": 6,
+    "alpha_pre_risk_total_return": 0.00963748383311458,
+    "alpha_quality_score": 0.5699964846524117,
+    "execution_fill_rate": 0.875,
+    "execution_robustness_score": 0.6198745667451651,
+    "max_drawdown": -0.04576832298067035,
+    "rejected_order_count": 0,
+    "risk_clipped_decisions": 0,
+    "risk_discipline_score": 0.625,
+    "risk_violation_count": 2,
+    "sharpe": -3.5066747525887467,
+    "total_return": -0.026294916958730208,
+    "trajectory_reproducibility_coverage": 1.0
+  },
+  "redaction": {
+    "notes": "Leaderboard smoke manifest generated from a live or cache-backed provider run; raw prompts and responses remain in ignored local cache files.",
+    "provider_secrets_removed": true,
+    "raw_provider_text_removed": true,
+    "timestamps_masked": true
+  },
+  "reproducibility_hash": "sha256:218ecb3bb308847c7680e38f60e7ab0de292e523d451a2d9344eafeb6f29aba6",
+  "risk_config": {
+    "risk_budget": {
+      "drawdown_de_risk_weight": 0.0,
+      "drawdown_lookback": 5,
+      "max_drawdown": 0.2,
+      "max_gross_exposure": 1.0,
+      "max_position_weight": 0.35,
+      "max_single_step_turnover": 0.75,
+      "risk_feedback_mode": "true"
+    },
+    "risk_manager": "max-position"
+  },
+  "scenario_id": "leaderboard_llm_spread_explosion_synthetic_v0_1",
+  "schema_version": "0.1",
+  "trajectory_manifest": {
+    "artifact_hashes": {
+      "redacted_summary": "sha256:0e30f41064a0b4733e158e046de97121e64981f29052171ce5fec361e9703f62"
+    },
+    "format": "redacted_manifest",
+    "manifest_hash": "sha256:0e30f41064a0b4733e158e046de97121e64981f29052171ce5fec361e9703f62",
+    "path_or_uri": "docs/results/model_matrix/spread_explosion__baseline_random__seed_63_summary.json",
+    "raw_prompts_included": false,
+    "raw_responses_included": false
+  }
+}

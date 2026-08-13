@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" role="img" aria-label="TreLLM audit report preview">
+  <defs>
+    <linearGradient id="hero" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="58%" stop-color="#17417f"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#0f172a" flood-opacity="0.13"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="660" fill="#f6f8fb"/>
+  <rect x="36" y="32" width="1128" height="596" rx="10" fill="#ffffff" filter="url(#shadow)"/>
+  <rect x="36" y="32" width="1128" height="150" rx="10" fill="url(#hero)"/>
+  <text x="76" y="88" font-family="Inter, Arial, sans-serif" font-size="31" font-weight="800" fill="#ffffff">TreLLM Audit Report</text>
+  <text x="76" y="124" font-family="Inter, Arial, sans-serif" font-size="16" fill="#dbeafe">Observe, plan, risk-gate, execute, and reflect in one replayable trajectory.</text>
+  <rect x="908" y="64" width="190" height="82" rx="8" fill="#0f172a" opacity="0.62" stroke="#93c5fd" stroke-opacity="0.45"/>
+  <text x="930" y="94" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#bfdbfe">Rendered step</text>
+  <text x="930" y="125" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="800" fill="#ffffff">1 / 90</text>
+
+  <g font-family="Inter, Arial, sans-serif">
+    <g transform="translate(76 210)">
+      <rect width="126" height="74" rx="8" fill="#ffffff" stroke="#d9e2ec"/>
+      <text x="14" y="26" font-size="12" fill="#64748b">Final equity</text>
+      <text x="14" y="55" font-size="24" font-weight="800" fill="#0f172a">$121,708</text>
+    </g>
+    <g transform="translate(218 210)">
+      <rect width="126" height="74" rx="8" fill="#ffffff" stroke="#d9e2ec"/>
+      <text x="14" y="26" font-size="12" fill="#64748b">Max drawdown</text>
+      <text x="14" y="55" font-size="24" font-weight="800" fill="#dc2626">-4.25%</text>
+    </g>
+    <g transform="translate(360 210)">
+      <rect width="126" height="74" rx="8" fill="#ffffff" stroke="#d9e2ec"/>
+      <text x="14" y="26" font-size="12" fill="#64748b">Risk clipped</text>
+      <text x="14" y="55" font-size="24" font-weight="800" fill="#d97706">118</text>
+    </g>
+    <g transform="translate(502 210)">
+      <rect width="126" height="74" rx="8" fill="#ffffff" stroke="#d9e2ec"/>
+      <text x="14" y="26" font-size="12" fill="#64748b">Fill rate</text>
+      <text x="14" y="55" font-size="24" font-weight="800" fill="#059669">77.25%</text>
+    </g>
+
+    <g transform="translate(76 314)">
+      <text x="0" y="0" font-size="19" font-weight="800" fill="#0f172a">Decision lifecycle</text>
+      <g transform="translate(0 24)">
+        <rect width="146" height="86" rx="8" fill="#fbfdff" stroke="#d9e2ec"/>
+        <rect width="146" height="4" rx="2" fill="#2563eb"/>
+        <text x="16" y="32" font-size="15" font-weight="800" fill="#0f172a">Observe</text>
+        <text x="16" y="56" font-size="13" fill="#64748b">3 symbols</text>
+      </g>
+      <g transform="translate(160 24)">
+        <rect width="146" height="86" rx="8" fill="#fbfdff" stroke="#d9e2ec"/>
+        <rect width="146" height="4" rx="2" fill="#7c3aed"/>
+        <text x="16" y="32" font-size="15" font-weight="800" fill="#0f172a">Plan</text>
+        <text x="16" y="56" font-size="13" fill="#64748b">6 signals</text>
+      </g>
+      <g transform="translate(320 24)">
+        <rect width="146" height="86" rx="8" fill="#fbfdff" stroke="#d9e2ec"/>
+        <rect width="146" height="4" rx="2" fill="#d97706"/>
+        <text x="16" y="32" font-size="15" font-weight="800" fill="#0f172a">Risk Gate</text>
+        <text x="16" y="56" font-size="13" fill="#64748b">1 clipped</text>
+      </g>
+      <g transform="translate(480 24)">
+        <rect width="146" height="86" rx="8" fill="#fbfdff" stroke="#d9e2ec"/>
+        <rect width="146" height="4" rx="2" fill="#dc2626"/>
+        <text x="16" y="32" font-size="15" font-weight="800" fill="#0f172a">Execute</text>
+        <text x="16" y="56" font-size="13" fill="#64748b">1 pending</text>
+      </g>
+    </g>
+
+    <g transform="translate(742 212)">
+      <rect width="360" height="186" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>
+      <text x="22" y="34" font-size="17" font-weight="800" fill="#0f172a">Why this step matters</text>
+      <text x="22" y="66" font-size="13" fill="#334155">The strategy proposed SYN at 0.750 target weight.</text>
+      <text x="22" y="90" font-size="13" fill="#334155">The pre-trade risk gate approved 0.220.</text>
+      <text x="22" y="114" font-size="13" fill="#334155">The order then entered realistic execution with latency.</text>
+      <rect x="22" y="138" width="306" height="10" rx="5" fill="#e5e7eb"/>
+      <rect x="22" y="138" width="230" height="10" rx="5" fill="#2563eb"/>
+      <text x="22" y="168" font-size="12" fill="#64748b">proposed 0.750</text>
+      <rect x="178" y="158" width="150" height="10" rx="5" fill="#e5e7eb"/>
+      <rect x="178" y="158" width="44" height="10" rx="5" fill="#059669"/>
+      <text x="178" y="184" font-size="12" fill="#64748b">approved 0.220</text>
+    </g>
+
+    <g transform="translate(742 424)">
+      <rect width="360" height="122" rx="8" fill="#ffffff" stroke="#d9e2ec"/>
+      <text x="22" y="32" font-size="17" font-weight="800" fill="#0f172a">Reproducibility fingerprint</text>
+      <text x="22" y="62" font-size="12" fill="#64748b">prompt_version</text>
+      <text x="160" y="62" font-size="12" fill="#0f172a">baseline-v0</text>
+      <text x="22" y="86" font-size="12" fill="#64748b">model_version</text>
+      <text x="160" y="86" font-size="12" fill="#0f172a">deterministic-baseline</text>
+      <text x="22" y="110" font-size="12" fill="#64748b">memory_digest</text>
+      <text x="160" y="110" font-size="12" fill="#0f172a">4f53...b945</text>
+    </g>
+  </g>
+</svg>

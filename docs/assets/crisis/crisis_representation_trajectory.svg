@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-label="Crisis representation trajectory"><rect width="100%" height="100%" fill="#f8fafc"/>
+<text x="40.00" y="46.00" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="800" fill="#0f172a" text-anchor="start">Representation trajectories during the 2022 Tech/Rates drawdown</text>
+<rect x="40" y="80" width="540" height="270" rx="8" fill="#ffffff" stroke="#d9e2ec"/><text x="58.00" y="108.00" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="800" fill="#0f172a" text-anchor="start">deepseek:deepseek-v4-pro</text>
+<polyline fill="none" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="3 4" points="492.2,274.9 268.4,128.0 463.1,238.3 315.1,181.0 156.6,169.0 121.9,320.0 314.2,175.4 76.0,295.9 404.9,185.3 546.0,294.7 316.4,253.3 357.6,189.5"/>
+<circle cx="492.21" cy="274.94" r="3.0" fill="#2563eb" fill-opacity="0.88"/>
+<circle cx="268.37" cy="128.00" r="3.0" fill="#2563eb" fill-opacity="0.88"/>
+<circle cx="463.08" cy="238.31" r="3.0" fill="#2563eb" fill-opacity="0.88"/>
+<circle cx="315.12" cy="180.99" r="3.0" fill="#2563eb" fill-opacity="0.88"/>
+<circle cx="156.57" cy="168.97" r="3.0" fill="#2563eb" fill-opacity="0.88"/>
+<circle cx="121.85" cy="320.00" r="3.0" fill="#2563eb" fill-opacity="0.88"/>
+<circle cx="314.21" cy="175.37" r="4.5" fill="#d97706" fill-opacity="0.88"/>
+<circle cx="76.00" cy="295.91" r="4.5" fill="#d97706" fill-opacity="0.88"/>
+<circle cx="404.92" cy="185.32" r="4.5" fill="#d97706" fill-opacity="0.88"/>
+<circle cx="546.00" cy="294.72" r="4.5" fill="#d97706" fill-opacity="0.88"/>
+<circle cx="316.45" cy="253.31" r="4.5" fill="#d97706" fill-opacity="0.88"/>
+<circle cx="357.60" cy="189.49" r="4.5" fill="#dc2626" fill-opacity="0.88"/>
+<rect x="370" y="94" width="10" height="10" fill="#2563eb"/><text x="386.00" y="104.00" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="400" fill="#334155" text-anchor="start">normal</text><rect x="370" y="112" width="10" height="10" fill="#d97706"/><text x="386.00" y="122.00" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="400" fill="#334155" text-anchor="start">pre</text><rect x="370" y="130" width="10" height="10" fill="#dc2626"/><text x="386.00" y="140.00" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="400" fill="#334155" text-anchor="start">drawdown</text>
+<rect x="630" y="80" width="540" height="270" rx="8" fill="#ffffff" stroke="#d9e2ec"/><text x="648.00" y="108.00" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="800" fill="#0f172a" text-anchor="start">poe:claude-opus-4.7</text>
+<polyline fill="none" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="3 4" points="1004.7,152.3 1117.7,263.3 978.8,176.3 1133.1,246.5 1064.2,252.5 979.6,320.0 1092.1,256.0 717.8,280.2 822.2,128.0 666.0,287.1 1136.0,263.3 1107.8,232.1"/>
+<circle cx="1004.68" cy="152.26" r="4.5" fill="#d97706" fill-opacity="0.88"/>
+<circle cx="1117.72" cy="263.28" r="4.5" fill="#d97706" fill-opacity="0.88"/>
+<circle cx="978.75" cy="176.33" r="4.5" fill="#dc2626" fill-opacity="0.88"/>
+<circle cx="1133.12" cy="246.50" r="4.5" fill="#dc2626" fill-opacity="0.88"/>
+<circle cx="1064.19" cy="252.49" r="4.5" fill="#dc2626" fill-opacity="0.88"/>
+<circle cx="979.55" cy="320.00" r="4.5" fill="#dc2626" fill-opacity="0.88"/>
+<circle cx="1092.08" cy="256.02" r="4.5" fill="#dc2626" fill-opacity="0.88"/>
+<circle cx="717.78" cy="280.25" r="4.5" fill="#dc2626" fill-opacity="0.88"/>
+<circle cx="822.20" cy="128.00" r="3.0" fill="#2563eb" fill-opacity="0.88"/>
+<circle cx="666.00" cy="287.11" r="3.0" fill="#2563eb" fill-opacity="0.88"/>
+<circle cx="1136.00" cy="263.32" r="3.0" fill="#2563eb" fill-opacity="0.88"/>
+<circle cx="1107.84" cy="232.15" r="3.0" fill="#2563eb" fill-opacity="0.88"/>
+<rect x="960" y="94" width="10" height="10" fill="#2563eb"/><text x="976.00" y="104.00" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="400" fill="#334155" text-anchor="start">normal</text><rect x="960" y="112" width="10" height="10" fill="#d97706"/><text x="976.00" y="122.00" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="400" fill="#334155" text-anchor="start">pre</text><rect x="960" y="130" width="10" height="10" fill="#dc2626"/><text x="976.00" y="140.00" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="400" fill="#334155" text-anchor="start">drawdown</text>
+<rect x="40" y="385" width="540" height="270" rx="8" fill="#ffffff" stroke="#d9e2ec"/><text x="58.00" y="413.00" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="800" fill="#0f172a" text-anchor="start">poe:gemini-3.1-pro</text>
+<polyline fill="none" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="3 4" points="76.0,575.2 380.1,583.0 169.2,597.8 546.0,474.9 214.6,505.6 469.4,618.8 274.1,442.5 156.6,500.5 245.5,433.0 470.8,454.6 127.6,527.3 425.1,625.0"/>
+<circle cx="76.00" cy="575.18" r="3.0" fill="#2563eb" fill-opacity="0.88"/>
+<circle cx="380.13" cy="583.00" r="3.0" fill="#2563eb" fill-opacity="0.88"/>
+<circle cx="169.20" cy="597.82" r="3.0" fill="#2563eb" fill-opacity="0.88"/>
+<circle cx="546.00" cy="474.87" r="3.0" fill="#2563eb" fill-opacity="0.88"/>
+<circle cx="214.58" cy="505.64" r="3.0" fill="#2563eb" fill-opacity="0.88"/>
+<circle cx="469.38" cy="618.84" r="3.0" fill="#2563eb" fill-opacity="0.88"/>
+<circle cx="274.10" cy="442.51" r="4.5" fill="#d97706" fill-opacity="0.88"/>
+<circle cx="156.58" cy="500.48" r="4.5" fill="#d97706" fill-opacity="0.88"/>
+<circle cx="245.55" cy="433.00" r="4.5" fill="#d97706" fill-opacity="0.88"/>
+<circle cx="470.76" cy="454.58" r="4.5" fill="#d97706" fill-opacity="0.88"/>
+<circle cx="127.62" cy="527.28" r="4.5" fill="#d97706" fill-opacity="0.88"/>
+<circle cx="425.13" cy="625.00" r="4.5" fill="#dc2626" fill-opacity="0.88"/>
+<rect x="370" y="399" width="10" height="10" fill="#2563eb"/><text x="386.00" y="409.00" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="400" fill="#334155" text-anchor="start">normal</text><rect x="370" y="417" width="10" height="10" fill="#d97706"/><text x="386.00" y="427.00" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="400" fill="#334155" text-anchor="start">pre</text><rect x="370" y="435" width="10" height="10" fill="#dc2626"/><text x="386.00" y="445.00" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="400" fill="#334155" text-anchor="start">drawdown</text>
+<rect x="630" y="385" width="540" height="270" rx="8" fill="#ffffff" stroke="#d9e2ec"/><text x="648.00" y="413.00" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="800" fill="#0f172a" text-anchor="start">poe:gpt-5.5</text>
+<polyline fill="none" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="3 4" points="670.5,433.0 666.0,497.3 1009.0,504.4 749.9,531.4 919.2,581.7 790.3,572.2 839.6,567.8 939.0,625.0 843.9,482.7 1136.0,434.4 803.2,519.8 753.9,543.8"/>
+<circle cx="670.51" cy="433.00" r="3.0" fill="#2563eb" fill-opacity="0.88"/>
+<circle cx="666.00" cy="497.28" r="3.0" fill="#2563eb" fill-opacity="0.88"/>
+<circle cx="1008.99" cy="504.39" r="3.0" fill="#2563eb" fill-opacity="0.88"/>
+<circle cx="749.88" cy="531.39" r="3.0" fill="#2563eb" fill-opacity="0.88"/>
+<circle cx="919.20" cy="581.69" r="3.0" fill="#2563eb" fill-opacity="0.88"/>
+<circle cx="790.26" cy="572.24" r="3.0" fill="#2563eb" fill-opacity="0.88"/>
+<circle cx="839.57" cy="567.77" r="4.5" fill="#d97706" fill-opacity="0.88"/>
+<circle cx="939.01" cy="625.00" r="4.5" fill="#d97706" fill-opacity="0.88"/>
+<circle cx="843.90" cy="482.73" r="4.5" fill="#d97706" fill-opacity="0.88"/>
+<circle cx="1136.00" cy="434.43" r="4.5" fill="#d97706" fill-opacity="0.88"/>
+<circle cx="803.15" cy="519.81" r="4.5" fill="#d97706" fill-opacity="0.88"/>
+<circle cx="753.94" cy="543.82" r="4.5" fill="#dc2626" fill-opacity="0.88"/>
+<rect x="960" y="399" width="10" height="10" fill="#2563eb"/><text x="976.00" y="409.00" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="400" fill="#334155" text-anchor="start">normal</text><rect x="960" y="417" width="10" height="10" fill="#d97706"/><text x="976.00" y="427.00" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="400" fill="#334155" text-anchor="start">pre</text><rect x="960" y="435" width="10" height="10" fill="#dc2626"/><text x="976.00" y="445.00" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="400" fill="#334155" text-anchor="start">drawdown</text>
+</svg>

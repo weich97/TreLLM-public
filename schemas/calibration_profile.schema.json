@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/weich97/TreLLM-public/schemas/calibration_profile.schema.json",
+  "title": "TreLLM execution calibration profile",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": ["schema", "data", "assumptions", "suggested_simulator_config", "diagnostics"],
+      "properties": {
+        "schema": { "const": "tradearena_execution_calibration_v1" },
+        "data": {
+          "type": "object",
+          "required": ["symbols", "symbol_count", "row_count"],
+          "properties": {
+            "symbols": { "type": "array", "items": { "type": "string" } },
+            "symbol_count": { "type": "integer", "minimum": 1 },
+            "row_count": { "type": "integer", "minimum": 1 }
+          },
+          "additionalProperties": true
+        },
+        "assumptions": { "type": "object" },
+        "suggested_simulator_config": {
+          "$ref": "#/$defs/simulator_config"
+        },
+        "diagnostics": { "type": "object" }
+      },
+      "additionalProperties": true
+    },
+    {
+      "type": "object",
+      "required": [
+        "schema",
+        "input",
+        "fitted_parameters",
+        "fit_quality",
+        "stress_only_comparison",
+        "suggested_simulator_config",
+        "rows",
+        "interpretation"
+      ],
+      "properties": {
+        "schema": { "const": "tradearena_quote_fill_calibration_v1" },
+        "input": {
+          "type": "object",
+          "required": ["quote_file", "fill_file", "quote_rows", "fill_rows", "aligned_rows", "symbols"],
+          "properties": {
+            "quote_file": { "type": "string" },
+            "fill_file": { "type": "string" },
+            "quote_rows": { "type": "integer", "minimum": 1 },
+            "fill_rows": { "type": "integer", "minimum": 1 },
+            "aligned_rows": { "type": "integer", "minimum": 1 },
+            "symbols": { "type": "array", "items": { "type": "string" } }
+          },
+          "additionalProperties": true
+        },
+        "fitted_parameters": { "type": "object" },
+        "fit_quality": { "type": "object" },
+        "stress_only_comparison": { "type": "object" },
+        "suggested_simulator_config": {
+          "$ref": "#/$defs/simulator_config"
+        },
+        "rows": { "type": "array" },
+        "interpretation": { "type": "string" }
+      },
+      "additionalProperties": true
+    }
+  ],
+  "$defs": {
+    "simulator_config": {
+      "type": "object",
+      "required": ["commission_bps", "base_slippage_bps", "participation_rate", "latency_steps", "market_impact"],
+      "properties": {
+        "commission_bps": { "type": "number" },
+        "base_slippage_bps": { "type": "number" },
+        "spread_bps": { "type": ["number", "null"] },
+        "participation_rate": { "type": "number", "minimum": 0 },
+        "latency_steps": { "type": "integer", "minimum": 0 },
+        "market_impact": { "type": "number", "minimum": 0 }
+      },
+      "additionalProperties": true
+    }
+  }
+}

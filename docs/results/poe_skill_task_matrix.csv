@@ -1,0 +1,16 @@
+provider,model,prompt_variant,repeat,tasks,tasks_passed,score,max_score,score_pct,hard_failed
+poe,gpt-5.5,standard,1,12,10,52,60,0.8666666666666667,1
+poe,gpt-5.5,skeptical_reviewer,1,12,11,52,60,0.8666666666666667,1
+poe,gpt-5.5,adversarial_claim_boundary,1,12,10,49,60,0.8166666666666667,1
+poe,gemini-3.1-pro,standard,1,12,10,51,60,0.85,0
+poe,gemini-3.1-pro,skeptical_reviewer,1,12,11,54,60,0.9,0
+poe,gemini-3.1-pro,adversarial_claim_boundary,1,12,11,54,60,0.9,0
+poe,kimi-k2.5,standard,1,12,9,48,60,0.8,1
+poe,kimi-k2.5,skeptical_reviewer,1,12,8,42,60,0.7,2
+poe,kimi-k2.5,adversarial_claim_boundary,1,12,8,46,60,0.7666666666666667,1
+poe,glm-5,standard,1,12,10,45,60,0.75,2
+poe,glm-5,skeptical_reviewer,1,12,9,46,60,0.7666666666666667,2
+poe,glm-5,adversarial_claim_boundary,1,12,11,52,60,0.8666666666666667,1
+poe,claude-opus-4.7,standard,1,12,8,44,60,0.7333333333333333,2
+poe,claude-opus-4.7,skeptical_reviewer,1,12,10,48,60,0.8,1
+poe,claude-opus-4.7,adversarial_claim_boundary,1,12,9,47,60,0.7833333333333333,1

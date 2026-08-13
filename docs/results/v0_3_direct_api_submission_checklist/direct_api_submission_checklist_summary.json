@@ -1,0 +1,72 @@
+{
+  "artifact_id": "direct_api_submission_checklist",
+  "artifacts": [
+    "direct_api_submission_checklist_items.csv",
+    "direct_api_submission_checklist_summary.json",
+    "direct_api_submission_checklist.md"
+  ],
+  "benchmark_submission_schema_required": [
+    "schema_version",
+    "scenario_id",
+    "agent",
+    "data_source",
+    "execution_config",
+    "risk_config",
+    "metrics",
+    "trajectory_manifest",
+    "reproducibility_hash",
+    "redaction"
+  ],
+  "blocking_item_count": 14,
+  "checklist_item_count": 14,
+  "claim_boundary": "This checklist constrains public direct API submissions, redaction, and claim boundaries. It is not provider-performance evidence and does not close the direct_api_model_matrix gap.",
+  "covered_protocol_manifest_fields": [
+    "provider",
+    "model_id",
+    "model_version_or_release",
+    "api_endpoint_family",
+    "temperature",
+    "top_p",
+    "max_tokens",
+    "call_started_at",
+    "call_completed_at",
+    "prompt_template_id",
+    "prompt_sha256",
+    "response_sha256",
+    "redaction_policy",
+    "retry_count",
+    "parse_status",
+    "cache_status"
+  ],
+  "direct_provider_schema_required": [
+    "schema",
+    "protocol_id",
+    "provider_route",
+    "provider",
+    "model_id",
+    "model_version_or_release",
+    "api_endpoint_family",
+    "call_window",
+    "sampling",
+    "prompt",
+    "response",
+    "redaction",
+    "cache",
+    "run_binding",
+    "evidence"
+  ],
+  "missing_protocol_manifest_fields": [],
+  "phases": [
+    "binding",
+    "claim-boundary",
+    "manifest",
+    "planning",
+    "redaction",
+    "submission",
+    "validation"
+  ],
+  "protocol_id": "trellm-v0.3-protocol",
+  "protocol_manifest_field_count": 16,
+  "protocol_manifest_fields_covered": true,
+  "schema": "trellm_v0_3_direct_api_submission_checklist_v0.1"
+}

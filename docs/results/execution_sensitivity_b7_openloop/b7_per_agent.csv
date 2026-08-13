@@ -1,0 +1,10 @@
+agent,e0_sharpe,e1_closed_sharpe,e1_open_sharpe
+buy-and-hold,10.9506,9.4571,9.4571
+signal-weighted,6.1283,4.849,4.849
+naive-momentum,10.9016,8.2603,8.2603
+mean-reversion,3.7206,3.3015,3.3015
+risk-parity,11.0716,8.693,8.693
+minimum-variance,10.0746,8.5595,8.5595
+random,9.3478,7.7501,7.7501
+deepseek:deepseek-v4-pro,7.5744,9.2008,8.3207
+glm:glm-5,8.9023,9.3433,9.0132

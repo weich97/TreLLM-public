@@ -1,0 +1,3 @@
+board,leg,tau_b_E0_E1
+9-agent direct,closed_loop,0.444
+9-agent direct,open_loop_mechanical,0.556

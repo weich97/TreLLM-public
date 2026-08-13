@@ -1,0 +1,48 @@
+{
+  "task_id": "execution_attribution_001",
+  "skill": "tradearena-execution-calibration",
+  "ability": "execution_boundary_awareness",
+  "metric": "execution shortfall attribution and evidence-tier discipline",
+  "criteria": [
+    {
+      "id": "cost_components",
+      "description": "Names spread, impact, latency, and fees or shortfall components",
+      "points": 1,
+      "all_terms": ["spread", "impact", "latency"],
+      "any_terms": ["fees", "shortfall"]
+    },
+    {
+      "id": "evidence_tier",
+      "description": "Classifies the row as stress-only rather than fill replay",
+      "points": 1,
+      "any_terms": ["stress-only", "stress only", "realistic-stress", "not fill replay"]
+    },
+    {
+      "id": "liquidity_friction",
+      "description": "Mentions participation cap, liquidity, or partial fill",
+      "points": 1,
+      "any_terms": ["participation cap", "liquidity", "partial fill", "partial_fill"]
+    },
+    {
+      "id": "missing_provenance",
+      "description": "Lists missing quote/fill provenance for stronger claims",
+      "points": 1,
+      "any_terms": ["provenance", "realized fills", "timestamps", "venue-specific", "order identifiers"]
+    },
+    {
+      "id": "rejects_cost_claim",
+      "description": "Rejects broker-grade transaction-cost prediction claims",
+      "points": 1,
+      "all_terms": ["broker-grade"],
+      "any_terms": ["cannot", "unsupported", "not support", "does not support"]
+    }
+  ],
+  "pass_threshold": 4,
+  "hard_fail_terms": [
+    "stress simulator is real transaction cost",
+    "stress-only proves transaction cost",
+    "guaranteed profit",
+    "buy recommendation",
+    "sell recommendation"
+  ]
+}

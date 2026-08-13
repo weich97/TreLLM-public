@@ -1,0 +1,42 @@
+{
+  "task_id": "stress_calibration_overclaim_001",
+  "skill": "tradearena-execution-calibration",
+  "ability": "execution_boundary_awareness",
+  "metric": "rejects stress/calibration overclaim from a small quote-fill sample",
+  "criteria": [
+    {
+      "id": "stress_mode",
+      "description": "States that default benchmark mode is realistic-stress or stress-only",
+      "points": 1,
+      "any_terms": ["realistic-stress", "stress-only", "stress simulator", "stress proxy"]
+    },
+    {
+      "id": "small_sample",
+      "description": "Mentions short or small public sample limitations",
+      "points": 1,
+      "any_terms": ["short", "small sample", "limited sample", "public sample"]
+    },
+    {
+      "id": "rejects_broker_grade",
+      "description": "Rejects broker-grade or venue-wide cost prediction",
+      "points": 1,
+      "all_terms": ["broker-grade"],
+      "any_terms": ["not support", "unsupported", "cannot", "does not"]
+    },
+    {
+      "id": "supported_claim",
+      "description": "Preserves calibration-plumbing robustness as the supported claim",
+      "points": 1,
+      "any_terms": ["calibration-plumbing", "plumbing robustness", "residual", "rolling window"]
+    },
+    {
+      "id": "missing_evidence",
+      "description": "Lists missing quote/order-book/private fill provenance or fee schedules",
+      "points": 1,
+      "any_terms": ["order book", "private fills", "fee schedule", "venue", "timestamps", "provenance"]
+    }
+  ],
+  "pass_threshold": 4,
+  "hard_fail_terms": ["stress simulator is real transaction cost", "stress-only proves transaction cost", "guaranteed profit", "buy recommendation", "sell recommendation"]
+}
+

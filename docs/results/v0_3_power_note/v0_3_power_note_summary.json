@@ -1,0 +1,89 @@
+{
+  "alpha": 0.05,
+  "artifact_id": "power_detectable_effect_note",
+  "artifacts": [
+    "v0_3_power_curves.csv",
+    "v0_3_detectable_effects.csv",
+    "v0_3_power_note_summary.json",
+    "v0_3_power_note_summary.md"
+  ],
+  "claim_boundary": "This power note constrains repeat-count and detectable-effect claims for v0.3 planning; it is not evidence of model superiority or trading profitability.",
+  "detectable_effect_row_count": 8,
+  "detected_by_target": {
+    "power_0.5": [
+      {
+        "grid_status": "detected",
+        "minimum_detectable_cohens_d": "1.2",
+        "repeat_count": 6
+      },
+      {
+        "grid_status": "detected",
+        "minimum_detectable_cohens_d": "0.8",
+        "repeat_count": 10
+      },
+      {
+        "grid_status": "detected",
+        "minimum_detectable_cohens_d": "0.5",
+        "repeat_count": 20
+      },
+      {
+        "grid_status": "detected",
+        "minimum_detectable_cohens_d": "0.5",
+        "repeat_count": 30
+      }
+    ],
+    "power_0.8": [
+      {
+        "grid_status": "detected",
+        "minimum_detectable_cohens_d": "2",
+        "repeat_count": 6
+      },
+      {
+        "grid_status": "detected",
+        "minimum_detectable_cohens_d": "1.2",
+        "repeat_count": 10
+      },
+      {
+        "grid_status": "detected",
+        "minimum_detectable_cohens_d": "0.8",
+        "repeat_count": 20
+      },
+      {
+        "grid_status": "detected",
+        "minimum_detectable_cohens_d": "0.8",
+        "repeat_count": 30
+      }
+    ]
+  },
+  "draws": 80,
+  "effect_sizes": [
+    0.2,
+    0.5,
+    0.8,
+    1.2,
+    1.6,
+    2.0
+  ],
+  "llm_main_comparison_threshold": {
+    "below_threshold_label": "pilot evidence",
+    "minimum_seeds": 10,
+    "samples_per_seed": 3
+  },
+  "minimum_repeats_for_alpha_005": 6,
+  "permutation_draws": 256,
+  "protocol_id": "trellm-v0.3-protocol",
+  "repeat_levels": [
+    6,
+    10,
+    20,
+    30
+  ],
+  "row_count": 24,
+  "schema": "trellm_v0_3_power_note_v0.1",
+  "seed": 2026,
+  "structural_note": "With n=5 paired rows, an exact two-sided sign-flip test has minimum p=2/32=0.0625, so it cannot reject under alpha=0.05. The v0.3 planning grid therefore starts at n=6.",
+  "target_powers": [
+    0.5,
+    0.8
+  ]
+}

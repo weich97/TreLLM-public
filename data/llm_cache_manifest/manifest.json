@@ -1,0 +1,41 @@
+{
+  "schema": "tradearena_llm_cache_manifest_v1",
+  "raw_cache_policy": "Raw prompt/response JSONL caches are local or external artifacts and are not tracked in the main repository.",
+  "summaries": [
+    {
+      "cache_name": "crisis_scene_llm.jsonl",
+      "rows": 322,
+      "provider_model_counts": {
+        "deepseek:deepseek-v4-pro": 110,
+        "poe:claude-opus-4.7": 70,
+        "poe:gemini-3.1-pro": 70,
+        "poe:gpt-5.5": 72
+      },
+      "prompt_mode_counts": {
+        "hidden_risk_feedback": 110,
+        "initial_or_no_recent_feedback": 12,
+        "visible_risk_feedback": 200
+      },
+      "parsed_response_rate": 1.0
+    },
+    {
+      "cache_name": "deepseek_analyst.jsonl",
+      "rows": 2915,
+      "provider_model_counts": {
+        "deepseek:deepseek-v4-flash": 411,
+        "deepseek:deepseek-v4-pro": 463,
+        "poe:claude-opus-4.7": 259,
+        "poe:gemini-3.1-pro": 677,
+        "poe:glm-5": 186,
+        "poe:gpt-5.5": 629,
+        "poe:kimi-k2.5": 290
+      },
+      "prompt_mode_counts": {
+        "hidden_risk_feedback": 396,
+        "initial_or_no_recent_feedback": 127,
+        "visible_risk_feedback": 2392
+      },
+      "parsed_response_rate": 1.0
+    }
+  ]
+}

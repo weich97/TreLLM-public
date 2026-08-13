@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/weich97/TreLLM-public/schemas/eval_trace_style.schema.json",
+  "title": "TreLLM Evals and LangSmith-style trace export",
+  "type": "object",
+  "required": ["schema", "compatibility", "redaction", "source", "run_id", "records"],
+  "properties": {
+    "schema": {
+      "const": "trellm_eval_trace_schema_v0.1"
+    },
+    "compatibility": {
+      "type": "object",
+      "required": ["openai_evals", "langsmith", "limits"],
+      "properties": {
+        "openai_evals": {
+          "const": "style_mapping_only"
+        },
+        "langsmith": {
+          "const": "style_mapping_only"
+        },
+        "limits": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "redaction": {
+      "type": "object",
+      "required": [
+        "prompt_payloads_exported",
+        "provider_outputs_exported",
+        "rationale_payloads_exported",
+        "raw_provider_text_policy",
+        "excluded_field_categories"
+      ],
+      "properties": {
+        "prompt_payloads_exported": {
+          "const": false
+        },
+        "provider_outputs_exported": {
+          "const": false
+        },
+        "rationale_payloads_exported": {
+          "const": false
+        },
+        "raw_provider_text_policy": {
+          "const": "excluded_by_default"
+        },
+        "excluded_field_categories": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "source": {
+      "type": "object",
+      "required": ["experiment_name", "schema_version", "source_path"],
+      "additionalProperties": true
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 8
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "run_id", "step_index", "timestamp", "inputs", "outputs", "events", "scores"],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "run_id": {
+            "type": "string"
+          },
+          "step_index": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "timestamp": {
+            "type": "string"
+          },
+          "inputs": {
+            "type": "object"
+          },
+          "outputs": {
+            "type": "object"
+          },
+          "events": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["type", "name", "payload"],
+              "properties": {
+                "type": {
+                  "enum": ["model_candidate", "guardrail", "tool_result"]
+                },
+                "name": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "payload": {
+                  "type": "object"
+                }
+              },
+              "additionalProperties": true
+            }
+          },
+          "scores": {
+            "type": "object"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

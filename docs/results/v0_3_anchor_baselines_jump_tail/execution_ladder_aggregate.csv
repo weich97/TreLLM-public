@@ -1,0 +1,22 @@
+scenario_id,contamination_tier,execution_level,execution_label,agent,run_count,rank,sharpe_mean,sharpe_std,sharpe_ci_low,sharpe_ci_high,total_return_mean,max_drawdown_mean,execution_fill_rate_mean,rejected_order_count_mean,total_slippage_cost_mean,intent_execution_gap_l1_mean,intent_risk_gap_l1_mean,risk_execution_gap_l1_mean
+synthetic_jump_tail_c0_v0_3,C0,E0,ideal execution,buy-and-hold,30,1,7.376081,3.592654,6.13795,8.668668,0.245912,-0.051138,1.0,0.0,22.179042,0.299992,0.3,1.5e-05
+synthetic_jump_tail_c0_v0_3,C0,E0,ideal execution,risk-parity,30,2,7.29888,3.542808,6.068508,8.572125,0.235983,-0.050401,1.0,0.0,31.578087,1.6e-05,0.0,1.6e-05
+synthetic_jump_tail_c0_v0_3,C0,E0,ideal execution,minimum-variance,30,3,7.186873,3.616598,5.936094,8.467457,0.232931,-0.04996,1.0,0.0,34.876176,1.8e-05,0.0,1.8e-05
+synthetic_jump_tail_c0_v0_3,C0,E0,ideal execution,random,30,4,5.956617,4.473643,4.382704,7.534582,0.150285,-0.042914,1.0,0.0,156.327778,3.9e-05,0.0,3.9e-05
+synthetic_jump_tail_c0_v0_3,C0,E0,ideal execution,naive-momentum,30,5,5.822904,3.445664,4.611839,7.051138,0.154356,-0.046877,1.0,0.0,62.445882,2e-05,0.0,2e-05
+synthetic_jump_tail_c0_v0_3,C0,E0,ideal execution,signal-weighted,30,6,5.817991,3.234574,4.708315,6.979874,0.127795,-0.029072,1.0,0.0,42.093068,0.299703,0.299709,1.3e-05
+synthetic_jump_tail_c0_v0_3,C0,E0,ideal execution,mean-reversion,30,7,4.892527,2.518435,4.034133,5.774187,0.051431,-0.016555,1.0,0.0,50.927961,1e-05,0.0,1e-05
+synthetic_jump_tail_c0_v0_3,C0,E1,paper stress execution,buy-and-hold,30,1,6.872543,3.95339,5.506193,8.272002,0.228199,-0.052644,0.924022,1.633333,2297.427967,0.401201,0.3,0.235331
+synthetic_jump_tail_c0_v0_3,C0,E1,paper stress execution,risk-parity,30,2,5.789942,3.634729,4.552002,7.102922,0.213648,-0.066523,0.912929,2.166667,2707.379412,0.262764,0.000828,0.263592
+synthetic_jump_tail_c0_v0_3,C0,E1,paper stress execution,minimum-variance,30,3,5.741919,3.789404,4.413948,7.101917,0.215414,-0.065266,0.909851,2.266667,2797.577962,0.27981,0.0,0.27981
+synthetic_jump_tail_c0_v0_3,C0,E1,paper stress execution,naive-momentum,30,4,5.04901,3.664801,3.857096,6.376759,0.155881,-0.056144,0.868496,3.333333,2895.13742,0.299736,0.000972,0.298764
+synthetic_jump_tail_c0_v0_3,C0,E1,paper stress execution,signal-weighted,30,5,4.831133,3.482777,3.605345,6.141399,0.107146,-0.040987,0.907401,1.333333,1816.736483,0.398193,0.299709,0.199804
+synthetic_jump_tail_c0_v0_3,C0,E1,paper stress execution,random,30,6,4.267536,3.913213,2.86946,5.607815,0.12297,-0.061291,0.846843,4.8,3128.950894,0.385562,0.0,0.385562
+synthetic_jump_tail_c0_v0_3,C0,E1,paper stress execution,mean-reversion,30,7,3.744654,2.704604,2.792408,4.671805,0.052622,-0.023298,0.781022,2.666667,1372.740012,0.160761,0.0,0.160761
+synthetic_jump_tail_c0_v0_3,C0,E2,harsh friction sweep corner,risk-parity,30,1,6.065836,3.659055,4.824139,7.353471,0.193579,-0.049913,0.616903,12.366667,2268.871206,0.392952,0.0,0.392952
+synthetic_jump_tail_c0_v0_3,C0,E2,harsh friction sweep corner,minimum-variance,30,2,5.98924,3.616075,4.783754,7.259198,0.18396,-0.052892,0.631908,11.433333,2257.849307,0.393714,0.000972,0.393714
+synthetic_jump_tail_c0_v0_3,C0,E2,harsh friction sweep corner,buy-and-hold,30,3,5.360634,3.852604,4.040411,6.775202,0.191699,-0.068734,0.623818,12.0,2242.836954,0.537078,0.304861,0.405363
+synthetic_jump_tail_c0_v0_3,C0,E2,harsh friction sweep corner,random,30,4,4.934765,3.632496,3.701965,6.171113,0.135711,-0.055367,0.592501,12.333333,2594.128898,0.457419,0.000972,0.457419
+synthetic_jump_tail_c0_v0_3,C0,E2,harsh friction sweep corner,signal-weighted,30,5,4.906749,2.916956,3.93644,5.932586,0.127532,-0.029541,0.588822,9.033333,1750.286699,0.489163,0.299709,0.320608
+synthetic_jump_tail_c0_v0_3,C0,E2,harsh friction sweep corner,naive-momentum,30,6,4.628619,3.371546,3.45838,5.749102,0.167677,-0.066253,0.579669,11.266667,2942.876806,0.529594,0.0,0.529594
+synthetic_jump_tail_c0_v0_3,C0,E2,harsh friction sweep corner,mean-reversion,30,7,3.048437,3.441796,1.741947,4.159406,0.08432,-0.047582,0.512691,7.2,1696.442616,0.352369,0.0,0.352369

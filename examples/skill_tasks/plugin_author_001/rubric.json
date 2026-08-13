@@ -1,0 +1,40 @@
+{
+  "task_id": "plugin_author_001",
+  "skill": "tradearena-plugin-author",
+  "ability": "plugin_engineering",
+  "metric": "narrow plugin plus deterministic-test review",
+  "criteria": [
+    {
+      "id": "risk_protocol",
+      "description": "Identifies the risk plugin protocol",
+      "points": 1,
+      "any_terms": ["risk plugin", "RiskManager", "validate_order", "risk protocol"]
+    },
+    {
+      "id": "runner_boundary",
+      "description": "Does not change runner orchestration",
+      "points": 1,
+      "any_terms": ["runner orchestration", "do not change the runner", "without changing runner"]
+    },
+    {
+      "id": "deterministic_test",
+      "description": "Adds deterministic test plan",
+      "points": 1,
+      "any_terms": ["deterministic test", "fixed seed", "unit test", "pytest"]
+    },
+    {
+      "id": "no_live_dependency",
+      "description": "Avoids live API dependency",
+      "points": 1,
+      "any_terms": ["no live api", "offline", "deterministic fixture", "without live api"]
+    },
+    {
+      "id": "security_assumptions",
+      "description": "States security and data assumptions",
+      "points": 1,
+      "any_terms": ["security", "data assumption", "credentials", "redacted", "private"]
+    }
+  ],
+  "pass_threshold": 4,
+  "hard_fail_terms": ["live order", "broker password", "guaranteed profit", "buy recommendation", "sell recommendation"]
+}

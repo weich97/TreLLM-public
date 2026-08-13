@@ -1,0 +1,58 @@
+{
+  "api_endpoint_family": "responses",
+  "cache": {
+    "cache_key_sha256": "sha256:0a53dd09bb164068fd9383bdb33dfd7b6ca99871834734775ad6ea1e197bda36",
+    "cache_status": "cache_replay"
+  },
+  "call_window": {
+    "call_completed_at": "2026-05-17T12:00:08Z",
+    "call_started_at": "2026-05-17T12:00:07Z",
+    "request_id_redacted": true,
+    "retry_count": 0
+  },
+  "evidence": {
+    "appendix_only": false,
+    "claim_scope": "Protocol fixture for the v0.3 direct API evidence path; not a live provider or trading-profit claim.",
+    "evidence_label": "direct-api"
+  },
+  "model_id": "fixture-llm-policy-v0",
+  "model_version_or_release": "fixture-2026-05-17",
+  "prompt": {
+    "prompt_sha256": "sha256:6d9e1d38cb7e1c7f5369aba8289cf3c28384742c64e7cc9036e65c3ba9f17913",
+    "prompt_template_id": "trellm-allocation-v0.3",
+    "prompt_version": "v0.3.0",
+    "raw_prompt_public": false,
+    "system_prompt_sha256": "sha256:c82540b8fbe974878b92f3f6f05dc3114d4ecb3229f4743f80b0878f70a78a7c"
+  },
+  "protocol_id": "trellm-v0.3-protocol",
+  "provider": "fixture-direct-api",
+  "provider_route": "direct-api",
+  "redaction": {
+    "notes": "Deterministic protocol fixture; no live API call or raw provider text is stored.",
+    "private_account_data_removed": true,
+    "provider_secrets_removed": true,
+    "raw_prompt_public": false,
+    "raw_response_public": false,
+    "redaction_policy": "hash-only-public-manifest"
+  },
+  "response": {
+    "parse_status": "parsed",
+    "raw_response_public": false,
+    "response_format": "json_object",
+    "response_sha256": "sha256:1cdbff8128cf023210bbbcd85424fea7f6dc91cd85fd2843e2f062c61803e02a"
+  },
+  "run_binding": {
+    "contamination_tier": "C0",
+    "execution_level": "E1",
+    "sample_index": 0,
+    "scenario_id": "synthetic_calm_trend_c0_v0_3",
+    "seed": 7,
+    "trajectory_manifest_sha256": "sha256:e14be2f7f4ea854457d01a66516db294af2e95aac5f023309b8d14f05b56dfd0"
+  },
+  "sampling": {
+    "max_tokens": 1200,
+    "temperature": 0.2,
+    "top_p": 1.0
+  },
+  "schema": "trellm_direct_provider_manifest_v0.1"
+}

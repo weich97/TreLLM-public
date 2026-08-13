@@ -1,0 +1,37 @@
+{
+  "artifact_count": 17,
+  "artifacts": [
+    "direct_api_pilot",
+    "direct_api_matrix_gate",
+    "direct_api_model_matrix_plan",
+    "direct_api_call_packets",
+    "direct_api_submission_checklist",
+    "claim_boundary_audit",
+    "execution_ladder",
+    "execution_stress_grid",
+    "finaudit_pilot",
+    "finaudit_direct_model_plan",
+    "memory_contamination",
+    "contamination_control_audit",
+    "power_detectable_effect_note",
+    "variance_decomposition",
+    "external_reproduction_gate",
+    "replication_pack_verification",
+    "direct_api_matrix_results"
+  ],
+  "claim_boundary": "This index maps public v0.3 artifacts to protocol claims. Current artifacts validate protocol plumbing and pilot mechanisms; they do not yet support headline scientific model-performance claims.",
+  "covered_artifact_count": 21,
+  "covered_fixture_count": 9,
+  "headline_scientific_claim_ready": false,
+  "independent_reproduction_accepted": false,
+  "open_gap_count": 1,
+  "open_gaps": [
+    "external_reproduction_reports"
+  ],
+  "open_protocol_coverage_count": 0,
+  "pack_self_verification_passes": true,
+  "present_artifact_count": 17,
+  "protocol_id": "trellm-v0.3-protocol",
+  "required_protocol_artifact_count": 21,
+  "schema": "trellm_v0_3_evidence_index_v0.1"
+}
