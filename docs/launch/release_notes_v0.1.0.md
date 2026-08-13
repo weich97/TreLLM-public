@@ -12,7 +12,7 @@ layer for comparable rows.
 - **Captioned demo video:** watch or regenerate a 3-minute walkthrough of the
   showcase portal, audit report, execution realism, extension walkthrough, and
   retail planning sandbox. Browser playback is available at
-  `https://weich97.github.io/TreLLM/demo_video.html`.
+  `https://weich97.github.io/TreLLM-public/demo_video.html`.
 - **Replayable audit trajectories:** every decision records observation,
   signals, intended allocation, risk-gate changes, orders, fills/rejections,
   portfolio state, memory, and reproducibility metadata.

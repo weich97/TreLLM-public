@@ -74,8 +74,8 @@ Then open:
 
 GitHub Pages:
 
-- <https://weich97.github.io/TreLLM/>
-- <https://weich97.github.io/TreLLM/benchmark-v0.2.html>
+- <https://weich97.github.io/TreLLM-public/>
+- <https://weich97.github.io/TreLLM-public/benchmark-v0.2.html>
 
 TreLLM is not financial advice and not a live trading bot. It is an open-source
 research prototype for studying whether autonomous financial agents are

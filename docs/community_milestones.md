@@ -12,7 +12,7 @@ and review while keeping TradeArena benchmark rows comparable.
 - Add a high-spread execution stress preset with CSV, JSON, and SVG artifacts.
 - Reflow public Markdown files for readable diffs.
 - Add benchmark provenance and limitations blocks.
-- Keep `https://weich97.github.io/TreLLM/` as a stable root landing page.
+- Keep `https://weich97.github.io/TreLLM-public/` as a stable root landing page.
 - Smoke-check the Colab and Codespaces paths.
 - Keep release-readiness checks in CI.
 

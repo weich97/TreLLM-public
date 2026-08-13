@@ -10,7 +10,7 @@ The 3-minute demo video shows the recommended first-run path:
 Watch it in the browser:
 
 ```text
-https://weich97.github.io/TreLLM/demo_video.html
+https://weich97.github.io/TreLLM-public/demo_video.html
 ```
 
 Regenerate it locally:

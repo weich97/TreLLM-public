@@ -38,10 +38,10 @@
 <p align="center">
   <a href="docs/getting_started.md">Getting started</a> |
   <a href="https://pypi.org/project/tradearena-benchmark/">PyPI</a> |
-  <a href="https://weich97.github.io/TreLLM/">Project site</a> |
-  <a href="https://weich97.github.io/TreLLM/agent_autopsy_dashboard.html">Agent Autopsy</a> |
-  <a href="https://weich97.github.io/TreLLM/benchmark-v0.2.html">Benchmark card</a> |
-  <a href="https://weich97.github.io/TreLLM/community_registry.html">Leaderboard</a> |
+  <a href="https://weich97.github.io/TreLLM-public/">Project site</a> |
+  <a href="https://weich97.github.io/TreLLM-public/agent_autopsy_dashboard.html">Agent Autopsy</a> |
+  <a href="https://weich97.github.io/TreLLM-public/benchmark-v0.2.html">Benchmark card</a> |
+  <a href="https://weich97.github.io/TreLLM-public/community_registry.html">Leaderboard</a> |
   <a href="docs/benchmark_submissions.md">Redacted manifests</a> |
   <a href="docs/public_artifact_privacy.md">Artifact privacy</a> |
   <a href="docs/research_report.md">Technical report</a> |
@@ -687,9 +687,9 @@ python scripts/validate_benchmark_spec.py benchmarks/v0.2/spec.json
 Open:
 
 - Static page:
-  [`weich97.github.io/TreLLM/benchmark-v0.2.html`](https://weich97.github.io/TreLLM/benchmark-v0.2.html)
+  [`weich97.github.io/TreLLM-public/benchmark-v0.2.html`](https://weich97.github.io/TreLLM-public/benchmark-v0.2.html)
 - Leaderboard:
-  [`weich97.github.io/TreLLM/community_registry.html`](https://weich97.github.io/TreLLM/community_registry.html)
+  [`weich97.github.io/TreLLM-public/community_registry.html`](https://weich97.github.io/TreLLM-public/community_registry.html)
 - Markdown artifact:
   [`docs/results/benchmark_v0_2.md`](docs/results/benchmark_v0_2.md)
 - Model matrix:
@@ -775,7 +775,7 @@ See [`docs/benchmark_submissions.md`](docs/benchmark_submissions.md).
 </table>
 
 The browser-playable demo video is here:
-[`weich97.github.io/TreLLM/demo_video.html`](https://weich97.github.io/TreLLM/demo_video.html).
+[`weich97.github.io/TreLLM-public/demo_video.html`](https://weich97.github.io/TreLLM-public/demo_video.html).
 
 ## What Is In The Repo
 

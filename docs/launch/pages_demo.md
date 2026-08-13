@@ -4,7 +4,7 @@ TreLLM publishes the project landing page and quickstart showcase as a
 static GitHub Pages site:
 
 ```text
-https://weich97.github.io/TreLLM/
+https://weich97.github.io/TreLLM-public/
 ```
 
 The Pages workflow lives in `.github/workflows/pages.yml`. On every push to

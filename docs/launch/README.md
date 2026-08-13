@@ -61,7 +61,7 @@ paper-trading
 - Verify GitHub About metadata with
   `python scripts/check_repository_metadata.py weich97/TreLLM-public`.
 - Enable GitHub Discussions.
-- Verify the GitHub Pages site at `https://weich97.github.io/TreLLM/`.
+- Verify the GitHub Pages site at `https://weich97.github.io/TreLLM-public/`.
 - Create the issue backlog in `docs/launch/issue_backlog.md`.
 - Verify the browser-playable 3-minute demo and link it from the README.
 - Verify the v0.2 external reproduction pack with at least three independent
@@ -87,7 +87,7 @@ outputs/examples/index.html
 Watch in the browser:
 
 ```text
-https://weich97.github.io/TreLLM/demo_video.html
+https://weich97.github.io/TreLLM-public/demo_video.html
 ```
 
 ## Suggested Repository Description
