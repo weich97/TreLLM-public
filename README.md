@@ -193,6 +193,13 @@ The accompanying technical report is:
 > LLM Trading Agents. arXiv:2605.28850.
 > https://arxiv.org/abs/2605.28850
 
+### Standalone research artifact
+
+[Validator Fate Profiles](https://github.com/weich97/validator-fate-profiles)
+publishes a focused technical note, pseudonymized row-level evidence, and
+reproducibility tools for measuring admission changes and downstream fates in
+ordered validators. It has its own release history and citation metadata.
+
 ## Claim Boundary
 
 The repo distinguishes three claims:
