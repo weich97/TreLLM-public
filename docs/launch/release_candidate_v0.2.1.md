@@ -6,8 +6,8 @@ This is a local release-candidate manifest. Tagging and PyPI publication are sep
 
 - Target release: `v0.2.1`
 - Current package version: `0.2.0`
-- Commit: `690817ae737ae3a65bf36083153286d919110334`
-- Working tree dirty entries when generated: `21`
+- Commit: `5157cf69069b7afcccce650be76c6834759ea94a`
+- Working tree dirty entries when generated: `0`
 
 ## Pre-Release Commands
 
@@ -20,7 +20,7 @@ This is a local release-candidate manifest. Tagging and PyPI publication are sep
 
 ## Artifact Hashes
 
-- `README.md`: present sha256:6f6883aba9874317f8cd4dbea16127475136abc7a33f5d32266ba26fa8d6ae6c
+- `README.md`: present sha256:1aa1644f0d45b08ada847dbdb6d8852640c0f889daf17156feaebc1fd2135257
 - `benchmarks/v0.2/spec.json`: present sha256:8e688190ff17bc0fca691bcd600bc56bb13d1215d2b5d6a8ac611ae70e17b156
 - `docs/results/benchmark_v0_2.md`: present sha256:319a45938b5708862ea06e280b78089bfe5b08f37a69006fe3707d1796126122
 - `docs/results/execution_replay_calibration_loop.json`: present sha256:afed5a3dd9940f654b0d28186dca2ca6bdafaf4e3da119308efe397aa47a9705
@@ -32,7 +32,7 @@ This is a local release-candidate manifest. Tagging and PyPI publication are sep
 - `docs/results/poe_skill_challenge_followup_matrix.md`: present sha256:be2e3fe9c9186367b59c65110da159047b24909730b11f83abb0362e08394b47
 - `docs/results/poe_skill_challenge_followup_claude_adversarial.md`: present sha256:de116d52697da541083dab9193e79d0a4b931e233b2f26846e4c34b0dbf5e4e9
 - `docs/results/skill_task_matrix.md`: present sha256:560dd7f8427e44af316f90a84765acb80fd931b4862cf32cd6f41a73ecce26ae
-- `docs/results/community_registry.md`: present sha256:e875e8cddd6c6405a4d7718c6f26b488f087ce3644633bbdd7fd4b8052f4a9cc
+- `docs/results/community_registry.md`: present sha256:790375b7a67b881b58206cd9f7a34303ed0f2fa3c238e84e1df063764afe06f9
 - `docs/public_artifact_privacy.md`: present sha256:4c52add96868290eab0b2f17aa060aaf94db052dd5a0bc048974e8b240b60d94
 - `docs/launch/release_notes_v0.2.1.md`: present sha256:8a0d326255aacca2f55cb32f0b822ce5ef7501e0d545f1e4a8dabf86a6fd6b60
 
